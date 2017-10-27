@@ -1,0 +1,66 @@
+<div id="dialog" class="dia_big"><!--玩家账目-->
+    <div class="Accounts_bg">
+        <div class="Account_bt_bg">
+            <div class="Account_icons"></div>
+        </div>
+        <div class="Account_tc">
+            <div class="Dialog_bg1 Account_tc_bg1">
+                <ul>
+                    <li class="Account_time"></li>
+                    <li class="Account_type"></li>
+                    <li class="Account_money"></li>
+                    <li class="Account_balance"></li>
+                </ul>
+            </div>
+            <div class="Dialog_bg2 Account_tc_bg2">
+                <div class="Account_content">
+                    <ul id="dataUl"></ul>
+                    <div id="pageEnd" class="Record_loading">
+                        <div class="Record_loading">
+                            <div class="loader">
+                                <div class="loader-inner line-spin-fade-loader">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                            <span>加载中...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Banker_tc_bg3 Account_tc_bg3">
+                <div class="Dialog_bg3_bg">
+                    <ul id="dataTab">
+                        <li tab="div1" data-value="0" class="Record_today"></li>
+                        <li tab="div2" data-value="1" class="Record_yesterday bg3_op"></li>
+                        <li tab="div3" data-value="2" class="Record_qt bg3_op"></li>
+                    </ul>
+                </div>
+                <div class="Dialog_bg2 Record_bg1"></div>
+            </div>
+            <div class="Account_tc_bg4"></div>
+            <div class="Account_tc_bg5"></div>
+        </div>
+        <button class="Prompt_close"></button>
+    </div>
+</div>
+<script id="dataTmpl" type="text/x-jsrender">
+{{if ~dataIsEmpty(code)}}
+    {{for data.datas}}
+        <li>
+            <div class="">{{:completiontime}}</div>
+            <div class="{{contentColor:transactiontype}}">{{transactionType:transactiontype}}</div>
+            <div class="Account_content_{{contentColor:transactionmoney}}">{{moneyConverter:transactionmoney}}</div>
+            <div class="">{{:balance}}</div>
+        </li>
+    {{/for}}
+{{else}}
+    <div class="Dialog_font_center">{{:msg}}</div>
+{{/if}}
+</script>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.announcement.GameAnnouncementMapper">
+
+    <resultMap id="TABLE:game_announcement" type="g.model.announcement.po.GameAnnouncement">
+        <id column="id" property="id"/>
+        <result column="publish_time" property="publishTime"/>
+        <result column="publish_user_id" property="publishUserId"/>
+        <result column="publish_user_name" property="publishUserName"/>
+        <result column="announcement_type" property="announcementType"/>
+        <result column="save_time" property="saveTime"/>
+        <result column="game_id" property="gameId"/>
+        <result column="title" property="title"/>
+        <result column="content" property="content"/>
+        <result column="validity_start_time" property="validityStartTime"/>
+        <result column="validity_end_time" property="validityEndTime"/>
+        <result column="repeat" property="repeat"/>
+        <result column="repeat_time" property="repeatTime"/>
+        <result column="repeat_unit" property="repeatUnit"/>
+        <result column="local" property="local"/>
+        <result column="game_name" property="gameName"/>
+        <result column="msg_type" property="msgType"/>
+        <result column="gain_gold_num" property="gainGoldNum"/>
+        <result column="is_send" property="isSend"/>
+    </resultMap>
+
+    <!--//region your codes 1-->
+    <!-- 查找游戏公告 -->
+    <select id="selectGameNotify" parameterType="map" resultType="map">
+        SELECT
+            publish_time AS publishTime,
+            announcement_type AS announcementType,
+            title AS title,
+            content AS content,
+            game_id AS gameId
+        FROM
+            game_announcement
+        WHERE
+            ${where};
+    </select>
+
+    <!-- 查找游戏公告 -->
+    <select id="selectGameAnnouncement" parameterType="map" resultMap="TABLE:game_announcement">
+        SELECT
+            *
+        FROM
+            game_announcement
+        WHERE
+            ${where};
+    </select>
+
+    <!-- 查找游戏被动生成的公告 -->
+    <select id="selectPassiveMsg" parameterType="map" resultMap="TABLE:game_announcement">
+        SELECT
+        *
+        FROM
+        game_announcement
+        WHERE
+        publish_time in (select "min"(publish_time) from game_announcement where is_send = '0');
+    </select>
+
+    <select id="selectCountByPublishTime" parameterType="map" resultType="Integer">
+        <![CDATA[
+        select "count"(*) from game_announcement where  publish_time > #{startTime} and publish_time < #{endTime};
+        ]]>
+    </select>
+    <!--//endregion your codes 1-->
+
+</mapper>

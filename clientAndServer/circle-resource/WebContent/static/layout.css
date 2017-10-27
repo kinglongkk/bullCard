@@ -1,0 +1,9 @@
+.sy_content{}
+.sy_content li{ width:526px;height: 370px; background-color: #fff;color: #235ec0;font-size: 18px; line-height: 46px;text-indent: 10px; float: left; margin: 0 46px 20px 0;}
+.sy_shares{ height: 46px;border-bottom: 3px solid #eeeeee;}
+.sy_shares_nr{ background: url("images/dl_09.jpg"); width: 526px;  height: 322px;}
+.sy_player_nr{background: url("images/dl_03.jpg"); width: 526px;  height: 322px;}
+.sy_hyd_nr{background: url("images/dl_06.jpg"); width: 526px;  height: 322px;}
+.sy_add_nr{background: url("images/dl_03.jpg"); width: 526px;  height: 322px;}
+.sy_hilt_nr{background: url("images/dl_06.jpg"); width: 526px;  height: 322px;}
+.sy_agent_nr{background: url("images/dl_04.jpg"); width: 526px;  height: 322px;}

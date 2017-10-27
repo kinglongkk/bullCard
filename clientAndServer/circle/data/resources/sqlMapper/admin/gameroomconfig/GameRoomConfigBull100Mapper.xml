@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.admin.gameroomconfig.GameRoomConfigBull100Mapper">
+
+    <resultMap id="TABLE:game_room_config_bull100" type="g.model.admin.gameroomconfig.po.GameRoomConfigBull100">
+        <id column="id" property="id"/>
+        <result column="room_id" property="roomId"/>
+        <result column="bet_chip" property="betChip"/>
+        <result column="dealer_blance" property="dealerBlance"/>
+        <result column="dealer_blance_tip" property="dealerBlanceTip"/>
+        <result column="dealer_blance_quit" property="dealerBlanceQuit"/>
+        <result column="bet_times" property="betTimes"/>
+        <result column="jackpot_sum" property="jackpotSum"/>
+        <result column="max_limit_game_lose" property="maxLimitGameLose"/>
+        <result column="min_jackpot_limit" property="minJackpotLimit"/>
+        <result column="max_jackpot_limit" property="maxJackpotLimit"/>
+        <result column="max_jackpot_a_match" property="maxJackpotAmatch"/>
+
+        <result column="game_name" property="gameName"/>
+        <result column="game_model_name" property="gameModelName"/>
+        <result column="game_room_name" property="gameRoomName"/>
+    </resultMap>
+    <!--根据房间ID获取房间的配置信息-->
+    <select id="getGameRoomConfigBull100" resultType="g.model.admin.gameroomconfig.po.GameRoomConfigBull100">
+        select * from game_room_config_bull100 where room_id=#{roomId}
+    </select>
+
+    <!--//region your codes 1-->
+    <!-- 查询奖池基本信息 -->
+    <select id="selectRoomList" parameterType="map" resultMap="TABLE:game_room_config_bull100">
+        SELECT
+            game.name AS game_name,
+            model.name AS game_model_name,
+            room.name AS game_room_name,
+            config.id,
+            config.jackpot_sum,
+            config.max_limit_game_lose,
+            config.min_jackpot_limit,
+            config.max_jackpot_limit,
+            config.max_jackpot_a_match
+        FROM
+            game_room_config_bull100 config
+        LEFT JOIN
+            game_room room
+        on
+            config.id = room.id
+        LEFT JOIN
+            game_model model
+        ON
+            room.game_model_id = model.id
+        LEFT JOIN
+            game game
+        ON
+            room.game_id = game.id
+        WHERE
+            ${where}
+        ORDER BY
+            config.id
+        ${paging};
+    </select>
+
+    <!-- 查询奖池基本信息 总记录数 -->
+    <select id="selectRoomListRecords" parameterType="map" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM
+            game_room_config_bull100
+        WHERE
+            ${where};
+    </select>
+    <!--//endregion your codes 1-->
+
+</mapper>

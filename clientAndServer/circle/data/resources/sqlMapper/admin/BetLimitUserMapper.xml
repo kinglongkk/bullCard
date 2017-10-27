@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.admin.BetLimitUserMapper">
+
+    <resultMap id="TABLE:bet_limit_user" type="g.model.admin.po.BetLimitUser">
+        <id column="id" property="id"/>
+        <result column="schema_code" property="schemaCode"/>
+        <result column="sys_user_id" property="sysUserId"/>
+    </resultMap>
+
+    <!--//region your codes 1-->
+
+    <!--//endregion your codes 1-->
+
+</mapper>

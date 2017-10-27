@@ -1,0 +1,12 @@
+{
+  "__type__": "cc.LabelAtlas",
+  "_name": "effectWords_01",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "fntDataStr": "info face=\"Arial\" size=15.84 bold=0 italic=0 charset=\"\" unicode=0 stretchH=100 smooth=1 aa=1 padding=0,0,0,0 spaceing=0,0\ncommon lineHeight=18 base=15.84 scaleW=124 scaleH=18 pages=1 packed=0\npage id=0 file=\"common_font_num01\"\nchars count=0\nchar id=48     x=0   y=0   width=11     height=18     xoffset=0     yoffset=0    xadvance=11    page=0 chnl=0 letter=\"0\"\nchar id=49     x=11   y=0   width=11     height=18     xoffset=0     yoffset=0    xadvance=11    page=0 chnl=0 letter=\"1\"\nchar id=50     x=22   y=0   width=11     height=18     xoffset=0     yoffset=0    xadvance=11    page=0 chnl=0 letter=\"2\"\nchar id=51     x=33   y=0   width=11     height=18     xoffset=0     yoffset=0    xadvance=11    page=0 chnl=0 letter=\"3\"\nchar id=52     x=44   y=0   width=11     height=18     xoffset=0     yoffset=0    xadvance=11    page=0 chnl=0 letter=\"4\"\nchar id=53     x=55   y=0   width=11     height=18     xoffset=0     yoffset=0    xadvance=11    page=0 chnl=0 letter=\"5\"\nchar id=54     x=66   y=0   width=11     height=18     xoffset=0     yoffset=0    xadvance=11    page=0 chnl=0 letter=\"6\"\nchar id=55     x=77   y=0   width=11     height=18     xoffset=0     yoffset=0    xadvance=11    page=0 chnl=0 letter=\"7\"\nchar id=56     x=88   y=0   width=11     height=18     xoffset=0     yoffset=0    xadvance=11    page=0 chnl=0 letter=\"8\"\nchar id=57     x=99   y=0   width=11     height=18     xoffset=0     yoffset=0    xadvance=11    page=0 chnl=0 letter=\"9\"\nchar id=58     x=110   y=0   width=11     height=18     xoffset=0     yoffset=0    xadvance=11    page=0 chnl=0 letter=\":\"\n",
+  "spriteFrame": {
+    "__uuid__": "45c85b06-e8ac-4bb7-a4a9-db22c5215bc4"
+  },
+  "fontSize": 15.84,
+  "_fntConfig": null
+}

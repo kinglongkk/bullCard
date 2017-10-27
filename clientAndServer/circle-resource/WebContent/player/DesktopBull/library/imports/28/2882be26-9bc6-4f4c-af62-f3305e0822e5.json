@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "bull100_txet_da02",
+    "texture": "92ccedd7-cb43-4be9-a8ed-92d12d8d8013",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      68,
+      67
+    ],
+    "offset": [
+      -0.5,
+      0
+    ],
+    "originalSize": [
+      69,
+      67
+    ]
+  }
+}

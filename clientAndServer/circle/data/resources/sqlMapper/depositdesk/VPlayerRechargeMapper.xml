@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.depositdesk.VPlayerRechargeMapper">
+
+    <resultMap id="TABLE:v_player_recharge" type="g.model.depositdesk.po.VPlayerRecharge">
+        <id column="id" property="id"/>
+        <result column="player_id" property="playerId"/>
+        <result column="player_transaction_id" property="playerTransactionId"/>
+        <result column="transaction_no" property="transactionNo"/>
+        <result column="recharge_amount" property="rechargeAmount"/>
+        <result column="recharge_remark" property="rechargeRemark"/>
+        <result column="favorable_total_amount" property="favorableTotalAmount"/>
+        <result column="is_counter_fee" property="isCounterFee"/>
+        <result column="counter_fee_path" property="counterFeePath"/>
+        <result column="cf_ratio_or_fixed" property="cfRatioOrFixed"/>
+        <result column="counter_fee" property="counterFee"/>
+        <result column="is_audit_recharge" property="isAuditRecharge"/>
+        <result column="recharge_type" property="rechargeType"/>
+        <result column="is_related_order" property="isRelatedOrder"/>
+        <result column="related_order_id" property="relatedOrderId"/>
+        <result column="payer_bank" property="payerBank"/>
+        <result column="payer_name" property="payerName"/>
+        <result column="payer_bankcard" property="payerBankcard"/>
+        <result column="create_time" property="createTime"/>
+        <result column="check_time" property="checkTime"/>
+        <result column="check_user_id" property="checkUserId"/>
+        <result column="check_remark" property="checkRemark"/>
+        <result column="check_status" property="checkStatus"/>
+        <result column="bank_order" property="bankOrder"/>
+        <result column="return_time" property="returnTime"/>
+        <result column="payer_bank_type" property="payerBankType"/>
+        <result column="is_first_recharge" property="isFirstRecharge"/>
+        <result column="counterfee_remark" property="counterfeeRemark"/>
+        <result column="is_favorable" property="isFavorable"/>
+        <result column="pay_account_id" property="payAccountId"/>
+        <result column="related_transaction_no" property="relatedTransactionNo"/>
+        <result column="cf_ratio_or_fixed_value" property="cfRatioOrFixedValue"/>
+        <result column="return_recharge" property="returnRecharge"/>
+        <result column="is_return_recharge" property="isReturnRecharge"/>
+        <result column="artificial_reason_content" property="artificialReasonContent"/>
+        <result column="recharge_type_parent" property="rechargeTypeParent"/>
+        <result column="recharge_total_amount" property="rechargeTotalAmount"/>
+        <result column="failure_title" property="failureTitle"/>
+        <result column="artificial_reason_title" property="artificialReasonTitle"/>
+        <result column="receive_account" property="receiveAccount"/>
+        <result column="receive_name" property="receiveName"/>
+        <result column="master_bank_type" property="masterBankType"/>
+        <result column="recharge_status" property="rechargeStatus"/>
+        <result column="username" property="username"/>
+        <result column="check_user_name" property="checkUserName"/>
+        <result column="main_currency" property="mainCurrency"/>
+        <result column="nation" property="nation"/>
+        <result column="recharge_count" property="rechargeCount"/>
+        <result column="master_bank_card" property="masterBankCard"/>
+        <result column="master_name" property="masterName"/>
+        <result column="master_bankcard_status" property="masterBankcardStatus"/>
+        <result column="master_bank" property="masterBank"/>
+        <result column="default_timezone" property="defaultTimezone"/>
+    </resultMap>
+
+    <!--//region your codes 1-->
+
+    <!--//endregion your codes 1-->
+
+</mapper>

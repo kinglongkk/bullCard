@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "comm_icon_onlookers",
+    "texture": "c4cf75ae-fa05-49d0-a6b2-236f35c1a465",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      56,
+      55
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      56,
+      55
+    ]
+  }
+}

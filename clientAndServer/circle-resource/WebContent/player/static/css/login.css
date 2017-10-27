@@ -1,0 +1,529 @@
+@charset "UTF-8";
+/* CSS reset */
+html{color:#515c6b; font-family:'微软雅黑',"Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","WenQuanYi Micro Hei",sans-serif;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td,
+strong{padding:0;margin:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset{border:0;}
+img{border:0; width:100%;}
+a{text-decoration:none; outline:none;}/*此处待添加默认链接颜色*/
+var,em,strong{font-style:normal;}
+address,caption,cite,code,dfn,em,strong,th,var, optgroup{font-style:inherit;font-weight:inherit;}
+del,ins{text-decoration:none;}
+li{list-style:none;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before,q:after{content:'';}
+abbr,acronym{border:0;font-variant:normal;}
+sup{vertical-align:baseline;}
+sub{vertical-align:baseline;}
+legend{color:#000;}
+input,button,textarea,select,optgroup,option{font-family:inherit; font-size:inherit;font-style:inherit;font-weight:inherit;}
+input,button,textarea,select{*font-size:100%;}
+*{-webkit-tap-highlight-color:rgba(0,0,0,0);}
+.clear:after {content:".";display:block;height:0;clear:both;visibility:hidden; overflow:hidden;}
+.clear { *zoom:1;}
+a{ cursor:pointer;}
+body,html,.container {width: 100%; height: 100%; }
+body {
+    padding: 0;
+    margin: 0;
+}
+input{
+    border: none;
+    outline:medium;
+}
+.login_bg{
+    background: url("../images/poker/common/login/beijing.jpg") 50% 50% /auto no-repeat;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    overflow: hidden;
+}
+.ui-contianer-login {
+    background: url("../images/poker/common/login/board_denglv_01.png")  no-repeat;
+    width: 10.65rem;
+    height: 7.44rem;
+    background-size: 100% 100%;
+    margin: 0 auto;
+    top: 20%;
+    position: relative;
+}
+.ui-contianer-login .ui-login {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -9999;
+}
+.login-account{
+    background: url("../images/poker/common/login/text_zhanghao.png") no-repeat;
+    background-size: 100%;
+    width: 1.15rem;
+    height: 0.6rem;
+    float: left;
+    margin-top: 0.25rem;
+}
+.ui-contianer-login .ui-login img {
+    width: 100%;
+}
+.login_list{
+    width: 6.8rem;
+    margin: 0 auto;
+    padding-top: 0.5rem;
+    font-size: 0.4rem;
+}
+.login_list li{
+    float: left;
+    width: 6.8rem;
+    height: 1.04rem;
+    margin-top: 0.4rem;
+}
+.logom_fg{
+    height:1rem;
+    float: left;
+}
+.ui-login-acount {
+    color: #FFFFFF;
+    float: left;
+    margin-left: 0.8rem;
+}
+.ui-login-acount input {
+    width: 4.5rem;
+    height: 1.04rem;
+    padding-left:0.3rem;
+    color: #FFFFFF;
+    background: none;
+    background-size: 100% 100%;
+    background-image: url(../images/poker/common/login/board_denglv_02.png);
+}
+.login-password{
+    background: url("../images/poker/common/login/text_mima.png") no-repeat;
+    background-size: 100%;
+    width: 1.15rem;
+    height: 0.6rem;
+    float: left;
+    margin-top: 0.25rem;
+}
+.ui-login-password {
+    float: left;
+    margin-left: 0.5rem;
+    color: #FFFFFF;
+}
+.ui-login-code {
+    margin-top:0.4rem;
+    color: #FFFFFF;
+    float: left;
+}
+.ui-login-code input {
+    width: 4rem;
+    height: 1.69rem;
+    border: none;
+    color: #FFFFFF;
+    background: none;
+    font-size: 0.6rem;
+    background-size: 100% 100%;
+    background-image: url(../images/poker/common/login/board_denglv_02.png);
+    padding-left:0.3rem;
+    float: left;
+}
+.verify-img{
+    width: 1.8rem;
+    height: 1.04rem;
+    float: left;
+    border-radius: 0.15rem;
+    margin-left: 0.1rem;
+    overflow: hidden;
+}
+.login-code{
+    width: 3.06rem;
+    height: 1.54rem;
+    float: left;
+    border: 0.04rem solid #295439;
+    border-radius: 0.15rem;
+    margin-left: 0.07rem;
+    overflow: hidden;
+}
+.ui-login-remember-acount {
+    width: 2rem;
+    float:left;
+}
+.ui-login-remember-gou {
+    background-image: url(../images/poker/common/login/0010.png);
+    background-size: 100% 100%;
+    width: 0.57rem;
+    height: 0.58rem;
+    float:left;
+    margin:0.4rem 0 0 0.1rem;
+}
+.ui-remember-gou-icon {
+    float:left;
+}
+.ui-login-forget-acount {
+    width: 2.62rem;
+    height: 0.7rem;
+    margin: 0.2rem 0 0 4.8rem;
+    background: url("../images/poker/common/login/rs.png") 50% 50% / auto 100% no-repeat;
+}
+.login_button{ float:left;}
+
+.ui-login-button {
+    background-image: url(../images/poker/common/login/bnt_denglv.png);
+    background-size: 100% 100%;
+    width: 2.46rem;
+    height: 1.04rem;
+    float:left;
+}
+.ui-clear-button {
+    background-image: url(../images/poker/common/login/bnt_qingkong.png);
+    background-size: 100% 100%;
+    width: 2.46rem;
+    height: 1.04rem;
+    float:left;
+    margin-left: 1.8rem;
+}
+.form-control{
+    color: #FFFFFF;
+    background: none;
+    background-size: 100% 100%;
+    background-image: url(../images/poker/common/login/board_denglv_02.png);
+    width: 2.5rem;
+    height: 1.04rem;
+    padding-left: 0.3rem;
+    float: left;
+    margin-left: 0.3rem;
+}
+.login-group{
+    background: url("../images/poker/common/login/text_yzhma.png") no-repeat;
+    background-size: 100%;
+    width: 1.69rem;
+    height: 0.6rem;
+    float: left;
+    margin-top: 0.25rem;
+}
+/*.input-group{*/
+    /*margin-top:0.4rem;;*/
+/*}*/
+.input-group-addon{
+    color: #FFFFFF;
+    font-size: 0.5rem;
+    line-height: 1.54rem;
+}
+.form-group{
+    color: #FFFFFF;
+    font-size: 0.5rem;
+    float: left;
+    width: 7.5rem;
+}
+.core-group{
+    color:#ff0000;
+    font-size: 0.4rem;
+    float: left;
+    margin-left: 2rem;
+}
+/*注册*/
+.Registered{
+    width: 100%;
+    height: 100%;
+    background-color: #ece5cb;
+    position: fixed;
+}
+.Registered_bg{
+    width: 11.40rem;
+    height: 12.22rem;
+    margin: -1rem 0 0 0.5rem;
+    border-radius: 0.5rem;
+    position: absolute;
+    color: #000;
+}
+.Registered-acount{
+    font-size: 0.6rem;
+    padding: 0.9rem 0 0 1rem;
+    width: 9.1rem;
+}
+.Registered-acount input{
+    width: 6.06rem;
+    height: 1.1rem;
+    border: 0.04rem solid #4c453d;
+    font-size: 0.6rem;
+    text-indent: 0.33rem;
+    margin-left: 0.3rem;
+    color: #5d5d5d;
+    background-color: #f1e0c4;
+}
+.Registered-color{
+    font-size: 0.3rem;
+    float: left;
+    margin: 0.1rem 0 0 2.9rem;
+    color: #989294;
+    width: 6.6rem;
+}
+.Registered-color1{
+    font-size: 0.3rem;
+    margin: 0.1rem 0 0 2.9rem;
+    color: #ff0000;
+}
+.Registered-password {
+    font-size: 0.6rem;
+    padding: 0 0 0 1rem;
+    width: 9.1rem;
+}
+.Registered-password input {
+    width: 6.06rem;
+    height: 1.1rem;
+    border: 0.04rem solid #4c453d;
+    font-size: 0.6rem;
+    text-indent: 0.33rem;
+    margin-left: 0.3rem;
+    color: #5d5d5d;
+    background-color: #f1e0c4;
+}
+.Registered_safe{
+    width: 1.74rem;
+    height: 0.16rem;
+    margin: 0.08rem 0 0 2.8rem;
+}
+.Registered_safe1{
+    width: 0.5rem;
+    height: 0.16rem;
+    background-color: #c8c8c8;
+    float: left;
+    margin-left: 0.08rem
+}
+.Registered-code{
+    font-size: 0.6rem;
+    padding: 0.3rem 0 0 1rem;
+    width: 9.1rem;
+    float: left;
+}
+.Registered-code input {
+    width: 3.42rem;
+    height: 1.1rem;
+    border: 0.04rem solid #4c453d;
+    font-size: 0.6rem;
+    text-indent: 0.33rem;
+    margin-left: 0.9rem;
+    color: #5d5d5d;
+    float: left;
+    background-color: #f1e0c4;
+}
+.Registered-yzm{
+    width: 2rem;
+    float: left;
+}
+.Registered-code1{
+    width: 2.37rem;
+    height: 1.1rem;
+    float: left;
+    border: 0.04rem solid #4c453d;
+    margin-left: 0.1rem;
+    background-color: #f1f1f1;
+    text-align: center;
+    color: #9d9495;
+    font-size: 0.45rem;
+    line-height: 1.02rem;
+}
+.Registered-btn{
+    width: 4.6rem;
+    height: 1.12rem;
+    color: #fff;
+    background-color: #f8b003;
+    border-radius: 0.1rem;
+    line-height: 1.12rem;
+    text-align: center;
+    font-size: 0.5rem;
+    border: none;
+    float: left;
+    margin: 0.3rem 0 0 35%;
+}
+.Registered-agree{
+    color: #5f5f5f;
+    font-size: 0.4rem;
+    float: left;
+    margin-left: 3.9rem;
+    margin-top: 0.1rem;
+    height: 0.4rem;
+    line-height: 0.4rem;
+}
+.Registered-agree span{
+    color: #61b5fb;
+}
+.agreement-border {;
+    float: left;
+    /*margin-top: 0.09rem;*/
+}
+.agreement-border input{
+    border: 1px solid #32425b;
+    float: left;
+    height: 0.4rem;
+    position: relative;
+    width: 0.4rem;
+}
+.agreement-border div {
+    display: none;
+    height: 18px;
+    margin: -2px;
+    position: absolute;
+    top: -1px;
+    width: 18px;
+}
+.acount_cord{
+    width: 5.48rem;
+    background: url("../images/poker/bullFight/common/board/begin.png");
+    height: 0.84rem;
+    background-size: 100%;
+    float: left;
+    left: 50%;
+    position: relative;
+    margin-left: -2.74rem;
+}
+.Registered_position{
+    top: 12.5%;
+    bottom: 20%;
+    left: 50%;
+    position: fixed;
+    height:13.9rem;
+    margin-left: -6.07rem;
+    width: 12.14rem;
+}
+.acount_btn{
+    width: 3.88rem;
+    background: url("../images/poker/common/login/registered.png");
+    height: 1.28rem;
+    background-size: 100%;
+    margin: -0.4rem 0 0 0.7rem;
+    position: absolute;
+}
+.Registered_bg1{
+    float: left;
+    width: 12.14rem;
+    margin-top: -0.2rem;
+    /*margin-left: 2.5%;*/
+}
+.Registered_tc_bg1{
+    background: url("../images/poker/bullFight/common/board/windo4.png");
+    background-size: 100%;
+    height: 1.68rem;
+}
+.Registered_tc_bg2{
+    background: url("../images/poker/bullFight/common/board/windo6.png");
+    background-size: 100%;
+    height: 100%;
+    margin-top: -0.02rem;
+}
+.Registered_tc_bg3{
+    background: url("../images/poker/bullFight/common/board/Under5.png") no-repeat;
+    background-size: 100%;
+    height: 1.68rem;
+    margin-top: -0.02rem;
+    width: 100%;
+    z-index: 9;
+    bottom: 0;
+    position: absolute;
+}
+.Registered_qh{
+    font-size: 0.4rem;
+    float: left;
+    margin: 0.1rem 0 0 35%;
+}
+.Registered_qh a{
+    color: #ff0000;
+}
+.Registered_ribbon{
+    background:url("../images/poker/common/login/ribbon04.png") no-repeat;
+    background-size: 100%;
+    width: 11.8rem;
+    height: 1.85rem;
+    position: absolute;
+    margin: -0.3rem 0 0 0.35rem;
+}
+.Registered_ribbon1{
+    background:url("../images/poker/common/login/ribbon05.png") no-repeat;
+    background-size: 100%;
+    width: 2.64rem;
+    height: 3.22rem;
+    position: absolute;
+    left: 0.1rem;
+    z-index: 15;
+}
+.Registered_ribbon2{
+    background:url("../images/poker/common/login/ribbon06.png") no-repeat;
+    background-size: 100%;
+    width: 2.64rem;
+    height: 3.22rem;
+    position: absolute;
+    right: 0;
+    z-index: 15;
+}
+.Registered_error{
+    font-size: 0.4rem;
+    float: left;
+    margin-left: 3.9rem;
+    color: #ff0000;
+    margin-top: 0.2rem;
+}
+.Registered_Prompt_bg{
+    width: 100%;
+    margin: auto;
+    top: 1.91rem;
+    margin-bottom: -0.6rem;
+    bottom: 1.4rem;
+    position: absolute !important;
+    margin-top: -0.04rem;
+    z-index: 10;
+}
+.Registered_Prompt_tc {
+    width: 100%;
+    height: 100%;
+}
+@media only screen and (min-width: 899px) {
+    .ui-contianer-login {
+        width: 5.325rem;
+        height: 3.77rem;
+        top: 20%;
+    }
+    .login_list{
+        padding-top: 0.16rem;
+        width: 3.4rem;
+        font-size: 0.3rem;
+    }
+    .login_list li{
+        height: 0.54rem;
+        margin-top: 0.21rem;
+        width: 3.4rem;
+    }
+    .login-account,.login-password{
+        width: 0.55rem;
+        height: 0.3rem;
+        margin-top: 0.1rem;
+    }
+    .ui-login-acount input{
+        width: 2.25rem;
+        height: 0.52rem;
+        padding-left: 0.1rem;
+    }
+    .login-group{
+        height: 0.3rem;
+        width: 0.84rem;
+        margin-top: 0.125rem;
+    }
+    .form-control{
+        width: 1.23rem;
+        height: 0.52rem;
+        margin-left: 0.11rem;
+        padding-left: 0.1rem;
+    }
+    .core-group{
+        font-size: 0.2rem;
+        margin-left: 1rem;
+    }
+    .verify-img{
+        width: 0.85rem;
+        height: 0.52rem;
+    }
+    .ui-login-button,.ui-clear-button{
+        width: 1.23rem;
+        height: 0.52rem;
+    }
+    .ui-clear-button{margin-left: 0.9rem;}
+    .ui-login-acount{margin-left: 0.4rem;}
+}

@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "comm_icon_charts",
+    "texture": "2e397d39-8bca-4557-b603-48c50a3b4db6",
+    "atlas": "",
+    "rect": [
+      1,
+      4,
+      55,
+      48
+    ],
+    "offset": [
+      0.5,
+      -0.5
+    ],
+    "originalSize": [
+      56,
+      55
+    ]
+  }
+}

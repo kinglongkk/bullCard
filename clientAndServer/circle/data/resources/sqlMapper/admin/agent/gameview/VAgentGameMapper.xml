@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.admin.agent.gameview.VAgentGameMapper">
+
+    <resultMap id="TABLE:v_agent_game" type="g.model.admin.agent.gameview.po.VAgentGame">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="status" property="status"/>
+        <result column="type" property="type"/>
+        <result column="first_type" property="firstType"/>
+        <result column="is_deleted" property="isDeleted"/>
+        <result column="game_logo" property="gameLogo"/>
+        <result column="game_link" property="gameLink"/>
+        <result column="agent_id" property="agentId"/>
+    </resultMap>
+
+    <!--//region your codes 1-->
+    <!-- 查询游戏列表 -->
+    <select id="selectAgentGame" parameterType="map" resultType="map">
+        SELECT
+            name AS gameName,
+            game_logo AS gameLogo,
+            game_link AS gameLink
+        FROM
+            v_agent_game
+        WHERE
+            ${where}
+        ORDER BY
+            id
+        ${paging};
+    </select>
+
+    <select id="selectAgentGameRecordNumber" parameterType="map" resultType="int">
+        SELECT
+            count(agentGame)
+        FROM
+            (SELECT
+                *
+            FROM
+                v_agent_game
+            WHERE
+                ${where}
+            ORDER BY
+                id)
+        as agentGame
+    </select>
+    <!--//endregion your codes 1-->
+
+</mapper>

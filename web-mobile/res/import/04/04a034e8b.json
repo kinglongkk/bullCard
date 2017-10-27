@@ -1,0 +1,246 @@
+[
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "common_btn_bet_gg_1",
+      "texture": "1b2a2a621",
+      "rect": [
+        572,
+        2,
+        269,
+        99
+      ],
+      "offset": [
+        -0.5,
+        0.5
+      ],
+      "originalSize": [
+        270,
+        100
+      ]
+    }
+  },
+  [
+    {
+      "__type__": "cc.Prefab",
+      "_name": "Prefab_buttonCell1",
+      "data": {
+        "__id__": 1
+      }
+    },
+    {
+      "__type__": "cc.Node",
+      "_name": "Prefab_buttonCell1",
+      "_anchorPoint": {
+        "__type__": "cc.Vec2",
+        "x": 0.5,
+        "y": 1
+      },
+      "_contentSize": {
+        "__type__": "cc.Size",
+        "width": 270,
+        "height": 100
+      },
+      "_children": [
+        {
+          "__id__": 2
+        },
+        {
+          "__id__": 3
+        },
+        {
+          "__id__": 4
+        }
+      ],
+      "_components": [
+        {
+          "__type__": "cc.Widget",
+          "node": {
+            "__id__": 1
+          },
+          "_left": -0.13645833333333332,
+          "_top": 1,
+          "_isAbsLeft": false,
+          "_isAbsTop": false
+        }
+      ],
+      "_prefab": {
+        "__type__": "cc.PrefabInfo",
+        "root": {
+          "__id__": 1
+        },
+        "fileId": "4e53eZ+LNpBPY2kCLuBaZig"
+      }
+    },
+    {
+      "__type__": "cc.Node",
+      "_name": "unCheckBtn",
+      "_parent": {
+        "__id__": 1
+      },
+      "_contentSize": {
+        "__type__": "cc.Size",
+        "width": 270,
+        "height": 100
+      },
+      "_position": {
+        "__type__": "cc.Vec2",
+        "y": -50
+      },
+      "_components": [
+        {
+          "__type__": "cc.Sprite",
+          "node": {
+            "__id__": 2
+          },
+          "_spriteFrame": {
+            "__uuid__": "a57d0aeb-5900-4f03-84b6-e6ee21e0c9a2"
+          },
+          "_sizeMode": 2,
+          "_isTrimmedMode": false
+        },
+        {
+          "__type__": "cc.Widget",
+          "node": {
+            "__id__": 2
+          },
+          "_alignFlags": 41,
+          "_bottom": -0.043478260869565216,
+          "_isAbsLeft": false,
+          "_isAbsRight": false,
+          "_isAbsTop": false,
+          "_isAbsBottom": false,
+          "_originalWidth": 270,
+          "_originalHeight": 100
+        }
+      ],
+      "_prefab": {
+        "__type__": "cc.PrefabInfo",
+        "root": {
+          "__id__": 1
+        },
+        "fileId": "ba4ccGxLGFC0634ryyAobs3"
+      }
+    },
+    {
+      "__type__": "cc.Node",
+      "_name": "checkBtn",
+      "_parent": {
+        "__id__": 1
+      },
+      "_contentSize": {
+        "__type__": "cc.Size",
+        "width": 270,
+        "height": 100
+      },
+      "_position": {
+        "__type__": "cc.Vec2",
+        "y": -50
+      },
+      "_active": false,
+      "_components": [
+        {
+          "__type__": "cc.Sprite",
+          "node": {
+            "__id__": 3
+          },
+          "_spriteFrame": {
+            "__uuid__": "e78de17a-48ea-4b1a-86c8-e14a1bb36d35"
+          },
+          "_sizeMode": 0,
+          "_isTrimmedMode": false
+        },
+        {
+          "__type__": "cc.Widget",
+          "node": {
+            "__id__": 3
+          },
+          "_alignFlags": 45,
+          "_isAbsLeft": false,
+          "_isAbsRight": false,
+          "_isAbsTop": false,
+          "_isAbsBottom": false,
+          "_originalWidth": 277,
+          "_originalHeight": 100
+        }
+      ],
+      "_prefab": {
+        "__type__": "cc.PrefabInfo",
+        "root": {
+          "__id__": 1
+        },
+        "fileId": "6223attN/dKpYj9X5JRn8sF"
+      }
+    },
+    {
+      "__type__": "cc.Node",
+      "_name": "buttonText",
+      "_parent": {
+        "__id__": 1
+      },
+      "_contentSize": {
+        "__type__": "cc.Size",
+        "width": 192,
+        "height": 40
+      },
+      "_position": {
+        "__type__": "cc.Vec2",
+        "x": -2.931297709923726,
+        "y": -48.26086956521739
+      },
+      "_components": [
+        {
+          "__type__": "cc.Label",
+          "node": {
+            "__id__": 4
+          },
+          "_useOriginalSize": false,
+          "_actualFontSize": 32,
+          "_fontSize": 32,
+          "_N$string": "封号说明公告",
+          "_N$horizontalAlign": 1,
+          "_N$verticalAlign": 1
+        },
+        {
+          "__type__": "cc.Widget",
+          "node": {
+            "__id__": 4
+          },
+          "_alignFlags": 1,
+          "_left": 0.13358778625954176,
+          "_top": 0.2826086956521739,
+          "_isAbsLeft": false,
+          "_isAbsTop": false
+        }
+      ],
+      "_prefab": {
+        "__type__": "cc.PrefabInfo",
+        "root": {
+          "__id__": 1
+        },
+        "fileId": "3f922El7kZMAYxtYP9Q029n"
+      }
+    }
+  ],
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "common_btn_bet_gg_2",
+      "texture": "1b2a2a621",
+      "rect": [
+        291,
+        2,
+        277,
+        100
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        277,
+        100
+      ]
+    }
+  }
+]

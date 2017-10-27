@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "bull100_board_beijing_desk",
+    "texture": "b7c202b3-6d0d-4c80-9cfd-537e9e172271",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      1358,
+      656
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      1358,
+      656
+    ]
+  }
+}

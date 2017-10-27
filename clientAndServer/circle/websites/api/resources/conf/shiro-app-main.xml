@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:util="http://www.springframework.org/schema/util"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+	http://www.springframework.org/schema/util
+	http://www.springframework.org/schema/util/spring-util-4.1.xsd"
+	   default-autowire="byName">
+
+	<import resource="classpath*:conf/shiro-base.xml"/>
+	<import resource="classpath*:conf/shiro-common.xml"/>
+	<import resource="classpath*:conf/shiro-base-local.xml"/>
+	<import resource="shiro-app-local.xml"/>
+
+	<util:list id="passportListeners">
+		<ref bean="passportListener"/>
+		<ref bean="cachePassportListener"/>
+	</util:list>
+
+	<bean id="passportDelegate" class="g.web.common.shiro.common.delegate.PassportDelegate">
+		<property name="passportListeners" ref="passportListeners"/>
+		<property name="redisSessionDao" ref="redisSessionDao"/>
+	</bean>
+
+
+	<!-- Shiro Filter -->
+	<bean id="shiroFilter" class="org.soul.web.shiro.common.spring.CustomShiroFilterFactoryBean">
+		<property name="securityManager" ref="securityManager" />
+		<property name="successUrl" value="/index.html"  />
+		<property name="loginUrl" value="/passport/login.html"/>
+		<property name="unauthorizedUrl" value="/errors/403.html"></property>
+		<property name="filters">
+			<map>
+				<entry key="kickout" value-ref="kickoutFilter"></entry>
+				<entry key="login" value-ref="login"></entry>
+				<entry key="logout" value-ref="logout"></entry>
+				<entry key="autho" value-ref="authoFilter"></entry>
+				<entry key="authc" value-ref="authcFilter"></entry>
+				<entry key="captcha" value-ref="captcha"></entry>
+			</map>
+		</property>
+		<!--<property name="filterChainDefinitions">-->
+			<!--<value>-->
+				<!--/images/favicon.ico = anon &lt;!&ndash;for chrome&ndash;&gt;-->
+				<!--/resource/** = anon-->
+				<!--/onlinePay/** = anon-->
+				<!--/errors/** = anon-->
+				<!--/captcha/*.html = captcha-->
+				<!--/passport/login* = login-->
+				<!--/passport/logout* = logout-->
+				<!--/passport/register* = anon-->
+				<!--/passport/register/do* = anon-->
+				<!--/** = authc,kickout,autho-->
+			<!--</value>-->
+		<!--</property>-->
+	</bean>
+</beans>

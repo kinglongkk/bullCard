@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "bull100_text_bairendazhan",
+    "texture": "7fb3c682-fce2-4479-a105-883ba96966f1",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      230,
+      62
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      230,
+      62
+    ]
+  }
+}

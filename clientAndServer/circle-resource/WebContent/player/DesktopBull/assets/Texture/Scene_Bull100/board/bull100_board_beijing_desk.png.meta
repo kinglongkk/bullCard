@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "b7c202b3-6d0d-4c80-9cfd-537e9e172271",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "bull100_board_beijing_desk": {
+      "ver": "1.0.3",
+      "uuid": "7c360155-2160-4b07-bf5b-6efeea2051b9",
+      "rawTextureUuid": "b7c202b3-6d0d-4c80-9cfd-537e9e172271",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 1358,
+      "height": 656,
+      "rawWidth": 1358,
+      "rawHeight": 656,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "bull100_board_box2",
+    "texture": "ce0e47f0-a47b-45a9-8cc9-0f000c26e213",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      153,
+      195
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      153,
+      195
+    ]
+  }
+}

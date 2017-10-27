@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.warning.PlayerWarningWinCountMapper">
+
+    <resultMap id="TABLE:player_warning_win_count" type="g.model.warning.po.PlayerWarningWinCount">
+        <id column="id" property="id"/>
+        <result column="player_id" property="playerId"/>
+        <result column="date" property="date"/>
+        <result column="username" property="username"/>
+        <result column="nickname" property="nickname"/>
+        <result column="register_date" property="registerDate"/>
+        <result column="win_amount" property="winAmount"/>
+        <result column="bet_amount" property="betAmount"/>
+        <result column="start_time" property="startTime"/>
+        <result column="end_time" property="endTime"/>
+        <result column="num" property="num"/>
+        <result column="match_id" property="matchId"  typeHandler="g.data.ArrayTypeHandler"/>
+        <result column="status" property="status"/>
+        <result column="is_delete" property="isDelete"/>
+        <result column="create_time" property="createTime"/>
+        <result column="agent_username" property="agentUsername"/>
+        <result column="agent_id" property="agentId"/>
+    </resultMap>
+
+    <!--//region your codes 1-->
+
+    <!--//endregion your codes 1-->
+    <select id="getPlayerWarningWinCount" resultType="g.model.warning.po.PlayerWarningWinCount">
+        SELECT *
+        FROM player_warning_win_count
+        WHERE id = #{id}
+    </select>
+
+    <!--连赢派彩次数存储过程算法-->
+    <select id="quartzWarningWinCount" statementType="CALLABLE" parameterType="map" resultType="boolean">
+        {call circle.player_warning_win_count_v2(
+        #{begintime, jdbcType=OTHER, mode=IN},
+        #{endtime, jdbcType=OTHER, mode=IN})
+        }
+    </select>
+</mapper>

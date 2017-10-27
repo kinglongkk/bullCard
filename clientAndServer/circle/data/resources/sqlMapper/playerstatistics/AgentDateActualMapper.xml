@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.playerstatistics.AgentDateActualMapper">
+
+    <resultMap id="TABLE:agent_date_actual" type="g.model.playerstatistics.po.AgentDateActual">
+        <id column="id" property="id"/>
+        <result column="username" property="username"/>
+        <result column="nickname" property="nickname"/>
+        <result column="statistics_datetime" property="statisticsDatetime"/>
+        <result column="profit_amount" property="profitAmount"/>
+        <result column="effective_amount" property="effectiveAmount"/>
+        <result column="is_delete" property="isDelete"/>
+    </resultMap>
+
+    <!-- 当日实时统计盈亏 -->
+    <insert id="playerAgentActual">
+
+        -- 先清空数据
+        DELETE FROM agent_date_actual;
+        -- 新增数据
+        INSERT INTO
+            agent_date_actual
+            (username,
+            nickname,
+            statistics_datetime,
+            profit_amount,
+            effective_amount)
+        SELECT
+            owner_username,
+            owner_nickname,
+            current_timestamp,
+            sum(win_amount),
+            sum(effective_amount)
+        FROM
+            player_data_statistics
+        WHERE
+            bet_date = to_date(to_char(current_timestamp, 'YYYY-MM-DD'), 'YYYY-MM-DD')
+        GROUP BY
+            owner_username,
+            owner_nickname;
+    </insert>
+
+</mapper>

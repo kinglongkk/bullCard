@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.report.ReportCqsscMapper">
+
+    <resultMap id="TABLE:report_cqssc" type="g.model.report.po.ReportCqssc">
+        <id column="id" property="id"/>
+        <result column="match_id" property="matchId"/>
+        <result column="match_code" property="matchCode"/>
+        <result column="user_id" property="userId"/>
+        <result column="username" property="username"/>
+        <result column="single_amount" property="singleAmount"/>
+        <result column="profit_amount" property="profitAmount"/>
+        <result column="effective_amount" property="effectiveAmount"/>
+        <result column="rakeback_amount" property="rakebackAmount"/>
+        <result column="is_deleted" property="isDeleted"/>
+        <result column="begin_time" property="beginTime"/>
+        <result column="create_time" property="createTime"/>
+    </resultMap>
+
+    <!--//region your codes 1-->
+
+    <!-- 报表数据的生成-->
+    <insert id="genReport" parameterType="Map">
+        INSERT INTO report_cqssc (
+            match_id,
+            match_code,
+            user_id,
+            username,
+            single_amount,
+            profit_amount,
+            effective_amount,
+            rakeback_amount,
+            is_deleted,
+            begin_time,
+            create_time
+        ) SELECT
+            bet.match_id,
+         mat.code match_code,
+        usr.id user_id,
+        usr.username,
+        bet.single_amount,
+        bet.profit_amount,
+        bet.effective_amount,
+        bet.rakeback_amount,
+        FALSE as is_deleted,
+        mat.begin_time,
+        now() as create_time
+        FROM
+            (
+                SELECT
+                    match_id,
+                    owner_id,
+                    "sum" (single_amount) single_amount,
+                    "sum" (profit_amount) profit_amount,
+                    "sum" (effective_amount) effective_amount,
+                    "sum" (effective_amount) * #{rakebackPoint} rakeback_amount
+                FROM
+                    v_bet_list
+                WHERE
+                    status = '20'
+                AND settle_status = '20'
+                AND is_deleted = FALSE
+                GROUP BY
+                    owner_id,
+                    match_id
+            ) bet,
+            sys_user usr,
+            MATCH mat
+        WHERE
+            bet.match_id = mat. ID
+        AND usr. ID = bet.owner_id
+        AND bet.match_id = #{matchId}
+    </insert>
+
+
+    <!--//region your codes 2-->
+
+    <!-- 页面数据显示 分组查询-->
+    <select id="showTotalNumber" parameterType="map" resultType="g.model.report.po.ReportCqssc">
+      SELECT
+        to_char(begin_time,'YYYY-MM-DD') AS begin_time,
+        username,
+        COUNT(username) AS totalNumber,
+        sum(single_amount) AS single_amount,
+        sum(effective_amount) AS effective_amount,
+        sum(profit_amount) AS profit_amount,
+        sum(rakeback_amount) AS rakeback_amount
+      FROM
+        report_cqssc
+      WHERE
+        ${where}
+      GROUP BY
+        to_char(begin_time,'YYYY-MM-DD'),
+        username
+      ORDER BY
+        begin_time
+      DESC
+        ${paging};
+    </select>
+
+    <!--//endregion your codes 2-->
+
+    <!-- 分组查询总记录数 -->
+    <select id="selectTotalRecords" parameterType="map" resultType="int">
+      SELECT
+        COUNT(report_cqssc) AS totalRecord
+      FROM (
+        SELECT
+         username,
+         to_char(begin_time,'YYYY-MM-DD') AS begin_time
+        FROM
+         report_cqssc
+        WHERE
+          ${where}
+        GROUP BY
+         username,
+         to_char(begin_time,'YYYY-MM-DD')
+      )
+      report_cqssc;
+    </select>
+
+</mapper>

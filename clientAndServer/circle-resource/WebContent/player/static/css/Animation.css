@@ -1,0 +1,546 @@
+/*下注开始*/
+.Animation_start{
+    width: 6.98rem;
+    height: 7.07rem;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin: -3.53rem 0 0 -3.49rem;
+}
+.Animation_start_bg{
+    width: 100%;
+    height:100%;
+    background-color: #000000;
+    position: fixed;
+    animation: Animation_start_bg 4s ease 1 ;
+    opacity:0;
+    -webkit-animation: Animation_start_bg 4s ease 1 ;
+}
+@-webkit-keyframes Animation_start_bg {
+    0%  { opacity: 0;}
+    70%{opacity: 0.3;}
+    100%{opacity: 0;}
+}
+
+@keyframes Animation_start_bg {
+    0%  { opacity: 0;}
+    70%{opacity: 0.3;}
+    100%{opacity: 0;}
+}
+.Animation_start_img{
+    background: url("../images/poker/bullFight/common/text/KSxiazhu.png") 50% 50% / auto 100% no-repeat;
+    width: 6.52rem;
+    height: 2.51rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin:-1.45rem 0 0 -3.26rem;
+    animation: Animation_start_img 4s ease 1  ;
+    -webkit-animation: Animation_start_img 4s ease 1  ;
+    opacity:0;
+}
+@keyframes Animation_start_img {
+    0%  {transform:scale(0,0);opacity:1; }
+    30% {transform:scale(1,1);opacity:1;}
+    70% {transform:scale(1,1);opacity:1;}
+    90%{transform:  scale(0.5,0.5);opacity:0;}
+}
+
+@-webkit-keyframes Animation_start_img {
+    0%  {transform:scale(0,0);opacity:1; }
+    30% {transform:scale(1,1);opacity:1;}
+    70% {transform:scale(1,1);opacity:1;}
+    90%{transform:  scale(0.5,0.5);opacity:0;}
+}
+
+.Animation_rotating_bg{
+    background: url("../images/poker/bullFight/common/specialEffects/KStexiao02.png") 50% 50% / auto 100% no-repeat;
+    width: 4.95rem;
+    height: 4.91rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin:-2.45rem 0 0 -2.47rem;
+    -webkit-animation: fadeIn 4s ease 1  ;
+    animation: fadeIn 4s ease 1  ;
+    opacity:0;
+}
+@keyframes fadeIn
+{
+    0%  {transform: scale(0,0); opacity:1;}
+    30% {transform:  scale(2,2);opacity:1;}
+    40% {transform:  scale(2,2);opacity:0.6;}
+    70%{transform:  scale(2,2);opacity:0.6;}
+    90%{transform:  scale(0.8,0.8);opacity:0;}
+}
+@-webkit-keyframes fadeIn
+{
+    0%  {transform: scale(0,0); opacity:1;}
+    30% {transform:  scale(2,2);opacity:1;}
+    40% {transform:  scale(2,2);opacity:0.6;}
+    70%{transform:  scale(2,2);opacity:0.6;}
+    90%{transform:  scale(0.8,0.8);opacity:0;}
+}
+.Animation_light_bg{
+    background: url("../images/poker/bullFight/common/specialEffects/KStexiao01.png") 50% 50% / auto 100% no-repeat;
+    width: 4.95rem;
+    height: 4.91rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin:-2.45rem 0 0 -2.47rem;
+    -webkit-animation: Animation_light_bg 4s ease 1  ;
+    animation: Animation_light_bg 4s ease 1 ;
+    opacity:0;
+}
+@keyframes Animation_light_bg
+{
+    0%  {transform: scale(0,0); opacity:1;}
+    30% {transform:  scale(2,2);opacity:1;}
+    70%{transform:  scale(2,2);opacity:1;}
+    90%{transform:  scale(0.8,0.8);opacity:0;}
+}
+@-webkit-keyframes Animation_light_bg
+{
+    0%  {transform: scale(0,0); opacity:1;}
+    30% {transform:  scale(2,2);opacity:1;}
+    70%{transform:  scale(2,2);opacity:1;}
+    90%{transform:  scale(0.8,0.8);opacity:0;}
+}
+.Animation_start_star{
+    background: url("../images/poker/bullFight/common/specialEffects/KSxingxing.png") 50% 50% / auto 100% no-repeat;
+    width: 0.64rem;
+    height: 0.62rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin:-1.9rem 0 0 -2.2rem;
+    -webkit-animation: Animation_start_star 1s ease 1s 1 ;
+    animation: Animation_start_star 1s ease 1s 1 ;
+    opacity:0;
+}
+@keyframes Animation_start_star
+{
+    0%  {transform: scale(1,1); opacity:1;}
+    50% {transform:  scale(3,3);opacity:0;margin:-4rem 0 0 -4rem; }
+    70%{transform:  scale(2,2);opacity:0;}
+    100%{transform: scale(0,0);opacity:0;}
+}
+@-webkit-keyframes Animation_start_star
+{
+    0%  {transform: scale(1,1); opacity:1;}
+    50% {transform:  scale(3,3);opacity:0;margin:-4rem 0 0 -4rem; }
+    70%{transform:  scale(2,2);opacity:0;}
+    100%{transform: scale(0,0);opacity:0;}
+}
+.Animation_start_star1{
+    background: url("../images/poker/bullFight/common/specialEffects/KSxingxing.png") 50% 50% / auto 100% no-repeat;
+    width: 0.76rem;
+    height: 0.75rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin:-1.9rem 0 0 -1.3rem;
+    -webkit-animation: Animation_start_star1 1s ease 1s 1 ;
+    animation: Animation_start_star1 1s ease 1s 1 ;
+    opacity:0;
+    transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+}
+@keyframes Animation_start_star1
+{
+    0%  {transform: scale(1,1); opacity:1;}
+    60% {transform:  scale(3,3);opacity:0;margin:-6rem 0 0 -4.5rem; }
+    70%{transform:  scale(2,2);opacity:0;}
+    100%{transform: scale(0,0);opacity:0;}
+}
+@-webkit-keyframes Animation_start_star1
+{
+    0%  {transform: scale(1,1); opacity:1;}
+    60% {transform:  scale(3,3);opacity:0;margin:-6rem 0 0 -4.5rem; }
+    70%{transform:  scale(2,2);opacity:0;}
+    100%{transform: scale(0,0);opacity:0;}
+}
+.Animation_start_star2{
+    background: url("../images/poker/bullFight/common/specialEffects/KSxingxing.png") 50% 50% / auto 100% no-repeat;
+    width: 0.64rem;
+    height: 0.62rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin:-2.2rem 0 0 -0.5rem;
+    -webkit-animation: Animation_start_star2 1s ease 1s 1 ;
+    animation: Animation_start_star2 1s ease 1s 1 ;
+    opacity:0;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+@keyframes Animation_start_star2
+{
+    0%  {transform: scale(1,1); opacity:1;}
+    60% {transform:  scale(3,3);opacity:0;margin:-5rem 0 0 -1.4rem; }
+    70%{transform:  scale(2,2);opacity:0;}
+    100%{transform: scale(0,0);opacity:0;}
+}
+@-webkit-keyframes Animation_start_star2
+{
+    0%  {transform: scale(1,1); opacity:1;}
+    60% {transform:  scale(3,3);opacity:0;margin:-5rem 0 0 -1.4rem; }
+    70%{transform:  scale(2,2);opacity:0;}
+    100%{transform: scale(0,0);opacity:0;}
+}
+.Animation_start_star3{
+    background: url("../images/poker/bullFight/common/specialEffects/KSxingxing.png") 50% 50% / auto 100% no-repeat;
+    width: 0.896rem;
+    height: 0.875rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin:-2.2rem 0 0 0.7rem;
+    -webkit-animation: Animation_start_star3 1s ease 1s 1 ;
+    animation: Animation_start_star3 1s ease 1s 1 ;
+    opacity:0;
+    transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+}
+@keyframes Animation_start_star3
+{
+    0%  {transform: scale(1,1); opacity:1;}
+    50% {transform:  scale(3,3);opacity:0;margin:-4rem 0 0 1.8rem; }
+    70%{transform:  scale(2,2);opacity:0;}
+    100%{transform: scale(0,0);opacity:0;}
+}
+@-webkit-keyframes Animation_start_star3
+{
+    0%  {transform: scale(1,1); opacity:1;}
+    50% {transform:  scale(3,3);opacity:0;margin:-4rem 0 0 1.8rem; }
+    70%{transform:  scale(2,2);opacity:0;}
+    100%{transform: scale(0,0);opacity:0;}
+}
+.Animation_start_star4{
+    background: url("../images/poker/bullFight/common/specialEffects/KSxingxing.png") 50% 50% / auto 100% no-repeat;
+    width: 0.64rem;
+    height: 0.62rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin:-2.2rem 0 0 2.1rem;
+    -webkit-animation: Animation_start_star4 1s ease 1s 1 ;
+    animation: Animation_start_star4 1s ease 1s 1 ;
+    opacity:0;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+@keyframes Animation_start_star4
+{
+    0%  {transform: scale(1,1); opacity:1;}
+    60% {transform:  scale(3,3);opacity:0;margin:-4rem 0 0 5rem; }
+    70%{transform:  scale(2,2);opacity:0;}
+    100%{transform: scale(0,0);opacity:0;}
+}
+@-webkit-keyframes Animation_start_star4
+{
+    0%  {transform: scale(1,1); opacity:1;}
+    60% {transform:  scale(3,3);opacity:0;margin:-4rem 0 0 5rem; }
+    70%{transform:  scale(2,2);opacity:0;}
+    100%{transform: scale(0,0);opacity:0;}
+}
+.Animation_start_star5{
+    background: url("../images/poker/bullFight/common/specialEffects/KSxingxing.png") 50% 50% / auto 100% no-repeat;
+    width: 0.76rem;
+    height: 0.75rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin:0.2rem 0 0 -2.2rem;
+
+    -webkit-animation: Animation_start_star5 1s ease  1s 1 ;
+    animation: Animation_start_star5 1s ease 1 ;
+    opacity:0;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+@keyframes Animation_start_star5
+{
+    0%  {transform: scale(1,1); opacity:1;}
+    60% {transform:  scale(3,3);opacity:0;margin:3rem 0 0 -3.2rem; }
+    70%{transform:  scale(2,2);opacity:0;}
+    100%{transform: scale(0,0);opacity:0;}
+}
+@-webkit-keyframes Animation_start_star5
+{
+    0%  {transform: scale(1,1); opacity:1;}
+    60% {transform:  scale(3,3);opacity:0;margin:3rem 0 0 -3.2rem; }
+    70%{transform:  scale(2,2);opacity:0;}
+    100%{transform: scale(0,0);opacity:0;}
+}
+.Animation_start_star6{
+    background: url("../images/poker/bullFight/common/specialEffects/KSxingxing.png") 50% 50% / auto 100% no-repeat;
+    width: 0.64rem;
+    height: 0.62rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0rem 0 0 1.1rem;
+    -webkit-animation: Animation_start_star6 1s ease 1s 1;
+    animation: Animation_start_star6 1s ease 1s 1;
+    opacity: 0;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+@keyframes Animation_start_star6
+{
+    0%  {transform: scale(1,1); opacity:1;}
+    60% {transform:  scale(3,3);opacity:0;margin:1rem 0 0 2rem; }
+    70%{transform:  scale(2,2);opacity:0;}
+    100%{transform: scale(0,0);opacity:0;}
+}
+@-webkit-keyframes Animation_start_star6
+{
+    0%  {transform: scale(1,1); opacity:1;}
+    60% {transform:  scale(3,3);opacity:0;margin:1rem 0 0 2rem; }
+    70%{transform:  scale(2,2);opacity:0;}
+    100%{transform: scale(0,0);opacity:0;}
+}
+.Animation_start_star7{
+    background: url("../images/poker/bullFight/common/specialEffects/KSxingxing.png") 50% 50% / auto 100% no-repeat;
+    width: 0.64rem;
+    height: 0.62rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin:-1.9rem 0 0 0.2rem;
+    -webkit-animation: Animation_start_star7 1s ease 1.2s 1 ;
+    animation: Animation_start_star7 1s ease 1.2s 1 ;
+    opacity:0;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+@keyframes Animation_start_star7
+{
+    0%  {transform: scale(1,1); opacity:1;}
+    60% {transform:  scale(3,3);opacity:0;margin:-3.5rem 0 0 1.4rem; }
+    70%{transform:  scale(2,2);opacity:0;}
+    100%{transform: scale(0,0);opacity:0;}
+}
+@-webkit-keyframes Animation_start_star7
+{
+    0%  {transform: scale(1,1); opacity:1;}
+    60% {transform:  scale(3,3);opacity:0;margin:-3.5rem 0 0 1.4rem; }
+    70%{transform:  scale(2,2);opacity:0;}
+    100%{transform: scale(0,0);opacity:0;}
+}
+.Animation_start_star8{
+    background: url("../images/poker/bullFight/common/specialEffects/KSxingxing.png") 50% 50% / auto 100% no-repeat;
+    width: 0.76rem;
+    height: 0.75rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin:0.4rem 0 0 -1.3rem;
+    -webkit-animation: Animation_start_star8 1s ease  1.2s 1 ;
+    animation: Animation_start_star8 1s ease 1.2s 1 ;
+    opacity:0;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+@keyframes Animation_start_star8
+{
+    0%  {transform: scale(1,1); opacity:1;}
+    60% {transform:  scale(3,3);opacity:0;margin:3.5rem 0 0 -2rem; }
+    80%{transform:  scale(2,2);opacity:0;}
+    100%{transform: scale(0,0);opacity:0;}
+}
+@-webkit-keyframes Animation_start_star8
+{
+    0%  {transform: scale(1,1); opacity:1;}
+    60% {transform:  scale(3,3);opacity:0;margin:3.5rem 0 0 -2rem; }
+    80%{transform:  scale(2,2);opacity:0;}
+    100%{transform: scale(0,0);opacity:0;}
+}
+.Animation_start_star9{
+    background: url("../images/poker/bullFight/common/specialEffects/KSxingxing.png") 50% 50% / auto 100% no-repeat;
+    width: 0.64rem;
+    height: 0.62rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0.2rem 0 0 0.4rem;
+    -webkit-animation: Animation_start_star9 1s ease 1s 1;
+    animation: Animation_start_star9 1s ease 1s 1;
+    opacity: 0;
+    transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+}
+@keyframes Animation_start_star9
+{
+    0%  {transform: scale(1,1); opacity:1;}
+    60% {transform:  scale(3,3);opacity:0;margin:3rem 0 0 2.5rem; }
+    70%{transform:  scale(2,2);opacity:0;}
+    100%{transform: scale(0,0);opacity:0;}
+}
+@-webkit-keyframes Animation_start_star9
+{
+    0%  {transform: scale(1,1); opacity:1;}
+    60% {transform:  scale(3,3);opacity:0;margin:3rem 0 0 2.5rem; }
+    70%{transform:  scale(2,2);opacity:0;}
+    100%{transform: scale(0,0);opacity:0;}
+}
+.Animation_start_star10{
+    background: url("../images/poker/bullFight/common/specialEffects/KSxingxing.png") 50% 50% / auto 100% no-repeat;
+    width: 0.76rem;
+    height: 0.75rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin:-0.5rem 0 0 -2.2rem;
+    -webkit-animation: Animation_start_star10 1s ease  1.3s 1 ;
+    animation: Animation_start_star10 1s ease 1.3s 1 ;
+    opacity:0;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+@keyframes Animation_start_star10
+{
+    0%  {transform: scale(1,1); opacity:1;}
+    60% {transform:  scale(3,3);opacity:0;margin:0.5rem 0 0 -2.8rem; }
+    70%{transform:  scale(2,2);opacity:0;}
+    100%{transform: scale(0,0);opacity:0;}
+}
+@-webkit-keyframes Animation_start_star10
+{
+    0%  {transform: scale(1,1); opacity:1;}
+    60% {transform:  scale(3,3);opacity:0;margin:0.5rem 0 0 -2.8rem; }
+    70%{transform:  scale(2,2);opacity:0;}
+    100%{transform: scale(0,0);opacity:0;}
+}
+.Animation_start_star11{
+    background: url("../images/poker/bullFight/common/specialEffects/KSxingxing.png") 50% 50% / auto 100% no-repeat;
+    width: 0.76rem;
+    height: 0.75rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin:-0.48rem 0 0 1rem;
+    -webkit-animation: Animation_start_star11 1s ease  1s 1 ;
+    animation: Animation_start_star11 1s ease 1 ;
+    opacity:0;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+@keyframes Animation_start_star11
+{
+    0%  {transform: scale(1,1); opacity:1;}
+    60% {transform:  scale(3,3);opacity:0;margin:0.8rem 0 0 2rem; }
+    70%{transform:  scale(2,2);opacity:0;}
+    100%{transform: scale(0,0);opacity:0;}
+}
+@-webkit-keyframes Animation_start_star11
+{
+    0%  {transform: scale(1,1); opacity:1;}
+    60% {transform:  scale(3,3);opacity:0;margin:0.8rem 0 0 2rem; }
+    70%{transform:  scale(2,2);opacity:0;}
+    100%{transform: scale(0,0);opacity:0;}
+}
+.Animation_start_star12{
+    background: url("../images/poker/bullFight/common/specialEffects/KSxingxing.png") 50% 50% / auto 100% no-repeat;
+    width: 0.76rem;
+    height: 0.75rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin:-2rem 0 0 -0.5rem;
+    -webkit-animation: Animation_start_star12 1s ease 1.3s 1 ;
+    animation: Animation_start_star12 1s ease 1.3s 1 ;
+    opacity:0;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+@keyframes Animation_start_star12
+{
+    0%  {transform: scale(1,1); opacity:1;}
+    60% {transform:  scale(3,3);opacity:0;margin:-3rem 0 0 -2.3rem; }
+    70%{transform:  scale(2,2);opacity:0;}
+    100%{transform: scale(0,0);opacity:0;}
+}
+@-webkit-keyframes Animation_start_star12
+{
+    0%  {transform: scale(1,1); opacity:1;}
+    60% {transform:  scale(3,3);opacity:0;margin:-3rem 0 0 -2.3rem; }
+    70%{transform:  scale(2,2);opacity:0;}
+    100%{transform: scale(0,0);opacity:0;}
+}
+/*加载动画*/
+.Animation_loading_bg{
+    width: 100%;
+    height:100%;
+    background: url("../images/poker/bullFight/common/specialEffects/jiazaibeij.jpg") no-repeat top center;
+    position: fixed;
+    background-size: 100% 100%;
+}
+.Animation_loading_content{
+    width: 3.45rem;
+    height: 3.94rem;
+    top: 40%;
+    left: 50%;
+    position: absolute;
+    margin: -1.72rem 0 0 -1.87rem;
+}
+.Animation_loading_prompt{
+    position: absolute;
+    bottom: 10%;
+    font-size: 0.4rem;
+    width: 8rem;
+    left: 50%;
+    margin-left: -4rem;
+    color: #747474;
+}
+.Animation_loading_prompt p{
+    text-indent: 0.15rem;
+    line-height: 0.64rem;
+}
+.loading_prompt_round{
+    width: 0.64rem;
+    height: 0.64rem;
+    background-color: #4c2003;
+    border-radius: 50%;
+    text-align: center;
+    float: left;
+    font-size: 0.5rem;
+    color: #be1d1d;
+}
+/*加载中*/
+.loading_font_jia{
+    background: url("../images/poker/bullFight/common/text/jia.png") 50% 50% / auto 100% no-repeat;
+    width: 0.89rem;
+    height: 0.82rem;
+    -webkit-animation: loading_font_jia 2s ease 0.4s infinite ;
+    animation: loading_font_jia 2s ease 0.4s infinite;
+}
+@keyframes loading_font_jia
+{
+    10%{transform: translate3d(0, -0.2rem, 0);}
+    20%{transform: translate3d(0, 0, 0);}
+}
+@-webkit-keyframes loading_font_jia
+{
+    10%{transform: translate3d(0, -0.2rem, 0);}
+    20%{transform: translate3d(0, 0, 0);}
+}
+.loading_font_Zai02{
+    background: url("../images/poker/bullFight/common/text/Zai02.png") 50% 50% / auto 100% no-repeat;
+    width: 0.89rem;
+    height: 0.82rem;
+    -webkit-animation: loading_font_Zai02 2s ease 0.6s infinite ;
+    animation: loading_font_Zai02 2s ease 0.6s infinite;
+}
+@keyframes loading_font_Zai02
+{
+    10%{transform: translate3d(0, -0.2rem, 0);}
+    20%{transform: translate3d(0, 0, 0);}
+}
+@-webkit-keyframes loading_font_Zai02
+{
+    10%{transform: translate3d(0, -0.2rem, 0);}
+    20%{transform: translate3d(0, 0, 0);}
+}

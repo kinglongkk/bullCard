@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"
+       default-autowire="byName">
+
+    <!-- *********** test *********** -->
+    <bean class="g.service.chesscard.engine.model.Desk" id="desk" scope="prototype"/>
+    <bean class="g.service.chesscard.engine.model.Room" id="room" scope="prototype"/>
+    <!-- *********** test *********** -->
+
+    <!--Game engine framework begin-->
+    <bean class="g.service.chesscard.engine.core.ChessCardEngine" id="chessCardEngine"/>
+    <bean class="g.service.chesscard.engine.manager.ChessCardInitManager" id="chessCardManager"/>
+    <bean class="g.service.engine.cache.ParamManager" id="paramManager"/>
+    <bean class="g.service.engine.cache.DictManager" id="dictManager"/>
+    <bean class="g.service.engine.core.WsSessionKickOut" id="wsSessionKickOut"/>
+
+    <bean class="g.service.chesscard.engine.factory.ModelFactory" id="modelFactory">
+        <property name="roomManagers">
+            <util:map key-type="g.model.enums.GameModelCodeEnum">
+                <entry key="BET" value-ref="roomManager"></entry>
+                <entry key="GRAB" value-ref="roomManager"></entry>
+            </util:map>
+        </property>
+        <property name="evaluators">
+            <util:map key-type="g.model.enums.GameModelCodeEnum">
+                <entry key="BET" value-ref="bull100Evaluator"/>
+                <entry key="GRAB" value-ref="bullBaoEvaluator"/>
+            </util:map>
+        </property>
+    </bean>
+
+    <bean class="g.service.chesscard.engine.manager.RoomManager" id="roomManager">
+        <property name="deskManager" ref="deskManager"/>
+    </bean>
+    <bean class="g.service.chesscard.engine.manager.DeskManager" id="deskManager">
+        <property name="deskListener" ref="deskListener"/>
+    </bean>
+    <bean class="g.service.chesscard.engine.manager.BetManager" id="betManager"/>
+
+    <bean class="g.service.chesscard.engine.manager.Bull100SettleManager" id="bull100SettleManager"/>
+    <bean class="g.service.chesscard.engine.manager.DealerManager" id="dealerManager"/>
+    <bean class="g.service.chesscard.engine.manager.PlayerManager" id="playerManager"/>
+    <bean class="g.service.chesscard.engine.manager.SeatManager" id="seatManager"/>
+    <bean class="g.service.chesscard.engine.manager.BetCoinLimitManager" id="betCoinLimitManager"/>
+
+    <bean class="g.service.chesscard.engine.schedule.DeskScheduleManager" id="deskScheduleManager"/>
+    <bean class="g.service.chesscard.engine.listener.DeskListener" id="deskListener">
+        <property name="scheduleBeanName" value="deskSchedule"/>
+    </bean>
+    <bean class="g.service.chesscard.engine.schedule.DeskSchedule" id="deskSchedule" scope="prototype"/>
+    <bean class="g.service.chesscard.engine.task.MatchTask" id="matchTask" scope="prototype"/>
+
+    <!--Game engine framework end-->
+
+    <!-- Evaluator begin -->
+    <bean class="g.service.chesscard.engine.evaluator.Bull100Evaluator" id="bull100Evaluator">
+    </bean>
+    <bean class="g.service.chesscard.engine.evaluator.BullBaoEvaluator" id="bullBaoEvaluator">
+    </bean>
+    <!-- Evaluator end -->
+
+    <!--Game engine settle begin-->
+    <bean class="g.service.bet.settle.strategy.SettleStrategyContext" id="settleStrategyContext">
+        <property name="strategyMap">
+            <map>
+                <entry key="BULL_100" value-ref="bull100SettleStrategy"/>
+                <entry key="BULL_BAO" value-ref="bullBaoSettleStrategy"/>
+            </map>
+        </property>
+    </bean>
+    <bean class="g.service.engine.settle.Bull100SettleStrategy" id="bull100SettleStrategy"/>
+    <bean class="g.service.engine.settle.BullBaoSettleStrategy" id="bullBaoSettleStrategy"/>
+
+    <bean id="memoryBetDao" class="g.data.bet.impl.MemoryBetDao"/>
+    <bean class="g.service.engine.settle.MemorySettleService" id="memorySettleService">
+        <property name="betDao" ref="memoryBetDao"/>
+    </bean>
+    <!--游戏被动产生消息-->
+    <bean id="broadcastMessageManager" class="g.service.chesscard.engine.manager.BroadcastMessageManager"/>
+    <!-- 游戏公告订阅 -->
+    <bean id="subscriberManager" class="g.service.chesscard.engine.manager.SubscriberManager" />
+    <!-- 玩家交易订阅 -->
+    <bean id="playerTransactionManager" class="g.service.chesscard.engine.manager.PlayerTransactionManager" />
+    <!-- 玩家交易结果 -->
+    <bean id="resultManager" class="g.service.chesscard.engine.manager.PlayerTransactionResultManager" />
+    <!--Game engine settle end-->
+
+    <!--WebSocket framework begin-->
+    <bean class="g.service.engine.core.WsHeartBeat" id="wsHeartBeat"></bean>
+
+    <bean class="g.service.webSocket.WebSocketServer" id="webSocketServer">
+        <property name="port" value="${game.engine.in.port}"/>
+        <property name="ip" value="${game.engine.in.ip}"/>
+        <property name="netBeanPackage" value="g.service.chesscard.netBeans"/>
+        <property name="netHandelPackage" value="g.service.chesscard.netHandles"/>
+    </bean>
+    <bean class="g.service.webSocket.WebSocketServerInitializer" id="webSocketServerInitializer"/>
+    <bean class="g.service.webSocket.WebSocketServerHandler" id="webSocketServerHandler"/>
+    <bean class="g.service.chesscard.WsHandle" id="wsHandle"/>
+    <bean class="g.service.webSocket.context.WsSessionManager" id="wsSessionManager"/>
+    <!--WebSocket framework end-->
+
+    <bean class="g.service.chesscard.ChesscardService" id="chesscardService"/>
+    <bean class="g.service.chesscard.netHandles.common.LoginHandle" id="loginHandle"/>
+    <bean class="g.service.chesscard.netHandles.common.LogoutHandle" id="logoutHandle"/>
+    <bean class="g.service.chesscard.netHandles.douniu.BetHandle" id="betHandle"/>
+    <bean class="g.service.chesscard.netHandles.douniu.IntoRoomHandle" id="intoRoomHandle"/>
+    <bean class="g.service.chesscard.netHandles.douniu.ExitRoomHandle" id="exitRoomHandle"/>
+    <bean class="g.service.chesscard.netHandles.douniu.Bull100MatchHandle" id="bull100MatchHandle"/>
+
+    <bean class="g.service.chesscard.netHandles.douniu.BetBatchHandle" id="betBatchHandle"/>
+    <bean class="g.service.chesscard.netHandles.douniu.SeatHandle" id="seatBatchHandle"/>
+
+    <bean class="g.service.chesscard.netHandles.douniu.UpDealerHandle" id="upDealerHandle"/>
+    <bean class="g.service.chesscard.netHandles.douniu.KeepDealerHandle" id="keepDealerHandle"/>
+    <bean class="g.service.chesscard.netHandles.douniu.DownDealerHandle" id="downDealerHandle"/>
+    <bean class="g.service.chesscard.netHandles.douniu.UpDealerListHandle" id="upDealerListHandle"/>
+    <bean class="g.service.chesscard.netHandles.douniu.DealerOutValueHandle" id="dealerHandle"/>
+
+    <!--bao handle start-->
+    <bean class="g.service.chesscard.netHandles.bao.BullBaoMatchHandle" id="bullBaoMatchHandle"/>
+    <bean class="g.service.chesscard.engine.manager.BullBaoSettleManager" id="bullBaoSettleManager"/>
+    <!--bao handle end-->
+
+    <!--MessageServer start-->
+    <bean class="g.service.chesscard.engine.sender.SimpleSendMessageSessionWrapper" id="simpleSendMessageSessionWrapper"/>
+    <!--MessageServer end-->
+
+    <!--MessageSender start-->
+    <bean class="g.service.chesscard.engine.sender.SyncMessageSender" id="syncMessageSender">
+        <property name="sendMessageSessionWrapper" ref="simpleSendMessageSessionWrapper"/>
+    </bean>
+    <bean class="g.service.chesscard.engine.bull100.sender.BetAsyncMessageSender" id="betAsyncMessageSender">
+        <property name="sendMessageSessionWrapper" ref="simpleSendMessageSessionWrapper"/>
+        <property name="delay" value="1000"/>
+    </bean>
+    <!--MessageSender end-->
+
+    <!--Message start-->
+    <bean class="g.service.chesscard.engine.bull100.message.Bull100BetMessage" id="betMessage" scope="prototype"/>
+    <bean class="g.service.chesscard.engine.bull100.message.Bull100SettleMessage" id="settleMessage" scope="prototype"/>
+    <bean class="g.service.chesscard.engine.bull100.message.Bull100SeatMessage" id="seatMessage" scope="prototype"/>
+    <bean class="g.service.chesscard.engine.bull100.message.Bull100TimeoutMessage" id="timeoutMessage" scope="prototype"/>
+    <bean class="g.service.chesscard.engine.bull100.message.Bull100WarningDealerMessage" id="warningDealerMessage" scope="prototype"/>
+    <bean class="g.service.chesscard.engine.bull100.message.Bull100UpDealerMessage" id="upDealerMessage" scope="prototype"/>
+    <!--Message end-->
+
+
+
+</beans>

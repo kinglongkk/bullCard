@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "common_board_wjlb_4",
+    "texture": "54dd5bac-d703-4530-a2d7-ec17fe177162",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      218,
+      34
+    ],
+    "offset": [
+      -0.5,
+      1
+    ],
+    "originalSize": [
+      219,
+      36
+    ]
+  }
+}

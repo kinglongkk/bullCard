@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>go</groupId>
+    <artifactId>circle</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+    <modules>
+        <module>common</module>
+        <module>model</module>
+        <module>data</module>
+        <module>iservice</module>
+        <module>service</module>
+        <module>webcommon</module>
+        <module>websites</module>
+        <module>tools</module>
+    </modules>
+
+    <properties>
+        <project.build.no>0001</project.build.no>
+        <!--build号,手工修改-->
+        <project.build.ver>1.0.0</project.build.ver>
+        <!--打包版本号-->
+        <!--<project.build.name>${project.artifactId}-${project.build.ver}-${maven.build.timestamp}-b${project.build.no}-->
+        <project.build.name>${project.artifactId}</project.build.name>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <maven.build.timestamp.format>yyMMdd</maven.build.timestamp.format>
+        <timestamp>${maven.build.timestamp}</timestamp>
+
+        <nexus.ip>192.168.0.44:8081</nexus.ip>
+        <repository.nexus.url>http://${nexus.ip}/nexus/content/groups/public</repository.nexus.url>
+        <repository.nexus.distribution.url>http://${nexus.ip}/nexus/content/repositories/thirdparty
+        </repository.nexus.distribution.url>
+
+        <monitor.version>1.0.0-SNAPSHOT</monitor.version>
+        <circle.version>1.0.0-SNAPSHOT</circle.version>
+        <soul.version>1.0.2-SNAPSHOT</soul.version>
+        <spring.data.monogodb.verion>1.8.0.RELEASE</spring.data.monogodb.verion>
+        <mockito.version>2.0.2-beta</mockito.version>
+        <junit.version>4.12</junit.version>
+        <jstl.version>1.1.2</jstl.version>
+        <jsp.api.version>2.2.1-b03</jsp.api.version>
+        <geronimo.servlet_3_0.version>1.0</geronimo.servlet_3_0.version>
+        <springframework.version>4.1.5.RELEASE</springframework.version>
+        <quartz.version>2.2.1</quartz.version>
+
+        <springside.version>4.3.0-SNAPSHOT</springside.version>
+        <cas.client.core.version>3.3.3</cas.client.core.version>
+
+        <freemarker.version>2.3.22</freemarker.version>
+        <fastjson.version>1.2.3</fastjson.version>
+        <shiro.version>1.2.3</shiro.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>public</id>
+            <name>Public Repositories</name>
+            <url>${repository.nexus.url}</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>public</id>
+            <name>Public Repositories</name>
+            <url>${repository.nexus.url}</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <distributionManagement>
+        <repository>
+            <id>thirdparty</id>
+            <name>3th party</name>
+            <url>${repository.nexus.distribution.url}</url>
+        </repository>
+    </distributionManagement>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>org.soul</groupId>
+                <artifactId>soul-commons</artifactId>
+                <version>${soul.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.soul</groupId>
+                <artifactId>soul-commons</artifactId>
+                <version>${soul.version}</version>
+                <classifier>sources</classifier>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.soul</groupId>
+                <artifactId>soul-dubbo</artifactId>
+                <version>${soul.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.soul</groupId>
+                <artifactId>soul-mq</artifactId>
+                <version>${soul.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjrt</artifactId>
+                <version>1.8.4</version>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-all</artifactId>
+                <version>${mockito.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${springframework.version}</version>
+                <!--<scope>test</scope>-->
+            </dependency>
+            <!--springside-->
+            <dependency>
+                <groupId>io.springside</groupId>
+                <artifactId>springside-redis</artifactId>
+                <version>${springside.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${springframework.version}</version>
+            </dependency>
+
+            <!-- 临时-->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-tx</artifactId>
+                <version>${springframework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.javassist</groupId>
+                <artifactId>javassist</artifactId>
+                <version>3.19.0-GA</version>
+            </dependency>
+
+
+
+            <dependency>
+                <groupId>org.quartz-scheduler</groupId>
+                <artifactId>quartz</artifactId>
+                <version>${quartz.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>c3p0</groupId>
+                        <artifactId>c3p0</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <!--<dependency>-->
+            <!--<groupId>org.jasig.cas.client</groupId>-->
+            <!--<artifactId>cas-client-core</artifactId>-->
+            <!--<version>${cas.client.core.version}</version>-->
+            <!--</dependency>-->
+
+            <dependency>
+                <groupId>jstl</groupId>
+                <artifactId>jstl</artifactId>
+                <version>${jstl.version}</version>
+                <!-- 			<scope>provided</scope> -->
+            </dependency>
+            <dependency>
+                <groupId>org.apache.geronimo.specs</groupId>
+                <artifactId>geronimo-servlet_3.0_spec</artifactId>
+                <version>${geronimo.servlet_3_0.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet.jsp</groupId>
+                <artifactId>jsp-api</artifactId>
+                <version>${jsp.api.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <profile.env>dev</profile.env>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <profile.env>test</profile.env>
+            </properties>
+        </profile>
+        <profile>
+            <id>pro</id>
+            <properties>
+                <profile.env>pro</profile.env>
+            </properties>
+        </profile>
+    </profiles>
+
+</project>

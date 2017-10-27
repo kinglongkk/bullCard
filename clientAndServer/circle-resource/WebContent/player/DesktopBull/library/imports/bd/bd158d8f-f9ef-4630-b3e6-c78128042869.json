@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "Scene_Classic_according",
+    "texture": "37011963-1f36-42bf-8c7f-5b7b60b6645e",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      180,
+      78
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      180,
+      78
+    ]
+  }
+}

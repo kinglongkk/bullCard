@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "font_mulpitle_green_0",
+    "texture": "58c445dc-abd0-4504-8e6d-f07547e9ee87",
+    "atlas": "",
+    "rect": [
+      1,
+      0,
+      302,
+      35
+    ],
+    "offset": [
+      -3,
+      2.5
+    ],
+    "originalSize": [
+      310,
+      40
+    ]
+  }
+}

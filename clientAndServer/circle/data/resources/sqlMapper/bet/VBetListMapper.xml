@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.bet.VBetListMapper">
+
+    <resultMap id="TABLE:v_bet_list" type="g.model.bet.po.VBetList">
+        <id column="id" property="id"/>
+        <result column="r_type" property="rtype"/>
+        <result column="bet_no" property="betNo"/>
+        <result column="order_type" property="orderType"/>
+        <result column="single_amount" property="singleAmount"/>
+        <result column="profit_amount" property="profitAmount"/>
+        <result column="effective_amount" property="effectiveAmount"/>
+        <result column="can_win" property="canWin"/>
+        <result column="status" property="status"/>
+        <result column="settle_status" property="settleStatus"/>
+        <result column="result" property="result"/>
+        <result column="strong" property="strong"/>
+        <result column="bet_time" property="betTime"/>
+        <result column="ball_type" property="ballType"/>
+        <result column="phase" property="phase"/>
+        <result column="bet_team" property="betTeam"/>
+        <result column="point" property="point"/>
+        <result column="bet_type" property="betType"/>
+        <result column="bet_team_type" property="betTeamType"/>
+        <result column="ior_field" property="iorField"/>
+        <result column="ratio" property="ratio"/>
+        <result column="host_score" property="hostScore"/>
+        <result column="client_score" property="clientScore"/>
+        <result column="match_id" property="matchId"/>
+        <result column="match_code" property="matchCode"/>
+        <result column="game_type" property="gameType"/>
+        <result column="begin_time" property="beginTime"/>
+        <result column="league_code" property="leagueCode"/>
+        <result column="host_code" property="hostCode"/>
+        <result column="client_code" property="clientCode"/>
+        <result column="username" property="username"/>
+        <result column="owner_id" property="ownerId"/>
+    </resultMap>
+    <!--//region your codes 1-->
+    <select id="getBetStatistics" parameterType="Long" resultMap="TABLE:v_bet_list">
+        select ior_field, sum(single_amount) as single_amount from v_bet_list where match_id = #{matchId} group by ior_field
+    </select>
+    <!--//endregion your codes 1-->
+
+</mapper>

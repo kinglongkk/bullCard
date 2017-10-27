@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>开始下注动画</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta content="telephone=no" name="format-detection">
+    <link rel="stylesheet" type="text/css" href="../static/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/common.css"/>
+    <script src="../static/js/common/common-rem.js" type="text/javascript"></script>
+    <script src="../../common/js/jquery/jquery-2.1.1.js" type="text/javascript"></script>
+    <script src="../../common/js/RequireJS-2.3.2/require.js" data-main="Animation/Startmain"></script>
+    <script >
+        function getVendorPrefix() {
+            var body, i, style, transition, vendor;
+            body = document.body || document.documentElement;
+            style = body.style;
+            transition = "transition";
+            vendor = ["Moz", "Webkit", "Khtml", "O", "ms"];
+            transition = transition.charAt(0).toUpperCase() + transition.substr(1);
+            i = 0;
+            while (i < vendor.length) {
+                if (typeof style[vendor[i] + transition] === "string") {
+                    return vendor[i];
+                }
+                i++;
+            }
+            return false;
+        }
+    </script>
+
+</head>
+<body >
+
+</body>
+</html>

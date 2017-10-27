@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>游戏</title>
+    <link rel="stylesheet" href="../css/luara.left.css"/>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="stylesheet" href="../css/lrtk.css"/>
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <script src="../js/jquery-1.9.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <script src="../js/jquery.luara.0.0.1.min.js"></script>
+    <script>
+        $(function(){
+            <!--调用Luara示例-->
+            $(".example2").luara({width:"793",height:"488",interval:4000,selected:"seleted",deriction:"left"});
+            $(".list").click(function(){
+                $(".deviation").toggleClass("dev1");
+                $(".deviation").siblings().removeClass("dev1");
+                $(".mob_nav").toggleClass("dis_b");
+                $(".mob_nav").siblings().removeClass("dis_n");
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="about">
+    <div class="header_c">
+        <div class="header ab_c">
+            <a class="list"></a>
+            <a class="logo fl" href="index.html"></a>
+            <ul>
+                <li><a href="index.html" class="">首页</a></li>
+                <li><a href="game.html" class="xz_c">游戏</a></li>
+                <li><a href="news.html" class="">公告</a></li>
+                <li><a href="about.html" class="">关于我们</a></li>
+            </ul>
+            <div style="clear:both"></div>
+        </div>
+    </div>
+    <div class="mob_nav">
+        <ul>
+            <li>
+                <a class="" href="game.html">
+                    <div class="game_btn btn1 fl"></div>
+                    <span class="nav_font">游戏</span>
+                    <span class="tri fr"></span>
+                </a>
+            </li>
+            <li>
+                <a class="" href="news.html">
+                    <div class="game_btn btn2 fl"></div>
+                    <span class="nav_font">公告</span>
+                    <span class="tri fr"></span>
+                </a>
+            </li>
+            <li>
+                <a class="" href="about.html">
+                    <div class="game_btn btn3 fl"></div>
+                    <span class="nav_font">关于我们</span>
+                    <span class="tri fr"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="deviation">
+        <div class="news_title">
+            <div class="game_bt">
+                游戏
+                <div class="game_tp"></div>
+            </div>
+        </div>
+        <div class="news_contain">
+            <div class="game_nav">
+                <ul>
+                    <li><a style="color: #229170">热门游戏<var style="width: 100%;"></var></a></li>
+                    <li><a>棋牌游戏<var></var></a></li>
+                    <li><a>休闲益智<var></var></a></li>
+                    <li><a>经营策略<var></var></a></li>
+                    <li><a>体育竞技<var></var></a></li>
+                    <li><a>动作射击<var></var></a></li>
+                    <li><a>角色扮演<var></var></a></li>
+                </ul>
+            </div>
+            <div class="game_list">
+                <ul>
+                    <li class="game_l fl">
+                        <a href="detail.html">
+                            <img class="game_img" src="../images/img_xin_7.png">
+                            <div class="game_font">百人大战</div>
+                            <p>web</p>
+                            <p class="game_m" >查看更多</p>
+                        </a>
+                    </li>
+                    <li class="game_l fl">
+                        <a href="">
+                            <img class="game_img" src="../images/img_xin_8.png">
+                            <div class="game_font">百人大战</div>
+                            <p>web</p>
+                            <p class="game_m" >查看更多</p>
+                        </a>
+                    </li>
+                    <li class="game_l fl">
+                        <a href="">
+                            <img class="game_img" src="../images/img_xin_9.png">
+                            <div class="game_font">百人大战</div>
+                            <p>web</p>
+                            <p class="game_m" >查看更多</p>
+                        </a>
+                    </li>
+                    <li class="game_l fl">
+                        <a href="">
+                            <img class="game_img" src="../images/img_xin_10.png">
+                            <div class="game_font">百人大战</div>
+                            <p>web</p>
+                            <p class="game_m" >查看更多</p>
+                        </a>
+                    </li>
+                    <li class="game_l fl">
+                        <a href="">
+                            <img class="game_img" src="../images/img_xin_11.png">
+                            <div class="game_font">百人大战</div>
+                            <p>web</p>
+                            <p class="game_m" >查看更多</p>
+                        </a>
+                    </li>
+                    <li class="game_l fl">
+                        <a href="">
+                            <img class="game_img" src="../images/img_xin_13.png">
+                            <div class="game_font">百人大战</div>
+                            <p>web</p>
+                            <p class="game_m" >查看更多</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="fenye ">
+                <div class="digg">
+                    <a href="javascript:void(0)" class="disabled">首页</a>
+
+                    <a href="" class="current">1</a>
+                    <a href="" class="">2</a>
+                    <a href="" class="">3</a>
+                    <a href="" class="">4</a>
+                    <a href="" class="">5</a>
+
+                    <a href="" class="page-next">...</a>
+
+                    <a href="" class="">301</a>
+                    <a href="" class="">302</a>
+                    <a href="" class="page-last" totalpages="302">尾页</a>
+                </div>
+            </div>
+        </div>
+        <div class="foot1">
+            <p>
+                健康游戏忠告：抵制不良游戏 拒绝盗版游戏 注意自我保护 谨防受骗上当 适度游戏益脑 沉迷游戏伤身 合理安排时间 享受健康生
+                </br>
+                本公司旗下所运营游戏均适合18周岁以上人群。
+                </br>
+                Copyright ©2016- zhiwansoft. All Rights Reserved. 厦门智玩软件开发有限公司 版权所有
+            </p>
+        </div>
+    </div>
+    <!-- 代码 开始 -->
+    <div class="floatDivBoxs">
+        <div class="floatDtt">在线客服</div>
+        <div class="floatShadow">
+            <ul class="floatDqq">
+                <li style="padding-left:0px;"><a target="_blank" href="tencent://message/?uin=1234567890&Site=www.lanrentuku.com&Menu=yes"><img src="../images/qq.png"  align="absmiddle">&nbsp;&nbsp;在线客服1号</a></li>
+                <li style="padding-left:0px;"><a target="_blank" href="tencent://message/?uin=1234567890&Site=www.lanrentuku.com&Menu=yes"><img src="../images/qq.png"   align="absmiddle">&nbsp;&nbsp;在线客服2号</a></li>
+                <li style="padding-left:0px;"><a target="_blank" href="tencent://message/?uin=1234567890&Site=www.lanrentuku.com&Menu=yes"><img src="../images/qq.png"   align="absmiddle">&nbsp;&nbsp;在线客服3号</a></li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/lrtk.js"></script>
+    <!-- 代码 结束 -->
+</div>
+</body>
+</html>

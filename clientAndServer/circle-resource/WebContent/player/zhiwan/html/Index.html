@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>厦门智玩软件开发有限公司</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="author" content="hlb"/>
+    <meta name="keywords" content="智玩 智玩软件 厦门智玩 厦门智玩软件开发有限公司 棋牌 棋牌软件 厦门棋牌 厦门棋牌软件">
+    <meta name="description" content="厦门智玩软件开发有限公司,棋牌软件开发,HTML5技术先行者">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="icon" href="" type="image/x-icon" />
+    <link rel="shortcut icon" href="" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.min.css">
+    <script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.slimscroll.min.js"></script>
+    <script src="../js/jquery.fullPage.min.js"></script>
+    <script type="text/javascript">
+        function scrollTo() {
+            $(document).ready(function() {
+                $.fn.fullpage({
+                    anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6'],
+                    css3: true,
+                    easingcss3: 'easeInOut',
+                    fixedElements: '.header, .sidebar',
+                    scrollingSpeed: 400,
+                    afterLoad: function(anchorLink, idx){
+                        var $header = $('.header'),
+                                $navbars = $('.navbar li'),
+                                $sidebars = $('.sidebar li'),
+                                hasScroll = $header.hasClass('headerscroll');
+                        //当不在第一屏时，缩小导航条
+                        if ( idx == 1 ) {
+                            if( hasScroll ) {
+                                $header.removeClass('headerscroll');
+                            }
+                        }else {
+                            if( !hasScroll ) {
+                                $header.addClass('headerscroll');
+                            }
+                        }
+                        //为顶部导航按钮添加激活态,假如idx为5，则第五个顶部导航按钮被激活
+                        $navbars.eq(idx-1).addClass('navactive').siblings().removeClass('navactive');
+                        //为侧边导航按钮添加激活态
+                        $sidebars.eq(idx-1).addClass('sideactive').siblings().removeClass('sideactive');
+                        if(idx == 2 || idx == 3 ) {
+                            $sidebars.children('a').addClass('c919a9f');
+                        }else {
+                            $sidebars.children('a').removeClass('c919a9f');
+                        }
+                    }
+                });
+                // //为mouse和arrowdown添加添加事件
+                $(document).on('click', '.mouse,.arrowdown', function(e) {
+                    e.preventDefault();
+                    $.fn.fullpage.moveSectionDown();
+                });
+            });
+        }
+
+        if( navigator.userAgent.indexOf("MSIE")>0 ) {
+            if ( navigator.appVersion .split(";")[1].replace(/[ ]/g,"") != "MSIE6.0" && navigator.appVersion .split(";")[1].replace(/[ ]/g,"") !="MSIE7.0"){
+                scrollTo();
+            }
+        }else {
+            scrollTo();
+        }
+        (function () {
+            var docEl = document.documentElement;
+            var resize = 'orientationchange' in window ? 'orientationchange' : 'resize';
+            var setRem = function () {
+
+                var screenWidth = docEl.clientWidth || window.screen.width || 360;
+                // 1080 PSD宽度(可变的)
+                docEl.style.fontSize = (100 * screenWidth / 1080) + 'px';
+            };
+
+            window.addEventListener('resize', setRem, false);
+            setRem();
+        })();// 用法psd量出来的像素距离 除以100  比如psd: 100px 转换后 1rem;
+    </script>
+</head>
+
+<body>
+<div class="header">
+    <div class="header-bg">
+        <a href="" class="logo"></a>
+        <ul class="navbar" id="navbar">
+            <li class="navbtn navactive active" data-menuanchor="page1"><a class="home" href="#page1">首页</a></li>
+            <li class="navbtn" data-menuanchor="page2"><a href="#page2" class="about">公司简介</a></li>
+            <li class="navbtn" data-menuanchor="page3"><a href="#page3" class="support">招聘职位</a></li>
+            <li class="navbtn" data-menuanchor="page4"><a href="#page4" class="case">联系我们</a></li>
+        </ul>
+    </div>
+</div>
+<ul class="sidebar" id="sidebar">
+    <li class="active sideactive" data-menuanchor="page1"><a class="home" href="#page1">首页</a></li>
+    <li data-menuanchor="page2"><a class="about" href="#page2">公司简介</a></li>
+    <li data-menuanchor="page3"><a class="support" href="#page3">招聘职位</a></li>
+    <li data-menuanchor="page4"><a class="case" href="#page4">联系我们</a></li>
+</ul>
+<div class="container" id="container">
+    <div class="section section1">
+        <div class="contenttext logotext">
+            <div class="biglogo"></div>
+            <div class="bigtitle"></div>
+        </div>
+        <span class="arrowdown"></span>
+    </div>
+    <div class="section section2">
+        <div class="aboutpara">
+            <div class="i_safe">
+                <ul style="margin:0;">
+                    <li tab="div1"><a class="active">公司简介<span>Company Profile</span></a></li>
+                    <li tab="div2"><a>产品<span>Products</span></a></li>
+                    <li tab="div3"><a>福利<span>Welfare</span></a></li>
+                </ul>
+                <div class="clear"></div>
+                <div class="about-text div1">
+                    <p><strong class="orange">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp厦门市智玩软件开发有限公司</strong>(简称“智玩软件”）,成立于2016年8月，位于美丽的鹭岛—厦门。智玩软件是一家拥有强大技术力量和雄厚资金的互联网企业。
+                        </br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp智玩软件的团队成员都是行业内资深技术人员，拥有多款成功游戏和软件研发经验。秉承着“精益求精，创造用户完美体验”的企业文化价值观，致力于打造国内顶尖游戏及软件产品。
+                        </br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp目前公司多款手机游戏正在研发中，敬请期待。
+                    </p>
+                </div>
+                <div class="about-text div2" style="display: none">
+                    <p>目前公司正处于多款软件及游戏共同研发中，敬请期待。</p>
+                    <ul class="showbox">
+                        <li class="showpart" alt="" title="">
+                            <img class="showimg" src="../images/comm_1_frame_welfare_10.png" alt="" title="">
+                        </li>
+
+                        <li class="showpart showdown" alt="" title="">
+                            <img class="showimg" src="../images/comm_1_frame_welfare_09.png" alt="" title="">
+                        </li>
+
+                        <li class="showpart" alt="" title="">
+                            <img class="showimg" src="../images/comm_1_frame_welfare_08.png" alt="" title="">
+                        </li>
+                    </ul>
+                </div>
+                <div class="about-text div3" style="display: none">
+                    <div class="welfare">
+                        <ul>
+                            <li>
+                                <div class="welfare_icon welfare_b"></div>
+                                <div class="welfare_b_font">
+                                    <h>基础福利</h>
+                                    <p>五险、13薪、年终奖、各种贴心礼金、带薪年假、体贴病假、奇葩大姨妈假、更多福利在等你！</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="welfare_icon welfare_f"></div>
+                                <div class="welfare_b_font">
+                                    <h>节日福利</h>
+                                    <p>生日蛋糕、节日礼品、节日礼金；活动，礼物，红包......样样都有.....满满的贴心与关怀！</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="welfare_icon welfare_l"></div>
+                                <div class="welfare_b_font">
+                                    <h>生活福利</h>
+                                    <p>下午茶、休息娱乐区、零食饮料、无限量断供应。让你劳逸结合，状态满血！</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="welfare_icon welfare_h"></div>
+                                <div class="welfare_b_font">
+                                    <h>健康福利</h>
+                                    <p>羽毛球、乒乓球、桌球、游泳、登山、K歌，年度体检、药箱常备。爱惜身体，呵护健康！</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section3">
+        <div class="aboutpara">
+            <div class="title contactustitle"><div style="float: left;text-indent: 44px;">职位</div><span>Position</span></div>
+            <div class="recruitment">
+                <div >
+                    <ul class="recruitment_list">
+                        <li tab="div4"><a class="active">游戏策划</a></li>
+                        <li tab="div5"><a class="recruitment_l">游戏开发</a></li>
+                        <li tab="div6"><a class="recruitment_l">游戏测试</a></li>
+                        <li tab="div7"><a class="recruitment_l">营销策划</a></li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+                <div class="recruitment_content div4">
+                    <div class="recruitment_icon recruitment_c"></div>
+                    <div class="recruitment_font">
+                        <div class="re_f_top">
+                            <div class="font_title">
+                                <div class="triangle-left"></div>
+                                <span>我们寻找这样的你：</span>
+                            </div>
+                            <div class="font-content">
+                                <li>
+                                    <div class="blue_disc"></div>
+                                    <span>游戏达人，对各类游戏如数家珍且是众多玩家中独树一帜的思考者；</span>
+                                </li>
+                                <li>
+                                    <div class="blue_disc"></div>
+                                    <span>博览群书，不论是新的网络小说还是深沉的历史文学都有涉猎；</span>
+                                </li>
+                                <li>
+                                    <div class="blue_disc"></div>
+                                    <span>既有天马行空的想象力，对新鲜事物有孜孜不倦的好奇心，又有缜密的逻辑思维。</span>
+                                </li>
+                            </div>
+                        </div>
+                        <div class="re_f_bottom">
+                            <div class="font_title">
+                                <div class="triangle-left"></div>
+                                <span>在这里，你可以：</span>
+                            </div>
+                            <div class="font-content">
+                                <li>
+                                    <div class="blue_disc"></div>
+                                    <span>在游戏的疆土中驰骋，像将军一样把才智挥洒在各种新兴玩法的战场上；</span>
+                                </li>
+                                <li>
+                                    <div class="blue_disc"></div>
+                                    <span>既能为一个文字的细节咬断笔头，又能为一个系统的成功设定而激动万分；</span>
+                                </li>
+                                <li>
+                                    <div class="blue_disc"></div>
+                                    <span>和各种游戏高手过招献宝，时而吵得焦头烂额，时而心心相惜，为的只是灯火阑珊处那一处细节设定的完美。</span>
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recruitment_content div5" style="display: none">
+                    <div class="recruitment_icon recruitment_k"></div>
+                    <div class="recruitment_font">
+                        <div class="re_f_top">
+                            <div class="font_title">
+                                <div class="triangle-left"></div>
+                                <span>我们寻找这样的你：</span>
+                            </div>
+                            <div class="font-content">
+                                <li>
+                                    <div class="blue_disc"></div>
+                                    <span>深深迷恋着一行行蝌蚪般的代码，愿意用C++、Erlang或JS码出你精彩的人生；</span>
+                                </li>
+                                <li>
+                                    <div class="blue_disc"></div>
+                                    <span>具备良好的逻辑分析能力，以及强烈求知欲望；</span>
+                                </li>
+                                <li>
+                                    <div class="blue_disc"></div>
+                                    <span>是技术控，不惜蓬头垢面也要攻克技术难关。</span>
+                                </li>
+                            </div>
+                        </div>
+                        <div class="re_f_bottom">
+                            <div class="font_title">
+                                <div class="triangle-left"></div>
+                                <span>在这里，你可以：</span>
+                            </div>
+                            <div class="font-content">
+                                <li>
+                                    <div class="blue_disc"></div>
+                                    <span>是一位建筑学家，运用完美的代码构建一个个华丽的虚拟世界；</span>
+                                </li>
+                                <li>
+                                    <div class="blue_disc"></div>
+                                    <span>是一位专研家，用你的小宇宙实现无数次的技术突破。</span>
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recruitment_content div6" style="display: none">
+                    <div class="recruitment_icon recruitment_cs"></div>
+                    <div class="recruitment_font">
+                        <div class="re_f_top">
+                            <div class="font_title">
+                                <div class="triangle-left"></div>
+                                <span>我们寻找这样的你：</span>
+                            </div>
+                            <div class="font-content">
+                                <li>
+                                    <div class="blue_disc"></div>
+                                    <span>游戏达人，且对寻找游戏bug乐此不疲；</span>
+                                </li>
+                                <li>
+                                    <div class="blue_disc"></div>
+                                    <span>对各种性能如数家珍，眼神犀利，一个bug也不放过；</span>
+                                </li>
+                                <li>
+                                    <div class="blue_disc"></div>
+                                    <span>经得起折腾，捍卫起原则和底线；耐得住寂寞，能坚守在自己的岗位上默默耕耘。</span>
+                                </li>
+                            </div>
+                        </div>
+                        <div class="re_f_bottom">
+                            <div class="font_title">
+                                <div class="triangle-left"></div>
+                                <span>在这里，你可以：</span>
+                            </div>
+                            <div class="font-content">
+                                <li>
+                                    <div class="blue_disc"></div>
+                                    <span>完美主义者，任何微小的错误都逃不过你的火眼金睛，严谨规范的工作流程也都出自你耕耘的双手；</span>
+                                </li>
+                                <li>
+                                    <div class="blue_disc"></div>
+                                    <span>是一个飞扬跋扈的电子警察，在研发中心横着走（程序、策划对你又爱又恨），每看到bug时总有一种回眸一笑的满足。</span>
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recruitment_content div7" style="display: none">
+                    <div class="recruitment_icon recruitment_yx"></div>
+                    <div class="recruitment_font">
+                        <div class="re_f_top">
+                            <div class="font_title">
+                                <div class="triangle-left"></div>
+                                <span>我们寻找这样的你：</span>
+                            </div>
+                            <div class="font-content">
+                                <li>
+                                    <div class="blue_disc"></div>
+                                    <span>脑洞大开，热点新闻信手拈来，爱吐槽的段子手；</span>
+                                </li>
+                                <li>
+                                    <div class="blue_disc"></div>
+                                    <span>出口成章，不管是软文推广还是策划案都能一 一搞定；</span>
+                                </li>
+                                <li>
+                                    <div class="blue_disc"></div>
+                                    <span>思维活跃，创意无限，既要了解公司产品，又要对市场有触电感。</span>
+                                </li>
+                            </div>
+                        </div>
+                        <div class="re_f_bottom">
+                            <div class="font_title">
+                                <div class="triangle-left"></div>
+                                <span>在这里，你可以：</span>
+                            </div>
+                            <div class="font-content">
+                                <li>
+                                    <div class="blue_disc"></div>
+                                    <span>在游戏世界里放飞思维，用文字堆砌一个个创意；</span>
+                                </li>
+                                <li>
+                                    <div class="blue_disc"></div>
+                                    <span>既可以是文艺的吐槽青年，又可以是二逼段子手。</span>
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section4">
+        <div class="title contactustitle"><div style="float: left">联系我们</div><span>Contact   Us</span></div>
+        <ul class="contactpara">
+            <li class="conpart mailpart">
+                <div class="coniconbox conicon_ck">
+                </div>
+                <h3>邮箱</h3>
+                <p>2186028489@qq.com</p>
+            </li>
+            <li class="conpart qqpart">
+                <div class="coniconbox1 conicon_ck">
+                </div>
+                <h3>QQ</h3>
+                <p>2186028489</p>
+            </li>
+            <li class="conpart mappart">
+                <div class="coniconbox2 conicon_ck">
+                </div>
+                <h3>地址</h3>
+                <p>厦门市湖里区吕岭路75-77号</br>长安大厦</br>邮编：361000</p>
+            </li>
+        </ul>
+        <div class="footer">
+            <p>健康游戏忠告：抵制不良游戏 拒绝盗版游戏 注意自我保护 谨防受骗上当 适度游戏益脑 沉迷游戏伤身 合理安排时间 享受健康生活</p>
+            <p> 本公司旗下所运营游戏均适合18周岁以上人群。</p>
+            <p>Copyright ©2016- zhiwansoft. All Rights Reserved. 厦门智玩软件开发有限公司 版权所有</p>
+        </div>
+    </div>
+</div>
+</div>
+<script>
+    $("[tab]").click(function(){
+        $("[tab]").children("li a").removeClass('active');
+        $("[tab]").children("li a").eq($(this).index()).addClass('active');
+        $(this).parents(".i_safe").find(".about-text").hide();
+        $(this).parents(".i_safe").find( "." + $(this).attr("tab")).show();
+    });
+    $(".recruitment_list").children().click(function(){
+        $(".recruitment_list").find("li a").removeClass('active');
+        $(this).children("a").addClass('active');
+        $(this).parents(".recruitment").find(".recruitment_content").hide();
+        $(this).parents(".recruitment").find( "." + $(this).attr("tab")).show();
+    });
+</script>
+</body>
+</html>

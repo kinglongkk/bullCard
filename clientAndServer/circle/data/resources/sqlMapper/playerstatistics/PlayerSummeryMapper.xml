@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.playerstatistics.PlayerSummeryMapper">
+
+    <resultMap id="TABLE:player_summery" type="g.model.playerstatistics.po.PlayerSummery">
+        <id column="id" property="id"/>
+        <result column="username" property="username"/>
+        <result column="nickname" property="nickname"/>
+        <result column="date" property="date"/>
+        <result column="player_summery" property="playerSummery"/>
+        <result column="active_player_qty" property="activePlayerQty"/>
+        <result column="new_player_qty" property="newPlayerQty"/>
+    </resultMap>
+
+    <!-- 统计昨日所有代理商下的玩家数 -->
+    <select id="playerSummeryCall" statementType="CALLABLE" parameterType="map" resultType="boolean">
+        {call circle.player_summery(
+        #{begintime, jdbcType=OTHER, mode=IN},
+        #{endtime, jdbcType=OTHER, mode=IN})
+        }
+    </select>
+
+    <select id="reportSearchAll" parameterType="map" resultType="g.model.playerstatistics.po.PlayerSummery">
+        select date,sum(new_player_qty) as new_player_qty,sum(player_summery) as player_summery,sum(active_player_qty) as active_player_qty ,username  from player_summery
+        where date BETWEEN #{beginTime} and #{endTime}
+        <if test="username!=null and username!=''">
+            and username IN
+            <foreach item="item" index="index" collection="username"
+                     open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+        group by date,username order by player_summery desc
+    </select>
+
+    <!-- 所有玩家统计 -->
+    <select id="selectPlayerGroupByDate" parameterType="map" resultMap="TABLE:player_summery">
+        SELECT
+            date,
+            sum(player_summery) AS player_summery,
+            sum(active_player_qty) AS active_player_qty,
+            sum(new_player_qty) AS new_player_qty
+        FROM
+            player_summery
+        WHERE
+            ${where}
+        GROUP BY
+            date
+        ORDER BY
+            date
+        DESC
+        ${paging};
+    </select>
+
+    <!-- 所有玩家统计 总记录数 -->
+    <select id="selectPlayerGroupByDateCount" parameterType="map" resultType="int">
+        SELECT
+            COUNT(player_summery)
+        FROM
+            (SELECT
+                date,
+                sum(player_summery) AS player_summery,
+                sum(active_player_qty) AS active_player_qty,
+                sum(new_player_qty) AS new_player_qty
+            FROM
+                player_summery
+            WHERE
+                ${where}
+            GROUP BY
+                date) AS
+            player_summery;
+    </select>
+
+    <!-- 所有玩家统计 导出数据 -->
+    <select id="getAllAgentExportData" parameterType="map" resultMap="TABLE:player_summery">
+        SELECT
+            date,
+            sum(player_summery) AS player_summery,
+            sum(active_player_qty) AS active_player_qty,
+            sum(new_player_qty) AS new_player_qty
+        FROM
+            player_summery
+        WHERE
+            ${where}
+        GROUP BY
+            date
+        ORDER BY
+            date
+        DESC;
+    </select>
+
+    <!-- 玩家统计 导出数据 -->
+    <select id="getOwnerAgentExportData" parameterType="map" resultMap="TABLE:player_summery">
+        SELECT
+          *
+        FROM
+            player_summery
+        WHERE
+            ${where}
+        ORDER BY
+            date DESC,
+            player_summery DESC,
+            username;
+    </select>
+</mapper>

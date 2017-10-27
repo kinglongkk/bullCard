@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.warning.PlayerWarningMultipleMapper">
+
+    <resultMap id="TABLE:player_warning_multiple" type="g.model.warning.po.PlayerWarningMultiple">
+        <id column="id" property="id"/>
+        <result column="player_id" property="playerId"/>
+        <result column="date" property="date"/>
+        <result column="username" property="username"/>
+        <result column="nickname" property="nickname"/>
+        <result column="register_date" property="registerDate"/>
+        <result column="win_amount" property="winAmount"/>
+        <result column="bet_amount" property="betAmount"/>
+        <result column="status" property="status"/>
+        <result column="multiple" property="multiple"/>
+        <result column="create_time" property="createTime"/>
+        <result column="agent_username" property="agentUsername"/>
+        <result column="agent_id" property="agentId"/>
+    </resultMap>
+    <select id="getPlayerWarningMultiple" resultType="g.model.warning.po.PlayerWarningMultiple">
+        SELECT *
+        FROM player_warning_multiple
+        WHERE id = #{id}
+    </select>
+    <!--赢得金币和投注金额倍数比存储过程-->
+    <select id="quartzWarningMultiple" statementType="CALLABLE" parameterType="map" resultType="boolean">
+        {call circle.player_warning_multiple(
+        #{begintime, jdbcType=OTHER, mode=IN},
+        #{endtime, jdbcType=OTHER, mode=IN})
+        }
+    </select>
+    <select id="getUserPlayer" resultType="map">
+      select * from sys_user s
+        left join user_player p on s.id=p.id
+        where s.id=#{playerId}
+    </select>
+</mapper>

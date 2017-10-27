@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.game.GameMapper">
+
+    <resultMap id="TABLE:game" type="g.model.game.po.Game">
+        <id column="id" property="id"/>
+        <result column="code" property="code"/>
+        <result column="name" property="name"/>
+        <result column="status" property="status"/>
+        <result column="icon" property="icon"/>
+        <result column="type" property="type"/>
+        <result column="first_type" property="firstType" />
+        <result column="create_time" property="createTime" />
+        <result column="create_user" property="createUser" />
+        <result column="is_deleted" property="isDeleted" />
+        <result column="update_user" property="updateUser" />
+        <result column="update_time" property="updateTime" />
+    </resultMap>
+
+    <!-- game逻辑删除 -->
+    <update id="updateGameIsDelete" parameterType="map">
+        UPDATE
+          game
+        SET
+          is_deleted = TRUE,
+          update_user = #{updateUser},
+          update_time = current_timestamp
+        WHERE
+          id = #{gameId}
+    </update>
+
+    <!-- 获取游戏列表 -->
+    <select id="getGameList" resultMap="TABLE:game">
+        SELECT
+            *
+        FROM
+            game
+        where
+            status = '10'
+        AND
+            is_deleted = FALSE
+    </select>
+
+    <!-- 查询代理商未代理的游戏 -->
+    <select id="selectGameWithoutAgent" parameterType="map" resultMap="TABLE:game">
+        SELECT
+            *
+        FROM
+            game game
+        WHERE
+            game.id
+        NOT IN
+            (SELECT game_id FROM user_agent_game WHERE agent_id = #{agentId})
+        AND
+            game.is_deleted = FALSE
+        AND
+            game.status = '10'
+        AND
+            game.first_type = #{firstType};
+    </select>
+
+    <!-- 查询代理商代理的游戏 -->
+    <select id="selectAgentGame" parameterType="map" resultMap="TABLE:game">
+        SELECT
+            *
+        FROM
+            game game
+        WHERE
+            game.id
+        IN
+            (SELECT game_id FROM user_agent_game WHERE agent_id = #{agentId})
+        AND
+            game.is_deleted = FALSE
+        AND
+            game.status = '10';
+    </select>
+
+    <!-- 查找游戏一级类型 -->
+    <select id="selectFirstType" resultMap="TABLE:game">
+        SELECT
+            first_type
+        FROM
+            game
+        WHERE
+            is_deleted = FALSE
+        AND
+            status = '10'
+        GROUP BY
+            first_type;
+    </select>
+
+</mapper>

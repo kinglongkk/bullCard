@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>关于我们</title>
+    <link rel="stylesheet" href="../css/luara.left.css"/>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="stylesheet" href="../css/lrtk.css"/>
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <script src="../js/jquery-1.9.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <script src="../js/jquery.luara.0.0.1.min.js"></script>
+    <script>
+        $(function(){
+            <!--调用Luara示例-->
+            $(".example2").luara({width:"793",height:"488",interval:4000,selected:"seleted",deriction:"left"});
+            $(".list").click(function(){
+                $(".deviation").toggleClass("dev1");
+                $(".deviation").siblings().removeClass("dev1");
+                $(".mob_nav").toggleClass("dis_b");
+                $(".mob_nav").siblings().removeClass("dis_n");
+            });
+            $(document).ready(function(){
+                $('.heartease__item_last').click(function(){$('.dialog').show();});
+                $('.close').click(function(){$('.dialog').hide();});
+                $('.dialog').easydrag();
+            });
+        });
+    </script>
+</head>
+<body>
+   <div class="about">
+       <div class="header_c">
+           <div class="header ab_c">
+               <a class="list"></a>
+               <a class="logo fl" href="index.html"></a>
+               <ul>
+                   <li><a href="index.html" class="">首页</a></li>
+                   <li><a href="game.html" class="">游戏</a></li>
+                   <li><a href="news.html" class="">公告</a></li>
+                   <li><a href="about.html" class="xz_c">关于我们</a></li>
+               </ul>
+               <div style="clear:both"></div>
+           </div>
+       </div>
+       <div class="mob_nav">
+           <ul>
+               <li>
+                   <a class="" href="game.html">
+                       <div class="game_btn btn1 fl"></div>
+                       <span class="nav_font">游戏</span>
+                       <span class="tri fr"></span>
+                   </a>
+               </li>
+               <li>
+                   <a class="" href="news.html">
+                       <div class="game_btn btn2 fl"></div>
+                       <span class="nav_font">公告</span>
+                       <span class="tri fr"></span>
+                   </a>
+               </li>
+               <li>
+                   <a class="" href="about.html">
+                       <div class="game_btn btn3 fl"></div>
+                       <span class="nav_font">关于我们</span>
+                       <span class="tri fr"></span>
+                   </a>
+               </li>
+           </ul>
+       </div>
+       <div class="deviation">
+           <div class="ab_banner"></div>
+           <div class="ab_contain">
+               <div class="l-wrap">
+                   <h2 class="u-part-tt"><span class="u-part-tt__ch">联系我们</span><i>C</i><span class="u-part-tt__en">ontact us</span></h2>
+                   <ul class="heartease__list">
+                       <li class="heartease__item2">
+                           <b class="phone"></b>
+                           <p class="heartease__p1">电话咨询</p>
+                           <p class="heartease__p2">0595-83918160</p>
+                       </li>
+                       <li class="heartease__item2">
+                           <b class="email"></b>
+                           <p class="heartease__p1">联系邮箱</p>
+                           <p class="heartease__p2">456456481@qq.com</p>
+                       </li>
+                       <li class="heartease__item2 heartease__item_last">
+                           <a>
+                               <b class="address"></b>
+                               <p class="heartease__p1">意见反馈</p>
+                               <p class="heartease__p2">对平台有意见，可随时反馈</p>
+                           </a>
+                       </li>
+                   </ul>
+               </div>
+           </div>
+           <div class="foot1">
+               <p>
+                   健康游戏忠告：抵制不良游戏 拒绝盗版游戏 注意自我保护 谨防受骗上当 适度游戏益脑 沉迷游戏伤身 合理安排时间 享受健康生
+                   </br>
+                   本公司旗下所运营游戏均适合18周岁以上人群。
+                   </br>
+                   Copyright ©2016- zhiwansoft. All Rights Reserved. 厦门智玩软件开发有限公司 版权所有
+               </p>
+           </div>
+   </div>
+       <!-- 代码 开始 -->
+       <div class="floatDivBoxs">
+           <div class="floatDtt">在线客服</div>
+           <div class="floatShadow">
+               <ul class="floatDqq">
+                   <li style="padding-left:0px;"><a target="_blank" href="tencent://message/?uin=1234567890&Site=www.lanrentuku.com&Menu=yes"><img src="../images/qq.png"  align="absmiddle">&nbsp;&nbsp;在线客服1号</a></li>
+                   <li style="padding-left:0px;"><a target="_blank" href="tencent://message/?uin=1234567890&Site=www.lanrentuku.com&Menu=yes"><img src="../images/qq.png"   align="absmiddle">&nbsp;&nbsp;在线客服2号</a></li>
+                   <li style="padding-left:0px;"><a target="_blank" href="tencent://message/?uin=1234567890&Site=www.lanrentuku.com&Menu=yes"><img src="../images/qq.png"   align="absmiddle">&nbsp;&nbsp;在线客服3号</a></li>
+               </ul>
+           </div>
+       </div>
+       <script type="text/javascript" src="js/lrtk.js"></script>
+       <!-- 代码 结束 -->
+   </div>
+   <div class="clear"></div>
+   <div class="dialog">
+       <div class="box">
+           <div class="box_title">
+               我的意见
+               <div class="close"></div>
+           </div>
+           <form>
+               <div class="advice clear">
+                   <span class="left-name">意见内容</span>
+                   <div class="middle-input">
+                       <textarea></textarea>
+                   </div>
+               </div>
+               <div class="mb20 clear">
+                   <span class="left-name">我的姓名</span>
+                   <div class="middle-input">
+                       <input>
+                   </div>
+               </div>
+               <div class="mb20 clear">
+                   <span class="left-name">联系方式</span>
+                   <div class="middle-input">
+                       <input>
+                   </div>
+               </div>
+           </form>
+           <div class="tj_btn">提&nbsp;&nbsp;交</div>
+       </div>
+   </div>
+</body>
+</html>

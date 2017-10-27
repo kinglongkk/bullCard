@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.player.UserBankcardMapper">
+
+    <resultMap id="TABLE:user_bankcard" type="g.model.common.userbankcard.po.UserBankcard">
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="bankcard_master_name" property="bankcardMasterName"/>
+        <result column="bankcard_number" property="bankcardNumber"/>
+        <result column="create_time" property="createTime"/>
+        <result column="use_count" property="useCount"/>
+        <result column="use_stauts" property="useStauts"/>
+        <result column="is_default" property="isDefault"/>
+        <result column="bank_name" property="bankName"/>
+        <result column="bank_deposit" property="bankDeposit"/>
+        <result column="custom_bank_name" property="customBankName"/>
+        <result column="bank_type" property="bankType"/>
+    </resultMap>
+
+    <!--//region your codes 1-->
+    <select id="findCardByCardNumber" resultType="g.model.common.userbankcard.po.UserBankcard" parameterType="g.model.common.userbankcard.so.UserBankcardSo">
+        SELECT * FROM user_bankcard WHERE bankcard_number = #{bankcardNumber}
+    </select>
+
+    <select id="findUserBankCardByUserId" resultType="g.model.common.userbankcard.po.UserBankcard" parameterType="g.model.common.userbankcard.so.UserBankcardSo">
+        SELECT * FROM user_bankcard WHERE user_id = #{userId} ORDER BY create_time desc limit 10;
+    </select>
+
+    <insert id="saveWhenNotExist" parameterType="g.model.common.userbankcard.po.UserBankcard">
+        insert into user_bankcard(user_id,bankcard_master_name,bankcard_number,create_time,use_count,use_stauts, is_default,
+                                  bank_name,bank_deposit,bank_type)
+        SELECT #{userId},#{bankcardMasterName},#{bankcardNumber},now(),0,false,true,
+                                  #{bankName},#{bankDeposit},#{bankType}
+        WHERE not EXISTS (SELECT id from user_bankcard where user_id = #{userId} and bank_type = #{bankType} and is_default = true);
+    </insert>
+    <!--//endregion your codes 1-->
+
+</mapper>

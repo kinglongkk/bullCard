@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "Grab__board__box",
+    "texture": "5725e669-890a-479a-a65d-3a4536942d79",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      212,
+      262
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      212,
+      262
+    ]
+  }
+}

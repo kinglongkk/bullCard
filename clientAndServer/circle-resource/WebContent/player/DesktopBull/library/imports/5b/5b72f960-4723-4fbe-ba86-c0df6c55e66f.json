@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "common_text_fuhaobang02",
+    "texture": "3f468086-9041-415a-b966-fc055bdf0c3d",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      59,
+      21
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      59,
+      21
+    ]
+  }
+}

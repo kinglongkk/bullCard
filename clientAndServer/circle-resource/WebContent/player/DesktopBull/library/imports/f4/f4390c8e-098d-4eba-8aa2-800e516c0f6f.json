@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "common_text_qiehuang",
+    "texture": "2074eaa8-6ef7-4761-b588-0ac80fed4f4f",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      111,
+      29
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      111,
+      29
+    ]
+  }
+}

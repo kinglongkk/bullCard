@@ -1,0 +1,1218 @@
+html {
+    background: #f3f5f4;
+    -moz-user-select: none;
+    /*火狐*/
+    -webkit-user-select: none;
+    /*webkit浏览器*/
+    -ms-user-select: none;
+    /*IE10*/
+    -khtml-user-select: none;
+    /*早期浏览器*/
+    user-select: none;
+    position: relative;
+    min-height: 100%;
+}
+body {font-size: 0.28rem; width: 100%; height: 100%; }
+body,html,.container {width: 100%; height: 100%; }
+img{width:100%;}
+/*公用部分*/
+.ui-destop-bg { background: url(../images/poker/bullFight/common/board/beijing01.jpg) no-repeat;background-size: 100% 100%;}
+.ui-game {top:0; bottom: 0; left: 0;right: 0;  position: fixed;}
+.Prompt{background: rgba(0,0,0,0.7); width: 5rem;
+    height: 0.7rem;
+    border-radius: 0.3rem;
+    left: 30%;
+    color: #fff;
+    opacity: 0.8;
+    text-align: center;
+    bottom: 14%;
+    line-height: 0.7rem;
+    font-size: 0.3rem;
+    position: fixed;
+}
+/*公共公告*/
+.ui-destop-notice {position: fixed;    left: 50%;  margin-left: -4.055rem;  }
+.ui-destop .ui-destop-user {width: 100%;height: 100%;}
+.ui-destopnotic-font { width: 5.5rem; height: 1.18rem; text-overflow: ellipsis;overflow: hidden; margin-top: -0.05rem; margin-left:1.3rem;}
+.ui-destop-notice .ui-destop-notic-wifi {top: 0.15rem;right: 0.15rem;width: 0.87rem;height: 0.64rem;float: left;}
+.ui-destop-notice .ui-destopnotic-font b {color: #f9020a;}
+.ui-destop-notice .ui-destopnotic-font span { color: #FFFFFF;}
+.marquee{display:inline-block;}
+/*百团大战布局*/
+.ui-destop a{position:fixed;}
+.ui-destop-back{
+    top: 0.1rem;
+    left: 0.2rem;
+    width: 1.2rem;
+    height: 1.24rem;
+    background: url("../images/poker/bullFight/common/icon/back01.png") 50% 50% / auto 100% no-repeat;
+}
+.ui-destop-onlookers {
+    width: 1.08rem;
+    height: 1.07rem;
+    bottom: 2.1rem;
+    left: 2rem;
+    background: url("../images/poker/bullFight/bull100/icon/onlookers.png") 50% 50% / auto 100% no-repeat;
+}
+.onlookers_jb{ width:1rem; height:1.07rem; bottom:7%;}
+.ui-destop-charts{
+    top: 0.1rem;
+    right: 0.2rem;
+    width: 1.34rem;
+    height: 1.01rem;
+    display: block;
+}
+.ui-destop-rules{width: 1.12rem;  height: 1.12rem; bottom: 2rem; left: 0.53rem; background: url(../images/poker/bullFight/common/icon/rules.png) no-repeat;background-size: 180%;;}
+.user-border {left:35%;position: fixed;width: 3.9rem;height: 1.8rem;}
+.user-border-a {top: 1.16rem; }
+.ui-destop-user-a .ui-destop-user-photo {width: 1.5rem;position: absolute;top: 0.12rem;left: 0.12rem;}
+.ui-destop-user-a .ui-destop-user-gold {width: 0.35rem;height: 0.35rem;left: 1.65rem;position: absolute;top: 10%;}
+.ui-destop-user-a .ui-destop-user-gold-num {color: #f5e75c;position: absolute;left:2.05rem;top: 0.1rem;font-size: 0.4rem;font-weight: bold;}
+.user-border-lr {width: 1.8rem; height: 2rem; position: fixed;}
+.user-border-b {left:0.1rem;top:20%;}
+.ui-destop-user-b {
+    width: 1.8rem;
+    height: 2.56rem;
+    position:absolute;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 0.15rem;
+    text-align: center;
+    font-size: 0.3rem;
+    font-weight: bold;
+    line-height: 0.4rem;
+}
+.bull_user_info{
+    width: 2.17rem;
+    height: 1.8rem;
+    margin: -1.6rem 0 0 1.7rem;
+    line-height:0.4rem
+}
+
+/*没有上庄按钮的情况下*/
+.bull_info_1{
+    line-height:0.8rem
+}
+.bull-user-a {width:3.9rem;height: 1.8rem;}
+.ui-destop-user-photo {width: 1.5rem;height: 1.5rem; border-radius: 0.1rem; overflow: hidden;margin: 0.15rem 0 0 0.15rem;}
+.bull_user_name{ width: 100%;color: #f96c24;margin-top: 0.08rem;}
+.bull_user_name1{ width: 2.17rem;  color: #f96c24;}
+.bull_user_name2{ width: 2.17rem;  color: #f96c24;  margin: -1.4rem 0 0 1.64rem; font-size:0.35rem;}
+.ui-destop-user-gold-num {color: #c77e31;margin-top: 0.08rem;}
+.bull_user_nub{width: 2.17rem;  color: #c77e31;}
+.bull_user_nub1{width: 2.17rem;  color: #c77e31;  margin: 0.12rem 0 0 1.64rem;font-size:0.5rem;}
+.user-border-c {right: 0.1rem;top:20%;}
+.user-border-d {left: 0.1rem;  bottom:25%;}
+.user-border-e {right: 0.1rem; bottom:25%;}
+.user-border-g {right: 0.1rem; top: 41%;}
+.user-border-h {left: 0.1rem; top: 41%;}
+.user-border-f {bottom: 0;  left: 0.1rem;}
+.no_user{
+    width: 1.8rem;
+    height: 2.56rem;
+    position:absolute;
+    background: url("../images/poker/common/head/unknown1.png") no-repeat;
+    background-size: 100%;
+    display: none;
+    border-radius: 0.15rem;
+}
+.room_nub{color: #fff;opacity: 0.7;width: 2.17rem; margin:0.12rem 0 0 1.7rem;}
+#room_nub,#room_model{display: none}
+/*上庄按钮动画*/
+.ui_btn_boss{
+    width: 2.1rem;
+    height: 0.95rem;
+}
+.bull_sz_btn{
+    background: url("../images/poker/bullFight/bull100/specialEffects/d3738cfe.png") 50% 50% / auto 100% no-repeat;
+    height: 0.95rem;
+    overflow: hidden;
+}
+.bull_sz_light{
+    width: 0.2rem;
+    height: 0.9rem;
+    transform: skew(-12deg);
+    -webkit-transform: skew(-12deg);
+    overflow: hidden;
+    animation: bull_sz_light 3s linear infinite;
+    -webkit-animation: bull_sz_light 3s linear  infinite;
+    opacity: 0;
+}
+@keyframes bull_sz_light {
+    39% {transform: translate3d(0, 0, 0) skew(-12deg);opacity: 0;}
+    40%  {transform: translate3d(0, 0, 0) skew(-12deg);opacity: 1;}
+    60%  {transform: translate3d(2.2rem, 0, 0) skew(-12deg);opacity: 1;}
+    100%  {transform: translate3d(2.2rem, 0, 0) skew(-12deg);opacity: 1;}
+}
+
+@-webkit-keyframes bull_sz_light {
+    39% {transform: translate3d(0, 0, 0) skew(-12deg);opacity: 0;}
+    40%  {transform: translate3d(0, 0, 0) skew(-12deg);opacity: 1;}
+    60%  {transform: translate3d(2.2rem, 0, 0) skew(-12deg);opacity: 1;}
+    100%  {transform: translate3d(2.2rem, 0, 0) skew(-12deg);opacity: 1;}
+}
+.bull_sz_light4{
+    width: 0.2rem;
+    height: 0.9rem;
+    transform: skew(-12deg);
+    -webkit-transform: skew(-12deg);
+    overflow: hidden;
+    animation: bull_sz_light4 3s linear  infinite;
+    -webkit-animation: bull_sz_light4 3s linear  infinite;
+    opacity: 0;
+    margin-top: -0.9rem;
+}
+@keyframes bull_sz_light4 {
+    42% {transform: translate3d(0, 0, 0) skew(-12deg);opacity: 0;}
+    43%  {transform: translate3d(0, 0, 0) skew(-12deg);opacity: 1;}
+    62%  {transform: translate3d(2.2rem, 0, 0) skew(-12deg);opacity: 1;}
+    100%  {transform: translate3d(2.2rem, 0, 0) skew(-12deg);opacity: 1;}
+}
+
+@-webkit-keyframes bull_sz_light4 {
+    42% {transform: translate3d(0, 0, 0) skew(-12deg);opacity: 0;}
+    43%  {transform: translate3d(0, 0, 0) skew(-12deg);opacity: 1;}
+    62%  {transform: translate3d(2.2rem, 0, 0) skew(-12deg);opacity: 1;}
+    100%  {transform: translate3d(2.2rem, 0, 0) skew(-12deg);opacity: 1;}
+}
+.bull_sz_btn1{
+    background: url("../images/poker/bullFight/bull100/specialEffects/1e61a871.png") 50% 50% / auto 100% no-repeat;
+    height: 0.95rem;
+    overflow: hidden;
+    width: 2.1rem;
+    transform: skew(12deg);
+    -webkit-transform:skew(12deg) ;
+    animation: bull_sz_btn1 3s linear  infinite;
+    -webkit-animation: bull_sz_btn1 3s linear infinite;
+}
+@keyframes bull_sz_btn1 {
+    39% {transform: translate3d(-0.5rem, 0, 0) skew(12deg);opacity: 1;}
+    40%  {transform: translate3d(0, 0, 0) skew(12deg);opacity: 1;}
+    60%  {transform: translate3d(-2.2rem, 0, 0) skew(12deg);opacity: 1;}
+    100%  {transform: translate3d(-2.2rem, 0, 0) skew(12deg);opacity: 1;}
+}
+
+@-webkit-keyframes bull_sz_btn1 {
+    39% {transform: translate3d(-0.5rem, 0, 0) skew(12deg);opacity: 1;}
+    40%  {transform: translate3d(0, 0, 0) skew(12deg);opacity: 1;}
+    60%  {transform: translate3d(-2.2rem, 0, 0) skew(12deg);opacity: 1;}
+    100%  {transform: translate3d(-2.2rem, 0, 0) skew(12deg);opacity: 1;}
+}
+.bull_sz_btn2{
+    background: url("../images/poker/bullFight/bull100/specialEffects/1e61a871.png") 50% 50% / auto 100% no-repeat;
+    height: 0.95rem;
+    overflow: hidden;
+    width: 2.1rem;
+    transform: skew(12deg);
+    -webkit-transform:skew(12deg) ;
+    animation: bull_sz_btn2 3s linear  infinite;
+    -webkit-animation: bull_sz_btn2 3s linear infinite;
+}
+@keyframes bull_sz_btn2 {
+    0% {transform: translate3d(-0.5rem, 0, 0) skew(12deg);opacity: 1;}
+    43%  {transform: translate3d(0, 0, 0) skew(12deg);opacity: 1;}
+    63%  {transform: translate3d(-2.2rem, 0, 0) skew(12deg);opacity: 1;}
+    100%  {transform: translate3d(-2.2rem, 0, 0) skew(12deg);opacity: 1;}
+}
+
+@-webkit-keyframes bull_sz_btn2 {
+    0% {transform: translate3d(-0.5rem, 0, 0) skew(12deg);opacity: 1;}
+    43%  {transform: translate3d(0, 0, 0) skew(12deg);opacity: 1;}
+    63%  {transform: translate3d(-2.2rem, 0, 0) skew(12deg);opacity: 1;}
+    100%  {transform: translate3d(-2.2rem, 0, 0) skew(12deg);opacity: 1;}
+}
+.bull_sz_animation{
+    width: 1.85rem;
+    height: 0.8rem;
+    border-radius: 0.2rem;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0.12rem;
+    margin-left: 0.13rem;
+}
+.bull_sz_light1{
+    background: url("../images/poker/bullFight/common/specialEffects/diantexiao.png") 50% 50% / auto 100% no-repeat;
+    width: 0.54rem;
+    height: 0.20rem;
+    margin-top: -0.08rem;
+    animation: bull_sz_light1 3s ease infinite;
+    -webkit-animation: bull_sz_light1 3s ease infinite;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+}
+@keyframes bull_sz_light1 {
+    0%  {transform: translate3d(-0.55rem, 0, 0)}
+    30%  {transform: translate3d(2rem, 0, 0)}
+    100%  {transform: translate3d(2rem, 0, 0)}
+}
+
+@-webkit-keyframes bull_sz_light1 {
+    0%  {transform: translate3d(-0.58rem, 0, 0)}
+    30%  {transform: translate3d(2rem, 0, 0)}
+    100%  {transform: translate3d(2rem, 0, 0)}
+}
+.bull_sz_light2{
+    background: url("../images/poker/bullFight/common/specialEffects/diantexiao.png") 50% 50% / auto 100% no-repeat;
+    width: 0.54rem;
+    height: 0.20rem;
+    margin: 0.64rem 0 0 2rem;
+    animation: bull_sz_light2 3s ease infinite;
+    -webkit-animation: bull_sz_light2 3s ease infinite;
+}
+@keyframes bull_sz_light2 {
+    30%  {transform: translate3d(-2.5rem, 0, 0)}
+    100%  {transform: translate3d(-2.5rem, 0, 0)}
+}
+
+@-webkit-keyframes bull_sz_light2 {
+    30%  {transform: translate3d(-2.5rem, 0, 0)}
+    100%  {transform: translate3d(-2.5rem, 0, 0)}
+}
+.bull_sz_light3{
+    background: url("../images/poker/bullFight/bull100/specialEffects/xxshshou.png") 50% 50% / auto 100% no-repeat;
+    width: 0.73rem;
+    height: 0.9rem;
+    margin: -1.37rem 0 0 1.4rem;
+    animation: bull_sz_light3 3s ease infinite;
+    -webkit-animation: bull_sz_light3 3s ease infinite;
+    mix-blend-mode: lighten;
+    opacity: 0;
+}
+@keyframes bull_sz_light3 {
+    69% {opacity: 0}
+    70% {transform: translate3d(0, 0, 0);opacity: 1}
+    100%{transform: translate3d(0.3rem, 0, 0);opacity: 1}
+}
+
+@-webkit-keyframes bull_sz_light3 {
+    69% {opacity: 0}
+    70% {transform: translate3d(0, 0, 0);opacity: 1}
+    100%{transform: translate3d(0.3rem, 0, 0);opacity: 1}
+}
+.board_jb{
+    background:url(../images/poker/bullFight/bull100/board/jb.png) no-repeat center;
+    width: 0.89rem;
+    height: 0.95rem;
+    background-size: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: -0.3rem;
+    margin-right: -0.3rem;
+    z-index:2;
+}
+.board_jb1 {
+    background: url(../images/poker/bullFight/bull100/board/jb.png) no-repeat center;
+    width: 0.89rem;
+    height: 0.95rem;
+    background-size: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: 1.1rem;
+    margin-left: -0.3rem;
+    z-index: 2;
+}
+.decorate_bg{ width: 1.824rem;height: 1.836rem;}
+.piece{ background:url(../images/poker/bullFight/bull100/board/piece.png) no-repeat center; background-size: 100%;margin-left: 0.9rem; position: absolute;  }
+.red-peach{ background:url(../images/poker/bullFight/bull100/board/peach.png) no-repeat center;margin-left: 0.9rem; position: absolute;background-size: 100%;}
+.comm_sucks{ background:url(../images/poker/bullFight/bull100/board/sucks.png) no-repeat center;background-size: 100%;margin-left: 0.9rem; position: absolute;}
+.comm_spades{ background:url(../images/poker/bullFight/bull100/board/spades.png) no-repeat center;background-size: 100%;margin-left: 0.9rem; position: absolute;  }
+/*续庄*/
+.bull_xz{
+    background: url("../images/poker/bullFight/bull100/board/shangxuazhuanDiban.png") 50% 50% / auto 100% no-repeat;
+    width: 6.349rem;
+    height: 1.8rem;
+    position: absolute;
+    bottom: 0;
+    margin-left: 4rem;
+    text-align:center;
+    display: none;
+}
+.bull_xz_btn{
+    margin-top:0.3rem;
+}
+.bull_xz_button{
+    background: url("../images/poker/bullFight/bull100/btn/xuzhuang.png") 50% 50% / auto 100% no-repeat;
+    width: 2.6rem;
+    height: 1.04rem;
+    border: none;
+}
+.bull_xzz_button{
+    background: url("../images/poker/bullFight/bull100/btn/xiazhuang.png") 50% 50% / auto 100% no-repeat;
+    width: 2.6rem;
+    height: 1.04rem;
+    border: none;
+    margin-left:0.1rem
+}
+
+/*牛几*/
+.cow{ background:url("../images/poker/bullFight/common/board/according.png") no-repeat; width:2.9rem; height:1.3rem; background-size:100%;  position:absolute;margin-top: 0.6rem; }
+/*牛几平移负的1.98rem*/
+.cow div{background:url(../images/poker/bullFight/common/text/digital.png) no-repeat; width:1.98rem; height:1.24rem; background-size:1100%; left:17%; position:absolute;}
+.cow0{background:none}
+.cow0 div{background-position:0 0;}
+.cow1 div{background-position:-1.98rem 0;}
+.cow2 div{background-position:-3.96rem 0;}
+.cow3 div{background-position:-5.94rem 0;}
+.cow4 div{background-position:-7.92rem 0;}
+.cow5 div{background-position:-9.9rem 0;}
+.cow6 div{background-position:-11.88rem 0;}
+.cow7 div{background-position:-13.86rem 0;}
+.cow8 div{background-position:-15.84rem 0;}
+.cow9 div{background-position:-17.82rem 0;}
+.cow10 div{background-position:-19.82rem 0;}
+
+.cmm_card {width:1.44rem; height:1.81rem;background:url(../images/poker/common/card/card.png) no-repeat;background-size: 5.11rem; position:absolute;background-position:-3.29rem 0rem;}
+.cmm_card2 {width:1.44rem; height:1.81rem;background:url(../images/poker/common/card/card.png) no-repeat;background-size: 5.11rem; position:absolute;background-position:-1.85rem 0rem;display: none;}
+.cmm_card:nth-child(2){margin-left: 0.4rem;}
+.cmm_card:nth-child(3){margin-left: 0.8rem;}
+.cmm_card:nth-child(4){margin-left: 1.2rem;}
+.cmm_card:nth-child(5){margin-left: 1.6rem;}
+.card_left{width:0.29rem; height:0.74rem; position:absolute; left:0.1rem;}
+/*牌面数字部分*/
+.card_left_nub{width:0.28rem; height:0.5rem;position:absolute; left:0.04rem;background:url(../images/poker/common/card/card.png) no-repeat;background-size:5.11rem;}
+.nub0{background-position:-0.8rem -1.78rem;}
+.nub12{background-position:-1.13rem -1.78rem;}
+.nub11{background-position:-1.46rem -1.78rem;}
+.nub10{background-position:-1.8rem -1.78rem;}
+.nub9{background-position:-2.13rem -1.78rem;}
+.nub8{background-position:-2.46rem -1.78rem;}
+.nub7{background-position:-2.78rem -1.78rem;}
+.nub6{background-position:-3.1rem -1.78rem;}
+.nub5{background-position:-3.45rem -1.78rem;}
+.nub4{background-position:-3.77rem -1.78rem;}
+.nub3{background-position:-4.1rem -1.78rem;}
+.nub2{background-position:-4.43rem -1.78rem;}
+.nub1{background-position:-4.75rem -1.78rem;}
+/*红色数字*/
+.rnub0{background-position:-0.8rem -2.3rem;}
+.rnub12{background-position:-1.13rem -2.3rem;}
+.rnub11{background-position:-1.46rem -2.3rem;}
+.rnub10{background-position:-1.8rem -2.3rem;}
+.rnub9{background-position:-2.13rem -2.3rem;}
+.rnub8{background-position:-2.46rem -2.3rem;}
+.rnub7{background-position:-2.78rem -2.3rem;}
+.rnub6{background-position:-3.1rem -2.3rem;}
+.rnub5{background-position:-3.45rem -2.3rem;}
+.rnub4{background-position:-3.77rem -2.3rem;}
+.rnub3{background-position:-4.1rem -2.3rem;}
+.rnub2{background-position:-4.43rem -2.3rem;}
+.rnub1{background-position:-4.75rem -2.3rem;}
+/*小牌花色*/
+.card_flow{width:0.29rem; height:0.28rem;background:url(../images/poker/common/card/card.png) no-repeat;background-size: 5.1rem; position:absolute; left:0.04rem;
+    top:0.55rem;}
+.flow0{background-position:-0.84rem  0rem;}
+.flow1{background-position:-0.84rem  -0.28rem;}
+.flow2{background-position:-0.84rem  -0.56rem;}
+.flow3{background-position:-0.84rem  -0.84rem;}
+/*中间大花色*/
+.card_auto{width:1.09rem; height:1.06rem;background:url(../images/poker/common/card/card.png) no-repeat;background-size: 5.1rem; position:absolute; left:0.18rem;top:25%;}
+.auto0{background-position:0rem 0rem; width:0.68rem; height:0.81rem; left:30%; top:30%;}
+.auto1{background-position:0rem -0.8rem; width:0.68rem; height:0.81rem; left:30%; top:30%;}
+.auto2{background-position:0rem -1.62rem; width:0.68rem; height:0.81rem; left:30%; top:30%;}
+.auto3{background-position:0rem -2.43rem; width:0.68rem; height:0.81rem; left:30%; top:30%;}
+.auto4{background-position:-1.44rem -2.87rem;}
+.auto5{background-position:-2.53rem -2.87rem;}
+.auto6{background-position:-3.63rem -2.87rem;}
+/*中间区域*/
+.Gamble_zje{  text-align:center; color:#fff;  line-height:0.41rem; font-weight:bold;}
+.Bull100_zje{
+    background: rgba(0,0,0,0.2);
+    border-radius: 0.1rem 0.1rem 0 0;
+    height:0.41rem;
+    width:1.936rem;
+}
+.Gamble_jb{
+    width: 100%;
+    position: absolute;
+    top: 0.41rem;
+    bottom: 0.41rem;
+}
+.Bull_flow_big{
+    background: url("../images/poker/bullFight/bull100/board/table1.png") no-repeat center;
+    background-size: 1.8rem;
+}
+.Bull_flow_big_yellow{
+    background: url("../images/poker/bullFight/bull100/board/table0.png") no-repeat center;
+    background-size: 1.8rem;
+}
+.Bull_flow_small{
+    background: url("../images/poker/bullFight/bull100/board/table3.png") no-repeat center;
+    background-size: 1.8rem;
+}
+.Bull_flow_samll_yellow{
+    background: url("../images/poker/bullFight/bull100/board/table2.png") no-repeat center;
+    background-size: 1.8rem;
+}
+.Bull_flow_bt{
+    background: url("../images/poker/bullFight/bull100/board/h1.png") no-repeat center;
+    background-size: 1.8rem;
+}
+.Bull_flow_rt{
+    background: url("../images/poker/bullFight/bull100/board/hong0.png") no-repeat center;
+    background-size: 1.8rem;
+}
+.Bull_flow_mh{
+    background: url("../images/poker/bullFight/bull100/board/m0.png") no-repeat center;
+    background-size: 1.8rem;
+}
+.Bull_flow_fk{
+    background: url("../images/poker/bullFight/bull100/board/f0.png") no-repeat center;
+    background-size: 1.8rem;
+}
+.Bull_flow_bt_yellow{
+    background: url("../images/poker/bullFight/bull100/board/h0.png") no-repeat center;
+    background-size: 1.8rem;
+}
+.Bull_flow_rt_yellow{
+    background: url("../images/poker/bullFight/bull100/board/hong1.png") no-repeat center;
+    background-size: 1.8rem;
+}
+.Bull_flow_mh_yellow{
+    background: url("../images/poker/bullFight/bull100/board/m1.png") no-repeat center;
+    background-size: 1.8rem;
+}
+.Bull_flow_fk_yellow{
+    background: url("../images/poker/bullFight/bull100/board/f1.png") no-repeat center;
+    background-size: 1.8rem;
+}
+.Gamble_per{background:rgba(0,0,0,0.4); height:0.41rem; width:1.91rem; border-radius:0 0 3px 3px;  text-align:center;font-weight:bold; line-height:0.41rem; color: #f5e75c;    position: absolute;
+    bottom: 0;}
+.Gamble_per_left {float: left; text-align: left; margin-left: 0.15rem;}
+.Gamble_per_right {float: right; text-align: right;margin-right: 0.15rem;}
+.Gamble_loser{ color:#fff;}
+.Gamble_loser_left {float: left; text-align: left; margin-left: 0.15rem;}
+.Gamble_loser_right {float: right; text-align: right;margin-right: 0.15rem;}
+.Gamble_l1{left: 0.1rem;}
+.Gamble_r1{right: 0.1rem;}
+.Gamble_bg{
+    width: 1.936rem;
+    background: rgba( 0, 0, 0,0.5);
+    border-radius: 0.1rem;
+    position: absolute;
+    top: 1.81rem;
+    bottom: 0;
+}
+.playing_card_user{width:2.99rem; height:1.7rem;    margin-left: 0.5rem;}
+.playing_card_user1{width:2.99rem; height:1.91rem;top:17%; left:38%;position: fixed;}
+.GC-up:nth-child(odd) .playing_card_user{left:22%;}
+.GC-up:nth-child(even) .playing_card_user{right:22.4%;}
+.GC-up{width:50%; height: 48%;    position: absolute; }
+.GC-up:nth-child(1) {top:0;left:0;}
+.GC-up:nth-child(2) {top:0;right:0;}
+.GC-up:nth-child(3) {bottom:0;left:0;}
+.GC-up:nth-child(4) {bottom:0;right:0;}
+.coin{ position:absolute;pointer-events: none;display:none;width:0.74rem;height:0.72rem; background:url(../images/poker/bullFight/common/icon/coins2.png) no-repeat;background-size:contain;  }
+
+/*4张牌下注区*/
+.Gamble_bg1{ width: 3rem;
+    background: rgba( 0, 0, 0,0.5);
+    border-radius: 0.1rem;
+    position: absolute;
+    top: 1.81rem;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1.5rem;
+}
+.small_big{
+    height: 0.41rem;
+    background: rgba(0,0,0,0.2);
+    border-radius: 0.1rem 0.1rem 0 0;
+}
+.Gamble_zje1{
+    text-align: center;
+    color: #fff;
+    line-height: 0.41rem;
+    font-weight: bold;
+}
+.Gamble_per1{     background: rgba(0,0,0,0.4);
+    height: 0.41rem;
+    width: 100%;
+    border-radius: 0 0 3px 3px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 0.41rem;
+    color: #f5e75c;
+    position: absolute;
+    bottom: 0;}
+.Gamble_f{width:2.13rem; height:2.82rem;}
+/*背景黄色*/
+.Gamble_bt1{background:url(../images/poker/bullFight/bull100/board/h0.png) no-repeat;background-size:2.3rem;}
+.Gamble_rt1{background:url(../images/poker/bullFight/bull100/board/hong1.png) no-repeat;background-size:2.3rem;}
+.Gamble_mh1{background:url(../images/poker/bullFight/bull100/board/m1.png) no-repeat;background-size:2.3rem;}
+.Gamble_fk1{background:url(../images/poker/bullFight/bull100/board/f1.png) no-repeat;background-size:2.3rem;}
+.GC-up1:nth-child(3) {bottom:0; left: 0; position: absolute;}
+.GC-up1:nth-child(4) {bottom:0;right:0;position: absolute;}
+.GC-center1{   width: 64%;  height: 54%;  top: 26.7%;  left: 18%;  position: fixed;}
+.GC-center{width: 64%;  height: 49%;  top: 26.7%;  left: 18%;  position: fixed; }
+/*下注*/
+.Betting{
+    bottom:0;
+    width: 100%;
+    position: fixed;
+    background: url("../images/poker/bullFight/bull100/board/touzhudibang.png") 50% 50% / auto 100% repeat-x;
+    margin-left: 4rem;
+    height:1.8rem;
+}
+.Betting ul{margin-top: 0.2rem;}
+.Betting_ul{}
+.Betting li .icon{height: 0.99rem;width:1.75rem; }
+nav li:nth-child(6):hover .icon{background:url(../images/poker/bullFight/bull100/text/automqtic02.png) no-repeat center ;background-size: 1.8rem;width:2.05rem; }
+.Be_bg{
+    height:0.99rem;
+    float:left;
+    width:1.75rem;
+    background:url(../images/poker/bullFight/common/btn/bet0.png) no-repeat;
+    background-size: 100%;
+    margin-top: -0.2rem;
+    font-weight: bolder;
+    line-height: 0.99rem;
+    text-align: center;
+    font-size: 0.5rem;
+    color:#e9dd70;
+}
+.Be_bg span{
+    text-shadow:#6b2110 1px 0 0,#6b2110 0 1px 0,#6b2110 -1px 0 0,#6b2110 0 -1px 0;
+    -webkit-text-shadow:#6b2110 1px 0 0,#6b2110 0 1px 0,#6b2110 -1px 0 0,#6b2110 0 -1px 0;
+}
+.Be_bg1{
+    height:0.99rem;
+    float:left;
+    width:1.75rem;
+    background:url(../images/poker/bullFight/common/btn/bet1.png)  no-repeat;
+    background-size: 100%;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 0.5rem;
+    color:#e9dd70;
+}
+.Be_bg1 span{
+    line-height: 0.99rem;
+    text-shadow:#085e06 1px 0 0,#085e06 0 1px 0,#085e06 -1px 0 0,#085e06 0 -1px 0;
+    -webkit-text-shadow:#085e06 1px 0 0,#085e06 0 1px 0,#085e06 -1px 0 0,#085e06 0 -1px 0;
+}
+.tz_tmd{opacity: 0.3;}
+.Be_bg_underline{
+    background: url("../images/poker/bullFight/bull100/board/xuangzhongZD.png") 50% 50% / auto 100% no-repeat;
+    width:1.38rem;
+    height:0.22rem;
+    margin: 0.25rem 0 0 0.2rem;
+}
+.Betting_btn_animation{
+    position: absolute;
+    margin-top: 0.8rem;
+}
+/*金币动画*/
+.bull_money_diff{
+    display: none;
+    font-size: 0.5rem;
+    position: absolute;
+    bottom: 0;
+    color: #09dae5;
+    text-shadow: 0.01rem 0rem 0.1em #023649,
+    -0.01rem 0rem 0.1em #023649,
+    0rem 0.01rem 0.1em #023649,
+    0rem -0.01rem 0.1em #023649;
+}
+.bull_add_money{
+    color: yellow;
+}
+.bull_nub_left{
+    left: 0;
+}
+.bull_nub_right{
+    right: 0;
+}
+/*投注按钮动画*/
+.Betting_btn_bgam{
+    width: 1.57rem;
+    height: 0.79rem;
+    border: 0.04rem solid #911b09;
+    border-radius: 0.15rem;
+    margin-top: -1.4rem;
+    margin-left: 0.05rem;
+    /*box-shadow: 0 0 0.03rem 0.01rem rgba(254,11,68,1);*/
+    /*animation: Betting_btn_bgam 0.5s ease infinite;*/
+    /*-webkit-animation: Betting_btn_bgam 0.5s ease infinite;*/
+}
+@keyframes Betting_btn_bgam
+{
+    50% {box-shadow: 0 0 0.1rem 0.01rem rgba(254,11,68,1);}
+}
+@-webkit-keyframes Betting_btn_bgam
+{
+    50% {box-shadow: 0 0 0.1rem 0.01rem rgba(254,11,68,1);}
+}
+.bull_bet_btn{
+    width: 1.52rem;
+    height: 1rem;
+    position: absolute;
+    margin: -0.9rem 0 0 0.12rem;
+    overflow: hidden;
+}
+.bull_bet_btn1{
+    width: 1.7rem;
+    height: 0.72rem;
+    position: absolute;
+    margin: -0.79rem 0 0 0;
+    overflow: hidden;
+}
+.bull_bet_btn2{
+    width: 0.3rem;
+    height: 0.3rem;
+    position: absolute;
+    overflow: hidden;
+}
+.bull_bet_vy1{
+    margin: -0.9rem 0 0 1.44rem;
+}
+.bull_bet_vy2{
+    margin: -0.25rem 0 0 1.44rem
+}
+.bull_bet_vy3{
+    margin: -0.25rem 0 0 0;
+}
+.bull_bet_vy4{
+    margin: -0.9rem 0 0 0;
+}
+.Betting_btn_dot{
+    background: url("../images/poker/bullFight/common/specialEffects/diantexiao.png") 50% 50% / auto 100% no-repeat;
+    width: 0.54rem;
+    height: 0.2rem;
+    position: absolute;
+    left: 0.15rem;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    top: -0.08rem;
+    opacity: 0;
+}
+.Betting_dot_animation1{
+    left: -0.31rem;
+    animation: Betting_dot_animation1 2s linear infinite;
+    -webkit-animation: Betting_dot_animation1 2s linear infinite;
+}
+@keyframes Betting_dot_animation1{
+    0%  {transform: translate3d(0.2rem, 0, 0) rotate(180deg);opacity: 1;}
+    35% {transform: translate3d(2rem, 0, 0) rotate(180deg);opacity: 1;}
+    100% {transform: translate3d(2rem, 0, 0) rotate(180deg);opacity: 1;}
+}
+@-webkit-keyframes Betting_dot_animation1 {
+    0%  {transform: translate3d(0.2rem, 0, 0) rotate(180deg);opacity: 1;}
+    35% {transform: translate3d(2rem, 0, 0) rotate(180deg);opacity: 1;}
+    100% {transform: translate3d(2rem, 0, 0) rotate(180deg);opacity: 1;}
+}
+.Betting_dot_animation9{
+    left: -0.51rem;
+    animation: Betting_dot_animation9 2s linear infinite;
+    -webkit-animation: Betting_dot_animation9 2s linear infinite;
+}
+@keyframes Betting_dot_animation9{
+    0%  {transform: translate3d(0, 0, 0) rotate(180deg);opacity: 0;}
+    90% {transform: translate3d(0, 0, 0) rotate(180deg);opacity: 1;}
+    100% {transform: translate3d(0.4rem, 0, 0) rotate(180deg);opacity: 1;}
+}
+@-webkit-keyframes Betting_dot_animation9 {
+    0%  {transform: translate3d(0, 0, 0) rotate(180deg);opacity: 0;}
+    89% {transform: translate3d(0, 0, 0) rotate(180deg);opacity: 0;}
+    90% {transform: translate3d(0, 0, 0) rotate(180deg);opacity: 1;}
+    100% {transform: translate3d(0.4rem, 0, 0) rotate(180deg);opacity: 1;}
+}
+.Betting_dot_animation2{
+    left: 1.43rem;
+    top: -0.36rem;
+    animation: Betting_dot_animation2 2s linear infinite;
+    -webkit-animation: Betting_dot_animation2 2s linear infinite;
+}
+@keyframes Betting_dot_animation2{
+    0%  {transform: translate3d(0, 0, 0) rotate(270deg);opacity: 1;}
+    25% {transform: translate3d(0, 0, 0) rotate(270deg);}
+    50% {transform: translate3d(0, 1.34rem, 0) rotate(270deg);opacity: 1;}
+    100% {transform: translate3d(0, 1.34rem, 0) rotate(270deg);opacity: 1;}
+}
+@-webkit-keyframes Betting_dot_animation2 {
+    0%  {transform: translate3d(0, 0, 0) rotate(270deg);opacity: 1;}
+    25% {transform: translate3d(0, 0, 0) rotate(270deg);}
+    50% {transform: translate3d(0, 1.34rem, 0) rotate(270deg);opacity: 1;}
+    100% {transform: translate3d(0, 1.34rem, 0) rotate(270deg);opacity: 1;}
+}
+.Betting_dot_animation3{
+    left: 1.67rem;
+    top: 0.79rem;
+    animation: Betting_dot_animation3 2s linear infinite;
+    -webkit-animation: Betting_dot_animation3 2s linear infinite;
+}
+@keyframes Betting_dot_animation3{
+    0%  {transform: translate3d(0, 0, 0);opacity: 1;}
+    35% {transform: translate3d(0, 0, 0);opacity: 1;}
+    80% {transform: translate3d(-2.2rem, 0, 0);opacity: 1;}
+    100% {transform: translate3d(-2.2rem, 0, 0);opacity: 1;}
+}
+@-webkit-keyframes Betting_dot_animation3 {
+    0%  {transform: translate3d(0, 0, 0);opacity: 1;}
+    35% {transform: translate3d(0, 0, 0);opacity: 1;}
+    80% {transform: translate3d(-2.2rem, 0, 0);opacity: 1;}
+    100% {transform: translate3d(-2.2rem, 0, 0);opacity: 1;}
+}
+.Betting_dot_animation4{
+    left: -0.205rem;
+    top: 1.15rem;
+    animation: Betting_dot_animation4 2s linear infinite;
+    -webkit-animation: Betting_dot_animation4 2s linear infinite;
+}
+@keyframes Betting_dot_animation4{
+    65% {transform: translate3d(0, 0, 0) rotate(90deg);opacity: 1;}
+    90% {transform: translate3d(0, -1.5rem, 0) rotate(90deg);opacity: 1;}
+    100% {transform: translate3d(0, -1.5rem, 0) rotate(90deg);opacity: 1;}
+}
+@-webkit-keyframes Betting_dot_animation4 {
+    65% {transform: translate3d(0, 0, 0) rotate(90deg);opacity: 1;}
+    90% {transform: translate3d(0, -1.5rem, 0) rotate(90deg);opacity: 1;}
+    100% {transform: translate3d(0, -1.5rem, 0) rotate(90deg);opacity: 1;}
+}
+.Betting_btn_dot1{
+    background: url("../images/poker/bullFight/common/specialEffects/diantexiao02.png") 50% 50% / auto 100% no-repeat;
+    width: 0.15rem;
+    height: 0.17rem;
+    position: absolute;
+    left: 0.12rem;
+    top: 0.01rem;
+    opacity: 0;
+}
+.Betting_dot_animation5{
+    animation: Betting_dot_animation5 2s linear infinite;
+    -webkit-animation: Betting_dot_animation5 2s linear infinite;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+}
+@keyframes Betting_dot_animation5{
+    24% {opacity: 0;}
+    25% {opacity: 1;}
+    32% {opacity: 1;}
+    33% {opacity: 0;}
+}
+@-webkit-keyframes Betting_dot_animation5 {
+    19% {opacity: 0;}
+    20% {opacity: 1;}
+    32% {opacity: 1;}
+    33% {opacity: 0;}
+}
+.Betting_dot_animation6{
+    animation: Betting_dot_animation6 2s linear infinite;
+    -webkit-animation: Betting_dot_animation6 2s linear infinite;
+    left: 0.12rem;
+    top: 0.09rem;
+    transform: rotate(235deg);
+    -webkit-transform: rotate(235deg);
+}
+@keyframes Betting_dot_animation6{
+    38% {opacity: 0;}
+    39% {opacity: 1;}
+    47% {opacity: 1;}
+    48% {opacity: 0;}
+}
+@-webkit-keyframes Betting_dot_animation6 {
+    38% {opacity: 0;}
+    39% {opacity: 1;}
+    47% {opacity: 1;}
+    48% {opacity: 0;}
+}
+.Betting_dot_animation7{
+    animation: Betting_dot_animation7 2s linear infinite;
+    -webkit-animation: Betting_dot_animation7 2s linear infinite;
+    left: 0.04rem;
+    top: 0.09rem;
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+}
+@keyframes Betting_dot_animation7{
+    70% {opacity: 0;}
+    71% {opacity: 1;}
+    79% {opacity: 1;}
+    80% {opacity: 0;}
+}
+@-webkit-keyframes Betting_dot_animation7 {
+    70% {opacity: 0;}
+    71% {opacity: 1;}
+    79% {opacity: 1;}
+    80% {opacity: 0;}
+}
+.Betting_dot_animation8{
+    animation: Betting_dot_animation8 2s linear infinite;
+    -webkit-animation: Betting_dot_animation8 2s linear infinite;
+    left: 0.05rem;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    /*top: 0.01rem;*/
+}
+@keyframes Betting_dot_animation8{
+    83% {opacity: 0;}
+    84% {opacity: 1;}
+    100% {opacity: 1;}
+}
+@-webkit-keyframes Betting_dot_animation8 {
+    83% {opacity: 0;}
+    84% {opacity: 1;}
+    100% {opacity: 1;}
+}
+/*胜利动画*/
+.Bull_victory_bg{
+    background-color: #000;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    top: 0;
+    animation: Bull_victory_bg 4s ease 0s;
+    -webkit-animation: Bull_victory_bg 4s ease 0s;
+}
+.Bull_victory_win{
+    background: url("../images/poker/bullFight/common/specialEffects/win.png") 50% 50% / auto 100% no-repeat;
+    width: 13.36rem;
+    height: 14.4rem;
+    /*margin-top: -4rem;*/
+    animation: Bull_victory_win 4s ease 0s;
+    -webkit-animation: Bull_victory_win 4s ease 0s;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin: -1.5rem 0 0 -6.68rem;
+}
+.Bull_vc_win_bg{
+    background: url("../images/poker/bullFight/common/board/win.png") 50% 50% / auto 100% no-repeat;
+    width: 10.46rem;
+    height: 3rem;
+    position: absolute;
+    top: 4rem;
+    left: 50%;
+    margin-left: -5.23rem;
+    z-index: 2;
+    animation: Bull_vc_win_bg 4s ease 0s;
+}
+@keyframes Bull_vc_win_bg
+{
+    0%  {transform: scale(0,0); opacity:1;}
+    10%{transform:  scale(1,1);opacity:1;}
+}
+@-webkit-keyframes Bull_vc_win_bg
+{
+    0%  {transform:  scale(0,0); opacity:1;}
+    10%{transform:  scale(1,1);opacity:1;}
+}
+.Bull_vc_win_font{
+    background: url("../images/poker/bullFight/common/text/win01.png") 50% 50% / auto 100% no-repeat;
+    width: 5.09rem;
+    height: 2.93rem;
+    margin: -0.8rem 0 0 2.5rem;
+}
+.Bull_vc_content_bg{
+    background: url("../images/poker/bullFight/common/board/and.png") 50% 50% / auto 100% no-repeat;
+    width: 9rem;
+    height: 7rem;
+    position: absolute;
+    top: 5.9rem;
+    margin-left: -4.5rem;
+    left: 50%;
+}
+.Bull_victory_font{
+    font-size: 1.3rem;
+    width: 100%;
+    text-align: center;
+    font-weight: bolder;
+    line-height: 1.8rem;
+    -webkit-text-fill-color:transparent;
+    background:-webkit-linear-gradient(#ffffff,#fdbb00 80%);
+    -webkit-background-clip:text;
+    -webkit-text-stroke:0.05rem  #663c1d;
+    position: absolute;
+    margin-top: 6rem;
+    z-index: 2;
+}
+.Bull_failure_font1{
+    font-size: 1.3rem;
+    width: 100%;
+    text-align: center;
+    font-weight: bolder;
+    line-height: 1.8rem;
+    -webkit-text-fill-color:transparent;
+    background:-webkit-linear-gradient(#f8fdff,#c1c1c3 80%);
+    -webkit-background-clip:text;
+    -webkit-text-stroke:0.05rem  #694024;
+    position: absolute;
+    margin-top: 6rem;
+    z-index: 2;
+}
+.Bull_victory_user{
+    height: 2.3rem;
+    margin-top: 2.3rem;
+}
+.Bull_victory_user li {
+    height: 1.4rem;
+    margin: 0.05rem 0 0 0.9rem;
+    float: left;
+}
+.Bull_victory_btn{
+    background: url("../images/poker/bullFight/common/btn/bet2.png") 50% 50% / auto 100% no-repeat;
+    width: 2.05rem;
+    height: 0.99rem;
+    margin: 0.4rem 0 0 3.5rem;
+    pointer-events: auto;
+}
+.Bull_victory_btn_font{
+    background: url("../images/poker/bullFight/common/text/continue.png") 50% 50% / auto 100% no-repeat;
+    width: 1.1rem;
+    height: 0.62rem;
+    margin: 0.13rem 0 0 0.47rem;
+    position: absolute;
+}
+.Bull_victory_user_head{
+    width: 1.06rem;
+    height: 1.06rem;
+    border-radius: 0.15rem;
+    overflow: hidden;
+}
+.Bull_victory_user_font{
+    width: 1.06rem;
+    color: #ab5526;
+    text-align: center;
+    font-weight: bold;
+    line-height: 0.35rem;
+    font-size: 0.28rem;
+}
+.Bull_victory_user_name{
+    width: 1.06rem;
+    color: #ab5526;
+    text-align: center;
+    font-weight: bold;
+    line-height: 0.4rem;
+    font-size: 0.2rem;
+}
+.Bull_vc_win_stars{
+    background: url("../images/poker/bullFight/common/specialEffects/stars.png") 50% 50% / auto 100% no-repeat;
+    width: 3.2rem;
+    height: 3.125rem;
+    margin:11em 0 0 1rem;
+    position: absolute;
+    top: 0;
+    animation: Bull_vc_win_stars 4s ease 0s;
+    -webkit-animation: Bull_vc_win_stars 4s ease 0s;
+    opacity: 0;
+    z-index: 2;
+}
+.Bull_vc_win_stars1{
+    background: url("../images/poker/bullFight/common/specialEffects/stars.png") 50% 50% / auto 100% no-repeat;
+    width: 2.56rem;
+    height: 2.5rem;
+    margin: 17em 0 0 8.5rem;
+    position: absolute;
+    top: 0;
+    animation: Bull_vc_win_stars1 4s ease 0s;
+    -webkit-animation: Bull_vc_win_stars1 4s ease 0s;
+    opacity:0;
+    z-index: 2;
+}
+@-webkit-keyframes Bull_victory_bg {
+    0%  { opacity: 0;}
+    20%{opacity: 0.8;}
+}
+
+@keyframes Bull_victory_bg {
+    0%  { opacity: 0;}
+    20%{opacity: 0.8;}
+}
+@keyframes Bull_victory_win {
+    0%  {transform:scale(0,0);opacity:0; }
+    25% {transform:scale(1,1);opacity:1;}
+    35%{transform:scale(1.2,1.2);opacity:0;}
+}
+
+@-webkit-keyframes Bull_victory_win {
+    0%  {transform:scale(0,0);opacity:0; }
+    25% {transform:scale(1,1);opacity:1;}
+    40%{transform:scale(1.2,1.2);opacity:0;}
+}
+.Bull_animation_content{
+    top: 0;
+    left: 50%;
+    width: 10.46rem;
+    margin-left: -5.23rem;
+    height: 10rem;
+    position: absolute;
+    animation: Bull_animation_content 3s ease 1;
+    -webkit-animation: Bull_animation_content 3s ease 1;
+}
+@keyframes Bull_animation_content
+{
+    0% {transform: scale(0.3,0.3); opacity:0;}
+    19% {transform: scale(0.3,0.3); opacity:0;}
+    20%{transform: scale(0.3,0.3); opacity:0.3;}
+    30%{transform:  scale(1,1);opacity:1;}
+}
+@-webkit-keyframes Bull_animation_content
+{
+    0% {transform: scale(0.3,0.3); opacity:0;}
+    19% {transform: scale(0.3,0.3); opacity:0;}
+    20%{transform: scale(0.3,0.3); opacity:0.3;}
+    30%{transform:  scale(1,1);opacity:1;}
+}
+.Bull_slsb_animation{
+    animation: Bull_slsb_animation 3s ease 1;
+    -webkit-animation: Bull_slsb_animation 3s ease 1;
+}
+@keyframes Bull_slsb_animation
+{
+    0% {transform: scale(0.3,0.3); opacity:0;}
+    19% {transform: scale(0.3,0.3); opacity:0;}
+    20%{transform: scale(0.3,0.3); opacity:0.3;}
+    30%{transform:  scale(1,1);opacity:1;}
+}
+@-webkit-keyframes Bull_slsb_animation
+{
+    0% {transform: scale(0.3,0.3); opacity:0;}
+    19% {transform: scale(0.3,0.3); opacity:0;}
+    20%{transform: scale(0.3,0.3); opacity:0.3;}
+    30%{transform:  scale(1,1);opacity:1;}
+}
+@keyframes Bull_vc_win_stars1
+{
+    0%  {transform: rotate(45deg) scale(0,0);opacity:0; }
+    15% {transform: rotate(45deg) scale(1.2,1.2);opacity:1;}
+    25% {transform: rotate(45deg) scale(1.4,1.4);opacity:0;}
+    100%{transform: rotate(45deg) scale(0,0);opacity:0;}
+}
+@-webkit-keyframes Bull_vc_win_stars1
+{
+    0%  {transform: rotate(45deg) scale(0,0);opacity:0; }
+    15% {transform: rotate(45deg) scale(1.2,1.2);opacity:1;}
+    25% {transform: rotate(45deg) scale(1.4,1.4);opacity:0;}
+    100%{transform: rotate(45deg) scale(0,0);opacity:0;}
+}
+@keyframes Bull_vc_win_stars
+{
+    0%  {transform: scale(0,0);opacity:0; }
+    15% {transform: scale(1.2,1.2);opacity:1;}
+    25% {transform: scale(1.4,1.4);opacity:0;}
+    100%{transform: scale(0,0);opacity:0;}
+}
+@-webkit-keyframes Bull_vc_win_stars
+{
+    0%  {transform: scale(0,0);opacity:0; }
+    15% {transform: scale(1.2,1.2);opacity:1;}
+    25% {transform: scale(1.4,1.4);opacity:0;}
+    100%{transform: scale(0,0);opacity:0;}
+}
+/*失败动画*/
+.Bull_animation_failure{
+    background: url("../images/poker/bullFight/common/specialEffects/luminoussLose.png") 50% 50% / auto 100% no-repeat;
+    width: 13.36rem;
+    height: 14.4rem;
+    animation: Bull_animation_failure 4s ease 0s;
+    -webkit-animation: Bull_animation_failure 4s ease 0s;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin: -1.5rem 0 0 -6.68rem;
+}
+@keyframes Bull_animation_failure {
+    0%  {transform:scale(0,0);opacity:0; }
+    25% {transform:scale(1,1);opacity:1;}
+    35%{transform:scale(1.2,1.2);opacity:0;}
+}
+
+@-webkit-keyframes Bull_animation_failure {
+    0%  {transform:scale(0,0);opacity:0; }
+    25% {transform:scale(1,1);opacity:1;}
+    40%{transform:scale(1.2,1.2);opacity:0;}
+}
+.Bull_failure_bg{
+    background: url("../images/poker/bullFight/common/board/lose.png") 50% 50% / auto 100% no-repeat;
+    width: 10.46rem;
+    height: 3rem;
+    position: absolute;
+    top: 4rem;
+    left: 50%;
+    margin-left: -5.23rem;
+    z-index: 2;
+    animation: Bull_vc_win_bg 4s ease 0s;
+}
+@keyframes Bull_failure_bg
+{
+    0%  {transform: scale(0,0); opacity:1;}
+    20%{transform:  scale(1,1);opacity:1;}
+}
+@-webkit-keyframes Bull_failure_bg
+{
+    0%  {transform:  scale(0,0); opacity:1;}
+    20%{transform:  scale(1,1);opacity:1;}
+}
+.Bull_failure_font{
+    background: url("../images/poker/bullFight/common/text/lose01.png") 50% 50% / auto 100% no-repeat;
+    width: 5.09rem;
+    height: 2.93rem;
+    margin: -0.8rem 0 0 2.6rem;
+}
+.Bull_failure_stars{
+    background: url("../images/poker/bullFight/common/specialEffects/loseDizzy.png") 50% 50% / auto 100% no-repeat;
+    width: 1.92rem;
+    height: 1.87rem;
+    margin:13em 0 0 2rem;
+    position: absolute;
+    top: 0;
+    animation: Bull_failure_stars 2s ease 0s;
+    -webkit-animation: Bull_failure_stars 2s ease 0s;
+    opacity: 0;
+    z-index: 2;
+}
+@keyframes Bull_failure_stars
+{
+    0%  {transform: rotate(0deg) scale(0,0);opacity:0; }
+    50%  {transform: rotate(360deg) scale(1,1);opacity:1; }
+    100%{transform: rotate(720deg) scale(0,0);opacity:0;}
+}
+@-webkit-keyframes Bull_failure_stars
+{
+    0%  {transform: rotate(0deg) scale(0,0);opacity:0; }
+    50%  {transform: rotate(360deg) scale(1,1);opacity:1; }
+    100%{transform: rotate(720deg) scale(0,0);opacity:0;}
+}
+.Bull_failure_stars1{
+    background: url("../images/poker/bullFight/common/specialEffects/loseDizzy.png") 50% 50% / auto 100% no-repeat;
+    width: 1.28rem;
+    height: 1.25rem;
+    margin: 18em 0 0 8.8rem;
+    position: absolute;
+    top: 0;
+    animation: Bull_vc_win_stars1 2s ease 0s;
+    -webkit-animation: Bull_failure_stars1 2s ease 0s;
+    opacity:0;
+    z-index: 2;
+}
+@keyframes Bull_failure_stars1
+{
+    0%  {transform: rotate(0deg) scale(0,0);opacity:0; }
+    50%  {transform: rotate(360deg) scale(1,1);opacity:1; }
+    100%{transform: rotate(720deg) scale(0,0);opacity:0;}
+}
+@-webkit-keyframes Bull_failure_stars1
+{
+    0%  {transform: rotate(0deg) scale(0,0);opacity:0; }
+    50%  {transform: rotate(360deg) scale(1,1);opacity:1; }
+    100%{transform: rotate(720deg) scale(0,0);opacity:0;}
+}
+/*限投提示*/
+.bull_prompt{
+    width: 3.14rem;
+    height: 0.8rem;
+    border-radius: 0.1rem;
+    background-color: #000;
+    opacity: 0.65;
+    position: fixed;
+    bottom: 1.9rem;
+    right: 0.1rem;
+    text-align: center;
+    color: #c1c798;
+    font-weight: bold;
+    line-height: 0.8rem;
+}
+

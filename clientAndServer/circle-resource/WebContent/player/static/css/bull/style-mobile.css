@@ -1,0 +1,453 @@
+html {
+    -ms-touch-action: none;
+}
+
+body, canvas, div {
+    display: block;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* Remove spin of input type number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    margin: 0;
+
+    cursor: default;
+    color: #888;
+    background-color: #333;
+
+    /*text-align: center;*/
+    font-family: Helvetica, Verdana, Arial, sans-serif;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#Cocos2dGameContainer {
+    position: absolute;
+    margin: 0;
+    overflow: hidden;
+    left: 0px;
+    top: 0px;
+
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+}
+
+canvas {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+a:link, a:visited {
+    color: #666;
+}
+
+a:active, a:hover {
+    color: #666;
+}
+
+p.header {
+    font-size: small;
+}
+
+p.footer {
+    font-size: x-small;
+}
+
+#splash {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #000 url(./jiazaibeij.jpg) no-repeat center;
+    background-size:  100% 100%;
+}
+.plumBG {
+    background: url(loading_01.png);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /*padding: 5px;*/
+    width: 1.63rem;
+    height: 1.66rem;
+    background-size: 100%;
+    margin-left: -0.815rem;
+}
+.plumBG-full {
+    background: url(loading_02.png);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /*padding: 5px;*/
+    width: 1.63rem;
+    height: 1.66rem;
+    background-size: 100%;
+    margin-left: -0.815rem;
+}
+.plumBG-fulling {
+    background: url(board_loading_10.png);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /*padding: 5px;*/
+    width: 1.63rem;
+    height: 1.66rem;
+    background-size: 100%;
+    margin-left: -0.815rem;
+    animation: plumBGFulling 2s linear 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes plumBGFulling {
+    from {height: 1.66rem;}
+    to {height: 0;}
+}
+/*.progress-bar {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    !*padding: 5px;*!
+    width: 1.63rem;
+    height: 1.66rem;
+    background-size: 100%;
+    margin-left: -0.815rem;
+}*/
+
+/*.progress-bar span {
+    display: none;
+    height: 100%;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
+    transition: width .4s ease-in-out;
+    background-color: #34c2e3;
+}*/
+
+/*.stripes span {
+    display: none;
+    background-size: 30px 30px;
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+    transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+    transparent 75%, transparent);
+}*/
+.G_loading{
+    background: url("text_loading.png");
+    width: 3.2rem;
+    height: 0.57rem;
+    background-size: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 1.9rem 0 0 -1.56rem;
+}
+/*加载动画*/
+.Animation_loading_bg{
+    width: 100%;
+    height:100%;
+    background-color: #000000;
+    position: fixed;
+}
+.Animation_loading_content{
+    width: 3.45rem;
+    height: 3.94rem;
+    top: 40%;
+    left: 50%;
+    position: absolute;
+    margin: -1.72rem 0 0 -1.87rem;
+}
+.Animation_loading_cow{
+    background: url("../../images/poker/bullFight/common/specialEffects/jiazaiDH07.png") 50% 50% / auto 100% no-repeat;
+    width: 3.45rem;
+    height: 3.94rem;
+    position: absolute;
+}
+.Animation_loading_zz{
+    background: url("../../images/poker/bullFight/common/specialEffects/jiazaiDH08.png") 50% 50% / auto 100% no-repeat;
+    width: 3.45rem;
+    height: 3.94rem;
+    position: absolute;
+}
+.loading_eyes_left{
+    width: 0.6rem;
+    height: 0.47rem;
+    margin: 0.9rem 0 0 0.85rem;
+    overflow: hidden;
+    float: left;
+}
+.loading_eyes_right{
+    width: 0.64rem;
+    height: 0.6rem;
+    margin: 0.72rem 0 0 1.58rem;
+    overflow: hidden;
+    position: absolute;
+}
+.Animation_loading_light{
+    width: 0.18rem;
+    height: 0.5rem;
+    transform: skew(-30deg);
+    -webkit-transform: skew(-30deg);
+    background-color: white;
+    margin-left: -0.15rem;
+    -webkit-animation: Animation_loading_light 1.3s ease 0.2s infinite ;
+    animation: Animation_loading_light 1.3s ease 0.2s infinite ;
+}
+@keyframes Animation_loading_light
+{
+    0%{transform: translate3d(-0.15rem, 0, 0) skew(-30deg); opacity: 0.6;}
+    50%{ opacity: 0.9}
+    80%{transform: translate3d(0.8rem, 0, 0) skew(-30deg); opacity: 0.6}
+    100%{transform: translate3d(0.8rem, 0, 0) skew(-30deg); opacity: 0}
+}
+@-webkit-keyframes Animation_loading_light
+{
+    0%{transform: translate3d(-0.15rem, 0, 0) skew(-30deg); opacity: 0.6;}
+    50%{ opacity: 0.9}
+    80%{transform: translate3d(0.8rem, 0, 0) skew(-30deg); opacity: 0.6}
+    100%{transform: translate3d(0.8rem, 0, 0) skew(-30deg); opacity: 0}
+}
+.Animation_loading_light1{
+    width: 0.18rem;
+    height: 0.7rem;
+    transform: skew(-30deg);
+    -webkit-transform: skew(-30deg);
+    background-color: white;
+    margin-left: -0.15rem;
+    -webkit-animation: Animation_loading_light1 1.3s ease 0.2s infinite ;
+    animation: Animation_loading_light1 1.3s ease 0.2s infinite;
+}
+@keyframes Animation_loading_light1
+{
+    0%{transform: translate3d(-0.15rem, 0, 0) skew(-30deg); opacity: 0.6;}
+    50%{ opacity: 0.9}
+    80%{transform: translate3d(0.8rem, 0, 0) skew(-30deg); opacity: 0.6}
+    100%{transform: translate3d(0.8rem, 0, 0) skew(-30deg); opacity: 0}
+}
+@-webkit-keyframes Animation_loading_light1
+{
+    0%{transform: translate3d(-0.15rem, 0, 0) skew(-30deg); opacity: 0.6;}
+    50%{ opacity: 0.9}
+    80%{transform: translate3d(0.8rem, 0, 0) skew(-30deg); opacity: 0.6}
+    100%{transform: translate3d(0.8rem, 0, 0) skew(-30deg); opacity: 0}
+}
+.Animation_loading_font{
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    margin-top: 2.7rem;
+}
+.Animation_loading_font ul{
+    display: inline-block;
+}
+.Animation_loading_font li{
+    float: left;
+}
+.loading_font_py{
+    margin-left: 0.4rem;
+}
+.loading_font_zheng{
+    background: url("../../images/poker/bullFight/common/text/zheng.png") 50% 50% / auto 100% no-repeat;
+    width: 0.89rem;
+    height: 0.82rem;
+    -webkit-animation: loading_font_zheng 2s ease infinite ;
+    animation: loading_font_zheng 2s ease infinite;
+}
+@keyframes loading_font_zheng
+{
+    10%{transform: translate3d(0, -0.2rem, 0);}
+    20%{transform: translate3d(0, 0, 0);}
+}
+@-webkit-keyframes loading_font_zheng
+{
+    10%{transform: translate3d(0, -0.2rem, 0);}
+    20%{transform: translate3d(0, 0, 0);}
+}
+.loading_font_zai{
+    background: url("../../images/poker/bullFight/common/text/zai.png") 50% 50% / auto 100% no-repeat;
+    width: 0.89rem;
+    height: 0.82rem;
+    -webkit-animation: loading_font_zai 2s ease 0.2s infinite ;
+    animation: loading_font_zai 2s ease 0.2s infinite;
+}
+@keyframes loading_font_zai
+{
+    10%{transform: translate3d(0, -0.2rem, 0);}
+    20%{transform: translate3d(0, 0, 0);}
+}
+@-webkit-keyframes loading_font_zai
+{
+    10%{transform: translate3d(0, -0.2rem, 0);}
+    20%{transform: translate3d(0, 0, 0);}
+}
+.loading_font_su{
+    background: url("../../images/poker/bullFight/common/text/su.png") 50% 50% / auto 100% no-repeat;
+    width: 0.89rem;
+    height: 0.82rem;
+    -webkit-animation: loading_font_su 2s ease 0.4s infinite ;
+    animation: loading_font_su 2s ease 0.4s infinite;
+}
+@keyframes loading_font_su
+{
+    10%{transform: translate3d(0, -0.2rem, 0);}
+    20%{transform: translate3d(0, 0, 0);}
+}
+@-webkit-keyframes loading_font_su
+{
+    10%{transform: translate3d(0, -0.2rem, 0);}
+    20%{transform: translate3d(0, 0, 0);}
+}
+.loading_font_pei{
+    background: url("../../images/poker/bullFight/common/text/pei.png") 50% 50% / auto 100% no-repeat;
+    width: 0.89rem;
+    height: 0.82rem;
+    -webkit-animation: loading_font_pei 2s ease 0.6s infinite ;
+    animation: loading_font_pei 2s ease 0.6s infinite;
+}
+@keyframes loading_font_pei
+{
+    10%{transform: translate3d(0, -0.2rem, 0);}
+    20%{transform: translate3d(0, 0, 0);}
+}
+@-webkit-keyframes loading_font_pei
+{
+    10%{transform: translate3d(0, -0.2rem, 0);}
+    20%{transform: translate3d(0, 0, 0);}
+}
+.loading_font_zhong{
+    background: url("../../images/poker/bullFight/common/text/zhong.png") 50% 50% / auto 100% no-repeat;
+    width: 0.89rem;
+    height: 0.82rem;
+    -webkit-animation: loading_font_zhong 2s ease 0.8s infinite ;
+    animation: loading_font_zhong 2s ease 0.8s infinite;
+}
+@keyframes loading_font_zhong
+{
+    10%{transform: translate3d(0, -0.2rem, 0);}
+    20%{transform: translate3d(0, 0, 0);}
+}
+@-webkit-keyframes loading_font_zhong {
+    10%{transform: translate3d(0, -0.2rem, 0);}
+    20%{transform: translate3d(0, 0, 0);}
+}
+.loading_font_round{
+    width: 0.2rem;
+    height: 0.2rem;
+    border-radius: 50%;
+    border: 0.08rem solid #4c2103;
+    background-color: #f5cc88;
+    margin:0.4rem 0 0 0.1rem;
+}
+.loading_round_animation{
+    opacity: 0;
+    -webkit-animation: loading_round_animation 1s ease infinite ;
+    animation: loading_round_animation 1s ease  infinite;
+}
+@keyframes loading_round_animation
+{
+    10%{opacity: 1;}
+    50%{opacity: 0;}
+}
+@-webkit-keyframes loading_round_animation {
+    10%{opacity: 1;}
+    50%{opacity: 0;}
+}
+.loading_round1_animation{
+    opacity: 0;
+    -webkit-animation: loading_round1_animation 1s ease 0.2s infinite ;
+    animation: loading_round1_animation 1s ease 0.2s infinite;
+}
+@keyframes loading_round1_animation
+{
+    10%{opacity: 1;}
+    50%{opacity: 0;}
+}
+@-webkit-keyframes loading_round1_animation {
+    10%{opacity: 1;}
+    50%{opacity: 0;}
+}
+.loading_font{
+    background: url("../../images/poker/bullFight/common/text/jiazaiziti.png") no-repeat;
+    background-size: 1050%;
+    width: 0.5rem;
+    height: 0.64rem;
+    margin-top: 0.1rem;
+}
+.loading_font_nub0{
+}
+.loading_font_nub1{
+    background-position: -0.55rem;
+}
+.loading_font_nub2{
+    background-position: -1.1rem;
+}
+.loading_font_nub3{
+    background-position: -1.6rem;
+}
+.loading_font_nub4{
+    background-position: -2.1rem;
+}
+.loading_font_nub5{
+    background-position: -2.65rem;
+}
+.loading_font_nub6{
+    background-position: -3.15rem;
+}
+.loading_font_nub7{
+    background-position: -3.7rem;
+}
+.loading_font_nub8{
+    background-position: -4.2rem;
+}
+.loading_font_nub9{
+    background-position: -4.75rem;
+}
+
+.loading_font_miao{
+    background: url("../../images/poker/bullFight/common/text/miao.png") no-repeat;
+    background-size: 100%;
+    width: 0.89rem;
+    height: 0.82rem;
+}
+.Animation_loading_prompt{
+    position: absolute;
+    font-size: 0.4rem;
+    left: 50%;
+    color: #8899ff;
+    bottom: 5%;
+    margin: 2.3rem 0 0 -3.45rem;
+}
+.Animation_loading_prompt p{
+    text-indent: 0.15rem;
+    line-height: 0.64rem;
+}
+.loading_prompt_round{
+    width: 0.64rem;
+    height: 0.64rem;
+    background-color: #4c2003;
+    border-radius: 50%;
+    text-align: center;
+    float: left;
+    font-size: 0.5rem;
+    color: #be1d1d;
+}

@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "common_board_rules1",
+    "texture": "f152df67-9a0e-4f50-887f-85d4d5444133",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      628,
+      354
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      628,
+      354
+    ]
+  }
+}

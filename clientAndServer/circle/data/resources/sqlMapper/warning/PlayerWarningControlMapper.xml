@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.warning.PlayerWarningControlMapper">
+
+    <resultMap id="TABLE:player_warning_control" type="g.model.warning.po.PlayerWarningControl">
+        <id column="id" property="id"/>
+        <result column="status" property="status"/>
+        <result column="win_rate1" property="winRate1"/>
+        <result column="win_rate2" property="winRate2"/>
+        <result column="win_gold_rate1" property="winGoldRate1"/>
+        <result column="win_gold_rate2" property="winGoldRate2"/>
+        <result column="enchashment_sum1" property="enchashmentSum1"/>
+        <result column="enchashment_sum2" property="enchashmentSum2"/>
+        <result column="payout_times1" property="payoutTimes1"/>
+        <result column="payout_times2" property="payoutTimes2"/>
+        <result column="enchashment_times1" property="enchashmentTimes1"/>
+        <result column="enchashment_times2" property="enchashmentTimes2"/>
+        <result column="create_user" property="createUser"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_user" property="updateUser"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+    <update id="updateWarningStatus">
+        update player_warning_control set status='20',update_time=now(),update_user=#{userId} where status='10'
+    </update>
+    <!--//region your codes 1-->
+
+    <!--//endregion your codes 1-->
+
+</mapper>

@@ -1,0 +1,32 @@
+{
+  "__type__": "cc.SpriteAtlas",
+  "_spriteFrames": {
+    "common_btn_bet_sj_1": {
+      "__uuid__": "4d67b366-0340-4398-a672-8a50aa4a5706"
+    },
+    "common_btn_bet_sj_2": {
+      "__uuid__": "73002c75-64ba-46df-b452-f170b256bb54"
+    },
+    "common_btn_bet_gg_2": {
+      "__uuid__": "e78de17a-48ea-4b1a-86c8-e14a1bb36d35"
+    },
+    "common_btn_shangzhuang": {
+      "__uuid__": "a74dd187-dc8d-46b5-a621-0c168dad85bf"
+    },
+    "common_btn_xiazhuang": {
+      "__uuid__": "36387abc-2d62-43ac-90c3-c0446f5728ab"
+    },
+    "common_btn_bet_gg_1": {
+      "__uuid__": "a57d0aeb-5900-4f03-84b6-e6ee21e0c9a2"
+    },
+    "common_btn_bet0": {
+      "__uuid__": "68de9ade-4b1d-4428-a0cb-514a21f5f3c2"
+    },
+    "common_btn_shezhi_2": {
+      "__uuid__": "f4e6ba9c-0cbf-4f0c-b7b2-e7aeab2c4365"
+    },
+    "common_btn_bet1": {
+      "__uuid__": "899bb5cc-449b-443b-93db-c5d362c5b0ae"
+    }
+  }
+}

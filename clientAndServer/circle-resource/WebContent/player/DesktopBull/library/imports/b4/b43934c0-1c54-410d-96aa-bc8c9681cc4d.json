@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "platform_lose_tex",
+    "texture": "b9ce70c0-2692-4a09-a2ae-92caf032ad0d",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      1954,
+      1250
+    ],
+    "offset": [
+      -46,
+      398
+    ],
+    "originalSize": [
+      2048,
+      2048
+    ]
+  }
+}

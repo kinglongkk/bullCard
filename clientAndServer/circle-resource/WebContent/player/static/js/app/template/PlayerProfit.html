@@ -1,0 +1,23 @@
+<div class="earnings"><!--盈利榜-->
+    <ul>
+        {{if ~dataIsEmpty(code)}}
+        {{for data}}
+            <li>
+                <div class="earnings_NO">{{medalChange:(#getIndex()+1)}}</div>
+                <div class="list_info">{{listHeadIcon:avatarurl}}
+                    <span class="list_name">{{hidePartUserName:username}}</span>
+                    <span class="list_money">
+                        {{if profitamount}}
+                            {{moneyFormat:profitamount}}
+                        {{else}}
+                            本周暂无战绩
+                        {{/if}}
+                    </span>
+                </div>
+            </li>
+        {{/for}}
+        {{else}}
+        <div class="Dialog_font_center">{{:msg}}</div>
+        {{/if}}
+    </ul>
+</div>

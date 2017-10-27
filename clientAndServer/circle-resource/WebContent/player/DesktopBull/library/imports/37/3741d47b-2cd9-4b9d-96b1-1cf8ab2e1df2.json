@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "Scene_Classic_dibang",
+    "texture": "2e975af8-e80e-4655-8d92-bb1cde8fd8dd",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      284,
+      229
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      284,
+      229
+    ]
+  }
+}

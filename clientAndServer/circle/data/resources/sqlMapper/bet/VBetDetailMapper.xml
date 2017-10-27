@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.bet.VBetDetailMapper">
+
+    <resultMap id="v_bet_detail" type="g.model.bet.po.VBetDetail">
+        <id column="id" property="id"/>
+        <result column="match_id" property="matchId"/>
+        <result column="bet_id" property="betId"/>
+        <result column="bet_team" property="betTeam"/>
+        <result column="point" property="point"/>
+        <result column="bet_type" property="betType"/>
+        <result column="bet_team_type" property="betTeamType"/>
+        <result column="ior_field" property="iorField"/>
+        <result column="ratio" property="ratio"/>
+        <result column="host_score" property="hostScore"/>
+        <result column="client_score" property="clientScore"/>
+        <result column="code" property="code"/>
+        <result column="game_id" property="gameId" />
+        <result column="game_name" property="gameName" />
+        <result column="game_model_id" property="gameModelId" />
+        <result column="game_model_name" property="gameModelName"/>
+        <result column="game_room_id" property="gameRoomId" />
+        <result column="room_name" property="roomName" />
+        <result column="game_type" property="gameType"/>
+        <result column="ball_type" property="ballType"/>
+        <result column="league_code" property="leagueCode"/>
+        <result column="host_code" property="hostCode"/>
+        <result column="client_code" property="clientCode"/>
+        <result column="begin_time" property="beginTime"/>
+        <result column="end_time" property="endTime"/>
+        <result column="cover_time" property="coverTime"/>
+        <result column="create_time" property="createTime"/>
+        <result column="gather_time" property="gatherTime"/>
+        <result column="result_gather_time" property="resultGatherTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="settle_status" property="settleStatus"/>
+        <result column="is_settling" property="isSettling"/>
+        <result column="is_resulted" property="isResulted"/>
+        <result column="is_cancel" property="isCancel"/>
+        <result column="gnum_h" property="gnumH"/>
+        <result column="gnum_c" property="gnumC"/>
+        <result column="strong" property="strong"/>
+        <result column="has_running_ball" property="hasRunningBall"/>
+        <result column="sys_user_id" property="sysUserId"/>
+        <result column="username" property="username" />
+        <result column="owner_id" property="ownerId" />
+        <result column="owner_username" property="ownerUsername" />
+        <result column="r_type" property="rtype"/>
+        <result column="bet_no" property="betNo"/>
+        <result column="order_type" property="orderType"/>
+        <result column="single_amount" property="singleAmount"/>
+        <result column="profit_amount" property="profitAmount"/>
+        <result column="effective_amount" property="effectiveAmount"/>
+        <result column="can_win" property="canWin"/>
+        <result column="status" property="status"/>
+        <result column="result" property="result"/>
+        <result column="is_deleted" property="isDeleted"/>
+        <result column="bet_time" property="betTime"/>
+        <result column="confirm_time" property="confirmTime"/>
+        <result column="settle_time" property="settleTime"/>
+        <result column="phase" property="phase"/>
+        <result column="bet_result" property="betResult"/>
+    </resultMap>
+
+    <!-- 查询游戏记录 -->
+    <select id="selectBetRecords" parameterType="map" resultType="map">
+        SELECT
+            detail.game_model_name AS gameModelName,
+            detail.game_room_id AS gameRoomId,
+            detail.room_name AS gameRoomName,
+            sum(detail.single_amount) AS singleAmount,
+            sum(detail.effective_amount) AS effectiveAmount,
+            sum(detail.profit_amount) AS profitAmount,
+            detail.confirm_time AS confirmTime
+        FROM
+            v_bet_detail detail
+        WHERE
+            ${where}
+        GROUP BY
+            detail.match_id,
+            detail.game_model_name,
+            detail.game_room_id,
+            detail.room_name,
+            confirmTime
+        ORDER BY
+            match_id
+        DESC
+        ${paging};
+    </select>
+
+    <!-- 分组查询总记录数 -->
+    <select id="selectBetTotalRecords" parameterType="map" resultType="int">
+        SELECT
+            count(record) AS totalRecords
+        FROM
+            (SELECT
+                detail.match_id
+            FROM
+                v_bet_detail detail
+            WHERE
+                ${where}
+            GROUP BY
+                detail.match_id
+            ORDER BY
+                match_id) AS
+        record;
+    </select>
+
+    <!-- 查询游戏记录 -->
+    <select id="selectPlayerBetRecords" parameterType="map" resultType="map">
+        SELECT
+            to_char(bet.confirm_time, 'HH24:MI') AS confirmTime,
+            model.name AS gameModelName,
+            room.name AS gameRoomName,
+            sum(bet.effective_amount) AS effectiveAmount,
+            sum(bet.profit_amount) AS profitAmount
+        FROM
+            bet bet,
+            bet_detail detail,
+            match match,
+            game_model model,
+            game_room room
+        WHERE
+            bet.confirm_time  &gt;= #{startTime} AND bet.confirm_time &lt; #{endTime}
+        AND
+            bet.settle_status = '20'
+        AND
+            bet.is_deleted = FALSE
+        AND
+            bet.sys_user_id = #{playerId}
+        AND
+            detail.bet_id = bet.id
+        AND
+            match.id = detail.match_id
+        AND
+            match.game_model_id = model.id
+        AND
+            match.game_room_id = room.id
+        GROUP BY
+            match.id,
+            bet.confirm_time,
+            model.name,
+            room.name
+        ORDER BY
+            bet.confirm_time
+        DESC
+        LIMIT
+          #{pageSize}
+        OFFSET
+          (#{pageNo} - 1) * #{pageSize};
+    </select>
+
+    <!-- 查询游戏记录 总记录数 -->
+    <select id="selectPlayerBetTotalRecords" parameterType="map" resultType="int">
+        SELECT
+            COUNT(total)
+        FROM
+            (SELECT
+                to_char(bet.confirm_time, 'HH24:MI') AS confirmTime,
+                model.name AS gameModelName,
+                room.name AS gameRoomName,
+                sum(bet.effective_amount) AS effectiveAmount,
+                sum(bet.profit_amount) AS profitAmount
+            FROM
+                bet bet,
+                bet_detail detail,
+                match match,
+                game_model model,
+                game_room room
+            WHERE
+                bet.confirm_time
+            BETWEEN
+                #{startTime}
+            AND
+                #{endTime}
+            AND
+                bet.settle_status = '20'
+            AND
+                bet.is_deleted = FALSE
+            AND
+                bet.sys_user_id = #{playerId}
+            AND
+                detail.bet_id = bet.id
+            AND
+                match.id = detail.match_id
+            AND
+                match.game_model_id = model.id
+            AND
+                match.game_room_id = room.id
+            GROUP BY
+                match.id,
+                bet.confirm_time,
+                model.name,
+                room.name
+            ORDER BY
+                bet.confirm_time
+            DESC) AS
+            total;
+    </select>
+
+    <!-- 玩家今日投注记录 分组 -->
+    <select id="selectCurrentReport" parameterType="map" resultMap="v_bet_detail">
+        SELECT
+            to_char(settle_time,'YYYY-MM-DD') AS settle_time,
+            owner_id,
+            owner_username,
+            sys_user_id,
+            username,
+            game_id,
+            game_name,
+            game_model_id,
+            game_model_name,
+            -1 * sum(profit_amount) AS profit_amount
+        FROM
+            v_bet_detail
+        WHERE
+            ${where}
+        GROUP BY
+            to_char(settle_time,'YYYY-MM-DD'),
+            owner_id,
+            owner_username,
+            sys_user_id,
+            username,
+            game_id,
+            game_name,
+            game_model_id,
+            game_model_name
+        ORDER BY
+            game_id,
+            game_model_id,
+            owner_id,
+            sys_user_id
+        ${paging};
+    </select>
+
+    <!-- 玩家今日投注记录 分组 总记录数-->
+    <select id="selectCurrentReportNumber" parameterType="map" resultType="int">
+        SELECT
+            COUNT(detail)
+        FROM
+            (SELECT
+                to_char(settle_time,'YYYY-MM-DD') AS settle_time,
+                owner_id,
+                owner_username,
+                sys_user_id,
+                username,
+                game_id,
+                game_name,
+                game_model_id,
+                game_model_name,
+                sum(profit_amount) AS profit_amount
+            FROM
+                v_bet_detail
+            WHERE
+                ${where}
+            AND
+                sys_user_id
+            NOT IN
+                (SELECT id FROM user_player WHERE is_ai = TRUE)
+            GROUP BY
+                to_char(settle_time,'YYYY-MM-DD'),
+                owner_id,
+                owner_username,
+                sys_user_id,
+                username,
+                game_id,
+                game_name,
+                game_model_id,
+                game_model_name) AS
+            detail;
+    </select>
+
+    <!-- 玩家今日投注记录 详细 -->
+    <select id="selectCurrentReportDetail" parameterType="map" resultMap="v_bet_detail">
+        SELECT
+            settle_time,
+            bet_time,
+            username,
+            game_name,
+            game_model_name,
+            room_name,
+            bet_no,
+            effective_amount,
+            -1 * profit_amount AS profit_amount
+        FROM
+            v_bet_detail
+        WHERE
+            ${where}
+        AND
+            sys_user_id
+        NOT IN
+            (SELECT id FROM user_player WHERE is_ai = TRUE)
+        ORDER BY
+            game_room_id,
+            bet_no
+        DESC
+        ${paging};
+    </select>
+
+    <!-- 玩家今日投注记录 详细 总记录数-->
+    <select id="selectCurrentReportDetailNumber" parameterType="map" resultType="int">
+        SELECT
+            COUNT(detail)
+        FROM
+            (SELECT
+                settle_time,
+                bet_time,
+                username,
+                game_name,
+                game_model_name,
+                room_name,
+                bet_no,
+                effective_amount,
+                profit_amount
+            FROM
+                v_bet_detail
+            WHERE
+                ${where}
+            AND
+                sys_user_id
+            NOT IN
+                (SELECT id FROM user_player WHERE is_ai = TRUE)
+            ) AS
+        detail;
+    </select>
+
+    <!-- 玩家今日投注记录 分组 导出报表数据 -->
+    <select id="selectCurrentReportExportData" parameterType="map" resultMap="v_bet_detail">
+        SELECT
+            to_char(settle_time,'YYYY-MM-DD') AS settle_time,
+            owner_id,
+            owner_username,
+            sys_user_id,
+            username,
+            game_id,
+            game_name,
+            game_model_id,
+            game_model_name,
+            -1 * sum(profit_amount) AS profit_amount
+        FROM
+            v_bet_detail
+        WHERE
+            ${where}
+        AND
+            sys_user_id
+        NOT IN
+            (SELECT id FROM user_player WHERE is_ai = TRUE)
+        GROUP BY
+            to_char(settle_time,'YYYY-MM-DD'),
+            owner_id,
+            owner_username,
+            sys_user_id,
+            username,
+            game_id,
+            game_name,
+            game_model_id,
+            game_model_name
+        ORDER BY
+            game_id,
+            game_model_id,
+            owner_id,
+            sys_user_id;
+    </select>
+
+    <!-- 玩家今日投注记录 详细 导出报表数据 -->
+    <select id="selectCurrentReportDetailExportData" parameterType="map" resultMap="v_bet_detail">
+        SELECT
+            settle_time,
+            bet_time,
+            username,
+            game_name,
+            game_model_name,
+            room_name,
+            bet_no,
+            effective_amount,
+            -1 * profit_amount AS profit_amount
+        FROM
+            v_bet_detail
+        WHERE
+            ${where}
+        AND
+            sys_user_id
+        NOT IN
+            (SELECT id FROM user_player WHERE is_ai = TRUE)
+        ORDER BY
+            game_room_id,
+            bet_no
+        DESC;
+    </select>
+
+    <!-- 查询赛事最后的结算时间 -->
+    <select id="selectLastConfirmTime" resultType="map">
+        SELECT
+            confirm_time AS confirmTime
+        FROM
+            v_bet_detail
+        WHERE
+            id = (SELECT max(id) FROM v_bet_detail);
+    </select>
+</mapper>

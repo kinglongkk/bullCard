@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "common_icon_accounts",
+    "texture": "335a9014-0669-46fc-9a54-b64e1aee869f",
+    "atlas": "",
+    "rect": [
+      1,
+      4,
+      54,
+      56
+    ],
+    "offset": [
+      0.5,
+      -2
+    ],
+    "originalSize": [
+      55,
+      60
+    ]
+  }
+}

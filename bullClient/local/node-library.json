@@ -1,0 +1,39 @@
+{
+  "user": {
+    "classify": [
+      {
+        "name": "Default",
+        "prefab": [
+          {
+            "name": "Prefab_multipleButton",
+            "uuid": "4b5b5bb5-aeaf-4c86-9a95-9eb8a02ddc12"
+          },
+          {
+            "name": "Prefab_goldValue",
+            "uuid": "4932dc25-3232-404c-9f62-deec3e35aa7f"
+          },
+          {
+            "name": "prefab_system",
+            "uuid": "6a39f387-bca0-4faf-adcd-beeea93c72c2"
+          },
+          {
+            "name": "prefab_noticeTip",
+            "uuid": "e8fa1cc9-0c3d-4dd3-a318-caef06449dc3"
+          },
+          {
+            "name": "Prefab_dialog_title",
+            "uuid": "ad98efc4-8688-4ce4-b043-b266d5464b3c"
+          },
+          {
+            "name": "prefab_headNode",
+            "uuid": "2ff56ce3-b270-4ab6-aea4-6c34c4668d27"
+          }
+        ],
+        "title": ""
+      }
+    ],
+    "modify": true,
+    "name": "user",
+    "title": "自定义控件"
+  }
+}

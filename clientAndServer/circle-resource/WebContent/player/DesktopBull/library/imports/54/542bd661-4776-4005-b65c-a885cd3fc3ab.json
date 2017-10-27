@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "common_text_zhangmu",
+    "texture": "7c31975d-6475-42e2-9a10-fc60cd11ab30",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      68,
+      39
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      68,
+      39
+    ]
+  }
+}

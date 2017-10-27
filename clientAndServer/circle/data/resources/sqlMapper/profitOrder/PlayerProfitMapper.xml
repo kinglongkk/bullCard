@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.profitOrder.PlayerProfitMapper">
+
+    <resultMap id="TABLE:player_profit" type="g.model.profitOrder.po.PlayerProfit">
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="profit_amount" property="profitAmount"/>
+        <result column="gather_time" property="gatherTime"/>
+        <result column="game_id" property="gameId"/>
+    </resultMap>
+
+    <!-- 将过期的盈利榜数据清除 -->
+    <delete id="deleteExpiredData" parameterType="map">
+        DELETE FROM
+            player_profit
+        WHERE
+            gather_time &lt; #{endDay};
+    </delete>
+
+    <!-- 每日统计 玩家盈利榜 -->
+    <select id="playerProfitOrder" statementType="CALLABLE" parameterType="map" resultType="boolean">
+        {call player_profit_order(
+            #{endtime, jdbcType=TIMESTAMP, mode=IN})
+        }
+    </select>
+
+    <!-- 查询玩家盈利榜 -->
+    <select id="selectPlayerProfitOrder" parameterType="map" resultType="map">
+         SELECT
+            sysUser.nickname,
+            sysUser.avatar_url AS avatarUrl,
+            profit.profitAmount
+        FROM
+            (
+                SELECT
+                    user_id,
+                    sum(profit_amount) AS profitAmount
+                FROM
+                    player_profit
+                GROUP BY
+                user_id
+            )  AS profit
+            left JOIN sys_user sysUser
+                ON
+                    profit.user_id = sysUser.id
+        GROUP BY
+            sysUser.id,
+            nickname,
+            avatarUrl,
+						profit.profitAmount
+        ORDER BY
+            profitAmount DESC
+        LIMIT
+            #{pageSize}
+        OFFSET
+            (#{pageNo} - 1) * #{pageSize};
+    </select>
+
+</mapper>

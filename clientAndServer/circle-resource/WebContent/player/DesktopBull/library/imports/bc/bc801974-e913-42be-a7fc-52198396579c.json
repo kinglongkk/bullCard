@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "common_board_paizi",
+    "texture": "a7498ea8-6ae3-4664-9ce3-d7cf92e1c264",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      807,
+      122
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      807,
+      122
+    ]
+  }
+}

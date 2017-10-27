@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.gameroom.VGameRoomMapper">
+
+    <resultMap id="TABLE:v_game_room" type="g.model.gameroom.po.VGameRoom">
+        <id column="id" property="id"/>
+        <result column="game_id" property="gameId"/>
+        <result column="game_model_id" property="gameModelId"/>
+        <result column="name" property="name"/>
+        <result column="status" property="status"/>
+        <result column="description" property="description"/>
+        <result column="max_limit_player_number" property="maxLimitPlayerNumber"/>
+        <result column="min_limit_player_blance" property="minLimitPlayerBlance"/>
+        <result column="per_desk_seat_count" property="perDeskSeatCount"/>
+        <result column="is_build_in" property="isBuildIn"/>
+        <result column="jackpot_sum" property="jackpotSum"/>
+        <result column="max_limit_game_lose" property="maxLimitGameLose"/>
+        <result column="min_jackpot_limit" property="minJackpotLimit"/>
+        <result column="max_jackpot_limit" property="maxJackpotLimit"/>
+        <result column="gamename" property="gamename"/>
+        <result column="modelname" property="modelname"/>
+        <result column="bet_chip" property="betChip"/>
+        <result column="dealer_blance" property="dealerBlance"/>
+        <result column="dealer_blance_tip" property="dealerBlanceTip"/>
+        <result column="dealer_blance_quit" property="dealerBlanceQuit"/>
+        <result column="bet_times" property="betTimes"/>
+    </resultMap>
+
+    <select id="selectWinGameAmout" parameterType="map" resultType="g.model.gameroom.po.WinGameAmount">
+       select gr.id ,
+        sum((case when b.profit_amount > 0 then -profit_amount else b.effective_amount end ))  as winamount
+            from game_room gr
+            left join match m on gr.id = m.game_room_id and m.begin_time BETWEEN #{begintime} and #{endtime} and m.settle_status='20'
+            left join bet_detail bd on bd.match_id=m.id
+            left join bet b on b.id=bd.bet_id and (b.bet_time BETWEEN #{begintime} and #{endtime}) and b.settle_status='20'
+            where  gr.id in
+        <foreach item="item" index="index" collection="gameids"
+                 open="(" separator="," close=")">
+            #{item}
+        </foreach>
+            group by gr.id order by gr.id asc
+    </select>
+
+</mapper>

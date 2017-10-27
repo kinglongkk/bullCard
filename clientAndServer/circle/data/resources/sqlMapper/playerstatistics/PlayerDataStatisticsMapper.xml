@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.playerstatistics.PlayerDataStatisticsMapper">
+    <cache
+            eviction="FIFO"
+            flushInterval="60000"
+            size="512"
+            readOnly="true" />
+    <resultMap id="TABLE:player_data_statistics" type="g.model.playerstatistics.po.PlayerDataStatistics">
+        <id column="id" property="id"/>
+        <result column="sys_user_id" property="sysUserId"/>
+        <result column="username" property="username"/>
+        <result column="nickname" property="nickname"/>
+        <result column="owner_username" property="ownerUsername"/>
+        <result column="owner_nickname" property="ownerNickname"/>
+        <result column="game_id" property="gameId"/>
+        <result column="game_name" property="gameName"/>
+        <result column="game_model_id" property="gameModelId"/>
+        <result column="game_model_name" property="gameModelName"/>
+        <result column="room_id" property="roomId"/>
+        <result column="room_name" property="roomName"/>
+        <result column="bet_no" property="betNo"/>
+        <result column="bet_date" property="betDate"/>
+        <result column="single_amount" property="singleAmount"/>
+        <result column="effective_amount" property="effectiveAmount" />
+        <result column="profit_amount" property="profitAmount"/>
+        <result column="win_amount" property="winAmount"/>
+        <result column="status" property="status"/>
+        <result column="result" property="result"/>
+        <result column="bet_time" property="betTime"/>
+        <result column="confirm_time" property="confirmTime"/>
+        <result column="settle_time" property="settleTime"/>
+    </resultMap>
+
+    <!--//region your codes 1-->
+
+    <!-- 按代理统计 -->
+    <select id="selectAllAgentList" parameterType="map" resultType="g.model.playerstatistics.po.PlayerDataStatistics">
+        SELECT
+            bet_date,
+            owner_username,
+            game_id,
+            game_name,
+            game_model_id,
+            game_model_name,
+            SUM(win_amount) AS win_amount
+        FROM
+            player_data_statistics
+        WHERE
+            ${where}
+        GROUP BY
+            owner_username,
+            bet_date,
+            game_id,
+            game_name,
+            game_model_id,
+            game_model_name
+        ORDER BY
+            bet_date DESC,
+            owner_username,
+            game_id,
+            game_model_id
+        ${paging};
+    </select>
+
+    <!-- 按代理统计 总记录数 -->
+    <select id="selectAllAgentListNumber" parameterType="map" resultType="int">
+        SELECT
+            count(nubmer)
+        FROM
+            (SELECT
+                bet_date,
+                owner_username,
+                game_id,
+                game_model_id,
+                SUM(win_amount) AS win_amount
+            FROM
+                player_data_statistics
+            WHERE
+                ${where}
+            GROUP BY
+                owner_username,
+                bet_date,
+                game_id,
+                game_model_id
+            ) AS
+        nubmer;
+    </select>
+
+    <!-- 按玩家统计 -->
+    <select id="selectOwnerPlayerList" parameterType="map" resultType="g.model.playerstatistics.po.PlayerDataStatistics">
+        SELECT
+            bet_date,
+            sys_user_id,
+            u.username AS username,
+            game_id,
+            game_name,
+            game_model_id,
+            game_model_name,
+            room_id,
+            room_name,
+            SUM(win_amount) AS win_amount
+        FROM
+            player_data_statistics p, sys_user u
+        WHERE
+            p.sys_user_id = u.id
+        AND
+            ${where}
+        GROUP BY
+            bet_date,
+            sys_user_id,
+            username,
+            game_id,
+            game_name,
+            game_model_id,
+            game_model_name,
+            room_id,
+            room_name
+        ORDER BY
+            bet_date,
+            username,
+            game_id,
+            game_model_id,
+            room_id
+        DESC
+        ${paging};
+    </select>
+
+    <!-- 按玩家统计 总记录数 -->
+    <select id="selectOwnerPlayerListNumber" parameterType="map" resultType="int">
+        SELECT
+            count(nubmer)
+        FROM
+            (SELECT
+                bet_date,
+                u.username AS username,
+                game_id,
+                game_model_id,
+                room_id,
+                SUM(win_amount) AS win_amount
+            FROM
+                player_data_statistics p, sys_user u
+            WHERE
+                p.sys_user_id = u.id
+            AND
+                ${where}
+            GROUP BY
+                bet_date,
+                username,
+                game_id,
+                game_model_id,
+                room_id
+            ) AS
+        nubmer;
+    </select>
+
+    <!-- 按游戏统计 -->
+    <select id="selectAllGameList" parameterType="map" resultType="g.model.playerstatistics.po.PlayerDataStatistics">
+        SELECT
+            bet_date,
+            owner_username,
+            u.username AS username,
+            sys_user_id,
+            game_id,
+            game_name,
+            game_model_id,
+            game_model_name,
+            SUM(win_amount) AS win_amount
+        FROM
+            player_data_statistics p, sys_user u
+        WHERE
+            p.sys_user_id = u.id
+        AND
+            ${where}
+        GROUP BY
+            game_id,
+            game_name,
+            owner_username,
+            username,
+            sys_user_id,
+            bet_date,
+            game_model_id,
+            game_model_name
+        ORDER BY
+            bet_date DESC,
+            owner_username,
+            game_id,
+            game_model_id,
+            username
+        ${paging};
+    </select>
+
+    <!-- 按游戏统计 总记录数 -->
+    <select id="selectAllGameListNumber" parameterType="map" resultType="int">
+        SELECT
+            count(nubmer)
+        FROM
+            (SELECT
+                bet_date,
+                owner_username,
+                u.username AS username,
+                sys_user_id,
+                game_id,
+                game_name,
+                game_model_id,
+                game_model_name,
+                SUM(win_amount) AS win_amount
+            FROM
+                player_data_statistics p, sys_user u
+            WHERE
+                p.sys_user_id = u.id
+            AND
+                ${where}
+            GROUP BY
+                game_id,
+                game_name,
+                owner_username,
+                username,
+                sys_user_id,
+                bet_date,
+                game_model_id,
+                game_model_name
+            ) AS
+        nubmer;
+    </select>
+
+    <!-- 按代理统计 导出报表数据 -->
+    <select id="selectAllAgentExportData" parameterType="map" resultType="g.model.playerstatistics.po.PlayerDataStatistics">
+        SELECT
+            bet_date,
+            owner_username,
+            game_id,
+            game_name,
+            game_model_id,
+            game_model_name,
+            SUM(win_amount) AS win_amount
+        FROM
+            player_data_statistics p, sys_user u
+        WHERE
+            p.sys_user_id = u.id
+        AND
+            ${where}
+        GROUP BY
+            owner_username,
+            bet_date,
+            game_id,
+            game_name,
+            game_model_id,
+            game_model_name
+        ORDER BY
+            bet_date DESC,
+            owner_username,
+            game_id,
+            game_model_id;
+    </select>
+
+    <!-- 按玩家统计 导出报表数据 -->
+    <select id="selectOwnerPlayerExportData" parameterType="map" resultType="g.model.playerstatistics.po.PlayerDataStatistics">
+        SELECT
+            bet_date,
+            u.username AS username,
+            game_id,
+            game_name,
+            game_model_id,
+            game_model_name,
+            room_id,
+            room_name,
+            SUM(win_amount) AS win_amount
+        FROM
+            player_data_statistics p, sys_user u
+        WHERE
+            p.sys_user_id = u.id
+        AND
+            ${where}
+        GROUP BY
+            bet_date,
+            username,
+            game_id,
+            game_name,
+            game_model_id,
+            game_model_name,
+            room_id,
+            room_name
+        ORDER BY
+            bet_date,
+            username,
+            game_id,
+            game_model_id,
+            room_id
+        DESC;
+    </select>
+
+    <!-- 按游戏统计 导出报表数据 -->
+    <select id="selectAllGameExportData" parameterType="map" resultType="g.model.playerstatistics.po.PlayerDataStatistics">
+        SELECT
+            bet_date,
+            owner_username,
+            u.username AS username,
+            game_id,
+            game_name,
+            game_model_id,
+            game_model_name,
+            SUM(win_amount) AS win_amount
+        FROM
+            player_data_statistics p, sys_user u
+        WHERE
+            p.sys_user_id = u.id
+        AND
+            ${where}
+        GROUP BY
+            game_id,
+            game_name,
+            owner_username,
+            username,
+            bet_date,
+            game_model_id,
+            game_model_name
+        ORDER BY
+            bet_date DESC,
+            owner_username,
+            game_id,
+            game_model_id,
+            username;
+    </select>
+
+    <!-- 按玩家、游戏详细 导出报表数据 -->
+    <select id="selectPlayerOrGameDetailExportData" parameterType="map" resultType="g.model.playerstatistics.po.PlayerDataStatistics">
+        SELECT
+            settle_time,
+            u.username AS username,
+            game_name,
+            game_model_name,
+            room_name,
+            bet_no,
+            bet_time,
+            effective_amount,
+            profit_amount,
+            win_amount
+        FROM
+            player_data_statistics p, sys_user u
+        WHERE
+            p.sys_user_id = u.id
+        AND
+            ${where}
+        ORDER BY
+            settle_time
+        DESC;
+    </select>
+    <!--//endregion your codes 1-->
+
+    <!-- 调用存储过程统计玩家盈亏明细 -->
+    <select id="playerDataStatisticsCall" statementType="CALLABLE" resultType="boolean">
+        {call player_data_statistics()}
+    </select>
+
+    <select id="reportSearchAll" parameterType="map" resultType="g.model.playerstatistics.po.PlayerDataStatistics">
+        select bet_date,sum(win_amount) as win_amount,owner_username from player_data_statistics where
+        bet_date BETWEEN #{beginTime} and #{endTime}
+        <!--分割-->
+        <if test="ownerName!=null and ownerName!=''">
+             and owner_username in
+            <foreach item="item" index="index" collection="ownerName"
+                     open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+            group by bet_date,owner_username
+    </select>
+
+
+    <select id="getJackpotMatch" resultType="g.model.playerstatistics.po.JackpotMatch" parameterType="map" >
+         select * from(
+         select b.*,g.name as gameroomname,g.jackpot,g.jackpot_overflow from (
+        select m.id,m.begin_time,m.end_time,sum(b.profit_amount) as profitAmount,sum( (case when b.profit_amount >0 then b.effective_amount else 0 end)*bd.point*0.02 ) as pumpingamount ,m.game_room_id
+        from match m
+        left join bet_detail bd on m.id=bd.match_id
+        left join bet b on b.id=bd.bet_id and (b.bet_time BETWEEN #{startTime} and #{outTime}) and b.sys_user_id=#{sysuserid}
+        where m.begin_time BETWEEN #{startTime} and #{outTime} and m.settle_status='20' and profit_amount is not null
+        and m.game_id=#{gameid} and m.game_model_id=#{gamemodelid}
+        group by m.id
+        ) as b
+        left join game_room g on b.game_room_id=g.id
+        ) as cc
+        where
+           ${where}
+           ${paging};
+    </select>
+    <select id="jackpotTotalRecords" parameterType="map" resultType="int">
+      select count(*) from(
+         select b.*,g.name as gameroomname,g.jackpot,g.jackpot_overflow from (
+        select m.id,m.begin_time,m.end_time,sum(b.profit_amount),sum( (case when b.profit_amount >0 then b.effective_amount else 0 end)*bd.point*0.02 ) as pumpingamount ,m.game_room_id
+        from match m
+        left join bet_detail bd on m.id=bd.match_id
+        left join bet b on b.id=bd.bet_id and (b.bet_time BETWEEN #{startTime} and #{outTime}) and b.sys_user_id=#{sysuserid}
+        where m.begin_time BETWEEN #{startTime} and #{outTime} and m.settle_status='20' and profit_amount is not null
+        and m.game_id=#{gameid} and m.game_model_id=#{gamemodelid}
+        group by m.id
+        ) as b
+        left join game_room g on b.game_room_id=g.id
+        ) as cc
+        where
+           ${where}
+    </select>
+
+    <select id="getJackpotPlayer" resultType="g.model.playerstatistics.po.JackpotPlayer" parameterType="map" >
+       select * from profit_execute_id where id=0;
+    </select>
+    <select id="jackpotPlayerTotalRecords" parameterType="map" resultType="int">
+        select count(id) from profit_execute_id where id=0
+    </select>
+
+    <select id="jackpotBet" resultType="g.model.warning.po.VWarningPlayerDetail"  parameterType="map" >
+
+        SELECT b.id,
+        b.sys_user_id,
+        bd.match_id,
+        b.bet_time,
+        s.username,
+        g.name AS gamename,
+        gm.name AS gamemodelname,
+        gr.name AS gameroomname,
+        b.bet_no,
+        b.single_amount,
+        b.profit_amount,
+        b.effective_amount,
+        m.settle_status,
+        (case when b.profit_amount > 0 then (b.effective_amount*bd.point*0.02) else 0 end ) as pumpingamount
+       FROM match m
+         LEFT JOIN bet_detail bd ON bd.match_id = m.id
+         LEFT JOIN bet b ON b.id = bd.bet_id
+         LEFT JOIN sys_user s ON b.sys_user_id = s.id
+         LEFT JOIN game g ON g.id = m.game_id
+         LEFT JOIN game_model gm ON gm.id = m.game_model_id
+         LEFT JOIN game_room gr ON m.game_room_id = gr.id
+        where
+         ${where}
+        ${paging};
+    </select>
+    <select id="jackpotTotalBet" resultType="int"  parameterType="map" >
+ select count(*) from (
+        SELECT b.id,
+        b.sys_user_id,
+        bd.match_id,
+        b.bet_time,
+        s.username,
+        g.name AS gamename,
+        gm.name AS gamemodelname,
+        gr.name AS gameroomname,
+        b.bet_no,
+        b.single_amount,
+        b.profit_amount,
+        b.effective_amount,
+        m.settle_status,
+        (case when b.profit_amount > 0 then (b.effective_amount*bd.point*0.02) else 0 end ) as pumpingamount
+        FROM match m
+        LEFT JOIN bet_detail bd ON bd.match_id = m.id
+        LEFT JOIN bet b ON b.id = bd.bet_id
+        LEFT JOIN sys_user s ON b.sys_user_id = s.id
+        LEFT JOIN game g ON g.id = m.game_id
+        LEFT JOIN game_model gm ON gm.id = m.game_model_id
+        LEFT JOIN game_room gr ON m.game_room_id = gr.id
+        ) as bb
+        where ${where}
+    </select>
+
+
+    <select id="playerDataStatisticsReport" parameterType="map" resultType="g.model.playerstatistics.po.PlayerDataStatisticsReport">
+        select * from player_data_statistics_report where
+        date BETWEEN #{beginTime} and #{endTime}
+        <!--分割-->
+        <if test="ownerName!=null and ownerName!=''">
+            and agent_username in
+            <foreach item="item" index="index" collection="ownerName"
+                     open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+    </select>
+
+
+    <!-- 每日统计 代理商盈亏 -->
+    <select id="dataStatisticsReport" statementType="CALLABLE" parameterType="map" resultType="boolean">
+        {call player_data_statistics_report(
+            #{endTime, jdbcType=TIMESTAMP, mode=IN})
+        }
+    </select>
+</mapper>

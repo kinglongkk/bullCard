@@ -1,0 +1,56 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>service</artifactId>
+        <groupId>go</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>service-admin</artifactId>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>go</groupId>
+            <artifactId>iservice-admin</artifactId>
+            <version>${circle.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>${project.build.name}</finalName>
+        <sourceDirectory>java</sourceDirectory>
+        <testResources>
+            <testResource>
+                <directory>test/resources</directory>
+            </testResource>
+        </testResources>
+        <resources>
+            <resource>
+                <directory>resources</directory>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <warSourceDirectory>WebContent</warSourceDirectory>
+                    <webResources>
+                        <resource>
+                            <directory>${basedir}/../config/common/${profile.env}</directory>
+                            <filtering>true</filtering>
+                            <targetPath>/WEB-INF/classes/conf/</targetPath>
+                        </resource>
+                        <resource>
+                            <directory>${basedir}/../config/service/${profile.env}</directory>
+                            <filtering>true</filtering>
+                            <targetPath>/WEB-INF/classes/conf/</targetPath>
+                        </resource>
+                    </webResources>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

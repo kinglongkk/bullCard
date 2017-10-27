@@ -1,0 +1,31 @@
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# Ignore all logfiles and tempfiles.
+
+.settings
+/*/.settings
+/*/.settings/*
+
+target
+/*/target
+/*/target/*
+
+
+.svn
+.svn/*
+
+.idea
+.idea/*
+
+Thumbs.db
+
+*.out
+*.iml
+**/**/rebel.xml
+**/logs/*
+
+config/common/dev/dubbo-version-conf.properties
+
+/**/.project
+/**/.classpath

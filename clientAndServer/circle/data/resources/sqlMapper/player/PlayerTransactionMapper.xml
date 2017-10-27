@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.player.PlayerTransactionMapper">
+
+    <resultMap id="TABLE:player_transaction" type="g.model.player.po.PlayerTransaction">
+        <id column="id" property="id"/>
+        <result column="transaction_no" property="transactionNo"/>
+        <result column="transaction_type" property="transactionType"/>
+        <result column="transaction_money" property="transactionMoney"/>
+        <result column="balance" property="balance"/>
+        <result column="status" property="status"/>
+        <result column="player_id" property="playerId"/>
+        <result column="source_id" property="sourceId"/>
+        <result column="create_time" property="createTime"/>
+        <result column="completion_time" property="completionTime"/>
+        <result column="failure_reason" property="failureReason"/>
+        <result column="remark" property="remark"/>
+    </resultMap>
+
+    <!-- 修改玩家确认转账之后的信息 -->
+    <update id="entWalletBalance" parameterType="g.model.player.po.PlayerTransaction">
+        UPDATE
+            user_player
+        SET
+            <if test="transactionType == 'WITHDRAWALS'">
+                withdraw_count = withdraw_count + 1,
+                withdraw_total = withdraw_total - #{transactionMoney},
+                freezing_funds_balance = freezing_funds_balance + #{transactionMoney},
+            </if>
+            <if test="transactionType == 'DEPOSIT'">
+                recharge_count = recharge_count + 1,
+                recharge_total = recharge_total + #{transactionMoney},
+                freezing_funds_balance = freezing_funds_balance - #{transactionMoney},
+            </if>
+            wallet_balance=wallet_balance+#{transactionMoney}
+        WHERE
+            id = #{playerId};
+    </update>
+
+    <!-- 修改玩家冻结资金 -->
+    <update id="updateFreezingFundsBalance" parameterType="map">
+        UPDATE
+            user_player
+        SET
+            freezing_funds_balance = freezing_funds_balance + abs(#{transactionMoney})
+        WHERE
+            id = #{playerId};
+    </update>
+
+    <!-- 预取款、存款 -->
+    <insert id="insertPlayerTransaction" parameterType="g.model.player.po.PlayerTransaction" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO
+            "player_transaction"
+                (
+                    "transaction_no",
+                    "create_time",
+                    "transaction_type",
+                    "remark",
+                    "transaction_money",
+                    "balance",
+                    "status",
+                    "player_id",
+                    "failure_reason",
+                    "source_id",
+                    "completion_time"
+                )
+        SELECT
+            #{transactionNo},
+            #{createTime},
+            #{transactionType},
+            #{remark},
+            #{transactionMoney},
+            (
+                SELECT COALESCE
+                    (wallet_balance, 0)
+                FROM
+                    user_player
+                WHERE
+                    id = #{playerId}
+            ),
+            #{status},
+            #{playerId},
+            #{failureReason},
+            #{sourceId},
+            #{completionTime};
+    </insert>
+
+    <!-- 存款、取款成功 -->
+    <update id="updateTransaction" parameterType="g.model.player.po.PlayerTransaction">
+        UPDATE
+            player_transaction
+        SET
+            <if test = "status != null and status != ''">
+                status = #{status},
+            </if>
+            <if test = "completionTime != null">
+                completion_time = #{completionTime},
+            </if>
+            <if test = "remark != null">
+                remark = #{remark},
+            </if>
+            <if test = "failureReason != null and failureReason != ''">
+                failure_reason = #{failureReason},
+            </if>
+                balance =
+                    (
+                        SELECT COALESCE(user_player.wallet_balance, 0)
+                        FROM
+                            user_player
+                        WHERE
+                            user_player.id = player_transaction.player_id
+                    )
+        WHERE
+            id = #{id};
+    </update>
+
+    <!-- 更新玩家的最大充值金额 -->
+    <update id="updateRechargeMaxAmount" parameterType="map">
+        UPDATE
+            user_player
+        SET
+            recharge_max_amount = #{transactionMoney}
+        WHERE EXISTS
+            (
+                SELECT
+                    id
+                FROM
+                    user_player
+                WHERE
+                    id = #{playerId}
+                AND
+                    recharge_max_amount &lt; #{transactionMoney}
+            )
+        AND
+            id = #{playerId};
+    </update>
+
+    <!-- 玩家账目记录 -->
+    <select id="selectPlayerAccountRecord" parameterType="map" resultType="map">
+        SELECT
+            completion_time AS completionTime,
+            transaction_type AS transactionType,
+            transaction_money AS transactionMoney,
+            balance
+        FROM
+            player_transaction
+        WHERE
+            ${where}
+        ORDER BY
+            completion_time
+        DESC
+            ${paging};
+    </select>
+
+    <!-- 玩家账目总记录 -->
+    <select id="selectPlayerAccountRecordNumber" parameterType="map" resultType="int">
+        SELECT
+          count(player_transaction) AS totalRecord
+        FROM
+          (SELECT
+              completion_time AS completionTime,
+              transaction_type AS transactionType,
+              transaction_money AS transactionMoney,
+              balance
+          FROM
+              player_transaction
+          WHERE
+              ${where}
+          GROUP BY
+              completionTime,
+              transactionType,
+              transactionMoney,
+              balance)
+        AS player_transaction;
+    </select>
+
+    <!-- 修改订单信息 -->
+    <update id="updatePlayerTransactionStatus" parameterType="g.model.player.po.PlayerTransaction">
+        UPDATE
+            player_transaction
+        SET
+            status = #{status},
+            failure_reason = #{failureReason}
+        WHERE
+            id = #{id};
+    </update>
+
+    <select id="selectByTransactionNo" parameterType="String" resultMap="TABLE:player_transaction">
+        SELECT
+            *
+        FROM
+            player_transaction
+        WHERE
+            transaction_no = #{0};
+    </select>
+</mapper>

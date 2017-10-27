@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+       default-autowire="byType">
+
+    <!-- 我的站点 -->
+    <bean id="sysSiteService" class="g.service.sys.SysSiteService" />
+    <!-- 用户银行卡 -->
+    <bean id="userBankcardService" class="g.service.player.UserBankcardService" />
+    <!-- 系统参数 -->
+    <bean id="sysParam" class="org.soul.service.sys.SysParamService"/>
+    <!--备注服务-->
+    <bean id="remarkService" class="g.service.common.RemarkService"/>
+    <!-- 我的账号服务 -->
+    <bean id="myAccountService" class="g.service.common.MyAccountService"/>
+    <!-- 联系方式视图 -->
+    <bean id="vSysUserContactService" class="g.service.common.VSysUserContactService"/>
+    <!-- 系统公告视图服务 -->
+    <bean id="vSystemAnnouncementService" class="g.service.common.VSysAnnouncementService"/>
+    <!-- 系统公告服务 -->
+    <bean id="sysAnnouncementService" class="g.service.common.SysAnnouncementService"/>
+    <!-- 游戏公告视图服务 -->
+    <bean id="vGameAnnouncementService" class="g.service.announcement.VGameAnnounncementService"/>
+    <!-- 游戏公告服务 -->
+    <bean id="gameAnnouncementService" class="g.service.announcement.GameAnnouncementService"/>
+    <!-- 游戏房间配置服务 -->
+    <bean id="gameRoomConfigBull100Service" class="g.service.admin.gameroomconfig.GameRoomConfigBull100Service"/>
+    <!-- 百人大战房间配置服务 -->
+    <bean id="vRoomBull100Service" class="g.service.admin.gamebull100room.VRoomBull100Service"/>
+    <!-- 系统公告I18n服务 -->
+    <bean id="sysAnnouncementI18nService" class="g.service.common.SysAnnouncementI18nService"/>
+    <!-- 系统公告是否已读服务 -->
+    <bean id="sysAnnouncementReadService" class="g.service.common.SysAnnouncementReadService"/>
+    <!-- vSysUser视图服务 -->
+    <bean id="vSysUserService" class="g.service.common.VSysUserService"/>
+    <!-- 偏好设置-->
+    <bean id="preferenceService" class="g.service.common.PreferenceService"/>
+
+
+    <!-- 盈利榜配置 -->
+    <bean id="profitService" class="g.service.profitOrder.PlayerProfitService" />
+    <!-- 玩家盈亏设置 -->
+    <bean id="playerProfitAndLossService" class="g.service.profitandloss.PlayerProfitAndLossService" />
+    <!-- game配置 -->
+    <bean id="gameService" class="g.service.game.GameService" />
+    <!-- gameModel配置 -->
+    <bean id="gameModelService" class="g.service.gamemodel.GameModelService" />
+    <!-- gameRoom配置 -->
+    <bean id="gameRoomService" class="g.service.gameroom.GameRoomService" />
+    <bean id="vRoomService" class="g.service.room.VRoomService" />
+    <!-- gameSetting 游戏声音配置 -->
+    <bean id="sysUserSetService" class="g.service.gameSetting.SysUserSetService" />
+
+    <!-- activityMessage配置 -->
+    <bean id="activityMessageService" class="g.service.activitymessage.ActivityMessageService" />
+    <!-- activityRule配置 -->
+    <bean id="activityRuleService" class="g.service.activitymessage.ActivityRuleService" />
+    <!-- activityWayRelation配置 -->
+    <bean id="activityWayRelationService" class="g.service.activitymessage.ActivityWayRelationService" />
+    <!-- activityPlayerApply配置 -->
+    <bean id="activityPlayerApplyService" class="g.service.activityapply.ActivityPlayerApplyService" />
+
+    <!--日志服务-->
+    <bean id="auditLogService" class="g.service.common.AuditLogService"/>
+    <!--玩家交易服务-->
+    <bean id="playerTransactionService" class="g.service.common.PlayerTransactionService"/>
+    <bean id="transferService" class="g.service.player.PlayerTransferService" />
+
+    <!-- 商户信息 -->
+    <bean id="userAgentService" class="g.service.admin.agent.message.UserAgentService" />
+    <!-- 货币汇率 -->
+    <bean id="agentCurrencyExchangeService" class="g.service.admin.agent.currency.AgentCurrencyExchangeService" />
+    <!-- 额度日志 -->
+    <bean id="agentQuotaTransactionService" class="g.service.admin.agent.quota.transaction.AgentQuotaTransactionService" />
+    <!-- 代理游戏 -->
+    <bean id="agentGameService" class="g.service.admin.agent.game.UserAgentGameService" />
+    <!-- 额度管理 -->
+    <bean id="agentQuotaService" class="g.service.admin.agent.quota.manager.VAgentQuotaService" />
+    <!-- 额度流水消耗 -->
+    <bean id="agentQuotaStatisticsService" class="g.service.admin.agent.quota.statistics.AgentQuotaStatisticsService" />
+    <!-- 代理游戏视图 -->
+    <bean id="vAgentGameService" class="g.service.admin.agent.gameview.VAgentGameService" />
+    <!-- 代理额度日志管理 -->
+    <bean id="userAgentManagerService" class="g.service.admin.agent.message.UserAgentManagerService" />
+
+    <!--通行证-->
+    <bean  id="passportService" class="g.service.common.PassportService"/>
+
+
+    <!--日志拦截器-->
+    <bean  id="auditLogServiceInterceptor" class="g.service.common.interceptor.AuditLogServiceInterceptor">
+        <property name="auditService" ref="auditService"/>
+        <property name="sysAuditLogService" ref="sysAuditLogService"/>
+    </bean>
+
+    <!--审计日志服务-->
+    <bean  id="auditService" class="org.soul.service.log.audit.AuditService"/>
+
+    <!--审计日志表服务-->
+    <bean  id="sysAuditLogService" class="org.soul.service.sys.SysAuditLogService" />
+
+    <!--会员扩展信息-->
+    <bean id="userPlayerService" class="g.service.common.UserPlayerService"/>
+
+    <bean id="vSubAccountService" class="g.service.common.VSubAccountService"/>
+
+
+    <!--管理分组视图-->
+    <bean id="vUserPlayerGroupService" class="g.service.common.VUserPlayerGroupService"/>
+
+    <!--管理分组-->
+    <bean id="userPlayerGroupService" class="g.service.common.UserPlayerGroupService"/>
+
+    <!--收款帐户-->
+    <bean id="payAccountService" class="g.service.payaccount.PayAccountService"/>
+    <bean id="playerRechargeService" class="g.service.depositdesk.PlayerRechargeService"/>
+    <bean id="vPlayerRechargeService" class="g.service.depositdesk.VPlayerRechargeService"/>
+
+
+    <bean id="reportCqsscService" class="g.service.report.ReportCqsscService"/>
+    <bean id="onlinePayService" class="org.soul.service.pay.OnlinePayService"/>
+
+    <!--注单详情-->
+    <bean id="vBetDetailService" class="g.service.bet.VBetDetailService"/>
+
+    <!-- 银行 -->
+    <bean id="bankService" class="g.service.payaccount.BankService"/>
+
+    <!-- 历史赛事-半全场 -->
+    <bean id="vPayAccountService" class="g.service.payaccount.VPayAccountService"/>
+
+    <!--玩家统计-->
+    <bean id="playerSummeryService" class="g.service.playerstatistics.PlayerSummeryService"/>
+    <!--玩家数据统计-->
+    <bean id="playerDataStatisticsService" class="g.service.playerstatistics.PlayerDataStatisticsService"/>
+
+    <!--玩家实时统计盈亏-->
+    <bean id="agentDateActualService" class="g.service.playerstatistics.AgentDateActualService"/>
+    <!-- 用户昵称 -->
+    <bean id="userNicknameService" class="g.service.admin.nickname.UserNicknameService" />
+    <!-- 用户头像 -->
+    <bean id="urlService" class="g.service.avatarurl.UserAvatarUrlService" />
+    <!--游戏房间监控-->
+    <bean id="vgameRoomService" class="g.service.gameroom.VGameRoomService"/>
+
+    <!--AI玩家基础设置-->
+    <bean id="playerAiRatioControlService" class="g.service.gameroom.PlayerAiRatioControlService"/>
+    <!--AI玩家调控设置-->
+    <bean id="playerAiControlService" class="g.service.gameroom.PlayerAiControlService"/>
+    <!--玩家预警设置-->
+    <bean id="playerWarningControlService" class="g.service.warning.PlayerWarningControlService"/>
+    <!--玩家赢得倍数比预警-->
+    <bean id="playerWarningMultipleService" class="g.service.warning.PlayerWarningMultipleService"/>
+    <!--连续派彩预警-->
+    <bean id="playerWarningWinCountService" class="g.service.warning.PlayerWarningWinCountService"/>
+    <!--预警详情-->
+    <bean id="vmarningPlayerDetailService" class="g.service.warning.VWarningPlayerDetailService"/>
+    <!--预警充值记录-->
+    <bean id="vwarningTransactionService" class="g.service.warning.VWarningTransactionService"/>
+</beans>

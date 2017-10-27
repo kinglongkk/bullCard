@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd"
+       default-autowire="byType">
+
+    <!-- Common begin-->
+    <import resource="classpath*:conf/soul-commons.xml" />
+    <!-- Common end-->
+
+    <!-- Data begin-->
+    <import resource="classpath*:conf/data-appCtx.xml"/>
+    <import resource="classpath*:conf/data-dao.xml"/>
+    <!-- Data end-->
+
+    <!-- soul service begin-->
+    <import resource="classpath*:conf/soul-service.xml"/>
+    <import resource="classpath*:conf/soul-service-sys.xml"/>
+    <import resource="classpath*:conf/soul-service-privilege.xml"/>
+    <import resource="classpath*:conf/soul-service-notice.xml"/>
+    <!-- soul service end-->
+
+    <!-- service begin-->
+    <import resource="classpath*:conf/service-biz-common.xml"/>
+    <import resource="classpath*:conf/service-biz-bet.xml"/>
+    <!-- service end-->
+
+    <!-- export begin -->
+    <import resource="classpath*:conf/service-biz-export-bean.xml"/>
+    <!-- export end -->
+
+</beans>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd"
+       default-autowire="byName">
+
+    <bean id="configLocationResource" class="org.springframework.core.io.ClassPathResource">
+        <constructor-arg value="conf/quartz.properties" type="java.lang.String"/>
+    </bean>
+
+    <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean" id="scheduler" >
+        <property name="schedulerName" value="quotaScheduler"/>
+        <property name="configLocation" ref="configLocationResource"/>
+        <property name="jobFactory">
+            <bean class="g.service.factory.AutowireSpringBeanJobFactory"/>
+        </property>
+
+        <property name="triggers">
+            <list>
+                <ref bean="quotaJobTrigger" />
+                <ref bean="quotaSumJobTrigger" />
+                <ref bean="quotaAgentActualJobTrigger" />
+                <ref bean="quotaPlayerSummeryJobTrigger" />
+                <ref bean="quotaPlayerDataStatisticsJobTrigger" />
+                <!--<ref bean="playerWarningMultipleJobTrigger" />-->
+                <!--<ref bean="playerWarningWinCountJobTrigger" />-->
+                <ref bean="profitAndLossJobTrigger" />
+                <ref bean="playerStatisticsReportJobTrigger" />
+            </list>
+        </property>
+    </bean>
+
+</beans>

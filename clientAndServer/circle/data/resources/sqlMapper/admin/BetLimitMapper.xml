@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.admin.BetLimitMapper">
+
+    <resultMap id="TABLE:bet_limit" type="g.model.admin.po.BetLimit">
+        <id column="id" property="id"/>
+        <result column="bet_type" property="betType"/>
+        <result column="r_type" property="rtype"/>
+        <result column="bet_min" property="betMin"/>
+        <result column="bet_max" property="betMax"/>
+        <result column="item_max" property="itemMax"/>
+        <result column="column_group_code" property="columnGroupCode"/>
+        <result column="schema_code" property="schemaCode"/>
+        <result column="order_num" property="orderNum"/>
+        <result column="create_user" property="createUser"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_user" property="updateUser"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <!--//region your codes 1-->
+
+    <select id="getSystemBetLimit" resultMap="TABLE:bet_limit">
+        select id,bet_min,bet_max,item_max,column_group_code from bet_limit where bet_type='R' and r_type is null and schema_code='99999999'
+        UNION ALL
+        select id,bet_min,bet_max,item_max,column_group_code from bet_limit where bet_type='R' and r_type='rb' and schema_code='99999999'
+        UNION ALL
+        select id,bet_min,bet_max,item_max,column_group_code from bet_limit where bet_type='M' and r_type is null and schema_code='99999999'
+        UNION ALL
+        select id,bet_min,bet_max,item_max,column_group_code from bet_limit where bet_type='QT' and r_type is null and schema_code='99999999'
+        UNION ALL
+        select id,bet_min,bet_max,item_max,column_group_code from bet_limit where bet_type='QT' and r_type='rb' and schema_code='99999999'
+        UNION ALL
+        select id,bet_min,bet_max,item_max,column_group_code from bet_limit where bet_type='fs'and schema_code='99999999'
+    </select>
+    
+    <!--<update id="updateBetMaxNumParam" parameterType="org.soul.model.sys.po.SysParam">
+        update sys_param set param_value=#{paramValue} where param_type='sys_bet_limit' and param_code='sys_win_max'
+    </update>-->
+    <!--//endregion your codes 1-->
+
+</mapper>

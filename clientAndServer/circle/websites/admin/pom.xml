@@ -1,0 +1,154 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <parent>
+        <artifactId>websites</artifactId>
+        <groupId>go</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>admin</artifactId>
+    <packaging>war</packaging>
+
+    <dependencies>
+          <!--game begin-->
+          <dependency>
+              <groupId>go</groupId>
+              <artifactId>service-admin</artifactId>
+              <version>${circle.version}</version>
+          </dependency>
+          <!--game end-->
+
+          <dependency>
+              <groupId>org.apache.geronimo.specs</groupId>
+              <artifactId>geronimo-servlet_3.0_spec</artifactId>
+              <scope>provided</scope>
+          </dependency>
+
+          <dependency>
+              <groupId>javax.servlet.jsp</groupId>
+              <artifactId>jsp-api</artifactId>
+          </dependency>
+
+          <dependency>
+              <groupId>org.springframework</groupId>
+              <artifactId>spring-aspects</artifactId>
+              <version>${springframework.version}</version>
+          </dependency>
+      </dependencies>
+
+      <build>
+          <finalName>${project.build.name}</finalName>
+          <sourceDirectory>java</sourceDirectory>
+          <testSourceDirectory>test/java</testSourceDirectory>
+          <testResources>
+              <testResource>
+                  <directory>test/resources</directory>
+              </testResource>
+          </testResources>
+          <resources>
+              <resource>
+                  <directory>resources</directory>
+              </resource>
+              <resource>
+                  <directory>${basedir}/../_i18n</directory>
+                  <targetPath>conf/i18n/</targetPath>
+              </resource>
+          </resources>
+          <plugins>
+              <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-war-plugin</artifactId>
+                  <version>2.6</version>
+                  <configuration>
+                      <warSourceDirectory>WebContent</warSourceDirectory>
+                      <webResources>
+                          <resource>
+                              <directory>${basedir}/../../../circle-resource/WebContent/common/js</directory>
+                              <targetPath>/common/js</targetPath>
+                          </resource>
+                          <resource>
+                              <directory>${basedir}/../../../circle-resource/WebContent/common/fonts</directory>
+                              <targetPath>/common/fonts</targetPath>
+                          </resource>
+                          <resource>
+                              <directory>${basedir}/../../../circle-resource/WebContent/common/themes</directory>
+                              <targetPath>/common/themes</targetPath>
+                          </resource>
+                          <resource>
+                              <directory>${basedir}/../../../circle-resource/WebContent/common/images</directory>
+                              <targetPath>/common/images</targetPath>
+                          </resource>
+                          <resource>
+                              <directory>${basedir}/../../../circle-resource/WebContent/admin/musics</directory>
+                              <targetPath>/static/musics</targetPath>
+                          </resource>
+                          <resource>
+                              <directory>${basedir}/../../../circle-resource/WebContent/admin/js</directory>
+                              <targetPath>/static/js</targetPath>
+                          </resource>
+                          <resource>
+                              <directory>${basedir}/../../../circle-resource/WebContent/admin/themes</directory>
+                              <targetPath>/static/themes</targetPath>
+                          </resource>
+                          <resource>
+                              <directory>${basedir}/../../../circle-resource/WebContent/admin/images</directory>
+                              <targetPath>/static/images</targetPath>
+                          </resource>
+
+                          <resource>
+                              <directory>${basedir}/../../../circle-resource/WebContent/WEB-INF/tags</directory>
+                              <targetPath>/WEB-INF/tags</targetPath>
+                          </resource>
+
+                          <resource>
+                              <directory>${basedir}/../../config/common/${profile.env}</directory>
+                              <filtering>true</filtering>
+                              <targetPath>/WEB-INF/classes/conf</targetPath>
+                          </resource>
+                          <resource>
+                              <directory>${basedir}/../../config/service/${profile.env}</directory>
+                              <filtering>true</filtering>
+                              <targetPath>/WEB-INF/classes/conf</targetPath>
+                          </resource>
+                          <resource>
+                              <directory>${basedir}/../../config/web/${profile.env}</directory>
+                              <filtering>true</filtering>
+                              <targetPath>/WEB-INF/classes/conf</targetPath>
+                          </resource>
+
+                          <!--common include begin-->
+                          <resource>
+                              <directory>${basedir}/../../webcommon/WebContent/include</directory>
+                              <targetPath>/include</targetPath>
+                          </resource>
+                          <resource>
+                              <directory>${basedir}/../../webcommon/WebContent/errors</directory>
+                              <targetPath>/errors</targetPath>
+                          </resource>
+                          <resource>
+                              <directory>${basedir}/../../webcommon/WebContent/subaccount</directory>
+                              <targetPath>/subaccount</targetPath>
+                          </resource>
+                          <resource>
+                              <directory>${basedir}/../../webcommon/WebContent/privilege</directory>
+                              <targetPath>/privilege</targetPath>
+                          </resource>
+                          <resource>
+                              <directory>${basedir}/../../webcommon/WebContent/systemFeedBack</directory>
+                              <targetPath>/systemFeedBack</targetPath>
+                          </resource>
+                          <resource>
+                              <directory>${basedir}/../../webcommon/WebContent/passport</directory>
+                              <targetPath>/passport</targetPath>
+                          </resource>
+                          <!--common include end-->
+                      </webResources>
+                  </configuration>
+              </plugin>
+          </plugins>
+      </build>
+
+
+
+</project>

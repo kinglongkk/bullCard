@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.match.MatchResultMapper">
+
+    <resultMap id="TABLE:match_result" type="g.model.match.po.MatchResult">
+        <id column="id" property="id"/>
+        <result column="match_id" property="matchId"/>
+        <result column="item_type" property="itemType"/>
+        <result column="result" property="result"/>
+        <result column="type" property="type"/>
+        <result column="host" property="host"/>
+        <result column="client" property="client"/>
+        <result column="provider" property="provider"/>
+        <result column="create_time" property="createTime"/>
+        <result column="manual_time" property="manualTime"/>
+        <result column="manual_user_id" property="manualUserId"/>
+        <result column="outcome" property="outcome" />
+        <result column="sys_user_id" property="sysUserId" />
+        <result column="consequence" property="consequence" />
+    </resultMap>
+
+    <resultMap id="matchBetCount" type="g.model.match.po.MatchBetCount">
+        <result column="match_id" property="matchId"/>
+        <result column="ball_type" property="ballType"/>
+        <result column="phase" property="phase"/>
+        <result column="closeBet" property="closeBet"/>
+        <result column="unCloseBet" property="unCloseBet"/>
+        <result column="totalMoney" property="totalMoney"/>
+    </resultMap>
+
+
+
+    <!--//region your codes 1-->
+
+    <select id="countFtMatchBet" parameterType="g.model.match.so.MatchResultSo" resultMap="matchBetCount">
+        select m.id as match_id,m.ball_type,'h' as phase,
+        (select count(1) from bet b inner join bet_detail bd on b.id=bd.bet_id where bd.match_id=m.id and order_type!='40' and settle_status='20' and b.phase &lt;=45) as closeBet,
+        (select count(1) from bet b inner join bet_detail bd on b.id=bd.bet_id where bd.match_id=m.id and order_type!='40' and settle_status='10' and b.phase &lt;=45) as unCloseBet,
+        (select sum(single_amount) from bet b inner join bet_detail bd on b.id=bd.bet_id where bd.match_id=m.id and order_type!='40' and settle_status='10' and b.phase &lt;=45) as totalMoney
+        from match m where m.id=#{matchId}
+        union ALL
+        select m.id as match_id,m.ball_type,'f' as phase,
+        (select count(1) from bet b inner join bet_detail bd on b.id=bd.bet_id where bd.match_id=m.id and order_type!='40' and settle_status='20' and b.phase &gt;=45) as closeBet,
+        (select count(1) from bet b inner join bet_detail bd on b.id=bd.bet_id where bd.match_id=m.id and order_type!='40' and settle_status='10' and b.phase &gt;=45) as unCloseBet,
+        (select sum(single_amount) from bet b inner join bet_detail bd on b.id=bd.bet_id where bd.match_id=m.id and order_type!='40' and settle_status='10' and b.phase &gt;=45) as totalMoney
+        from match m where m.id=#{matchId}
+    </select>
+
+    <select id="queryFtMatchResult" parameterType="g.model.match.so.MatchResultSo" resultType="g.model.match.po.MatchResultInfo">
+        select m.id as match_id,hmr.host as hhost,hmr.client as hclient,mr.host as fhost,mr.client as fclient
+        from match m
+        inner join (select match_id,host,client from match_result where item_type='HGM') hmr on hmr.match_id=m.id
+        inner join (select match_id,host,client from match_result where item_type='GM') mr on mr.match_id=m.id
+        where m.id=#{matchId}
+    </select>
+
+
+    <select id="getMatchResult" parameterType="g.model.match.so.MatchResultSo" resultMap="resultMatch">
+    SELECT * FROM match_result r, match m where r.match_id=m.id AND m.begin_time>#{startTime} and #{endTime}>m.begin_time
+    </select>
+
+
+    <resultMap id="resultMatch" type="g.model.match.po.MatchResult">
+        <association property="match" column="match_id" select="selectMatch"/>
+    </resultMap>
+
+    <select id="selectMatch" parameterType="int" resultType="g.model.match.po.Match">
+        SELECT * FROM "match" WHERE ID = #{id}
+    </select>
+
+    <insert id="saveResultWhenNoResulted" parameterType="g.model.match.po.MatchResult">
+        INSERT INTO match_result (match_id, item_type, result, type, host, client, provider, create_time, manual_time, manual_user_id)
+        select #{matchId}, #{itemType}, #{result}, #{type}, #{host}, #{client}, #{provider}, now(), #{manualTime}, #{manualUserId}
+        from match WHERE id = #{matchId} and (is_resulted = FALSE or is_resulted is null);
+    </insert>
+
+    <select id="matchResultGroupMatchId" resultMap="betAndDetail">
+        SELECT DISTINCT(match_id) FROM match_result r, match m where r.match_id=m.id AND m.begin_time>#{startTime} and #{endTime}>m.begin_time
+    </select>
+
+    <!--//定义bet属性betDetailList的集合查询-->
+    <resultMap id="betAndDetail" type="g.model.match.po.MatchResult">
+        <collection property="matchResult" javaType="ArrayList" column="match_id" ofType="betDetail" select="selecDetailsFoBet"/>
+    </resultMap>
+
+    <select id="selecDetailsFoBet" parameterType="int" resultMap="resultMatch">
+        SELECT * FROM match_result WHERE match_id = #{id}
+    </select>
+
+    <select id="getMatchResultListByMatchId" parameterType="Long" resultType="g.model.match.po.MatchResult">
+        SELECT * FROM match_result where match_id=#{id}
+    </select>
+
+    <insert id="saveMatchResult" parameterType="g.model.match.po.MatchResult">
+        <![CDATA[
+            insert into match_result(match_id,item_type,host,client,outcome)
+            values(#{matchId},#{itemType},#{host},#{client},#{outcome})
+        ]]>
+    </insert>
+
+    <!--//endregion your codes 1-->
+
+</mapper>

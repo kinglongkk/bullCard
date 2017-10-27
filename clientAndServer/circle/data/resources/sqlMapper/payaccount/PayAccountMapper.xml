@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.payaccount.PayAccountMapper">
+
+    <resultMap id="TABLE:pay_account" type="g.model.payaccount.po.PayAccount">
+        <id column="id" property="id"/>
+        <result column="pay_name" property="payName"/>
+        <result column="account" property="account"/>
+        <result column="full_name" property="fullName"/>
+        <result column="disable_amount" property="disableAmount"/>
+        <result column="pay_key" property="payKey"/>
+        <result column="status" property="status"/>
+        <result column="create_time" property="createTime"/>
+        <result column="create_user" property="createUser"/>
+        <result column="type" property="type"/>
+        <result column="account_type" property="accountType"/>
+        <result column="bank_code" property="bankCode"/>
+        <result column="pay_url" property="payUrl"/>
+        <result column="code" property="code"/>
+        <result column="deposit_count" property="depositCount"/>
+        <result column="deposit_total" property="depositTotal"/>
+        <result column="deposit_default_count" property="depositDefaultCount"/>
+        <result column="deposit_default_total" property="depositDefaultTotal"/>
+        <result column="effective_minutes" property="effectiveMinutes"/>
+        <result column="single_deposit_min" property="singleDepositMin"/>
+        <result column="single_deposit_max" property="singleDepositMax"/>
+        <result column="frozen_time" property="frozenTime"/>
+        <result column="channel_json" property="channelJson"/>
+        <result column="full_rank" property="fullRank"/>
+        <result column="custom_bank_name" property="customBankName"/>
+        <result column="open_acount_name" property="openAcountName"/>
+        <result column="qr_code_url" property="qrCodeUrl"/>
+    </resultMap>
+
+    <!--//region your codes 1-->
+    <!--线上支付存款成功后更新收款账号-->
+    <update id="updatePayAccountByOnlineRecharge" parameterType="g.model.depositdesk.po.PlayerRecharge">
+        update pay_account SET deposit_count = COALESCE(deposit_count,0)+1, deposit_total = COALESCE(deposit_total,0) + #{rechargeAmount},
+        status = (SELECT case WHEN COALESCE(deposit_total,0)+#{rechargeAmount}>=disable_amount  OR COALESCE(deposit_total,0)+#{rechargeAmount}+COALESCE(single_deposit_min,0) >disable_amount  THEN '3'
+        ELSE status END
+        FROM pay_account WHERE id = #{payAccountId}),
+        frozen_time = (SELECT case when COALESCE(deposit_total,0)+#{rechargeAmount}>=disable_amount  OR COALESCE(deposit_total,0)+#{rechargeAmount}+COALESCE(single_deposit_min,0) >disable_amount THEN #{checkTime}
+        ELSE frozen_time END  FROM pay_account WHERE id = #{payAccountId})
+        WHERE id =  #{payAccountId}
+    </update>
+    <select id="getMaxPayCode" resultType="g.model.payaccount.po.PayAccount">
+        SELECT MAX(p.code) code FROM pay_account p WHERE p.TYPE =#{type}
+    </select>
+
+
+    <!--<select id="getMaxPayCode" resultType="so.wwb.circle.model.master.content.po.PayAccount">-->
+        <!--SELECT MAX(p.code) code FROM pay_account p WHERE p.TYPE =#{type}-->
+    <!--</select>-->
+    <!--//endregion your codes 1-->
+
+</mapper>

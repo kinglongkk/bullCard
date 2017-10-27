@@ -1,0 +1,16 @@
+<div class="personal_info"><!--玩家信息-->
+    <a class="GL_exit"></a>
+    <a class="GB_back"></a>
+    {{for data}}
+        <div class="user_info">
+            <div class="info_head">{{infoHeadIcon:avatarUrl}}</div>
+            <span class="info_name">{{partUserName:username}}</span>
+        </div>
+        <div class="info_coin">
+            <img class="if_coin" src="static/images/poker/bullFight/common/icon/coins.png"/>
+            <span id="infoNum" class="info_nub">{{moneyFormat:coin}}</span>
+            <!--<button type="button" class="coin_add"></button>-->
+        </div>
+    {{/for}}
+    <a class="setting"></a>
+</div>

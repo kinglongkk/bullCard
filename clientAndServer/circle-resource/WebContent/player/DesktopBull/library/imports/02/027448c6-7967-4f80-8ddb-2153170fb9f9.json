@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "common_text_zoushitu",
+    "texture": "53ebee91-ae9f-45f4-920c-480e60938310",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      104,
+      40
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      104,
+      40
+    ]
+  }
+}

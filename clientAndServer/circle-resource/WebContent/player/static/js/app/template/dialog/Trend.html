@@ -1,0 +1,56 @@
+<div  class="dialogFront"><!--胜负走势图-->
+    <div id="dialog" class="dia_small">
+        <div class="Prompt_bt_bg">
+            <div class="cow_head"></div>
+        </div>
+        <div class="Prompt_tc">
+            <div class="Dialog_bg1 Prompt_tc_bg1">
+                <div class="Trend_img">
+                    <div class="Trend_Arrow"></div>
+                    <div class="Trend_font"></div>
+                </div>
+            </div>
+            <div class="Dialog_bg3 Trend_bg3"></div>
+            <div class="Prompt_bg">
+                <div class="Prompt_tc">
+                    <div class="Dialog_bg2 Prompt_tc_bg2 ">
+                        <div class="Trend_content_list1">
+                            <div class="Trend_content_border"></div>
+                            <div class="Trend_content_flow"></div>
+                        </div>
+                        <div class="Trend_content">
+                            <ul>
+                                {{if ~dataIsEmpty(code)}}
+                                    {{for data}}
+                                        {{if #getIndex()==0}}
+                                <li>
+                                    <div class="Trend_content_new"></div>
+                                    <div class="Trend_btn_bg">
+                                            {{for matchResult}}
+                                                <div class="Trend_btn_{{bigOrSmall:outcome}}"></div>
+                                            {{/for}}
+                                    </div>
+                                </li>
+                                        {{else}}
+                                <li>
+                                    <div class="Trend_content_lx"></div>
+                                    <div class="Trend_btn_bg1">
+                                            {{for matchResult}}
+                                                <div class="Trend_btn_{{bigOrSmall:outcome}}"></div>
+                                            {{/for}}
+                                    </div>
+                                </li>
+                                        {{/if}}
+                                    {{/for}}
+                                {{else}}
+                                    <div class="Dialog_font_center">{{:msg}}</div>
+                                {{/if}}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="Prompt_close"></button>
+    </div>
+</div>

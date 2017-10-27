@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.gameroom.GameRoomMapper">
+
+    <resultMap id="TABLE:game_room" type="g.model.gameroom.po.GameRoom">
+        <id column="id" property="id"/>
+        <result column="game_id" property="gameId"/>
+        <result column="game_model_id" property="gameModelId"/>
+        <result column="name" property="name"/>
+        <result column="status" property="status"/>
+        <result column="description" property="description"/>
+        <result column="max_limit_player_number" property="maxLimitPlayerNumber"/>
+        <result column="min_limit_player_blance" property="minLimitPlayerBlance"/>
+        <result column="per_desk_seat_count" property="perDeskSeatCount"/>
+        <result column="is_build_in" property="isBuildIn"/>
+        <result column="jackpot" property="jackpot"/>
+        <result column="jackpot_overflow" property="jackpotOverflow"/>
+        <result column="max_limit_player_blance" property="maxLimitPlayerBlance"/>
+        <result column="send_msg_condition" property="sendMsgCondition"/>
+    </resultMap>
+
+    <!--//region your codes 1-->
+
+
+    <!--//endregion your codes 1-->
+
+</mapper>

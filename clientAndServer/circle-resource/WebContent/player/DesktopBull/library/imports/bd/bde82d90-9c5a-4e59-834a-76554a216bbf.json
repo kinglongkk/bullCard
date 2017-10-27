@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "common_board_zoushi_2",
+    "texture": "4bb2de6a-f7bc-4ef1-813c-4b91397cb7d2",
+    "atlas": "",
+    "rect": [
+      1,
+      0,
+      15,
+      15
+    ],
+    "offset": [
+      0,
+      0.5
+    ],
+    "originalSize": [
+      17,
+      16
+    ]
+  }
+}

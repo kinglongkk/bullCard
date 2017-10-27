@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "common_board_music_OFF",
+    "texture": "96e0725c-0703-44ef-afd9-3b36a5f4cd80",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      79,
+      71
+    ],
+    "offset": [
+      -0.5,
+      0
+    ],
+    "originalSize": [
+      80,
+      71
+    ]
+  }
+}

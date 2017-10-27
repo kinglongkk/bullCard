@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "common_board_windo_a",
+    "texture": "69dba133-e8a7-42a5-be29-b14d26a51f91",
+    "rect": [
+      0,
+      0,
+      1469,
+      956
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      1469,
+      956
+    ]
+  }
+}

@@ -1,0 +1,768 @@
+14:41:50.590 ERROR [main] o.s.m.nosql.redis.JedisTemplate:153 - Redis connection 192.168.0.44:6379 lost.
+redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool
+	at redis.clients.util.Pool.getResource(Pool.java:53)
+	at org.springside.modules.nosql.redis.JedisTemplate.execute(JedisTemplate.java:93)
+	at org.springside.modules.nosql.redis.JedisTemplate.flushDB(JedisTemplate.java:203)
+	at g.service.chesscard.engine.manager.ChessCardInitManager.init(ChessCardInitManager.java:40)
+	at g.service.chesscard.engine.core.ChessCardEngine.init(ChessCardEngine.java:40)
+	at g.service.chesscard.GameMain.initEngine(GameMain.java:47)
+	at g.service.chesscard.GameMain.init(GameMain.java:38)
+	at g.service.chesscard.GameMain.main(GameMain.java:63)
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: java.net.NoRouteToHostException: No route to host: connect
+	at redis.clients.jedis.Connection.connect(Connection.java:164)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:80)
+	at redis.clients.jedis.BinaryJedis.connect(BinaryJedis.java:1677)
+	at org.springside.modules.nosql.redis.pool.JedisFactory.makeObject(JedisFactory.java:71)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:868)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:435)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at redis.clients.util.Pool.getResource(Pool.java:49)
+	... 7 common frames omitted
+Caused by: java.net.NoRouteToHostException: No route to host: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at redis.clients.jedis.Connection.connect(Connection.java:158)
+	... 14 common frames omitted
+14:41:50.604 ERROR [main] g.service.chesscard.GameMain:42 - 游戏引擎:启动异常!
+redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool
+	at redis.clients.util.Pool.getResource(Pool.java:53)
+	at org.springside.modules.nosql.redis.JedisTemplate.execute(JedisTemplate.java:93)
+	at org.springside.modules.nosql.redis.JedisTemplate.flushDB(JedisTemplate.java:203)
+	at g.service.chesscard.engine.manager.ChessCardInitManager.init(ChessCardInitManager.java:40)
+	at g.service.chesscard.engine.core.ChessCardEngine.init(ChessCardEngine.java:40)
+	at g.service.chesscard.GameMain.initEngine(GameMain.java:47)
+	at g.service.chesscard.GameMain.init(GameMain.java:38)
+	at g.service.chesscard.GameMain.main(GameMain.java:63)
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: java.net.NoRouteToHostException: No route to host: connect
+	at redis.clients.jedis.Connection.connect(Connection.java:164)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:80)
+	at redis.clients.jedis.BinaryJedis.connect(BinaryJedis.java:1677)
+	at org.springside.modules.nosql.redis.pool.JedisFactory.makeObject(JedisFactory.java:71)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:868)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:435)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at redis.clients.util.Pool.getResource(Pool.java:49)
+	... 7 common frames omitted
+Caused by: java.net.NoRouteToHostException: No route to host: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at redis.clients.jedis.Connection.connect(Connection.java:158)
+	... 14 common frames omitted
+14:42:49.233 ERROR [main] o.s.m.nosql.redis.JedisTemplate:153 - Redis connection 192.168.0.44:6379 lost.
+redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool
+	at redis.clients.util.Pool.getResource(Pool.java:53)
+	at org.springside.modules.nosql.redis.JedisTemplate.execute(JedisTemplate.java:93)
+	at org.springside.modules.nosql.redis.JedisTemplate.flushDB(JedisTemplate.java:203)
+	at g.service.chesscard.engine.manager.ChessCardInitManager.init(ChessCardInitManager.java:40)
+	at g.service.chesscard.engine.core.ChessCardEngine.init(ChessCardEngine.java:40)
+	at g.service.chesscard.GameMain.initEngine(GameMain.java:47)
+	at g.service.chesscard.GameMain.init(GameMain.java:38)
+	at g.service.chesscard.GameMain.main(GameMain.java:63)
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: java.net.NoRouteToHostException: No route to host: connect
+	at redis.clients.jedis.Connection.connect(Connection.java:164)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:80)
+	at redis.clients.jedis.BinaryJedis.connect(BinaryJedis.java:1677)
+	at org.springside.modules.nosql.redis.pool.JedisFactory.makeObject(JedisFactory.java:71)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:868)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:435)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at redis.clients.util.Pool.getResource(Pool.java:49)
+	... 7 common frames omitted
+Caused by: java.net.NoRouteToHostException: No route to host: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at redis.clients.jedis.Connection.connect(Connection.java:158)
+	... 14 common frames omitted
+14:42:49.236 ERROR [main] g.service.chesscard.GameMain:42 - 游戏引擎:启动异常!
+redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool
+	at redis.clients.util.Pool.getResource(Pool.java:53)
+	at org.springside.modules.nosql.redis.JedisTemplate.execute(JedisTemplate.java:93)
+	at org.springside.modules.nosql.redis.JedisTemplate.flushDB(JedisTemplate.java:203)
+	at g.service.chesscard.engine.manager.ChessCardInitManager.init(ChessCardInitManager.java:40)
+	at g.service.chesscard.engine.core.ChessCardEngine.init(ChessCardEngine.java:40)
+	at g.service.chesscard.GameMain.initEngine(GameMain.java:47)
+	at g.service.chesscard.GameMain.init(GameMain.java:38)
+	at g.service.chesscard.GameMain.main(GameMain.java:63)
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: java.net.NoRouteToHostException: No route to host: connect
+	at redis.clients.jedis.Connection.connect(Connection.java:164)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:80)
+	at redis.clients.jedis.BinaryJedis.connect(BinaryJedis.java:1677)
+	at org.springside.modules.nosql.redis.pool.JedisFactory.makeObject(JedisFactory.java:71)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:868)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:435)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at redis.clients.util.Pool.getResource(Pool.java:49)
+	... 7 common frames omitted
+Caused by: java.net.NoRouteToHostException: No route to host: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at redis.clients.jedis.Connection.connect(Connection.java:158)
+	... 14 common frames omitted
+14:44:42.260 ERROR [main] o.s.m.nosql.redis.JedisTemplate:153 - Redis connection 192.168.0.44:6379 lost.
+redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool
+	at redis.clients.util.Pool.getResource(Pool.java:53)
+	at org.springside.modules.nosql.redis.JedisTemplate.execute(JedisTemplate.java:93)
+	at org.springside.modules.nosql.redis.JedisTemplate.flushDB(JedisTemplate.java:203)
+	at g.service.chesscard.engine.manager.ChessCardInitManager.init(ChessCardInitManager.java:40)
+	at g.service.chesscard.engine.core.ChessCardEngine.init(ChessCardEngine.java:40)
+	at g.service.chesscard.GameMain.initEngine(GameMain.java:47)
+	at g.service.chesscard.GameMain.init(GameMain.java:38)
+	at g.service.chesscard.GameMain.main(GameMain.java:63)
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: java.net.NoRouteToHostException: No route to host: connect
+	at redis.clients.jedis.Connection.connect(Connection.java:164)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:80)
+	at redis.clients.jedis.BinaryJedis.connect(BinaryJedis.java:1677)
+	at org.springside.modules.nosql.redis.pool.JedisFactory.makeObject(JedisFactory.java:71)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:868)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:435)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at redis.clients.util.Pool.getResource(Pool.java:49)
+	... 7 common frames omitted
+Caused by: java.net.NoRouteToHostException: No route to host: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at redis.clients.jedis.Connection.connect(Connection.java:158)
+	... 14 common frames omitted
+14:44:42.264 ERROR [main] g.service.chesscard.GameMain:42 - 游戏引擎:启动异常!
+redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool
+	at redis.clients.util.Pool.getResource(Pool.java:53)
+	at org.springside.modules.nosql.redis.JedisTemplate.execute(JedisTemplate.java:93)
+	at org.springside.modules.nosql.redis.JedisTemplate.flushDB(JedisTemplate.java:203)
+	at g.service.chesscard.engine.manager.ChessCardInitManager.init(ChessCardInitManager.java:40)
+	at g.service.chesscard.engine.core.ChessCardEngine.init(ChessCardEngine.java:40)
+	at g.service.chesscard.GameMain.initEngine(GameMain.java:47)
+	at g.service.chesscard.GameMain.init(GameMain.java:38)
+	at g.service.chesscard.GameMain.main(GameMain.java:63)
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: java.net.NoRouteToHostException: No route to host: connect
+	at redis.clients.jedis.Connection.connect(Connection.java:164)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:80)
+	at redis.clients.jedis.BinaryJedis.connect(BinaryJedis.java:1677)
+	at org.springside.modules.nosql.redis.pool.JedisFactory.makeObject(JedisFactory.java:71)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:868)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:435)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at redis.clients.util.Pool.getResource(Pool.java:49)
+	... 7 common frames omitted
+Caused by: java.net.NoRouteToHostException: No route to host: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at redis.clients.jedis.Connection.connect(Connection.java:158)
+	... 14 common frames omitted
+14:46:29.332 ERROR [main] o.s.m.nosql.redis.JedisTemplate:153 - Redis connection 192.168.0.44:6379 lost.
+redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool
+	at redis.clients.util.Pool.getResource(Pool.java:53)
+	at org.springside.modules.nosql.redis.JedisTemplate.execute(JedisTemplate.java:93)
+	at org.springside.modules.nosql.redis.JedisTemplate.flushDB(JedisTemplate.java:203)
+	at g.service.chesscard.engine.manager.ChessCardInitManager.init(ChessCardInitManager.java:40)
+	at g.service.chesscard.engine.core.ChessCardEngine.init(ChessCardEngine.java:40)
+	at g.service.chesscard.GameMain.initEngine(GameMain.java:47)
+	at g.service.chesscard.GameMain.init(GameMain.java:38)
+	at g.service.chesscard.GameMain.main(GameMain.java:63)
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: java.net.NoRouteToHostException: No route to host: connect
+	at redis.clients.jedis.Connection.connect(Connection.java:164)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:80)
+	at redis.clients.jedis.BinaryJedis.connect(BinaryJedis.java:1677)
+	at org.springside.modules.nosql.redis.pool.JedisFactory.makeObject(JedisFactory.java:71)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:868)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:435)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at redis.clients.util.Pool.getResource(Pool.java:49)
+	... 7 common frames omitted
+Caused by: java.net.NoRouteToHostException: No route to host: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at redis.clients.jedis.Connection.connect(Connection.java:158)
+	... 14 common frames omitted
+14:46:29.334 ERROR [main] g.service.chesscard.GameMain:42 - 游戏引擎:启动异常!
+redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool
+	at redis.clients.util.Pool.getResource(Pool.java:53)
+	at org.springside.modules.nosql.redis.JedisTemplate.execute(JedisTemplate.java:93)
+	at org.springside.modules.nosql.redis.JedisTemplate.flushDB(JedisTemplate.java:203)
+	at g.service.chesscard.engine.manager.ChessCardInitManager.init(ChessCardInitManager.java:40)
+	at g.service.chesscard.engine.core.ChessCardEngine.init(ChessCardEngine.java:40)
+	at g.service.chesscard.GameMain.initEngine(GameMain.java:47)
+	at g.service.chesscard.GameMain.init(GameMain.java:38)
+	at g.service.chesscard.GameMain.main(GameMain.java:63)
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: java.net.NoRouteToHostException: No route to host: connect
+	at redis.clients.jedis.Connection.connect(Connection.java:164)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:80)
+	at redis.clients.jedis.BinaryJedis.connect(BinaryJedis.java:1677)
+	at org.springside.modules.nosql.redis.pool.JedisFactory.makeObject(JedisFactory.java:71)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:868)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:435)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at redis.clients.util.Pool.getResource(Pool.java:49)
+	... 7 common frames omitted
+Caused by: java.net.NoRouteToHostException: No route to host: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at redis.clients.jedis.Connection.connect(Connection.java:158)
+	... 14 common frames omitted
+14:46:40.370 ERROR [main] o.s.m.nosql.redis.JedisTemplate:153 - Redis connection 192.168.0.44:6379 lost.
+redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool
+	at redis.clients.util.Pool.getResource(Pool.java:53)
+	at org.springside.modules.nosql.redis.JedisTemplate.execute(JedisTemplate.java:93)
+	at org.springside.modules.nosql.redis.JedisTemplate.flushDB(JedisTemplate.java:203)
+	at g.service.chesscard.engine.manager.ChessCardInitManager.init(ChessCardInitManager.java:40)
+	at g.service.chesscard.engine.core.ChessCardEngine.init(ChessCardEngine.java:40)
+	at g.service.chesscard.GameMain.initEngine(GameMain.java:47)
+	at g.service.chesscard.GameMain.init(GameMain.java:38)
+	at g.service.chesscard.GameMain.main(GameMain.java:63)
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: java.net.NoRouteToHostException: No route to host: connect
+	at redis.clients.jedis.Connection.connect(Connection.java:164)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:80)
+	at redis.clients.jedis.BinaryJedis.connect(BinaryJedis.java:1677)
+	at org.springside.modules.nosql.redis.pool.JedisFactory.makeObject(JedisFactory.java:71)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:868)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:435)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at redis.clients.util.Pool.getResource(Pool.java:49)
+	... 7 common frames omitted
+Caused by: java.net.NoRouteToHostException: No route to host: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at redis.clients.jedis.Connection.connect(Connection.java:158)
+	... 14 common frames omitted
+14:46:40.372 ERROR [main] g.service.chesscard.GameMain:42 - 游戏引擎:启动异常!
+redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool
+	at redis.clients.util.Pool.getResource(Pool.java:53)
+	at org.springside.modules.nosql.redis.JedisTemplate.execute(JedisTemplate.java:93)
+	at org.springside.modules.nosql.redis.JedisTemplate.flushDB(JedisTemplate.java:203)
+	at g.service.chesscard.engine.manager.ChessCardInitManager.init(ChessCardInitManager.java:40)
+	at g.service.chesscard.engine.core.ChessCardEngine.init(ChessCardEngine.java:40)
+	at g.service.chesscard.GameMain.initEngine(GameMain.java:47)
+	at g.service.chesscard.GameMain.init(GameMain.java:38)
+	at g.service.chesscard.GameMain.main(GameMain.java:63)
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: java.net.NoRouteToHostException: No route to host: connect
+	at redis.clients.jedis.Connection.connect(Connection.java:164)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:80)
+	at redis.clients.jedis.BinaryJedis.connect(BinaryJedis.java:1677)
+	at org.springside.modules.nosql.redis.pool.JedisFactory.makeObject(JedisFactory.java:71)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:868)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:435)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at redis.clients.util.Pool.getResource(Pool.java:49)
+	... 7 common frames omitted
+Caused by: java.net.NoRouteToHostException: No route to host: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at redis.clients.jedis.Connection.connect(Connection.java:158)
+	... 14 common frames omitted
+14:49:48.052 ERROR [main] o.s.m.nosql.redis.JedisTemplate:153 - Redis connection 192.168.0.44:6379 lost.
+redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool
+	at redis.clients.util.Pool.getResource(Pool.java:53)
+	at org.springside.modules.nosql.redis.JedisTemplate.execute(JedisTemplate.java:93)
+	at org.springside.modules.nosql.redis.JedisTemplate.flushDB(JedisTemplate.java:203)
+	at g.service.chesscard.engine.manager.ChessCardInitManager.init(ChessCardInitManager.java:40)
+	at g.service.chesscard.engine.core.ChessCardEngine.init(ChessCardEngine.java:40)
+	at g.service.chesscard.GameMain.initEngine(GameMain.java:47)
+	at g.service.chesscard.GameMain.init(GameMain.java:38)
+	at g.service.chesscard.GameMain.main(GameMain.java:63)
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: java.net.NoRouteToHostException: No route to host: connect
+	at redis.clients.jedis.Connection.connect(Connection.java:164)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:80)
+	at redis.clients.jedis.BinaryJedis.connect(BinaryJedis.java:1677)
+	at org.springside.modules.nosql.redis.pool.JedisFactory.makeObject(JedisFactory.java:71)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:868)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:435)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at redis.clients.util.Pool.getResource(Pool.java:49)
+	... 7 common frames omitted
+Caused by: java.net.NoRouteToHostException: No route to host: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at redis.clients.jedis.Connection.connect(Connection.java:158)
+	... 14 common frames omitted
+14:49:48.055 ERROR [main] g.service.chesscard.GameMain:42 - 游戏引擎:启动异常!
+redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool
+	at redis.clients.util.Pool.getResource(Pool.java:53)
+	at org.springside.modules.nosql.redis.JedisTemplate.execute(JedisTemplate.java:93)
+	at org.springside.modules.nosql.redis.JedisTemplate.flushDB(JedisTemplate.java:203)
+	at g.service.chesscard.engine.manager.ChessCardInitManager.init(ChessCardInitManager.java:40)
+	at g.service.chesscard.engine.core.ChessCardEngine.init(ChessCardEngine.java:40)
+	at g.service.chesscard.GameMain.initEngine(GameMain.java:47)
+	at g.service.chesscard.GameMain.init(GameMain.java:38)
+	at g.service.chesscard.GameMain.main(GameMain.java:63)
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: java.net.NoRouteToHostException: No route to host: connect
+	at redis.clients.jedis.Connection.connect(Connection.java:164)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:80)
+	at redis.clients.jedis.BinaryJedis.connect(BinaryJedis.java:1677)
+	at org.springside.modules.nosql.redis.pool.JedisFactory.makeObject(JedisFactory.java:71)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:868)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:435)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at redis.clients.util.Pool.getResource(Pool.java:49)
+	... 7 common frames omitted
+Caused by: java.net.NoRouteToHostException: No route to host: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at redis.clients.jedis.Connection.connect(Connection.java:158)
+	... 14 common frames omitted
+16:36:38.977 ERROR [desk-11-1] g.s.c.n.bao.BullBaoMatchHandle:98 - nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is com.alibaba.druid.pool.GetConnectionTimeoutException: wait millis 1000, active 8, maxActive 8, runningSqlCount 2 : update match
+          set result=?,settle_status=?
+          where id=?
+### The error may exist in g/data/match/MatchMapper.java (best guess)
+### The error may involve g.data.match.MatchMapper.get
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is com.alibaba.druid.pool.GetConnectionTimeoutException: wait millis 1000, active 8, maxActive 8, runningSqlCount 2 : update match
+          set result=?,settle_status=?
+          where id=?
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is com.alibaba.druid.pool.GetConnectionTimeoutException: wait millis 1000, active 8, maxActive 8, runningSqlCount 2 : update match
+          set result=?,settle_status=?
+          where id=?
+### The error may exist in g/data/match/MatchMapper.java (best guess)
+### The error may involve g.data.match.MatchMapper.get
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is com.alibaba.druid.pool.GetConnectionTimeoutException: wait millis 1000, active 8, maxActive 8, runningSqlCount 2 : update match
+          set result=?,settle_status=?
+          where id=?
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:75)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:371)
+	at com.sun.proxy.$Proxy23.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:163)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:68)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:52)
+	at com.sun.proxy.$Proxy104.get(Unknown Source)
+	at g.service.match.MatchService.get(MatchService.java:95)
+	at g.service.match.MatchService$$FastClassBySpringCGLIB$$a13cf099.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:649)
+	at g.service.match.MatchService$$EnhancerBySpringCGLIB$$86601c8.get(<generated>)
+	at g.service.chesscard.engine.manager.SettleManager.newSettle(SettleManager.java:73)
+	at g.service.chesscard.netHandles.bao.BullBaoMatchHandle.onSettle(BullBaoMatchHandle.java:85)
+	at g.service.chesscard.engine.task.MatchTask.settle(MatchTask.java:152)
+	at g.service.chesscard.engine.task.MatchTask.stop(MatchTask.java:130)
+	at g.service.chesscard.engine.task.MatchTask.run(MatchTask.java:213)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is com.alibaba.druid.pool.GetConnectionTimeoutException: wait millis 1000, active 8, maxActive 8, runningSqlCount 2 : update match
+          set result=?,settle_status=?
+          where id=?
+### The error may exist in g/data/match/MatchMapper.java (best guess)
+### The error may involve g.data.match.MatchMapper.get
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is com.alibaba.druid.pool.GetConnectionTimeoutException: wait millis 1000, active 8, maxActive 8, runningSqlCount 2 : update match
+          set result=?,settle_status=?
+          where id=?
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:26)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:111)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:102)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:66)
+	at sun.reflect.GeneratedMethodAccessor57.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:358)
+	... 22 common frames omitted
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is com.alibaba.druid.pool.GetConnectionTimeoutException: wait millis 1000, active 8, maxActive 8, runningSqlCount 2 : update match
+          set result=?,settle_status=?
+          where id=?
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:80)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:81)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:67)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:279)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:72)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:59)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:267)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:137)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:120)
+	at sun.reflect.GeneratedMethodAccessor36.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:62)
+	at com.sun.proxy.$Proxy123.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:108)
+	... 28 common frames omitted
+Caused by: com.alibaba.druid.pool.GetConnectionTimeoutException: wait millis 1000, active 8, maxActive 8, runningSqlCount 2 : update match
+          set result=?,settle_status=?
+          where id=?
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionInternal(DruidDataSource.java:1139)
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionDirect(DruidDataSource.java:960)
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:4544)
+	at com.alibaba.druid.filter.stat.StatFilter.dataSource_getConnection(StatFilter.java:661)
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:4540)
+	at com.alibaba.druid.filter.FilterAdapter.dataSource_getConnection(FilterAdapter.java:2723)
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:4540)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:938)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:930)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:102)
+	at org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource.getConnection(AbstractRoutingDataSource.java:164)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:111)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:77)
+	... 42 common frames omitted
+16:36:38.977 ERROR [desk-9-1] g.s.c.n.bao.BullBaoMatchHandle:98 - nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is com.alibaba.druid.pool.GetConnectionTimeoutException: wait millis 1000, active 8, maxActive 8, runningSqlCount 2 : update match
+          set result=?,settle_status=?
+          where id=?
+### The error may exist in g/data/match/MatchMapper.java (best guess)
+### The error may involve g.data.match.MatchMapper.get
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is com.alibaba.druid.pool.GetConnectionTimeoutException: wait millis 1000, active 8, maxActive 8, runningSqlCount 2 : update match
+          set result=?,settle_status=?
+          where id=?
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is com.alibaba.druid.pool.GetConnectionTimeoutException: wait millis 1000, active 8, maxActive 8, runningSqlCount 2 : update match
+          set result=?,settle_status=?
+          where id=?
+### The error may exist in g/data/match/MatchMapper.java (best guess)
+### The error may involve g.data.match.MatchMapper.get
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is com.alibaba.druid.pool.GetConnectionTimeoutException: wait millis 1000, active 8, maxActive 8, runningSqlCount 2 : update match
+          set result=?,settle_status=?
+          where id=?
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:75)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:371)
+	at com.sun.proxy.$Proxy23.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:163)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:68)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:52)
+	at com.sun.proxy.$Proxy104.get(Unknown Source)
+	at g.service.match.MatchService.get(MatchService.java:95)
+	at g.service.match.MatchService$$FastClassBySpringCGLIB$$a13cf099.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:649)
+	at g.service.match.MatchService$$EnhancerBySpringCGLIB$$86601c8.get(<generated>)
+	at g.service.chesscard.engine.manager.SettleManager.newSettle(SettleManager.java:73)
+	at g.service.chesscard.netHandles.bao.BullBaoMatchHandle.onSettle(BullBaoMatchHandle.java:85)
+	at g.service.chesscard.engine.task.MatchTask.settle(MatchTask.java:152)
+	at g.service.chesscard.engine.task.MatchTask.stop(MatchTask.java:130)
+	at g.service.chesscard.engine.task.MatchTask.run(MatchTask.java:213)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is com.alibaba.druid.pool.GetConnectionTimeoutException: wait millis 1000, active 8, maxActive 8, runningSqlCount 2 : update match
+          set result=?,settle_status=?
+          where id=?
+### The error may exist in g/data/match/MatchMapper.java (best guess)
+### The error may involve g.data.match.MatchMapper.get
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is com.alibaba.druid.pool.GetConnectionTimeoutException: wait millis 1000, active 8, maxActive 8, runningSqlCount 2 : update match
+          set result=?,settle_status=?
+          where id=?
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:26)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:111)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:102)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:66)
+	at sun.reflect.GeneratedMethodAccessor57.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:358)
+	... 22 common frames omitted
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is com.alibaba.druid.pool.GetConnectionTimeoutException: wait millis 1000, active 8, maxActive 8, runningSqlCount 2 : update match
+          set result=?,settle_status=?
+          where id=?
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:80)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:81)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:67)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:279)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:72)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:59)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:267)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:137)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:120)
+	at sun.reflect.GeneratedMethodAccessor36.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:62)
+	at com.sun.proxy.$Proxy123.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:108)
+	... 28 common frames omitted
+Caused by: com.alibaba.druid.pool.GetConnectionTimeoutException: wait millis 1000, active 8, maxActive 8, runningSqlCount 2 : update match
+          set result=?,settle_status=?
+          where id=?
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionInternal(DruidDataSource.java:1139)
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionDirect(DruidDataSource.java:960)
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:4544)
+	at com.alibaba.druid.filter.stat.StatFilter.dataSource_getConnection(StatFilter.java:661)
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:4540)
+	at com.alibaba.druid.filter.FilterAdapter.dataSource_getConnection(FilterAdapter.java:2723)
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:4540)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:938)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:930)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:102)
+	at org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource.getConnection(AbstractRoutingDataSource.java:164)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:111)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:77)
+	... 42 common frames omitted
+16:36:38.977 ERROR [desk-7-1] g.s.c.n.bao.BullBaoMatchHandle:98 - nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is com.alibaba.druid.pool.GetConnectionTimeoutException: wait millis 1000, active 8, maxActive 8, runningSqlCount 2 : update match
+          set result=?,settle_status=?
+          where id=?
+### The error may exist in g/data/match/MatchMapper.java (best guess)
+### The error may involve g.data.match.MatchMapper.get
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is com.alibaba.druid.pool.GetConnectionTimeoutException: wait millis 1000, active 8, maxActive 8, runningSqlCount 2 : update match
+          set result=?,settle_status=?
+          where id=?
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is com.alibaba.druid.pool.GetConnectionTimeoutException: wait millis 1000, active 8, maxActive 8, runningSqlCount 2 : update match
+          set result=?,settle_status=?
+          where id=?
+### The error may exist in g/data/match/MatchMapper.java (best guess)
+### The error may involve g.data.match.MatchMapper.get
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is com.alibaba.druid.pool.GetConnectionTimeoutException: wait millis 1000, active 8, maxActive 8, runningSqlCount 2 : update match
+          set result=?,settle_status=?
+          where id=?
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:75)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:371)
+	at com.sun.proxy.$Proxy23.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:163)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:68)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:52)
+	at com.sun.proxy.$Proxy104.get(Unknown Source)
+	at g.service.match.MatchService.get(MatchService.java:95)
+	at g.service.match.MatchService$$FastClassBySpringCGLIB$$a13cf099.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:649)
+	at g.service.match.MatchService$$EnhancerBySpringCGLIB$$86601c8.get(<generated>)
+	at g.service.chesscard.engine.manager.SettleManager.newSettle(SettleManager.java:73)
+	at g.service.chesscard.netHandles.bao.BullBaoMatchHandle.onSettle(BullBaoMatchHandle.java:85)
+	at g.service.chesscard.engine.task.MatchTask.settle(MatchTask.java:152)
+	at g.service.chesscard.engine.task.MatchTask.stop(MatchTask.java:130)
+	at g.service.chesscard.engine.task.MatchTask.run(MatchTask.java:213)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is com.alibaba.druid.pool.GetConnectionTimeoutException: wait millis 1000, active 8, maxActive 8, runningSqlCount 2 : update match
+          set result=?,settle_status=?
+          where id=?
+### The error may exist in g/data/match/MatchMapper.java (best guess)
+### The error may involve g.data.match.MatchMapper.get
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is com.alibaba.druid.pool.GetConnectionTimeoutException: wait millis 1000, active 8, maxActive 8, runningSqlCount 2 : update match
+          set result=?,settle_status=?
+          where id=?
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:26)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:111)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:102)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:66)
+	at sun.reflect.GeneratedMethodAccessor57.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:358)
+	... 22 common frames omitted
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is com.alibaba.druid.pool.GetConnectionTimeoutException: wait millis 1000, active 8, maxActive 8, runningSqlCount 2 : update match
+          set result=?,settle_status=?
+          where id=?
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:80)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:81)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:67)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:279)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:72)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:59)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:267)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:137)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:120)
+	at sun.reflect.GeneratedMethodAccessor36.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:62)
+	at com.sun.proxy.$Proxy123.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:108)
+	... 28 common frames omitted
+Caused by: com.alibaba.druid.pool.GetConnectionTimeoutException: wait millis 1000, active 8, maxActive 8, runningSqlCount 2 : update match
+          set result=?,settle_status=?
+          where id=?
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionInternal(DruidDataSource.java:1139)
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionDirect(DruidDataSource.java:960)
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:4544)
+	at com.alibaba.druid.filter.stat.StatFilter.dataSource_getConnection(StatFilter.java:661)
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:4540)
+	at com.alibaba.druid.filter.FilterAdapter.dataSource_getConnection(FilterAdapter.java:2723)
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:4540)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:938)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:930)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:102)
+	at org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource.getConnection(AbstractRoutingDataSource.java:164)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:111)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:77)
+	... 42 common frames omitted
+16:36:38.977 ERROR [desk-12-1] g.s.c.n.bao.BullBaoMatchHandle:98 - nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is com.alibaba.druid.pool.GetConnectionTimeoutException: wait millis 1001, active 8, maxActive 8, runningSqlCount 2 : update match
+          set result=?,settle_status=?
+          where id=?
+### The error may exist in g/data/match/MatchMapper.java (best guess)
+### The error may involve g.data.match.MatchMapper.get
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is com.alibaba.druid.pool.GetConnectionTimeoutException: wait millis 1001, active 8, maxActive 8, runningSqlCount 2 : update match
+          set result=?,settle_status=?
+          where id=?
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is com.alibaba.druid.pool.GetConnectionTimeoutException: wait millis 1001, active 8, maxActive 8, runningSqlCount 2 : update match
+          set result=?,settle_status=?
+          where id=?
+### The error may exist in g/data/match/MatchMapper.java (best guess)
+### The error may involve g.data.match.MatchMapper.get
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is com.alibaba.druid.pool.GetConnectionTimeoutException: wait millis 1001, active 8, maxActive 8, runningSqlCount 2 : update match
+          set result=?,settle_status=?
+          where id=?
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:75)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:371)
+	at com.sun.proxy.$Proxy23.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:163)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:68)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:52)
+	at com.sun.proxy.$Proxy104.get(Unknown Source)
+	at g.service.match.MatchService.get(MatchService.java:95)
+	at g.service.match.MatchService$$FastClassBySpringCGLIB$$a13cf099.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:649)
+	at g.service.match.MatchService$$EnhancerBySpringCGLIB$$86601c8.get(<generated>)
+	at g.service.chesscard.engine.manager.SettleManager.newSettle(SettleManager.java:73)
+	at g.service.chesscard.netHandles.bao.BullBaoMatchHandle.onSettle(BullBaoMatchHandle.java:85)
+	at g.service.chesscard.engine.task.MatchTask.settle(MatchTask.java:152)
+	at g.service.chesscard.engine.task.MatchTask.stop(MatchTask.java:130)
+	at g.service.chesscard.engine.task.MatchTask.run(MatchTask.java:213)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is com.alibaba.druid.pool.GetConnectionTimeoutException: wait millis 1001, active 8, maxActive 8, runningSqlCount 2 : update match
+          set result=?,settle_status=?
+          where id=?
+### The error may exist in g/data/match/MatchMapper.java (best guess)
+### The error may involve g.data.match.MatchMapper.get
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is com.alibaba.druid.pool.GetConnectionTimeoutException: wait millis 1001, active 8, maxActive 8, runningSqlCount 2 : update match
+          set result=?,settle_status=?
+          where id=?
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:26)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:111)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:102)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:66)
+	at sun.reflect.GeneratedMethodAccessor57.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:358)
+	... 22 common frames omitted
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is com.alibaba.druid.pool.GetConnectionTimeoutException: wait millis 1001, active 8, maxActive 8, runningSqlCount 2 : update match
+          set result=?,settle_status=?
+          where id=?
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:80)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:81)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:67)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:279)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:72)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:59)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:267)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:137)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:120)
+	at sun.reflect.GeneratedMethodAccessor36.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:62)
+	at com.sun.proxy.$Proxy123.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:108)
+	... 28 common frames omitted
+Caused by: com.alibaba.druid.pool.GetConnectionTimeoutException: wait millis 1001, active 8, maxActive 8, runningSqlCount 2 : update match
+          set result=?,settle_status=?
+          where id=?
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionInternal(DruidDataSource.java:1139)
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionDirect(DruidDataSource.java:960)
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:4544)
+	at com.alibaba.druid.filter.stat.StatFilter.dataSource_getConnection(StatFilter.java:661)
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:4540)
+	at com.alibaba.druid.filter.FilterAdapter.dataSource_getConnection(FilterAdapter.java:2723)
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:4540)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:938)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:930)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:102)
+	at org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource.getConnection(AbstractRoutingDataSource.java:164)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:111)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:77)
+	... 42 common frames omitted

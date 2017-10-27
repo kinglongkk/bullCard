@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.payaccount.BankMapper">
+
+    <resultMap id="TABLE:bank" type="g.model.payaccount.po.Bank">
+        <id column="id" property="id"/>
+        <result column="bank_name" property="bankName"/>
+        <result column="bank_icon" property="bankIcon"/>
+        <result column="bank_district" property="bankDistrict"/>
+        <result column="type" property="type"/>
+        <result column="bank_short_name" property="bankShortName"/>
+        <result column="bank_icon_simplify" property="bankIconSimplify"/>
+        <result column="bank_short_name2" property="bankShortName2"/>
+        <result column="is_use" property="isUse"/>
+        <result column="order_num" property="orderNum"/>
+        <result column="pay_type" property="payType"/>
+        <result column="website" property="website"/>
+    </resultMap>
+
+    <!--//region your codes 1-->
+
+    <!--//endregion your codes 1-->
+
+</mapper>

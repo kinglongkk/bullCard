@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "eeca3fd1-8a4e-4eee-8e80-efad7c307936",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "走势图界面": {
+      "ver": "1.0.3",
+      "uuid": "abfed0f5-c5ef-4006-a804-d9fbc503b053",
+      "rawTextureUuid": "eeca3fd1-8a4e-4eee-8e80-efad7c307936",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 0,
+      "height": 0,
+      "rawWidth": 0,
+      "rawHeight": 0,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

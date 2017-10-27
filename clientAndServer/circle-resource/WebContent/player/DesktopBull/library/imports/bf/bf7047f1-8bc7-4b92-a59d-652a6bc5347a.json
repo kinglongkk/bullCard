@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "specialEffects_jiesuan02",
+    "texture": "d5959f27-8f53-4f68-8a0b-6a2875c6451f",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      375,
+      178
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      375,
+      178
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "__type__": "cc.SpriteAtlas",
+  "_name": "card.plist",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_spriteFrames": {
+    "common_card_bei": {
+      "__uuid__": "2baf630f-754b-4139-b60a-dd966e4948c2"
+    },
+    "common_card_f_01": {
+      "__uuid__": "2a28fe64-0d98-4b59-995f-0686470d840d"
+    },
+    "common_card_f_02": {
+      "__uuid__": "a214c8d0-944e-4250-b82f-b33850050fa8"
+    },
+    "common_card_h_01": {
+      "__uuid__": "14b648be-790a-4928-8815-137443cd2385"
+    },
+    "common_card_h_02": {
+      "__uuid__": "d974cfd4-3f91-4edf-9af6-769de9649505"
+    },
+    "common_card_hong_01": {
+      "__uuid__": "5fa0fa0a-745a-457e-89c7-8b9567fc30ad"
+    },
+    "common_card_hong_02": {
+      "__uuid__": "659e32ff-2641-4efe-be7e-45c1c9c4b000"
+    },
+    "common_card_mei_01": {
+      "__uuid__": "662e2e5e-590c-4db7-b1b8-87fb8d8ea8b3"
+    },
+    "common_card_mei_02": {
+      "__uuid__": "0b6c7840-50a6-4091-a3d8-6bdccef58559"
+    },
+    "common_card_zheng": {
+      "__uuid__": "9f97881b-7161-4f57-b2ec-0240a366848f"
+    }
+  }
+}

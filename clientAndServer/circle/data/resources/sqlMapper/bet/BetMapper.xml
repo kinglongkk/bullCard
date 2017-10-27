@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.bet.BetMapper">
+
+    <resultMap id="TABLE:bet" type="g.model.bet.po.Bet">
+        <id column="id" property="id"/>
+        <result column="sys_user_id" property="sysUserId"/>
+        <result column="r_type" property="rtype"/>
+        <result column="bet_no" property="betNo"/>
+        <result column="order_type" property="orderType"/>
+        <result column="single_amount" property="singleAmount"/>
+        <result column="profit_amount" property="profitAmount"/>
+        <result column="effective_amount" property="effectiveAmount"/>
+        <result column="can_win" property="canWin"/>
+        <result column="status" property="status"/>
+        <result column="settle_status" property="settleStatus"/>
+        <result column="result" property="result"/>
+        <result column="is_deleted" property="isDeleted"/>
+        <result column="strong" property="strong"/>
+        <result column="bet_time" property="betTime"/>
+        <result column="confirm_time" property="confirmTime"/>
+        <result column="settle_time" property="settleTime"/>
+        <result column="update_user" property="updateUser"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="delete_user" property="deleteUser"/>
+        <result column="delete_time" property="deleteTime"/>
+        <result column="ball_type" property="ballType"/>
+        <result column="phase" property="phase"/>
+        <result column="water_amount" property="waterAmount"/>
+    </resultMap>
+
+    <select id="selectBetAndDetail" parameterType="int" resultMap="betAndDetail">
+        SELECT * FROM bet LIMIT #{paging.pageSize} OFFSET (#{paging.pageNumber} - 1) * #{paging.pageSize}
+    </select>
+
+    <!--//定义bet属性betDetailList的集合查询-->
+    <resultMap id="betAndDetail" type="g.model.bet.po.Bet">
+        <collection property="betDetailList" javaType="ArrayList" column="id" ofType="betDetail" select="selecDetailsFoBet"/>
+    </resultMap>
+
+    <select id="selecDetailsFoBet" parameterType="int" resultMap="detailMatch">
+        SELECT * FROM bet_detail WHERE bet_id = #{id}
+    </select>
+
+    <resultMap id="detailMatch" type="g.model.bet.po.BetDetail">
+        <association property="match" column="match_id" select="selectMatch"/>
+    </resultMap>
+
+    <select id="selectMatch" parameterType="int" resultType="g.model.match.po.Match">
+        SELECT * FROM "match" WHERE ID = #{id}
+    </select>
+
+    <select id="getBetHistory" parameterType="g.model.bet.so.BetSo" resultType="g.model.bet.po.Bet">
+        SELECT
+        SUM (single_amount) singleAmount,
+        SUM (effective_amount) effectiveAmount,
+        SUM (profit_amount) profitAmount,
+         to_char(bet_time,'YYYY-MM-DD') AS betTime
+        FROM
+        bet
+        WHERE
+        sys_user_id = #{sysUserId}
+        AND bet_time>#{startTime}
+        AND #{endTime}>bet_time
+        GROUP BY
+        to_char(bet_time,'YYYY-MM-DD')
+        order by betTime desc
+    </select>
+
+    <select id="getProfitAmount" resultType="Double">
+               select sum(pa.winAmount) from
+               ( select
+                (case when  b.profit_amount>0 then  -b.profit_amount else  b.single_amount end) as winAmount
+                from bet b
+                where b.bet_time BETWEEN #{startTime} and #{endTime}
+                <if test="sysUserId !=null ">
+                    and b.sys_user_id = #{sysUserId}
+                </if>
+                ) pa
+    </select>
+
+    <select id="oneMatchOneUserBetTypesAmountSum" resultType="g.model.bet.po.Bet">
+        SELECT bet_type,sum(single_amount)as single_amount
+        FROM v_bet_settle bet
+        WHERE bet.sys_user_id = #{sysUserId} and bet.match_id = #{matchId}
+        GROUP BY bet_type
+    </select>
+
+    <insert id="saveBet" parameterType="g.model.bet.po.Bet" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+        <![CDATA[
+          insert into bet(sys_user_id,r_type,bet_no,single_amount,status,settle_status,is_deleted,
+          bet_time,confirm_time)
+          values(#{sysUserId},#{rtype},#{betNo},#{singleAmount},#{status},#{settleStatus},#{isDeleted},
+          #{betTime},#{confirmTime})
+        ]]>
+    </insert>
+
+    <resultMap id="bet_ids" type="g.model.bet.po.BetIds">
+        <result column="bet_ids" property="ids" typeHandler="g.data.ArrayTypeHandler"/>
+    </resultMap>
+    <select id="getBetIds" parameterType="int" resultMap="bet_ids">
+        select bet_ids(#{size});
+    </select>
+
+    <!--//region your codes 1-->
+
+    <!--//endregion your codes 1-->
+
+</mapper>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.activityapply.ActivityPlayerApplyMapper">
+
+    <resultMap id="TABLE:activity_player_apply" type="g.model.activityapply.po.ActivityPlayerApply">
+        <id column="id" property="id"/>
+        <result column="activity_message_id" property="activityMessageId"/>
+        <result column="user_id" property="userId"/>
+        <result column="user_name" property="userName"/>
+        <result column="register_time" property="registerTime"/>
+        <result column="apply_time" property="applyTime"/>
+        <result column="player_recharge_id" property="playerRechargeId"/>
+        <result column="balance_start_time" property="balanceStartTime"/>
+        <result column="balance_end_time" property="balanceEndTime"/>
+        <result column="preferential_value" property="preferentialValue"/>
+        <result column="article" property="article"/>
+        <result column="is_realize" property="isRealize"/>
+        <result column="is_effective" property="isEffective"/>
+        <result column="relation_player_id" property="relationPlayerId" />
+        <result column="activity_type_code" property="activityTypeCode" />
+        <result column="activity_way_relation_id" property="activityWayRelationId" />
+    </resultMap>
+
+    <!-- 查询参与统计信息 分组 -->
+    <select id="selectActivityPlayerApplyInfoByGroup" parameterType="map" resultMap="TABLE:activity_player_apply">
+        SELECT
+            activity_classify_key,
+            starttime,
+            endtime,
+            COUNT(user_id) AS joinNumber,
+            SUM(preferential_value) AS totalCashBack,
+            SUM(recharge_amount) AS totalConsume
+        FROM
+            (
+                    activity_player_apply
+                LEFT JOIN
+                    player_recharge
+                ON
+                    activity_player_apply.player_recharge_id = player_recharge.id
+                LEFT JOIN
+                    activity_message
+                ON
+                    activity_player_apply.activity_message_id = activity_message.id
+            )
+        WHERE
+            ${where}
+        GROUP BY
+            activity_classify_key,
+            starttime,
+            endtime
+        ORDER BY
+            starttime
+        DESC
+            ${paging};
+    </select>
+
+    <!-- 查询参与统计信息总条数 分组 -->
+    <select id="selectTotalRecordByGroup" parameterType="map" resultType="int">
+        SELECT
+            COUNT(activity_player_apply) AS totalRecord
+        FROM
+            (
+                SELECT
+                    activity_classify_key
+                FROM
+                    activity_player_apply
+                LEFT JOIN
+                    player_recharge
+                ON
+                    activity_player_apply.player_recharge_id = player_recharge.id
+                LEFT JOIN
+                    activity_message
+                ON
+                    activity_player_apply.activity_message_id = activity_message.id
+                WHERE
+                    ${where}
+                GROUP BY
+                    activity_classify_key
+            )
+          activity_player_apply
+    </select>
+
+    <!-- 查询参与统计信息 详细 -->
+    <select id="selectActivityPlayerApplyInfoByDetail" parameterType="map" resultMap="TABLE:activity_player_apply">
+        SELECT
+            *
+        FROM
+            activity_player_apply
+        LEFT JOIN
+            player_recharge
+        ON
+            activity_player_apply.player_recharge_id = player_recharge.id
+        LEFT JOIN
+            activity_message
+        ON
+            activity_player_apply.activity_message_id = activity_message.id
+        LEFT JOIN
+            activity_way_relation
+        ON
+            activity_way_relation.activity_message_id = activity_message.id
+        WHERE
+            ${where}
+        ORDER BY
+            starttime
+        DESC
+            ${paging};
+    </select>
+
+    <!-- 查询参与统计信息总条数 详细 -->
+    <select id="selectTotalRecordByDetail" parameterType="map" resultType="int">
+        SELECT
+            COUNT(activity_player_apply) AS totalRecord
+        FROM
+        (
+            SELECT
+                *
+            FROM
+                activity_player_apply
+            LEFT JOIN
+                player_recharge
+            ON
+                activity_player_apply.player_recharge_id = player_recharge.id
+            LEFT JOIN
+                activity_message
+            ON
+                activity_player_apply.activity_message_id = activity_message.id
+            LEFT JOIN
+                activity_way_relation
+            ON
+                activity_way_relation.activity_message_id = activity_message.id
+            WHERE
+                ${where}
+            ORDER BY
+                starttime
+        )
+        activity_player_apply;
+    </select>
+
+    <!-- 玩家已经领取奖励 -->
+    <update id="updateIsRealize" parameterType="int">
+        UPDATE
+            activity_player_apply
+        SET
+            is_realize = TRUE
+        WHERE
+            id = #{id};
+    </update>
+
+    <!-- 玩家参加活动 -->
+    <insert id="insertNewRecord" parameterType="map">
+        INSERT INTO
+            activity_player_apply
+            (
+                activity_message_id,
+                user_id,
+                user_name,
+                balance_start_time,
+                balance_end_time,
+                article,
+                is_realize,
+                activity_type_code,
+                activity_way_relation_id
+            )
+        VALUES
+            (
+                #{messageId},
+                #{userId},
+                #{userName},
+                CURRENT_TIMESTAMP,
+                CURRENT_TIMESTAMP,
+                #{article},
+                TRUE,
+                #{activityTypeCode},
+                #{relationId}
+            );
+
+            <if test="walletBalance != null">
+                UPDATE
+                    user_player
+                SET
+                    wallet_balance = #{walletBalance}
+                WHERE
+                    id = #{userId};
+            </if>
+    </insert>
+
+</mapper>

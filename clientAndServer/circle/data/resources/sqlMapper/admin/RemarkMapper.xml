@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.admin.RemarkMapper">
+
+    <resultMap id="TABLE:remark" type="g.model.admin.po.Remark">
+        <id column="id" property="id"/>
+        <result column="remark_content" property="remarkContent"/>
+        <result column="remark_time" property="remarkTime"/>
+        <result column="model" property="model"/>
+        <result column="remark_title" property="remarkTitle"/>
+        <result column="remark_type" property="remarkType"/>
+        <result column="entity_user_id" property="entityUserId"/>
+        <result column="operator_id" property="operatorId"/>
+        <result column="entity_id" property="entityId"/>
+        <result column="operator" property="operator"/>
+    </resultMap>
+
+    <!--//region your codes 1-->
+
+    <!--//endregion your codes 1-->
+
+</mapper>

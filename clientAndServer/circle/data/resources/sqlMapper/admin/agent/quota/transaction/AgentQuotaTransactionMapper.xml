@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.admin.agent.quota.transaction.AgentQuotaTransactionMapper">
+
+    <resultMap id="TABLE:agent_quota_transaction" type="g.model.admin.agent.quota.transaction.po.AgentQuotaTransaction">
+        <id column="id" property="id"/>
+        <result column="agent_id" property="agentId"/>
+        <result column="date" property="date"/>
+        <result column="quota" property="quota"/>
+        <result column="type" property="type"/>
+        <result column="nickname" property="nickname"/>
+    </resultMap>
+
+    <!--//region your codes 1-->
+
+    <!--//endregion your codes 1-->
+
+</mapper>

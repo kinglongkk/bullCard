@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "shouzhiDH04",
+    "texture": "aa4f2834-b992-4657-9cfd-33e2107176d9",
+    "atlas": "",
+    "rect": [
+      7,
+      11,
+      143,
+      143
+    ],
+    "offset": [
+      -3.5,
+      0
+    ],
+    "originalSize": [
+      164,
+      165
+    ]
+  }
+}

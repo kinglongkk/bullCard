@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd"
+       default-autowire="byName">
+
+    <import resource="classpath*:conf/commons-security.xml" />
+
+    <!-- game.redis begin -->
+    <bean id="connectionInfoGame" class="org.springside.modules.nosql.redis.pool.ConnectionInfo">
+        <property name="database" value="${game.redis.database}"/>
+        <property name="timeout" value="${game.redis.timeout}"/>
+    </bean>
+
+    <bean id="hostAndPortGame" class="redis.clients.jedis.HostAndPort">
+        <constructor-arg index="0" value="${game.redis.host}"/>
+        <constructor-arg index="1" value="${game.redis.port}"/>
+    </bean>
+
+    <bean id="jedisPoolConfigGame" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="minIdle" value="${game.redis.minIdle}"/>
+        <property name="maxIdle" value="${game.redis.maxIdle}"/>
+        <property name="maxTotal" value="${game.redis.maxTotal}"/>
+        <property name="testOnBorrow" value="${game.redis.testOnBorrow}"/>
+    </bean>
+
+    <bean id="jedisPoolGame" class="org.springside.modules.nosql.redis.pool.JedisDirectPool">
+        <constructor-arg index="0" value="redis-redis-pool"/>
+        <constructor-arg index="1" ref="hostAndPortGame"/>
+        <constructor-arg index="2" ref="connectionInfoGame"/>
+        <constructor-arg index="3" ref="jedisPoolConfigGame"/>
+    </bean>
+
+    <bean id="jedisTemplateGame" class="org.springside.modules.nosql.redis.JedisTemplate">
+        <constructor-arg ref="jedisPoolGame"/>
+    </bean>
+    <!-- game redis end-->
+
+
+    <!-- api.redis begin -->
+    <bean id="connectionInfoApi" class="org.springside.modules.nosql.redis.pool.ConnectionInfo">
+        <property name="database" value="${api.redis.database}"/>
+        <property name="timeout" value="${api.redis.timeout}"/>
+    </bean>
+
+    <bean id="hostAndPortApi" class="redis.clients.jedis.HostAndPort">
+        <constructor-arg index="0" value="${api.redis.host}"/>
+        <constructor-arg index="1" value="${api.redis.port}"/>
+    </bean>
+
+    <bean id="jedisPoolConfigApi" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="minIdle" value="${api.redis.minIdle}"/>
+        <property name="maxIdle" value="${api.redis.maxIdle}"/>
+        <property name="maxTotal" value="${api.redis.maxTotal}"/>
+        <property name="testOnBorrow" value="${api.redis.testOnBorrow}"/>
+    </bean>
+
+    <bean id="jedisPoolApi" class="org.springside.modules.nosql.redis.pool.JedisDirectPool">
+        <constructor-arg index="0" value="redis-redis-pool"/>
+        <constructor-arg index="1" ref="hostAndPortApi"/>
+        <constructor-arg index="2" ref="connectionInfoApi"/>
+        <constructor-arg index="3" ref="jedisPoolConfigApi"/>
+    </bean>
+
+    <bean id="jedisTemplateApi" class="org.springside.modules.nosql.redis.JedisTemplate">
+        <constructor-arg ref="jedisPoolApi"/>
+    </bean>
+    <!-- api redis end-->
+
+</beans>

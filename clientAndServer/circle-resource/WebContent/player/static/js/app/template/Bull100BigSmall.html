@@ -1,0 +1,786 @@
+<div class="ui-destop-bg ui-game">
+    <div class="ui-destop">
+        <a class="ui-destop-back">
+        </a>
+        <a class="ui-destop-onlookers">
+            <div class="onlookers_jb">
+            </div>
+        </a>
+        <a class="ui-destop-charts">
+            <img src="../static/images/poker/bullFight/bull100/icon/charts.png"/>
+        </a>
+        <a class="ui-destop-rules">
+        </a>
+    </div>
+    <!--滚动通知-->
+    <div class="ui-destop-notice">
+        <div class="ui-destopnotic-font">
+            <marquee direction="left" scrollamount="2">
+                恭喜<span>Toggle</span>获得<b>550元</b>大奖奖奖奖奖奖奖&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                恭喜<span>Toggle2</span>获得<b>550元</b>大奖奖奖奖奖奖奖&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                恭喜<span>Toggle3</span>获得<b>550元</b>大奖奖奖奖奖奖奖&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </marquee>
+        </div>
+        <div class="ui-destop-notic-wifi">
+            <img src="../static/images/poker/bullFight/common/icon/wifi3.png"/>
+        </div>
+    </div>
+    <div class="bull_prompt">本桌限投：<span id="bullBetTimes">10</span>次</div>
+    <!--投注按钮-->
+    <div class="Betting">
+        <ul class="Betting_ul">
+            <li class="Be_bg">
+                <span>100</span>
+            </li>
+            <li class="Be_bg1">
+                <span>1000</span>
+            </li>
+            <li class="Be_bg1">
+                <span>1万</span>
+            </li>
+            <li class="Be_bg1">
+                <span>5万</span>
+            </li>
+            <li class="Be_bg1">
+                <span>10万</span>
+            </li>
+        </ul>
+        <div class="Betting_btn_animation">
+            <div class="Be_bg_underline"></div>
+            <div class="Betting_btn_bgam"></div>
+            <div class="bull_bet_btn">
+                <div class="Betting_btn_dot Betting_dot_animation1"></div>
+                <div class="Betting_btn_dot Betting_dot_animation3"></div>
+                <div class="Betting_btn_dot Betting_dot_animation9"></div>
+            </div>
+            <div class="bull_bet_btn1">
+                <div class="Betting_btn_dot Betting_dot_animation2"></div>
+                <div class="Betting_btn_dot Betting_dot_animation4"></div>
+            </div>
+            <div class="bull_bet_btn2 bull_bet_vy1">
+                <div class="Betting_btn_dot1 Betting_dot_animation5"></div>
+            </div>
+            <div class="bull_bet_btn2 bull_bet_vy2">
+                <div class="Betting_btn_dot1 Betting_dot_animation6"></div>
+            </div>
+            <div class="bull_bet_btn2 bull_bet_vy3">
+                <div class="Betting_btn_dot1 Betting_dot_animation7"></div>
+            </div>
+            <div class="bull_bet_btn2 bull_bet_vy4">
+                <div class="Betting_btn_dot1 Betting_dot_animation8"></div>
+            </div>
+        </div>
+    </div>
+    <div class="user-border user-border-f">
+        <div class="ui-destop-user-b bull-user-a">
+            <div class="ui-destop-user-photo">
+                <img src="../static/images/head/comm_1_icon_head_00.jpg"/>
+            </div>
+            <div class="bull_user_name2">
+                花花不是花
+            </div>
+            <div class="bull_user_nub1">
+                3,710
+            </div>
+            <div class="bull_money_diff bull_add_money bull_nub_left">+2000</div>
+            <div class="room_nub">房间：<span id="room_name">吉林</span><span id="room_nub">35</span><span id="room_model">bull100</span></div>
+            <div class="board_jb"></div>
+        </div>
+    </div>
+    <!--牌面-->
+    <div class="playing_card">
+        <div class="playing_card_user1">
+            <div class="cmm_card ">
+                <div class="cmm_card2">
+                    <div class="card_left">
+                        <div class="card_left_nub nub0">
+                        </div>
+                        <div class="card_flow flow0">
+                        </div>
+                    </div>
+                    <div class="card_auto auto0">
+                    </div>
+                </div>
+            </div>
+            <div class="cmm_card ">
+                <div class="cmm_card2">
+                    <div class="card_left">
+                        <div class="card_left_nub nub1">
+                        </div>
+                        <div class="card_flow flow0">
+                        </div>
+                    </div>
+                    <div class="card_auto auto0">
+                    </div>
+                </div>
+            </div>
+            <div class="cmm_card ">
+                <div class="cmm_card2">
+                    <div class="card_left">
+                        <div class="card_left_nub nub2">
+                        </div>
+                        <div class="card_flow flow0">
+                        </div>
+                    </div>
+                    <div class="card_auto auto0">
+                    </div>
+                </div>
+            </div>
+            <div class="cmm_card ">
+                <div class="cmm_card2">
+                    <div class="card_left">
+                        <div class="card_left_nub nub3">
+                        </div>
+                        <div class="card_flow flow0">
+                        </div>
+                    </div>
+                    <div class="card_auto auto0">
+                    </div>
+                </div>
+            </div>
+            <div class="cmm_card ">
+                <div class="cmm_card2">
+                    <div class="card_left">
+                        <div class="card_left_nub nub4">
+                        </div>
+                        <div class="card_flow flow0">
+                        </div>
+                    </div>
+                    <div class="card_auto auto0">
+                    </div>
+                </div>
+            </div>
+            <div class="cow cow0">
+                <div></div>
+            </div>
+        </div>
+
+    </div>
+    <!--中心区-->
+    <div class="GC-center">
+        <div class="GC-up" >
+            <div class="decorate_bg comm_spades"></div>
+            <div class="Gamble_p">
+                <div class="Gamble_bg Gamble_l1">
+                    <div class=" Bull100_zje">
+                        <div class="Gamble_zje">
+                            326万
+                        </div>
+                    </div>
+                    <div class="Gamble_jb Bull_flow_big">
+                    </div>
+                    <div class="Gamble_per">
+                        3000
+                    </div>
+                    <!--赢钱-->
+                    <div class="Gamble_per">
+                        <span class="Gamble_per_left ">×1</span>
+                        <span class="Gamble_per_right">1460万</span>
+                    </div>
+                </div>
+                <div class="Gamble_bg Gamble_r1">
+                    <div class=" Bull100_zje">
+                        <div class="Gamble_zje">
+                            326万
+                        </div>
+                    </div>
+                    <div class="Gamble_jb Bull_flow_small">
+                    </div>
+                    <div class="Gamble_per">
+                        3000
+                    </div>
+                    <!--赢钱-->
+                    <div class="Gamble_per">
+                        <span class="Gamble_per_left ">×1</span>
+                        <span class="Gamble_per_right">300</span>
+                    </div>
+                </div>
+            </div>
+            <div class="playing_card_user">
+                <div class="cmm_card ">
+                    <div class="cmm_card2">
+                        <div class="card_left">
+                            <div class="card_left_nub nub5">
+                            </div>
+                            <div class="card_flow flow0">
+                            </div>
+                        </div>
+                        <div class="card_auto auto0">
+                        </div>
+                    </div>
+                </div>
+                <div class="cmm_card ">
+                    <div class="cmm_card2">
+                        <div class="card_left">
+                            <div class="card_left_nub nub6">
+                            </div>
+                            <div class="card_flow flow0">
+                            </div>
+                        </div>
+                        <div class="card_auto auto0">
+                        </div>
+                    </div>
+                </div>
+                <div class="cmm_card ">
+                    <div class="cmm_card2">
+                        <div class="card_left">
+                            <div class="card_left_nub nub7">
+                            </div>
+                            <div class="card_flow flow0">
+                            </div>
+                        </div>
+                        <div class="card_auto auto0">
+                        </div>
+                    </div>
+                </div>
+                <div class="cmm_card ">
+                    <div class="cmm_card2">
+                        <div class="card_left">
+                            <div class="card_left_nub nub8">
+                            </div>
+                            <div class="card_flow flow0">
+                            </div>
+                        </div>
+                        <div class="card_auto auto0">
+                        </div>
+                    </div>
+                </div>
+                <div class="cmm_card ">
+                    <div class="cmm_card2">
+                        <div class="card_left">
+                            <div class="card_left_nub nub9">
+                            </div>
+                            <div class="card_flow flow0">
+                            </div>
+                        </div>
+                        <div class="card_auto auto0">
+                        </div>
+                    </div>
+                </div>
+                <div class="cow cow0">
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <div class="GC-up" >
+            <div class="decorate_bg red-peach"></div>
+            <div class="Gamble_p">
+                <div class="Gamble_bg Gamble_l1">
+                    <div class=" Bull100_zje">
+                        <div class="Gamble_zje">
+                            326万
+                        </div>
+                    </div>
+                    <div class="Gamble_jb Bull_flow_big ">
+                    </div>
+                    <div class="Gamble_per">
+                        3000
+                    </div>
+                    <!--赢钱-->
+                    <div class="Gamble_per">
+                        <span class="Gamble_per_left ">×1</span>
+                        <span class="Gamble_per_right">300</span>
+                    </div>
+                </div>
+                <div class="Gamble_bg Gamble_r1">
+                    <div class=" Bull100_zje">
+                        <div class="Gamble_zje">
+                            326万
+                        </div>
+                    </div>
+                    <div class="Gamble_jb Bull_flow_small">
+                    </div>
+                    <div class="Gamble_per">
+                        3000
+                    </div>
+                    <!--赢钱-->
+                    <div class="Gamble_per">
+                        <span class="Gamble_per_left ">×1</span>
+                        <span class="Gamble_per_right">300</span>
+                    </div>
+                </div>
+            </div>
+            <div class="playing_card_user">
+                <div class="cmm_card ">
+                    <div class="cmm_card2">
+                        <div class="card_left">
+                            <div class="card_left_nub rnub2">
+                            </div>
+                            <div class="card_flow flow1">
+                            </div>
+                        </div>
+                        <div class="card_auto auto1">
+                        </div>
+                    </div>
+                </div>
+                <div class="cmm_card ">
+                    <div class="cmm_card2">
+                        <div class="card_left">
+                            <div class="card_left_nub rnub3">
+                            </div>
+                            <div class="card_flow flow1">
+                            </div>
+                        </div>
+                        <div class="card_auto auto1">
+                        </div>
+                    </div>
+                </div>
+                <div class="cmm_card ">
+                    <div class="cmm_card2">
+                        <div class="card_left">
+                            <div class="card_left_nub rnub4">
+                            </div>
+                            <div class="card_flow flow1">
+                            </div>
+                        </div>
+                        <div class="card_auto auto1">
+                        </div>
+                    </div>
+                </div>
+                <div class="cmm_card ">
+                    <div class="cmm_card2">
+                        <div class="card_left">
+                            <div class="card_left_nub rnub5">
+                            </div>
+                            <div class="card_flow flow1">
+                            </div>
+                        </div>
+                        <div class="card_auto auto1">
+                        </div>
+                    </div>
+                </div>
+                <div class="cmm_card ">
+                    <div class="cmm_card2">
+                        <div class="card_left">
+                            <div class="card_left_nub rnub6">
+                            </div>
+                            <div class="card_flow flow1">
+                            </div>
+                        </div>
+                        <div class="card_auto auto1">
+                        </div>
+                    </div>
+                </div>
+                <div class="cow cow0">
+                    <div></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="GC-up" >
+            <div class="decorate_bg comm_sucks"></div>
+            <div class="Gamble_p">
+                <div class="Gamble_bg Gamble_l1">
+                    <div class=" Bull100_zje">
+                        <div class="Gamble_zje">
+                            326万
+                        </div>
+                    </div>
+                    <div class="Gamble_jb Bull_flow_big">
+                    </div>
+                    <div class="Gamble_per">
+                        3000
+                    </div>
+                    <!--赢钱-->
+                    <div class="Gamble_per Gamble_win">
+                        <span class="Gamble_per_left ">×1</span>
+                        <span class="Gamble_per_right">300</span>
+                    </div>
+                </div>
+                <div class="Gamble_bg Gamble_r1">
+                    <div class=" Bull100_zje">
+                        <div class="Gamble_zje">
+                            326万
+                        </div>
+                    </div>
+                    <div class="Gamble_jb Bull_flow_small">
+                    </div>
+                    <div class="Gamble_per">
+                        3000
+                    </div>
+                    <!--赢钱-->
+                    <div class="Gamble_per Gamble_win">
+                        <span class="Gamble_per_left ">×1</span>
+                        <span class="Gamble_per_right">300</span>
+                    </div>
+                </div>
+            </div>
+            <div class="playing_card_user">
+                <div class="cmm_card ">
+                    <div class="cmm_card2">
+                        <div class="card_left">
+                            <div class="card_left_nub nub10">
+                            </div>
+                            <div class="card_flow flow0">
+                            </div>
+                        </div>
+                        <div class="card_auto auto4">
+                        </div>
+                    </div>
+                </div>
+                <div class="cmm_card ">
+                    <div class="cmm_card2">
+                        <div class="card_left">
+                            <div class="card_left_nub nub11">
+                            </div>
+                            <div class="card_flow flow0">
+                            </div>
+                        </div>
+                        <div class="card_auto auto5">
+                        </div>
+                    </div>
+                </div>
+                <div class="cmm_card ">
+                    <div class="cmm_card2">
+                        <div class="card_left">
+                            <div class="card_left_nub nub12">
+                            </div>
+                            <div class="card_flow flow0">
+                            </div>
+                        </div>
+                        <div class="card_auto auto6">
+                        </div>
+                    </div>
+                </div>
+                <div class="cmm_card ">
+                    <div class="cmm_card2">
+                        <div class="card_left">
+                            <div class="card_left_nub rnub0">
+                            </div>
+                            <div class="card_flow flow1">
+                            </div>
+                        </div>
+                        <div class="card_auto auto1">
+                        </div>
+                    </div>
+                </div>
+                <div class="cmm_card ">
+                    <div class="cmm_card2">
+                        <div class="card_left">
+                            <div class="card_left_nub rnub1">
+                            </div>
+                            <div class="card_flow flow1">
+                            </div>
+                        </div>
+                        <div class="card_auto auto1">
+                        </div>
+                    </div>
+                </div>
+                <div class="cow cow0">
+                    <div></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="GC-up" >
+            <div class="decorate_bg piece"></div>
+            <div class="Gamble_p">
+                <div class="Gamble_bg Gamble_l1">
+                    <div class=" Bull100_zje">
+                        <div class="Gamble_zje">
+                            326万
+                        </div>
+                    </div>
+                    <div class="Gamble_jb Bull_flow_big_yellow">
+                    </div>
+                    <div class="Gamble_per">
+                        3000
+                    </div>
+                    <!--赢钱-->
+                    <div class="Gamble_per">
+                        <span class="Gamble_per_left ">×1</span>
+                        <span class="Gamble_per_right">300</span>
+                    </div>
+                </div>
+                <div class="Gamble_bg Gamble_r1">
+                    <div class=" Bull100_zje">
+                        <div class="Gamble_zje">
+                            326万
+                        </div>
+                    </div>
+                    <div class="Gamble_jb Bull_flow_samll_yellow">
+                    </div>
+                    <div class="Gamble_per">
+                        3000
+                    </div>
+                    <!--赢钱-->
+                    <div class="Gamble_per Gamble_loser">
+                        <span class="Gamble_per_left ">×1</span>
+                        <span class="Gamble_per_right">300</span>
+                    </div>
+                </div>
+            </div>
+            <div class="playing_card_user">
+                <div class="cmm_card ">
+                    <div class="cmm_card2">
+                        <div class="card_left">
+                            <div class="card_left_nub rnub7">
+                            </div>
+                            <div class="card_flow flow1">
+                            </div>
+                        </div>
+                        <div class="card_auto auto1">
+                        </div>
+                    </div>
+                </div>
+                <div class="cmm_card ">
+                    <div class="cmm_card2">
+                        <div class="card_left">
+                            <div class="card_left_nub rnub8">
+                            </div>
+                            <div class="card_flow flow1">
+                            </div>
+                        </div>
+                        <div class="card_auto auto1">
+                        </div>
+                    </div>
+                </div>
+                <div class="cmm_card ">
+                    <div class="cmm_card2">
+                        <div class="card_left">
+                            <div class="card_left_nub rnub9">
+                            </div>
+                            <div class="card_flow flow1">
+                            </div>
+                        </div>
+                        <div class="card_auto auto1">
+                        </div>
+                    </div>
+                </div>
+                <div class="cmm_card ">
+                    <div class="cmm_card2">
+                        <div class="card_left">
+                            <div class="card_left_nub rnub10">
+                            </div>
+                            <div class="card_flow flow1">
+                            </div>
+                        </div>
+                        <div class="card_auto auto4">
+                        </div>
+                    </div>
+                </div>
+                <div class="cmm_card ">
+                    <div class="cmm_card2">
+                        <div class="card_left">
+                            <div class="card_left_nub rnub11">
+                            </div>
+                            <div class="card_flow flow1">
+                            </div>
+                        </div>
+                        <div class="card_auto auto5">
+                        </div>
+                    </div>
+                </div>
+                <div class="cow cow0">
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--倒计时-->
+    <div class="Prompt">请选择幸运区域</div>
+    <!--头像扑克牌-->
+    <div class="ui-destop-user-border">
+        <div class="user-border user-border-a">
+            <div class="ui-destop-user-b bull-user-a">
+                <div class="ui-destop-user-photo">
+                    <img src="../static/images/head/comm_1_icon_head_00.jpg"/>
+                </div>
+                <div class="bull_user_info">
+                    <div class="bull_user_name1">
+                        花花不是花
+                    </div>
+                    <div class="bull_user_nub">
+                        3,710
+                    </div>
+                    <div class="bull_money_diff">+2000</div>
+                    <div class="ui_btn_boss">
+                        <div class="bull_sz_btn">
+                            <div class="bull_sz_light">
+                                <div class="bull_sz_btn1"></div>
+                            </div>
+                            <div class="bull_sz_light4">
+                                <div class="bull_sz_btn2"></div>
+                            </div>
+                        </div>
+                        <div class="bull_sz_animation">
+                            <!--<div class="bull_sz_light1"></div>-->
+                            <div class="bull_sz_light2"></div>
+                        </div>
+                        <!--<div class="bull_sz_light3"></div>-->
+                    </div>
+                </div>
+                <div class="board_jb1"></div>
+            </div>
+        </div>
+        <div class="user-border-lr user-border-b">
+            <div class="ui-destop-user-b">
+                <div class="ui-destop-user-photo">
+                    <img src="../static/images/head/comm_1_icon_head_00.jpg"/>
+                </div>
+                <div class="bull_user_name">
+                    花花不是花
+                </div>
+                <div class="ui-destop-user-gold-num">
+                    3,710
+                </div>
+                <div class="bull_money_diff bull_add_money bull_nub_left">+2000</div>
+            </div>
+            <div class="no_user">
+            </div>
+        </div>
+        <div class="user-border-lr user-border-c">
+            <div class="ui-destop-user-b">
+                <div class="ui-destop-user-photo">
+                    <img src="../static/images/head/comm_1_icon_head_00.jpg"/>
+                </div>
+                <div class="bull_user_name">
+                    花花不是花
+                </div>
+                <div class="ui-destop-user-gold-num">
+                    3,710
+                </div>
+                <div class="bull_money_diff bull_add_money  bull_nub_right">+2000</div>
+            </div>
+            <div class="no_user">
+            </div>
+        </div>
+        <div class="user-border-lr user-border-h">
+            <div class="ui-destop-user-b">
+                <div class="ui-destop-user-photo">
+                    <img src="../static/images/head/comm_1_icon_head_00.jpg"/>
+                </div>
+                <div class="bull_user_name">
+                    花花不是花
+                </div>
+                <div class="ui-destop-user-gold-num">
+                    3,710万
+                </div>
+                <div class="bull_money_diff bull_add_money bull_nub_left">+2000</div>
+            </div>
+            <div class="no_user">
+            </div>
+        </div>
+        <div class="user-border-lr user-border-g">
+            <div class="ui-destop-user-b">
+                <div class="ui-destop-user-photo">
+                    <img src="../static/images/head/comm_1_icon_head_00.jpg"/>
+                </div>
+                <div class="bull_user_name">
+                    花花不是花
+                </div>
+                <div class="ui-destop-user-gold-num">
+                    3,710
+                </div>
+                <div class="bull_money_diff bull_add_money bull_nub_right">+2000</div>
+
+            </div>
+            <div class="no_user">
+            </div>
+        </div>
+        <div class="user-border-lr user-border-d">
+            <div class="ui-destop-user-b">
+                <div class="ui-destop-user-photo">
+                    <img src="../static/images/head/comm_1_icon_head_00.jpg"/>
+                </div>
+                <div class="bull_user_name">
+                    花花不是花
+                </div>
+                <div class="ui-destop-user-gold-num">
+                    3,710
+                </div>
+                <div class="bull_money_diff bull_add_money bull_nub_left">+2000</div>
+            </div>
+            <div class="no_user">
+            </div>
+        </div>
+        <div class="user-border-lr user-border-e">
+            <div class="ui-destop-user-b">
+                <div class="ui-destop-user-photo">
+                    <img src="../static/images/head/comm_1_icon_head_00.jpg"/>
+                </div>
+                <div class="bull_user_name">
+                    花花不是花
+                </div>
+                <div class="ui-destop-user-gold-num">
+                    3,710
+                </div>
+                <div class="bull_money_diff bull_add_money bull_nub_right">+2000</div>
+            </div>
+            <div class="no_user">
+            </div>
+        </div>
+        <div class="bull_xz">
+            <div class="bull_xz_btn">
+                <button class="bull_xz_button"></button>
+                <button class="bull_xzz_button"></button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!--胜利动画-->
+<!--
+<div class="Bull_animation"style="display: none;" >
+    <div class="Bull_victory_bg"><i></i></div>
+    <div class="Bull_victory">
+        <div class="Bull_victory_win"><i></i></div>
+        <div class="Bull_vc_win_bg">
+            <i></i>
+            <div class="Bull_vc_win_font"></div>
+        </div>
+        <div class="Bull_vc_win_stars"><i></i></div>
+        <div class="Bull_vc_win_stars1"><i></i></div>
+    </div>
+    <div class="Bull_failure" style="display: none;">
+        <div class="Bull_animation_failure"><i></i></div>
+        <div class="Bull_failure_bg">
+            <i></i>
+            <div class="Bull_failure_font"></div>
+        </div>
+        <div class="Bull_failure_stars"><i></i></div>
+        <div class="Bull_failure_stars1"><i></i></div>
+        <div class="Bull_failure_font1" data-text="+200"><i></i>-200</div>
+    </div>
+    <div class="Bull_animation_content">
+        <i></i>
+        <div class="Bull_vc_content_bg">
+            <div class="Bull_victory_font" data-text="+200"><i></i>+200</div>
+            <div class="Bull_victory_user">
+                <ul>
+                    <li>
+                        <div class="Bull_victory_user_head">
+                            <img src="../static/images/head/comm_1_icon_head_00.jpg"/>
+                        </div>
+                        <div class="Bull_victory_user_name">我来也</div>
+                        <div class="Bull_victory_user_font">4700</div>
+                    </li>
+                    <li>
+                        <div class="Bull_victory_user_head">
+                            <img src="../static/images/head/comm_1_icon_head_01.jpg"/>
+                        </div>
+                        <div class="Bull_victory_user_name">我来也</div>
+                        <div class="Bull_victory_user_font">4700</div>
+                    </li>
+                    <li>
+                        <div class="Bull_victory_user_head">
+                            <img src="../static/images/head/comm_1_icon_head_02.jpg"/>
+                        </div>
+                        <div class="Bull_victory_user_name">我来也</div>
+                        <div class="Bull_victory_user_font">4700</div>
+                    </li>
+                    <li>
+                        <div class="Bull_victory_user_head">
+                            <img src="../static/images/head/comm_1_icon_head_03.jpg"/>
+                        </div>
+                        <div class="Bull_victory_user_name">我来也</div>
+                        <div class="Bull_victory_user_font">4700</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="Bull_victory_btn">
+                <div class="Bull_victory_btn_font"></div>
+            </div>
+        </div>
+    </div>
+</div>-->

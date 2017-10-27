@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.activitymessage.ActivityMessageMapper">
+
+    <resultMap id="TABLE:activity_message" type="g.model.activitymessage.po.ActivityMessage">
+        <id column="id" property="id"/>
+        <result column="starttime" property="startTime"/>
+        <result column="endtime" property="endTime"/>
+        <result column="create_time" property="createTime"/>
+        <result column="create_userid" property="createUserId"/>
+        <result column="create_username" property="createUserName"/>
+        <result column="activity_classify_key" property="activityClassifyKey"/>
+        <result column="activity_type_code" property="activityTypeCode"/>
+        <result column="is_display" property="isDisplay"/>
+        <result column="is_deleted" property="isDeleted"/>
+        <result column="update_userid" property="updateUserId"/>
+        <result column="update_username" property="updateUserName"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="order_num" property="orderNum"/>
+        <result column="status" property="status"/>
+    </resultMap>
+
+    <!--//region your codes 1-->
+
+    <!-- 新增活动信息 -->
+    <insert id="insertActivityMessageInfo" parameterType="map">
+        INSERT INTO
+            activity_message
+            (
+                starttime,
+                endtime,
+                create_time,
+                create_userid,
+                create_username,
+                activity_classify_key,
+                activity_type_code,
+                is_display,
+                is_deleted,
+                update_userid,
+                update_time,
+                order_num,
+                update_username
+            )
+        VALUES
+            (
+                #{message.startTime},
+                #{message.endTime},
+                CURRENT_TIMESTAMP,
+                #{message.createUserId},
+                #{message.createUserName},
+                #{message.activityClassifyKey},
+                #{message.activityTypeCode},
+                #{message.isDisplay},
+                FALSE,
+                #{message.updateUserId},
+                CURRENT_TIMESTAMP,
+                #{message.orderNum},
+                #{message.updateUserName}
+            );
+
+        INSERT INTO
+            activity_rule
+            (
+                activity_message_id,
+                limit_number,
+                effective_time,
+                is_demand_first,
+                is_designated_game,
+                game_type,
+                is_exclusive,
+                exclusive_activity
+            )
+        VALUES
+            (
+                (SELECT currval('activity_message_id_seq')),
+                #{rule.limitNumber},
+                #{rule.effectiveTime},
+                #{rule.isDemandFirst},
+                #{rule.isDesignatedGame},
+                #{rule.gameType},
+                #{rule.isExclusive},
+                #{rule.exclusiveActivity}
+            );
+
+        <if test="relation != null">
+            <if test="!relation.isEmpty()">
+                INSERT INTO
+                    activity_way_relation
+                    (
+                        activity_message_id,
+                        preferential_form,
+                        preferential_value,
+                        preferential_audit,
+                        order_column,
+                        activity_rule_id,
+                        is_article,
+                        article,
+                        trigger_value,
+                        preferential_ratio
+                    )
+                VALUES
+                <foreach collection="relation" index="index" item="relation" separator=",">
+                    (
+                        (SELECT currval('activity_message_id_seq')),
+                        #{relation.preferentialForm},
+                        #{relation.preferentialValue},
+                        #{relation.preferentialAudit},
+                        #{relation.orderColumn},
+                        (SELECT currval('activity_rule_id_seq')),
+                        #{relation.isArticle},
+                        #{relation.article},
+                        #{relation.triggerValue},
+                        #{relation.preferentialRatio}
+                    )
+                </foreach>
+            </if>
+        </if>
+    </insert>
+
+    <!-- 修改活动信息 -->
+    <update id="updateActivityMessageInfo" parameterType="map">
+        UPDATE
+            activity_message
+        SET
+            starttime = #{message.startTime},
+            endtime = #{message.endTime},
+            activity_classify_key = #{message.activityClassifyKey},
+            activity_type_code = #{message.activityTypeCode},
+            is_display = #{message.isDisplay},
+            update_userid = #{message.updateUserId},
+            update_time = CURRENT_TIMESTAMP,
+            order_num = #{message.orderNum},
+            update_username = #{message.updateUserName}
+        WHERE
+            id = #{message.id};
+
+        UPDATE
+            activity_rule
+        SET
+            activity_message_id = #{message.id},
+            limit_number = #{rule.limitNumber},
+            effective_time = #{rule.effectiveTime},
+            is_demand_first = #{rule.isDemandFirst},
+            is_designated_game = #{rule.isDesignatedGame},
+            game_type = #{rule.gameType},
+            is_exclusive = #{rule.isExclusive},
+            exclusive_activity = #{rule.exclusiveActivity}
+        WHERE
+            id = #{rule.id};
+
+        DELETE FROM
+            activity_way_relation
+        WHERE
+            activity_message_id = #{message.id};
+
+        <if test="relation != null">
+            <if test="!relation.isEmpty()">
+                INSERT INTO
+                    activity_way_relation
+                        (
+                            activity_message_id,
+                            preferential_form,
+                            preferential_value,
+                            preferential_audit,
+                            order_column,
+                            activity_rule_id,
+                            is_article,
+                            article,
+                            trigger_value,
+                            preferential_ratio
+                        )
+                VALUES
+                <foreach collection="relation" index="index" item="relation" separator=",">
+                    (
+                        #{message.id},
+                        #{relation.preferentialForm},
+                        #{relation.preferentialValue},
+                        #{relation.preferentialAudit},
+                        #{relation.orderColumn},
+                        #{rule.id},
+                        #{relation.isArticle},
+                        #{relation.article},
+                        #{relation.triggerValue},
+                        #{relation.preferentialRatio}
+                    )
+                </foreach>
+            </if>
+        </if>
+    </update>
+
+    <!-- ActivityMessage逻辑删除 -->
+    <update id="updateMessageIsDeleted" parameterType="map">
+        UPDATE
+            activity_message
+        SET
+            is_deleted = TRUE,
+            update_userid = #{updateUserId},
+            update_username = #{updateUser},
+            update_time = CURRENT_TIMESTAMP
+        WHERE
+            id = #{messageId};
+    </update>
+
+    <!-- 查询当前可参与的活动列表 -->
+    <select id="selectCanJoinActivity" parameterType="String" resultType="map">
+        SELECT
+            message.activity_classify_key,
+            message.id
+        FROM
+            activity_rule rule
+        LEFT JOIN
+            activity_message message
+        ON
+            message.id = rule.activity_message_id
+        WHERE
+            message.endtime > current_timestamp
+        AND
+            message.is_display = TRUE
+        AND
+            message.is_deleted = FALSE
+        AND
+            rule.game_type = #{gameType};
+    </select>
+
+</mapper>

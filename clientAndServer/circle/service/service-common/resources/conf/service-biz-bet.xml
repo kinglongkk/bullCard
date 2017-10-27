@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd"
+       default-autowire="byType">
+
+    <bean class="g.service.bet.settle.SettleExecutor" id="settleExecutor"/>
+
+    <bean class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor" id="settleThreadPool" >
+        <property name="queueCapacity" value="300"/>
+        <property name="corePoolSize" value="10"/>
+        <property name="maxPoolSize" value="100"/>
+        <property name="threadGroupName" value="Task"/>
+        <property name="rejectedExecutionHandler">
+            <bean class="java.util.concurrent.ThreadPoolExecutor$CallerRunsPolicy"/>
+        </property>
+    </bean>
+
+    <!--投注-->
+    <bean id="betService" class="g.service.bet.BetService"/>
+    <bean id="settleService" class="g.service.bet.settle.DatabaseSettleService">
+        <property name="betDao" ref="betDao"/>
+    </bean>
+    <bean id="matchService" class="g.service.match.MatchService"/>
+    <bean id="matchResultService" class="g.service.match.MatchResultService"/>
+    <bean id="vMatchResultService" class="g.service.match.VMatchResultService"/>
+    <!-- 玩家分组单注投注限额服务 -->
+    <bean id="vUserGroupBetLimitService" class="g.service.common.VUserGroupBetLimitService"/>
+
+    <!-- 玩家分组综合过关单项限额服务 -->
+    <bean id="vUserGroupBetLimitMultipleService" class="g.service.common.VUserGroupBetLimitMultipleService"/>
+
+    <!-- 用户与投注限额关系表服务 -->
+    <bean id="betLimitUserService" class="g.service.common.support.BetLimitUserService"/>
+
+    <!-- 用户组与综合投注限额关系表服务 -->
+    <bean id="betLimitUserGroupService" class="g.service.common.support.BetLimitUserGroupService"/>
+    <bean id="betLimitUserGroupMultipleService" class="g.service.common.support.BetLimitUserGroupMultipleService"/>
+
+    <!-- 用户与综合投注限额关系表服务 -->
+    <bean id="betLimitUserMultipleService" class="g.service.common.support.BetLimitUserMultipleService"/>
+
+    <!-- 代理单注限额视图服务 -->
+    <bean id="vUserBetLimitService" class="g.service.common.support.VUserBetLimitService"/>
+
+    <!-- 代理综合过关单注最高限额服务 -->
+    <bean id="vUserBetLimitMultipleService" class="g.service.common.support.VUserBetLimitMultipleService"/>
+
+    <!--注单详情-->
+    <bean id="betDetailService" class="g.service.bet.BetDetailService"/>
+
+    <!-- 注单 -->
+    <bean id="vBetListService" class="g.service.common.VBetListService"/>
+</beans>

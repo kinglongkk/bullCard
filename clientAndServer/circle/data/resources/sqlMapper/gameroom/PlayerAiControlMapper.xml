@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.gameroom.PlayerAiControlMapper">
+
+    <resultMap id="TABLE:player_ai_control" type="g.model.gameroom.po.PlayerAiControl">
+        <id column="id" property="id"/>
+        <result column="room_id" property="roomId"/>
+        <result column="room_name" property="roomName"/>
+        <result column="batch_id" property="batchId"/>
+        <result column="status" property="status"/>
+        <result column="ai_qty" property="aiQty"/>
+        <result column="control_mode" property="controlMode"/>
+        <result column="bring_gold_min" property="bringGoldMin"/>
+        <result column="bring_gold_max" property="bringGoldMax"/>
+        <result column="interval_min_time" property="intervalMinTime"/>
+        <result column="interval_max_time" property="intervalMaxTime"/>
+        <result column="leave_min_time" property="leaveMinTime"/>
+        <result column="leave_max_time" property="leaveMaxTime"/>
+        <result column="rest_min_games" property="restMinGames"/>
+        <result column="rest_max_games" property="restMaxGames"/>
+        <result column="room_max_qty" property="roomMaxQty"/>
+        <result column="create_user" property="createUser"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_user" property="updateUser"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="begin_control_time" property="beginControlTime"/>
+        <result column="control_cycle" property="controlCycle"/>
+        <result column="bet_count" property="betCount"/>
+        <result column="chip_rates" property="chipRates"/>
+        <result column="game_model" property="gameModel"/>
+    </resultMap>
+
+    <!--根据房间ID获取-->
+    <select id="getTodayBatchId"  parameterType="map" resultType="java.lang.String">
+        select max(batch_id) from player_ai_control  where room_id=#{gameRoomId} and create_time BETWEEN #{begintime} and #{endtime}
+    </select>
+    <!--根据房间的ID停止调控-->
+    <update id="stopAi">
+        update player_ai_control set status='20',update_time=now(),update_user=#{username} where status='10' and room_id=#{roomId} and control_mode != '3'
+    </update>
+    <!--根据房间ID 获取实体数据-->
+    <select id="getPlayerAiControl" parameterType="map" resultType="g.model.gameroom.po.PlayerAiControl">
+        select * from player_ai_control where status='10' and room_id=#{roomId} and control_mode != '3'
+    </select>
+    <!--根据房间ID获取默认基础设置信息-->
+    <select id="getDefaultPlayerAiControl" resultType="g.model.gameroom.po.PlayerAiControl">
+        select * from player_ai_control where control_mode='3' and room_id=#{roomId}
+    </select>
+</mapper>

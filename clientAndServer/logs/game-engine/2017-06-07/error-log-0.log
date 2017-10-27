@@ -1,0 +1,62 @@
+14:05:20.601 ERROR [main] o.s.m.nosql.redis.JedisTemplate:153 - Redis connection 192.168.0.44:6379 lost.
+redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool
+	at redis.clients.util.Pool.getResource(Pool.java:53)
+	at org.springside.modules.nosql.redis.JedisTemplate.execute(JedisTemplate.java:93)
+	at org.springside.modules.nosql.redis.JedisTemplate.flushDB(JedisTemplate.java:203)
+	at g.service.chesscard.engine.manager.ChessCardInitManager.init(ChessCardInitManager.java:40)
+	at g.service.chesscard.engine.core.ChessCardEngine.init(ChessCardEngine.java:40)
+	at g.service.chesscard.GameMain.initEngine(GameMain.java:47)
+	at g.service.chesscard.GameMain.init(GameMain.java:38)
+	at g.service.chesscard.GameMain.main(GameMain.java:63)
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: java.net.NoRouteToHostException: No route to host: connect
+	at redis.clients.jedis.Connection.connect(Connection.java:164)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:80)
+	at redis.clients.jedis.BinaryJedis.connect(BinaryJedis.java:1677)
+	at org.springside.modules.nosql.redis.pool.JedisFactory.makeObject(JedisFactory.java:71)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:868)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:435)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at redis.clients.util.Pool.getResource(Pool.java:49)
+	... 7 common frames omitted
+Caused by: java.net.NoRouteToHostException: No route to host: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at redis.clients.jedis.Connection.connect(Connection.java:158)
+	... 14 common frames omitted
+14:05:20.606 ERROR [main] g.service.chesscard.GameMain:42 - 游戏引擎:启动异常!
+redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool
+	at redis.clients.util.Pool.getResource(Pool.java:53)
+	at org.springside.modules.nosql.redis.JedisTemplate.execute(JedisTemplate.java:93)
+	at org.springside.modules.nosql.redis.JedisTemplate.flushDB(JedisTemplate.java:203)
+	at g.service.chesscard.engine.manager.ChessCardInitManager.init(ChessCardInitManager.java:40)
+	at g.service.chesscard.engine.core.ChessCardEngine.init(ChessCardEngine.java:40)
+	at g.service.chesscard.GameMain.initEngine(GameMain.java:47)
+	at g.service.chesscard.GameMain.init(GameMain.java:38)
+	at g.service.chesscard.GameMain.main(GameMain.java:63)
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: java.net.NoRouteToHostException: No route to host: connect
+	at redis.clients.jedis.Connection.connect(Connection.java:164)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:80)
+	at redis.clients.jedis.BinaryJedis.connect(BinaryJedis.java:1677)
+	at org.springside.modules.nosql.redis.pool.JedisFactory.makeObject(JedisFactory.java:71)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:868)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:435)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at redis.clients.util.Pool.getResource(Pool.java:49)
+	... 7 common frames omitted
+Caused by: java.net.NoRouteToHostException: No route to host: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at redis.clients.jedis.Connection.connect(Connection.java:158)
+	... 14 common frames omitted

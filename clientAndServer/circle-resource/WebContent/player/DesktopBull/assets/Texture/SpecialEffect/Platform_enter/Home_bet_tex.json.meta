@@ -1,0 +1,7 @@
+{
+  "ver": "1.0.0",
+  "uuid": "155d0d15-f1ad-4404-bdd3-5c6cea0e9519",
+  "atlasJson": "{\"imagePath\":\"Home_bet_tex.png\",\"SubTexture\":[{\"width\":194,\"y\":1,\"height\":197,\"name\":\"bull100_board_dibang\",\"x\":1},{\"width\":115,\"y\":200,\"height\":127,\"name\":\"bull100_board_pork\",\"x\":331},{\"width\":179,\"y\":428,\"height\":53,\"name\":\"text_bull100\",\"x\":184},{\"width\":193,\"y\":200,\"height\":197,\"name\":\"Grab_board_dibang\",\"x\":1},{\"width\":133,\"y\":200,\"height\":129,\"name\":\"Grab_board_pork\",\"x\":196},{\"width\":131,\"y\":331,\"height\":95,\"name\":\"Grab_board_jingbi\",\"x\":196},{\"width\":181,\"y\":399,\"height\":53,\"name\":\"text_Grab\",\"x\":1},{\"width\":132,\"y\":329,\"height\":97,\"name\":\"zhuang_texiao\",\"x\":331}],\"name\":\"Home_bet\"}",
+  "texture": "771a2ba4-4966-4cbe-8a38-5e178dc05110",
+  "subMetas": {}
+}

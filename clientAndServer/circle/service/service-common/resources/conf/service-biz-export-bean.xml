@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+    <!-- key配置 -->
+    <bean id="exportConf" class="org.soul.commons.export.core.conf.ExportConf">
+        <property name="exportItemConfs">
+            <map>
+                <!-- 按所有代理统计报表 -->
+                <entry key="allAgentList" value-ref="allAgentListExportItemConf" />
+                <!-- 按代理所属玩家统计报表 -->
+                <entry key="ownerPlayerList" value-ref="ownerPlayerListExportItemConf" />
+                <!-- 玩家详细统计报表 -->
+                <entry key="playerDetailList" value-ref="playerDetailListExportItemConf" />
+                <!-- 按所有游戏统计报表 -->
+                <entry key="allGameList" value-ref="allGameListExportItemConf" />
+                <!-- 游戏详细统计报表 -->
+                <entry key="gameDetailList" value-ref="gameDetailListExportItemConf" />
+                <!-- 今日统计报表 -->
+                <entry key="todayGroupList" value-ref="todayGroupListExportItemConf" />
+                <!-- 今日详细统计报表 -->
+                <entry key="todayDetailList" value-ref="todayDetailListExportItemConf" />
+                <!-- 所有代理商玩家统计报表 -->
+                <entry key="allPlayerSum" value-ref="allPlayerSumExportItemConf" />
+                <!-- 代理商玩家统计报表 -->
+                <entry key="ownerPlayer" value-ref="ownerPlayerExportItemConf" />
+            </map>
+        </property>
+    </bean>
+
+    <!-- 所有代理统计报表 -->
+    <bean name="allAgentListExportItemConf" class="org.soul.commons.export.core.conf.ExportItemConf">
+        <property name="exportDataClass" value="g.model.playerstatistics.po.PlayerDataStatistics"/>
+        <property name="fields" value="betDate,ownerUsername,gameName,gameModelName,winAmount" />
+        <property name="titleMap">
+            <map>
+                <entry key="zh_CN" value="所有代理统计报表" />
+                <entry key="zh_TW" value="所有代理統計報表" />
+                <entry key="en_US" value="All agent statistics Report" />
+            </map>
+        </property>
+        <property name="tableHeadsMap">
+            <map>
+                <entry key="zh_CN" value="日期,代理商,游戏,游戏玩法,盈亏" />
+                <entry key="zh_TW" value="日期,代理商,遊戲,遊戲玩法,盈虧" />
+                <entry key="en_US" value="BETDATE,OWNERUSERNAME,GAMENAME,GAMEMODELNAME,WINAMOUNT" />
+            </map>
+        </property>
+        <property name="exportItemFieldConfMap">
+            <map>
+                <entry key="betDate">
+                    <bean class="org.soul.commons.export.core.conf.ExportItemFieldConf">
+                        <property name="patternMap">
+                            <map>
+                                <entry key="zh_CN" value="yyyy-MM-dd" />
+                                <entry key="zh_TW" value="yyyy/MM/dd" />
+                                <entry key="en_US" value="MMM dd,yyyy" />
+                            </map>
+                        </property>
+                    </bean>
+                </entry>
+                <entry key="winAmount">
+                    <bean class="org.soul.commons.export.core.conf.ExportItemFieldConf">
+                        <property name="patternMap">
+                            <map>
+                                <entry key="zh_CN" value="#,##0.00" />
+                                <entry key="zh_TW" value="#,##0.00" />
+                                <entry key="en_US" value="#,##0.00" />
+                            </map>
+                        </property>
+                    </bean>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <!-- 代理所属玩家统计报表 -->
+    <bean name="ownerPlayerListExportItemConf" class="org.soul.commons.export.core.conf.ExportItemConf">
+        <property name="exportDataClass" value="g.model.playerstatistics.po.PlayerDataStatistics"/>
+        <property name="fields" value="betDate,username,gameName,gameModelName,roomName,winAmount" />
+        <property name="titleMap">
+            <map>
+                <entry key="zh_CN" value="代理所属玩家统计报表" />
+                <entry key="zh_TW" value="代理所屬玩家統計報表" />
+                <entry key="en_US" value="Owner agent player statistics Report" />
+            </map>
+        </property>
+        <property name="tableHeadsMap">
+            <map>
+                <entry key="zh_CN" value="日期,玩家,游戏,游戏玩法,房间,盈亏" />
+                <entry key="zh_TW" value="日期,玩家,遊戲,遊戲玩法,房間,盈虧" />
+                <entry key="en_US" value="BETDATE,USERNAME,GAMENAME,GAMEMODELNAME,ROOMNAME,WINAMOUNT" />
+            </map>
+        </property>
+        <property name="exportItemFieldConfMap">
+            <map>
+                <entry key="betDate">
+                    <bean class="org.soul.commons.export.core.conf.ExportItemFieldConf">
+                        <property name="patternMap">
+                            <map>
+                                <entry key="zh_CN" value="yyyy-MM-dd" />
+                                <entry key="zh_TW" value="yyyy/MM/dd" />
+                                <entry key="en_US" value="MMM dd,yyyy" />
+                            </map>
+                        </property>
+                    </bean>
+                </entry>
+                <entry key="winAmount">
+                    <bean class="org.soul.commons.export.core.conf.ExportItemFieldConf">
+                        <property name="patternMap">
+                            <map>
+                                <entry key="zh_CN" value="#,##0.00" />
+                                <entry key="zh_TW" value="#,##0.00" />
+                                <entry key="en_US" value="#,##0.00" />
+                            </map>
+                        </property>
+                    </bean>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <!-- 玩家详细统计报表 -->
+    <bean name="playerDetailListExportItemConf" class="org.soul.commons.export.core.conf.ExportItemConf">
+        <property name="exportDataClass" value="g.model.playerstatistics.po.PlayerDataStatistics"/>
+        <property name="fields" value="betDate,username,gameName,gameModelName,roomName,betNo,betTime,effectiveAmount,profitAmount,winAmount" />
+        <property name="titleMap">
+            <map>
+                <entry key="zh_CN" value="玩家详细统计报表" />
+                <entry key="zh_TW" value="玩家詳細統計報表" />
+                <entry key="en_US" value="Player detail statistics Report" />
+            </map>
+        </property>
+        <property name="tableHeadsMap">
+            <map>
+                <entry key="zh_CN" value="日期,玩家,游戏,游戏玩法,房间,注单号,注单时间,下单金额,派彩金额,盈亏结果" />
+                <entry key="zh_TW" value="日期,玩家,遊戲,遊戲玩法,房間,注單號,注單時間,下單金額,派彩金額,盈虧結果" />
+                <entry key="en_US" value="BETDATE,USERNAME,GAMENAME,GAMEMODELNAME,ROOMNAME,BETNO,BETTIME,EFFECTIVEAMOUNT,PROFITAMOUNT,WINAMOUNT" />
+            </map>
+        </property>
+        <property name="exportItemFieldConfMap">
+            <map>
+                <entry key="betDate">
+                    <bean class="org.soul.commons.export.core.conf.ExportItemFieldConf">
+                        <property name="patternMap">
+                            <map>
+                                <entry key="zh_CN" value="yyyy-MM-dd" />
+                                <entry key="zh_TW" value="yyyy/MM/dd" />
+                                <entry key="en_US" value="MMM dd,yyyy" />
+                            </map>
+                        </property>
+                    </bean>
+                </entry>
+                <entry key="betTime">
+                    <bean class="org.soul.commons.export.core.conf.ExportItemFieldConf">
+                        <property name="patternMap">
+                            <map>
+                                <entry key="zh_CN" value="HH:mm:ss" />
+                                <entry key="zh_TW" value="HH:mm:ss" />
+                                <entry key="en_US" value="HH:mm:ss" />
+                            </map>
+                        </property>
+                    </bean>
+                </entry>
+                <entry key="effectiveAmount">
+                    <bean class="org.soul.commons.export.core.conf.ExportItemFieldConf">
+                        <property name="patternMap">
+                            <map>
+                                <entry key="zh_CN" value="#,##0.00" />
+                                <entry key="zh_TW" value="#,##0.00" />
+                                <entry key="en_US" value="#,##0.00" />
+                            </map>
+                        </property>
+                    </bean>
+                </entry>
+                <entry key="profitAmount">
+                    <bean class="org.soul.commons.export.core.conf.ExportItemFieldConf">
+                        <property name="patternMap">
+                            <map>
+                                <entry key="zh_CN" value="#,##0.00" />
+                                <entry key="zh_TW" value="#,##0.00" />
+                                <entry key="en_US" value="#,##0.00" />
+                            </map>
+                        </property>
+                    </bean>
+                </entry>
+                <entry key="winAmount">
+                    <bean class="org.soul.commons.export.core.conf.ExportItemFieldConf">
+                        <property name="patternMap">
+                            <map>
+                                <entry key="zh_CN" value="#,##0.00" />
+                                <entry key="zh_TW" value="#,##0.00" />
+                                <entry key="en_US" value="#,##0.00" />
+                            </map>
+                        </property>
+                    </bean>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <!-- 所有游戏统计报表 -->
+    <bean name="allGameListExportItemConf" class="org.soul.commons.export.core.conf.ExportItemConf">
+        <property name="exportDataClass" value="g.model.playerstatistics.po.PlayerDataStatistics"/>
+        <property name="fields" value="betDate,ownerUsername,username,gameName,gameModelName,winAmount" />
+        <property name="titleMap">
+            <map>
+                <entry key="zh_CN" value="所有游戏统计报表" />
+                <entry key="zh_TW" value="所有遊戲統計報表" />
+                <entry key="en_US" value="All game statistics Report" />
+            </map>
+        </property>
+        <property name="tableHeadsMap">
+            <map>
+                <entry key="zh_CN" value="日期,代理商,玩家,游戏,游戏玩法,盈亏" />
+                <entry key="zh_TW" value="日期,代理商,玩家,遊戲,遊戲玩法,盈虧" />
+                <entry key="en_US" value="BETDATE,OWNERUSERNAME,USERNAME,GAMENAME,GAMEMODELNAME,WINAMOUNT" />
+            </map>
+        </property>
+        <property name="exportItemFieldConfMap">
+            <map>
+                <entry key="betDate">
+                    <bean class="org.soul.commons.export.core.conf.ExportItemFieldConf">
+                        <property name="patternMap">
+                            <map>
+                                <entry key="zh_CN" value="yyyy-MM-dd" />
+                                <entry key="zh_TW" value="yyyy/MM/dd" />
+                                <entry key="en_US" value="MMM dd,yyyy" />
+                            </map>
+                        </property>
+                    </bean>
+                </entry>
+                <entry key="winAmount">
+                    <bean class="org.soul.commons.export.core.conf.ExportItemFieldConf">
+                        <property name="patternMap">
+                            <map>
+                                <entry key="zh_CN" value="#,##0.00" />
+                                <entry key="zh_TW" value="#,##0.00" />
+                                <entry key="en_US" value="#,##0.00" />
+                            </map>
+                        </property>
+                    </bean>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <!-- 游戏详细统计报表 -->
+    <bean name="gameDetailListExportItemConf" class="org.soul.commons.export.core.conf.ExportItemConf">
+        <property name="exportDataClass" value="g.model.playerstatistics.po.PlayerDataStatistics"/>
+        <property name="fields" value="betDate,username,gameName,gameModelName,roomName,betNo,betTime,effectiveAmount,profitAmount,winAmount" />
+        <property name="titleMap">
+            <map>
+                <entry key="zh_CN" value="游戏详细统计报表" />
+                <entry key="zh_TW" value="遊戲詳細統計報表" />
+                <entry key="en_US" value="Game detail statistics Report" />
+            </map>
+        </property>
+        <property name="tableHeadsMap">
+            <map>
+                <entry key="zh_CN" value="日期,玩家,游戏,游戏玩法,房间,注单号,注单时间,下单金额,派彩金额,盈亏结果" />
+                <entry key="zh_TW" value="日期,玩家,遊戲,遊戲玩法,房間,注單號,注單時間,下單金額,派彩金額,盈虧結果" />
+                <entry key="en_US" value="BETDATE,USERNAME,GAMENAME,GAMEMODELNAME,ROOMNAME,BETNO,BETTIME,EFFECTIVEAMOUNT,PROFITAMOUNT,WINAMOUNT" />
+            </map>
+        </property>
+        <property name="exportItemFieldConfMap">
+            <map>
+                <entry key="betDate">
+                    <bean class="org.soul.commons.export.core.conf.ExportItemFieldConf">
+                        <property name="patternMap">
+                            <map>
+                                <entry key="zh_CN" value="yyyy-MM-dd" />
+                                <entry key="zh_TW" value="yyyy/MM/dd" />
+                                <entry key="en_US" value="MMM dd,yyyy" />
+                            </map>
+                        </property>
+                    </bean>
+                </entry>
+                <entry key="betTime">
+                    <bean class="org.soul.commons.export.core.conf.ExportItemFieldConf">
+                        <property name="patternMap">
+                            <map>
+                                <entry key="zh_CN" value="HH:mm:ss" />
+                                <entry key="zh_TW" value="HH:mm:ss" />
+                                <entry key="en_US" value="HH:mm:ss" />
+                            </map>
+                        </property>
+                    </bean>
+                </entry>
+                <entry key="effectiveAmount">
+                    <bean class="org.soul.commons.export.core.conf.ExportItemFieldConf">
+                        <property name="patternMap">
+                            <map>
+                                <entry key="zh_CN" value="#,##0.00" />
+                                <entry key="zh_TW" value="#,##0.00" />
+                                <entry key="en_US" value="#,##0.00" />
+                            </map>
+                        </property>
+                    </bean>
+                </entry>
+                <entry key="profitAmount">
+                    <bean class="org.soul.commons.export.core.conf.ExportItemFieldConf">
+                        <property name="patternMap">
+                            <map>
+                                <entry key="zh_CN" value="#,##0.00" />
+                                <entry key="zh_TW" value="#,##0.00" />
+                                <entry key="en_US" value="#,##0.00" />
+                            </map>
+                        </property>
+                    </bean>
+                </entry>
+                <entry key="winAmount">
+                    <bean class="org.soul.commons.export.core.conf.ExportItemFieldConf">
+                        <property name="patternMap">
+                            <map>
+                                <entry key="zh_CN" value="#,##0.00" />
+                                <entry key="zh_TW" value="#,##0.00" />
+                                <entry key="en_US" value="#,##0.00" />
+                            </map>
+                        </property>
+                    </bean>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <!-- 今日统计报表 -->
+    <bean name="todayGroupListExportItemConf" class="org.soul.commons.export.core.conf.ExportItemConf">
+        <property name="exportDataClass" value="g.model.bet.po.VBetDetail"/>
+        <property name="fields" value="betDate,ownerUsername,username,gameName,gameModelName,profitAmount" />
+        <property name="titleMap">
+            <map>
+                <entry key="zh_CN" value="今日统计报表" />
+                <entry key="zh_TW" value="今日統計報表" />
+                <entry key="en_US" value="Today statistics Report" />
+            </map>
+        </property>
+        <property name="tableHeadsMap">
+            <map>
+                <entry key="zh_CN" value="日期,代理商,玩家,游戏,游戏玩法,盈亏" />
+                <entry key="zh_TW" value="日期,代理商,玩家,遊戲,遊戲玩法,盈虧" />
+                <entry key="en_US" value="BETDATE,OWNERUSERNAME,USERNAME,GAMENAME,GAMEMODELNAME,PROFITAMOUNT" />
+            </map>
+        </property>
+        <property name="exportItemFieldConfMap">
+            <map>
+                <entry key="betDate">
+                    <bean class="org.soul.commons.export.core.conf.ExportItemFieldConf">
+                        <property name="patternMap">
+                            <map>
+                                <entry key="zh_CN" value="yyyy-MM-dd" />
+                                <entry key="zh_TW" value="yyyy/MM/dd" />
+                                <entry key="en_US" value="MMM dd,yyyy" />
+                            </map>
+                        </property>
+                    </bean>
+                </entry>
+                <entry key="profitAmount">
+                    <bean class="org.soul.commons.export.core.conf.ExportItemFieldConf">
+                        <property name="patternMap">
+                            <map>
+                                <entry key="zh_CN" value="#,##0.00" />
+                                <entry key="zh_TW" value="#,##0.00" />
+                                <entry key="en_US" value="#,##0.00" />
+                            </map>
+                        </property>
+                    </bean>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <!-- 今日详细统计报表 -->
+    <bean name="todayDetailListExportItemConf" class="org.soul.commons.export.core.conf.ExportItemConf">
+        <property name="exportDataClass" value="g.model.bet.po.VBetDetail"/>
+        <property name="fields" value="betDate,username,gameName,gameModelName,roomName,betNo,betTime,effectiveAmount,profitAmount" />
+        <property name="titleMap">
+            <map>
+                <entry key="zh_CN" value="今日详细统计报表" />
+                <entry key="zh_TW" value="今日詳細統計報表" />
+                <entry key="en_US" value="Today detail statistics Report" />
+            </map>
+        </property>
+        <property name="tableHeadsMap">
+            <map>
+                <entry key="zh_CN" value="日期,玩家,游戏,游戏玩法,房间,注单号,注单时间,下单金额,盈亏结果" />
+                <entry key="zh_TW" value="日期,玩家,遊戲,遊戲玩法,房間,注單號,注單時間,下單金額,盈虧結果" />
+                <entry key="en_US" value="BETDATE,USERNAME,GAMENAME,GAMEMODELNAME,ROOMNAME,BETNO,BETTIME,EFFECTIVEAMOUNT,WINAMOUNT" />
+            </map>
+        </property>
+        <property name="exportItemFieldConfMap">
+            <map>
+                <entry key="betDate">
+                    <bean class="org.soul.commons.export.core.conf.ExportItemFieldConf">
+                        <property name="patternMap">
+                            <map>
+                                <entry key="zh_CN" value="yyyy-MM-dd" />
+                                <entry key="zh_TW" value="yyyy/MM/dd" />
+                                <entry key="en_US" value="MMM dd,yyyy" />
+                            </map>
+                        </property>
+                    </bean>
+                </entry>
+                <entry key="betTime">
+                    <bean class="org.soul.commons.export.core.conf.ExportItemFieldConf">
+                        <property name="patternMap">
+                            <map>
+                                <entry key="zh_CN" value="HH:mm:ss" />
+                                <entry key="zh_TW" value="HH:mm:ss" />
+                                <entry key="en_US" value="HH:mm:ss" />
+                            </map>
+                        </property>
+                    </bean>
+                </entry>
+                <entry key="effectiveAmount">
+                    <bean class="org.soul.commons.export.core.conf.ExportItemFieldConf">
+                        <property name="patternMap">
+                            <map>
+                                <entry key="zh_CN" value="#,##0.00" />
+                                <entry key="zh_TW" value="#,##0.00" />
+                                <entry key="en_US" value="#,##0.00" />
+                            </map>
+                        </property>
+                    </bean>
+                </entry>
+                <entry key="profitAmount">
+                    <bean class="org.soul.commons.export.core.conf.ExportItemFieldConf">
+                        <property name="patternMap">
+                            <map>
+                                <entry key="zh_CN" value="#,##0.00" />
+                                <entry key="zh_TW" value="#,##0.00" />
+                                <entry key="en_US" value="#,##0.00" />
+                            </map>
+                        </property>
+                    </bean>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <!-- 所有代理商玩家统计报表 -->
+    <bean name="allPlayerSumExportItemConf" class="org.soul.commons.export.core.conf.ExportItemConf">
+        <property name="exportDataClass" value="g.model.playerstatistics.po.PlayerSummery"/>
+        <property name="fields" value="date,playerSummery,activePlayerQty,newPlayerQty" />
+        <property name="titleMap">
+            <map>
+                <entry key="zh_CN" value="所有代理商玩家统计报表" />
+                <entry key="zh_TW" value="所有代理商玩家統計報表" />
+                <entry key="en_US" value="All agent's player Report" />
+            </map>
+        </property>
+        <property name="tableHeadsMap">
+            <map>
+                <entry key="zh_CN" value="日期,玩家总数,活跃玩家,新增玩家" />
+                <entry key="zh_TW" value="日期,玩家總數,活躍玩家,新增玩家" />
+                <entry key="en_US" value="DATE,PLAYERSUMMERY,ACTIVEPLAYERQTY,NEWPLAYWEQTY" />
+            </map>
+        </property>
+        <property name="exportItemFieldConfMap">
+            <map>
+                <entry key="date">
+                    <bean class="org.soul.commons.export.core.conf.ExportItemFieldConf">
+                        <property name="patternMap">
+                            <map>
+                                <entry key="zh_CN" value="yyyy-MM-dd" />
+                                <entry key="zh_TW" value="yyyy/MM/dd" />
+                                <entry key="en_US" value="MMM dd,yyyy" />
+                            </map>
+                        </property>
+                    </bean>
+                </entry>
+                <entry key="playerSummery">
+                    <bean class="org.soul.commons.export.core.conf.ExportItemFieldConf">
+                        <property name="patternMap">
+                            <map>
+                                <entry key="zh_CN" value="#,##0" />
+                                <entry key="zh_TW" value="#,##0" />
+                                <entry key="en_US" value="#,##0" />
+                            </map>
+                        </property>
+                    </bean>
+                </entry>
+                <entry key="activePlayerQty">
+                    <bean class="org.soul.commons.export.core.conf.ExportItemFieldConf">
+                        <property name="patternMap">
+                            <map>
+                                <entry key="zh_CN" value="#,##0" />
+                                <entry key="zh_TW" value="#,##0" />
+                                <entry key="en_US" value="#,##0" />
+                            </map>
+                        </property>
+                    </bean>
+                </entry>
+                <entry key="newPlayerQty">
+                    <bean class="org.soul.commons.export.core.conf.ExportItemFieldConf">
+                        <property name="patternMap">
+                            <map>
+                                <entry key="zh_CN" value="#,##0" />
+                                <entry key="zh_TW" value="#,##0" />
+                                <entry key="en_US" value="#,##0" />
+                            </map>
+                        </property>
+                    </bean>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <!-- 代理商玩家统计报表 -->
+    <bean name="ownerPlayerExportItemConf" class="org.soul.commons.export.core.conf.ExportItemConf">
+        <property name="exportDataClass" value="g.model.playerstatistics.po.PlayerSummery"/>
+        <property name="fields" value="date,username,playerSummery,activePlayerQty,newPlayerQty" />
+        <property name="titleMap">
+            <map>
+                <entry key="zh_CN" value="代理商玩家统计报表" />
+                <entry key="zh_TW" value="代理商玩家統計報表" />
+                <entry key="en_US" value="Agent's player Report" />
+            </map>
+        </property>
+        <property name="tableHeadsMap">
+            <map>
+                <entry key="zh_CN" value="日期,代理商,玩家总数,活跃玩家,新增玩家" />
+                <entry key="zh_TW" value="日期,代理商,玩家總數,活躍玩家,新增玩家" />
+                <entry key="en_US" value="DATE,USERNAME,PLAYERSUMMERY,ACTIVEPLAYERQTY,NEWPLAYWEQTY" />
+            </map>
+        </property>
+        <property name="exportItemFieldConfMap">
+            <map>
+                <entry key="date">
+                    <bean class="org.soul.commons.export.core.conf.ExportItemFieldConf">
+                        <property name="patternMap">
+                            <map>
+                                <entry key="zh_CN" value="yyyy-MM-dd" />
+                                <entry key="zh_TW" value="yyyy/MM/dd" />
+                                <entry key="en_US" value="MMM dd,yyyy" />
+                            </map>
+                        </property>
+                    </bean>
+                </entry>
+                <entry key="playerSummery">
+                    <bean class="org.soul.commons.export.core.conf.ExportItemFieldConf">
+                        <property name="patternMap">
+                            <map>
+                                <entry key="zh_CN" value="#,##0" />
+                                <entry key="zh_TW" value="#,##0" />
+                                <entry key="en_US" value="#,##0" />
+                            </map>
+                        </property>
+                    </bean>
+                </entry>
+                <entry key="activePlayerQty">
+                    <bean class="org.soul.commons.export.core.conf.ExportItemFieldConf">
+                        <property name="patternMap">
+                            <map>
+                                <entry key="zh_CN" value="#,##0" />
+                                <entry key="zh_TW" value="#,##0" />
+                                <entry key="en_US" value="#,##0" />
+                            </map>
+                        </property>
+                    </bean>
+                </entry>
+                <entry key="newPlayerQty">
+                    <bean class="org.soul.commons.export.core.conf.ExportItemFieldConf">
+                        <property name="patternMap">
+                            <map>
+                                <entry key="zh_CN" value="#,##0" />
+                                <entry key="zh_TW" value="#,##0" />
+                                <entry key="en_US" value="#,##0" />
+                            </map>
+                        </property>
+                    </bean>
+                </entry>
+            </map>
+        </property>
+    </bean>
+</beans>

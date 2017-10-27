@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.player.UserPlayerMapper">
+
+    <resultMap id="TABLE:user_player" type="g.model.player.po.UserPlayer">
+        <id column="id" property="id"/>
+        <result column="player_group_id" property="playerGroupId"/>
+        <result column="wallet_balance" property="walletBalance"/>
+        <result column="recharge_count" property="rechargeCount"/>
+        <result column="recharge_total" property="rechargeTotal"/>
+        <result column="recharge_max_amount" property="rechargeMaxAmount"/>
+        <result column="withdraw_count" property="withdrawCount"/>
+        <result column="withdraw_total" property="withdrawTotal"/>
+        <result column="freezing_funds_balance" property="freezingFundsBalance"/>
+        <result column="invitation_code" property="invitationCode" />
+        <result column="nickname" property="nickname" />
+        <result column="username" property="username" />
+        <result column="avatar_url" property="avatarUrl" />
+    </resultMap>
+
+    <!--//region your codes 1-->
+    <!--存款成功后更新玩家钱包余额、充值成功次数、充值总金额-->
+    <update id="updatePlayerByRecharge" parameterType="g.model.depositdesk.po.PlayerRecharge">
+        UPDATE user_player SET wallet_balance = COALESCE(wallet_balance,0) + (select transaction_money from  player_transaction where id=#{playerTransactionId}) , recharge_count = COALESCE(recharge_count,0) +1 , recharge_total = COALESCE(recharge_total,0) + #{rechargeAmount}
+        WHERE id = #{playerId} AND EXISTS (select status from  player_transaction where id=#{playerTransactionId} and status in('pending','process','pending_pay','over_time'))
+    </update>
+
+    <!--提现审核成功-->
+    <update id="successWalletBalance" parameterType="Map">
+        update user_player set withdraw_count = COALESCE(withdraw_count,0)+1,withdraw_total=COALESCE(withdraw_total,0)+(select withdraw_amount from player_withdraw where id =  #{withdrawId}),freezing_funds_balance = COALESCE(freezing_funds_balance,0)-(select withdraw_amount from player_withdraw where id =  #{withdrawId})
+        where id = #{userId} AND EXISTS (select status from player_transaction where source_id =  #{withdrawId} AND transaction_type='withdrawals' AND status in('pending','process','deal_audit_fail'))
+    </update>
+    <!--提现审核拒绝-->
+    <update id="refusesWalletBalance" parameterType="Map">
+        update user_player set freezing_funds_balance = COALESCE(freezing_funds_balance,0)-(select withdraw_amount from player_withdraw where id =  #{withdrawId})
+        where id = #{userId} AND EXISTS (select status from player_transaction where source_id =  #{withdrawId} AND transaction_type='withdrawals' AND status in('pending','process','deal_audit_fail'))
+    </update>
+    <!--提现审核失败-->
+    <update id="failWalletBalance" parameterType="Map">
+        update user_player set wallet_balance = COALESCE(wallet_balance,0)+(select withdraw_amount from player_withdraw where id = #{withdrawId}),freezing_funds_balance = COALESCE(freezing_funds_balance,0) -(select withdraw_amount from player_withdraw where id =  #{withdrawId})
+        where id = #{userId} AND EXISTS (select status from player_transaction where source_id =  #{withdrawId} AND transaction_type='withdrawals' AND status in('pending','process','deal_audit_fail'))
+    </update>
+
+    <update id="updateUserPlayerBalance" parameterType="Map">
+        update user_player set wallet_balance = COALESCE(wallet_balance,0)- #{withdrawAmount} ,freezing_funds_balance = COALESCE(freezing_funds_balance,0) + #{withdrawAmount} where id = #{id}
+    </update>
+    <!--//endregion your codes 1-->
+
+    <!-- 通过id查找玩家信息 -->
+    <select id="selectUserPlayerInfoById" parameterType="Integer" resultMap="TABLE:user_player">
+        SELECT
+          p.*,
+          u.username,
+          u.nickname,
+          u.avatar_url
+        FROM
+            user_player p
+        LEFT JOIN
+            sys_user u
+        ON
+            p.id = u.id
+        WHERE
+            p.id = #{id}
+    </select>
+
+    <!-- 通过邀请码来查找玩家 -->
+    <select id="selectUserPlayerInfoByInvitationCode" parameterType="String" resultMap="TABLE:user_player">
+        SELECT
+          *
+        FROM
+          user_player
+        WHERE
+          invitation_code = #{invitationCode}
+    </select>
+
+    <!-- 更新玩家信息 -->
+    <update id="updateUserPlayerInfo" parameterType="Map">
+        UPDATE
+          user_player
+        SET
+          invitation_code = #{invitationCode}
+        WHERE
+          id = #{id}
+    </update>
+
+    <!-- 获取玩家列表 -->
+    <select id="getUserPlayerList" resultMap="TABLE:user_player">
+        SELECT
+          *
+        FROM
+          user_player
+    </select>
+
+    <!-- 查询玩家总数 -->
+    <select id="selectUserPlayerNumber" resultType="int">
+        SELECT
+          COUNT (*)
+        FROM
+          user_player
+    </select>
+
+    <!-- 查询玩家 土豪排行榜 -->
+    <select id="selectPlayerOrderByWalletBalance" parameterType="map" resultType="map">
+        SELECT
+            userPlayer.nickname AS nickName,
+            userPlayer.avatar_url AS avatarUrl,
+            player.wallet_balance AS walletBalance
+        FROM
+            user_player player
+        LEFT JOIN
+            sys_user userPlayer
+        ON
+            player.id = userPlayer.id
+        WHERE
+            userPlayer.subsys_code = 'player'
+        AND
+            player.wallet_balance > 0
+        ORDER BY
+            player.wallet_balance DESC,
+            userPlayer.id
+            NULLS LAST
+        LIMIT
+            #{pageSize}
+        OFFSET
+            (#{pageNo} - 1) * #{pageSize};
+    </select>
+
+    <update id="updateUserPlayerBalanceByBet" parameterType="map">
+        <![CDATA[
+            update user_player
+            set wallet_balance = wallet_balance + #{coin}
+            where id = #{userId}
+        ]]>
+    </update>
+</mapper>

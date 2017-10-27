@@ -1,0 +1,7 @@
+{
+  "ver": "1.0.0",
+  "uuid": "724a049a-a4c6-4180-b143-4d880e608e14",
+  "atlasJson": "{\"imagePath\":\"Home_zhuang_mark_tex.png\",\"SubTexture\":[{\"width\":51,\"y\":82,\"height\":52,\"name\":\"zhuang_mark\",\"x\":1},{\"width\":40,\"y\":82,\"height\":36,\"name\":\"zhuang_guang\",\"x\":54},{\"width\":107,\"y\":1,\"height\":79,\"name\":\"zhuang_texiao\",\"x\":1}],\"name\":\"Home_zhuang_mark\"}",
+  "texture": "b6303f71-7a71-4e5a-a1c9-6489ee249303",
+  "subMetas": {}
+}

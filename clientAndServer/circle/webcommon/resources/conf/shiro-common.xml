@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+	<!--注: 此配置文件,如果稳定,可以转换到soul-->
+	<bean id="realm" class="g.web.common.shiro.local.realm.LocalRealm">
+		<property name="baseWebConf" ref="baseWebConf"/>
+	</bean>
+
+	<!--是否认证-->
+	<bean id="authcFilter" class="org.soul.web.shiro.common.filter.authc.AuthcFilter"/>
+
+	<!--角色权限-->
+	<bean id="authoFilter" class="g.web.common.shiro.common.filter.autho.AuthorizationFilter"/>
+
+	<!--过滤器:限制登录数-->
+	<bean id="kickoutFilter" class="g.web.common.shiro.common.filter.KickoutFilter"/>
+
+</beans>

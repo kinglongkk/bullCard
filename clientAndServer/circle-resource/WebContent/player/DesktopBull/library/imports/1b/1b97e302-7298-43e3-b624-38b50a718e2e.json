@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "common_board_moneyBG1",
+    "texture": "813ab67a-b1a8-4b43-a34c-d5066f54604d",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      140,
+      32
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      140,
+      32
+    ]
+  }
+}

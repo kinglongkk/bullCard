@@ -1,0 +1,60 @@
+<div  class="dialogFront"><!--上庄列表-->
+    <div id="dialog" class="dia_small">
+        <div class="Prompt_bt_bg">
+            <div class="cow_head"></div>
+        </div>
+        <div class="Banker_tc">
+            <div class="Dialog_bg1 Prompt_tc_bg1">
+                <div class="Banker_title"></div>
+                <span class="Banker_title_font">（{{:players.length}}）</span>
+            </div>
+            <div class="Dialog_bg2 Banker_bg2">
+                <div class="Banker_content">
+                    <ul>
+                        {{for players}}
+                        <li>
+                            {{if #getIndex()==0}}
+                                <div class="Banker_icon"></div>
+                            {{/if}}
+                            <div class="Banker_font">
+                                <span class="Banker_name">{{:nickname}}</span>
+                                <span class="Banker_money">{{separatorMoney:usableBalance}}</span>
+                            </div>
+                            <div class="Banker_coin"></div>
+                        </li>
+                        {{/for}}
+                    </ul>
+                </div>
+            </div>
+            <div class="Banker_tc_bg2 Banker_bg4">
+                <div class="Banker_slider">
+                    <div id="btnTip" class="Banker_number">
+                        <span>88888</span>
+                    </div>
+                    <div class="Banker_slider_bg" id="bar">
+                        <div id="step"></div>
+                        <div class="Banker_slider_btn">
+                            <span id="btn"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="Banker_arrow"></div>
+                <p class="Banker_font1">金币不足，上庄至少要<span>3000万</span></p>
+            </div>
+            <div class="Banker_tc_bg3 Banker_bg3">
+                <div class="Banker_btn">
+                    <a class="Banker_btn_font"></a>
+                </div>
+                <div class="Banker_btn1">
+                    <button class="Banker_xz">
+                        <img src="static/images/poker/bullFight/bull100/text/boss02.png"/>
+                    </button>
+                    <button class="Banker_xz1">
+                        <img src="static/images/poker/bullFight/bull100/text/boss03.png"/>
+                    </button>
+                </div>
+            </div>
+            <button class="Prompt_close"></button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+{
+  "__type__": "cc.SpriteAtlas",
+  "_name": "comm_text_list_according.plist",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_spriteFrames": {
+    "comm_text_list_according_1": {
+      "__uuid__": "b7172e6f-265e-4eaa-a8ea-26c4cc8d719a"
+    },
+    "comm_text_list_according_10": {
+      "__uuid__": "ed6b42bd-6806-4b6d-b6dd-1c72174239e7"
+    },
+    "comm_text_list_according_2": {
+      "__uuid__": "bab9bfe6-bd1a-491a-a6db-c2f9f22c231c"
+    },
+    "comm_text_list_according_3": {
+      "__uuid__": "f0a8bc89-28d8-42bd-b5b7-9751064715ee"
+    },
+    "comm_text_list_according_4": {
+      "__uuid__": "d7f6fbc6-cf04-4da6-862a-539d8b930a47"
+    },
+    "comm_text_list_according_5": {
+      "__uuid__": "c5cb321a-f03e-42db-8151-af5f3c72ea94"
+    },
+    "comm_text_list_according_6": {
+      "__uuid__": "26d52bbc-59ff-4ad2-998c-d68a7a1b8b82"
+    },
+    "comm_text_list_according_7": {
+      "__uuid__": "a50330d1-9b44-4e03-a07f-ce381165a130"
+    },
+    "comm_text_list_according_8": {
+      "__uuid__": "f4f8030a-802e-4a49-96ec-e03ccad7aac5"
+    },
+    "comm_text_list_according_9": {
+      "__uuid__": "52056165-c176-4579-bed0-09fe241c86e0"
+    },
+    "comm_text_list_according_no": {
+      "__uuid__": "2a267d59-9177-4499-bf9d-789825970a59"
+    },
+    "comm_text_list_according_ok": {
+      "__uuid__": "d528a748-01c1-4916-bd9d-1a85935533dc"
+    }
+  }
+}

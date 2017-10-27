@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "common_btn_tishi_2",
+    "texture": "b4267085-aead-4788-aa68-cf242218585b",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      161,
+      50
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      161,
+      50
+    ]
+  }
+}

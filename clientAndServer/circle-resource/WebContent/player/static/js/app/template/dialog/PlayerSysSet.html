@@ -1,0 +1,59 @@
+<div  class="dialogFront">
+    <div id="dialog" class="dia_small Dia_Set_small">
+        <div class="Account_bt_bg">
+            <div class="Dia_Set_icon"></div>
+        </div>
+        <div class="Banker_tc">
+            <div class="Set_tc_bg">
+                <div class="Set_bg1 Prompt_tc_bg1">
+                </div>
+                <div class="Banker_tc_bg2 Set_bg4">
+                    <div class="Set_content">
+                        <div class="Set_content_left">
+                            <ul>
+                              {{if ~dataIsEmpty(code)}}
+                                {{for data}}
+                                {{for result}}
+                                <li class="voiceSet">
+                                    <div class="Set_music_{{voiceSwitch:music}}"></div>
+                                    <div class="Set_{{voiceSwitch:music}}"></div>
+                                </li>
+                                <li>
+                                    <div class="Set_sound_{{voiceSwitch:sound}}"></div>
+                                    <div class="Set_{{voiceSwitch:sound}}"></div>
+                                </li>
+                                {{/for}}
+                            </ul>
+                        </div>
+                            <div class="Set_content_right">
+                                <p class="Set_content_name">{{:userName}}</p>
+                                <p class="Set_content_login">您已登录</p>
+                                <button class="Set_switch_btn"><img src="../static/images/poker/bullFight/common/text/listAccount.png"></button>
+                            </div>
+                                {{/for}}
+                              {{else}}
+                                <li class="voiceSet">
+                                    <div class="Set_music_open"></div>
+                                    <div class="Set_open"></div>
+                                </li>
+                                <li>
+                                    <div class="Set_sound_open"></div>
+                                    <div class="Set_open"></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="Set_content_right">
+                            <p class="Set_content_name">{{:userName}}</p>
+                            <p class="Set_content_login">您已登录</p>
+                            <button class="Set_switch_btn"><img src="../static/images/poker/bullFight/common/text/listAccount.png"></button>
+                        </div>
+                    {{/if}}
+                    </div>
+                </div>
+                <div class="Banker_tc_bg3 Banker_bg3">
+                </div>
+            </div>
+            <button class="Prompt_close"></button>
+        </div>
+    </div>
+</div>

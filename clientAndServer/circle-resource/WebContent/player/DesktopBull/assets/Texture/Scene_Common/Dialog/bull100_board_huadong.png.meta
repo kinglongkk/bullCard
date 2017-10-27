@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "192c43f8-6593-4346-a250-73c1221b6f63",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "bull100_board_huadong": {
+      "ver": "1.0.3",
+      "uuid": "8b4a1da8-5940-4ed0-8cd8-2b60e03c48ee",
+      "rawTextureUuid": "192c43f8-6593-4346-a250-73c1221b6f63",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0.5,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 120,
+      "height": 70,
+      "rawWidth": 120,
+      "rawHeight": 71,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

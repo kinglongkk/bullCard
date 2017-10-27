@@ -1,0 +1,23 @@
+{
+  "__type__": "cc.SpriteAtlas",
+  "_spriteFrames": {
+    "Grab__board__jb": {
+      "__uuid__": "c0161146-118a-4eb4-8e6b-ce7bb7aee800"
+    },
+    "Scene_Classic_dibang": {
+      "__uuid__": "3741d47b-2cd9-4b9d-96b1-1cf8ab2e1df2"
+    },
+    "board_exit": {
+      "__uuid__": "75a892b5-4210-4b45-944f-6225c26ede91"
+    },
+    "Scene_Classic_tchu": {
+      "__uuid__": "62150749-0edf-4e3b-8431-f01800ea6f29"
+    },
+    "Scene_Classic_hzhuo01": {
+      "__uuid__": "1e93d305-2ac3-43ab-9520-cdba08f20bbd"
+    },
+    "common_icon_back2": {
+      "__uuid__": "ab142c6c-cada-4d46-99fa-e127a6794cb3"
+    }
+  }
+}

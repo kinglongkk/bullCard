@@ -1,0 +1,44 @@
+[
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "common_board_ribbon_5",
+      "texture": "1cfae9545",
+      "rect": [
+        2,
+        904,
+        260,
+        91
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        260,
+        91
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "common_board_ribbon_4",
+      "texture": "1cfae9545",
+      "rect": [
+        479,
+        138,
+        298,
+        91
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        298,
+        91
+      ]
+    }
+  }
+]

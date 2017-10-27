@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "common_btn_down_1",
+    "texture": "d845cd48-292f-4265-a592-02ea37bde33e",
+    "atlas": "",
+    "rect": [
+      5,
+      8,
+      56,
+      56
+    ],
+    "offset": [
+      -0.5,
+      -2.5
+    ],
+    "originalSize": [
+      67,
+      67
+    ]
+  }
+}

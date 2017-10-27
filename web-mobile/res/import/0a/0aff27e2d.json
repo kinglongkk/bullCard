@@ -1,0 +1,1245 @@
+[
+  [
+    {
+      "__type__": "cc.Prefab",
+      "_name": "prefab_rulesGrabCell",
+      "data": {
+        "__id__": 1
+      }
+    },
+    {
+      "__type__": "cc.Node",
+      "_name": "prefab_rulesGrabCell",
+      "_anchorPoint": {
+        "__type__": "cc.Vec2",
+        "x": 0.5,
+        "y": 1
+      },
+      "_contentSize": {
+        "__type__": "cc.Size",
+        "width": 1135,
+        "height": 1880
+      },
+      "_children": [
+        {
+          "__id__": 2
+        },
+        {
+          "__id__": 3
+        },
+        {
+          "__id__": 4
+        },
+        {
+          "__id__": 5
+        },
+        {
+          "__id__": 6
+        },
+        {
+          "__id__": 7
+        },
+        {
+          "__id__": 8
+        },
+        {
+          "__id__": 9
+        },
+        {
+          "__id__": 10
+        }
+      ],
+      "_components": [
+        {
+          "__type__": "cc.Widget",
+          "node": {
+            "__id__": 1
+          },
+          "_left": -1.4570080613137457,
+          "_right": 1.2747163946470792,
+          "_top": -0.21563098588534915,
+          "_isAbsLeft": false,
+          "_isAbsRight": false,
+          "_isAbsTop": false,
+          "_originalWidth": 1135
+        }
+      ],
+      "_prefab": {
+        "__type__": "cc.PrefabInfo",
+        "root": {
+          "__id__": 1
+        },
+        "fileId": "a380eOON49C4q84y4qAjqXq"
+      }
+    },
+    {
+      "__type__": "cc.Node",
+      "_name": "textBoard",
+      "_parent": {
+        "__id__": 1
+      },
+      "_contentSize": {
+        "__type__": "cc.Size",
+        "width": 325.53393346183975,
+        "height": 66.99999999999999
+      },
+      "_position": {
+        "__type__": "cc.Vec2",
+        "x": -379.9591379624759,
+        "y": -160
+      },
+      "_components": [
+        {
+          "__type__": "cc.Sprite",
+          "node": {
+            "__id__": 2
+          },
+          "_spriteFrame": {
+            "__uuid__": "6abf1cbf-b0d3-4dbf-88b1-2d4992e134f6"
+          },
+          "_type": 1,
+          "_sizeMode": 0,
+          "_isTrimmedMode": false
+        },
+        {
+          "__type__": "cc.Widget",
+          "node": {
+            "__id__": 2
+          },
+          "_alignFlags": 45,
+          "_left": 0.021827220534453105,
+          "_right": 0.6913587411731771,
+          "_top": 0.0672872340425532,
+          "_bottom": 0.8970744680851064,
+          "_isAbsLeft": false,
+          "_isAbsRight": false,
+          "_isAbsTop": false,
+          "_isAbsBottom": false,
+          "_originalWidth": 320,
+          "_originalHeight": 67
+        }
+      ],
+      "_prefab": {
+        "__type__": "cc.PrefabInfo",
+        "root": {
+          "__id__": 1
+        },
+        "fileId": "42f0fETgxlCk7z/usSrr5ma"
+      }
+    },
+    {
+      "__type__": "cc.Node",
+      "_name": "textBoard",
+      "_parent": {
+        "__id__": 1
+      },
+      "_contentSize": {
+        "__type__": "cc.Size",
+        "width": 254.3233855170563,
+        "height": 66.99999999999999
+      },
+      "_position": {
+        "__type__": "cc.Vec2",
+        "x": -45.77820939307014,
+        "y": -160
+      },
+      "_components": [
+        {
+          "__type__": "cc.Sprite",
+          "node": {
+            "__id__": 3
+          },
+          "_spriteFrame": {
+            "__uuid__": "6abf1cbf-b0d3-4dbf-88b1-2d4992e134f6"
+          },
+          "_type": 1,
+          "_sizeMode": 0,
+          "_isTrimmedMode": false
+        },
+        {
+          "__type__": "cc.Widget",
+          "node": {
+            "__id__": 3
+          },
+          "_alignFlags": 45,
+          "_left": 0.34763004215718213,
+          "_right": 0.42829649042690926,
+          "_top": 0.0672872340425532,
+          "_bottom": 0.8970744680851064,
+          "_isAbsLeft": false,
+          "_isAbsRight": false,
+          "_isAbsTop": false,
+          "_isAbsBottom": false,
+          "_originalWidth": 250,
+          "_originalHeight": 67
+        }
+      ],
+      "_prefab": {
+        "__type__": "cc.PrefabInfo",
+        "root": {
+          "__id__": 1
+        },
+        "fileId": "47c67jKd/RAy6636n6/lg8m"
+      }
+    },
+    {
+      "__type__": "cc.Node",
+      "_name": "textBoard",
+      "_parent": {
+        "__id__": 1
+      },
+      "_contentSize": {
+        "__type__": "cc.Size",
+        "width": 101.72935420682256,
+        "height": 66.99999999999999
+      },
+      "_position": {
+        "__type__": "cc.Vec2",
+        "x": 172.9399021515983,
+        "y": -160
+      },
+      "_components": [
+        {
+          "__type__": "cc.Sprite",
+          "node": {
+            "__id__": 4
+          },
+          "_spriteFrame": {
+            "__uuid__": "6abf1cbf-b0d3-4dbf-88b1-2d4992e134f6"
+          },
+          "_type": 1,
+          "_sizeMode": 0,
+          "_isTrimmedMode": false
+        },
+        {
+          "__type__": "cc.Widget",
+          "node": {
+            "__id__": 4
+          },
+          "_alignFlags": 45,
+          "_left": 0.6075552643596361,
+          "_right": 0.3028153486740004,
+          "_top": 0.0672872340425532,
+          "_bottom": 0.8970744680851064,
+          "_isAbsLeft": false,
+          "_isAbsRight": false,
+          "_isAbsTop": false,
+          "_isAbsBottom": false,
+          "_originalWidth": 100,
+          "_originalHeight": 67
+        }
+      ],
+      "_prefab": {
+        "__type__": "cc.PrefabInfo",
+        "root": {
+          "__id__": 1
+        },
+        "fileId": "d82d3/xYZxFqb9AT6lxmoT0"
+      }
+    },
+    {
+      "__type__": "cc.Node",
+      "_name": "textBoard",
+      "_parent": {
+        "__id__": 1
+      },
+      "_contentSize": {
+        "__type__": "cc.Size",
+        "width": 101.72935420682262,
+        "height": 66.99999999999999
+      },
+      "_position": {
+        "__type__": "cc.Vec2",
+        "x": 315.36099804114974,
+        "y": -160
+      },
+      "_components": [
+        {
+          "__type__": "cc.Sprite",
+          "node": {
+            "__id__": 5
+          },
+          "_spriteFrame": {
+            "__uuid__": "6abf1cbf-b0d3-4dbf-88b1-2d4992e134f6"
+          },
+          "_type": 1,
+          "_sizeMode": 0,
+          "_isTrimmedMode": false
+        },
+        {
+          "__type__": "cc.Widget",
+          "node": {
+            "__id__": 5
+          },
+          "_alignFlags": 45,
+          "_left": 0.733036406112545,
+          "_right": 0.17733420692109156,
+          "_top": 0.0672872340425532,
+          "_bottom": 0.8970744680851064,
+          "_isAbsLeft": false,
+          "_isAbsRight": false,
+          "_isAbsTop": false,
+          "_isAbsBottom": false,
+          "_originalWidth": 100,
+          "_originalHeight": 67
+        }
+      ],
+      "_prefab": {
+        "__type__": "cc.PrefabInfo",
+        "root": {
+          "__id__": 1
+        },
+        "fileId": "53eaabPs/xGCqXQSggZlPCT"
+      }
+    },
+    {
+      "__type__": "cc.Node",
+      "_name": "textBoard",
+      "_parent": {
+        "__id__": 1
+      },
+      "_contentSize": {
+        "__type__": "cc.Size",
+        "width": 101.72935420682273,
+        "height": 66.99999999999999
+      },
+      "_position": {
+        "__type__": "cc.Vec2",
+        "x": 456.76480038863303,
+        "y": -160
+      },
+      "_components": [
+        {
+          "__type__": "cc.Sprite",
+          "node": {
+            "__id__": 6
+          },
+          "_spriteFrame": {
+            "__uuid__": "6abf1cbf-b0d3-4dbf-88b1-2d4992e134f6"
+          },
+          "_type": 1,
+          "_sizeMode": 0,
+          "_isTrimmedMode": false
+        },
+        {
+          "__type__": "cc.Widget",
+          "node": {
+            "__id__": 6
+          },
+          "_alignFlags": 45,
+          "_left": 0.85762125399579,
+          "_right": 0.05274935903784638,
+          "_top": 0.0672872340425532,
+          "_bottom": 0.8970744680851064,
+          "_isAbsLeft": false,
+          "_isAbsRight": false,
+          "_isAbsTop": false,
+          "_isAbsBottom": false,
+          "_originalWidth": 100,
+          "_originalHeight": 67
+        }
+      ],
+      "_prefab": {
+        "__type__": "cc.PrefabInfo",
+        "root": {
+          "__id__": 1
+        },
+        "fileId": "3c069M90WlI+7DeI5UwCQzZ"
+      }
+    },
+    {
+      "__type__": "cc.Node",
+      "_name": "title",
+      "_color": {
+        "__type__": "cc.Color",
+        "r": 255
+      },
+      "_parent": {
+        "__id__": 1
+      },
+      "_contentSize": {
+        "__type__": "cc.Size",
+        "width": 373.28,
+        "height": 50
+      },
+      "_position": {
+        "__type__": "cc.Vec2",
+        "x": -24.415045009637396,
+        "y": -50
+      },
+      "_components": [
+        {
+          "__type__": "cc.Label",
+          "node": {
+            "__id__": 7
+          },
+          "_useOriginalSize": false,
+          "_lineHeight": 50,
+          "_N$string": "--押宝大战规则介绍--",
+          "_N$horizontalAlign": 1,
+          "_N$verticalAlign": 1
+        },
+        {
+          "__type__": "cc.Widget",
+          "node": {
+            "__id__": 7
+          },
+          "_alignFlags": 45,
+          "_left": 0.31120465929405217,
+          "_right": 0.3542267650379066,
+          "_top": 0.013297872340425532,
+          "_bottom": 0.9601063829787234,
+          "_isAbsLeft": false,
+          "_isAbsRight": false,
+          "_isAbsTop": false,
+          "_isAbsBottom": false,
+          "_originalWidth": 373.28,
+          "_originalHeight": 50
+        }
+      ],
+      "_prefab": {
+        "__type__": "cc.PrefabInfo",
+        "root": {
+          "__id__": 1
+        },
+        "fileId": "296fb1oE4BOUIJmZXHIUVbH"
+      }
+    },
+    {
+      "__type__": "cc.Node",
+      "_name": "text",
+      "_parent": {
+        "__id__": 1
+      },
+      "_contentSize": {
+        "__type__": "cc.Size",
+        "width": 1017.69,
+        "height": 38
+      },
+      "_position": {
+        "__type__": "cc.Vec2",
+        "x": -18.31128375722801,
+        "y": -158.41739130434826
+      },
+      "_components": [
+        {
+          "__type__": "cc.Label",
+          "node": {
+            "__id__": 8
+          },
+          "_useOriginalSize": false,
+          "_actualFontSize": 38,
+          "_fontSize": 38,
+          "_lineHeight": 38,
+          "_N$string": "选择投注筹码单位  >  选择投注区域  >  发牌  >  亮牌  >  结算",
+          "_N$horizontalAlign": 1,
+          "_N$verticalAlign": 1
+        },
+        {
+          "__type__": "cc.Widget",
+          "node": {
+            "__id__": 8
+          },
+          "_alignFlags": 45,
+          "_left": 0.027792056237062445,
+          "_right": 0.06005863554495329,
+          "_top": 0.07600370027752083,
+          "_bottom": 0.907474560592044,
+          "_isAbsLeft": false,
+          "_isAbsRight": false,
+          "_isAbsTop": false,
+          "_isAbsBottom": false,
+          "_originalWidth": 1017.69,
+          "_originalHeight": 38
+        }
+      ],
+      "_prefab": {
+        "__type__": "cc.PrefabInfo",
+        "root": {
+          "__id__": 1
+        },
+        "fileId": "68f94qe6CNH4bqjKByMeXS5"
+      }
+    },
+    {
+      "__type__": "cc.Node",
+      "_name": "bull100_rules",
+      "_parent": {
+        "__id__": 1
+      },
+      "_contentSize": {
+        "__type__": "cc.Size",
+        "width": 1065.797263108298,
+        "height": 644.9999999999999
+      },
+      "_position": {
+        "__type__": "cc.Vec2",
+        "x": -5.351381554148929,
+        "y": -543.8000000000002
+      },
+      "_components": [
+        {
+          "__type__": "cc.Sprite",
+          "node": {
+            "__id__": 9
+          },
+          "_spriteFrame": {
+            "__uuid__": "8496f61c-9958-4eca-9bcf-8d27365db335"
+          },
+          "_type": 1,
+          "_sizeMode": 0
+        },
+        {
+          "__type__": "cc.Widget",
+          "node": {
+            "__id__": 9
+          },
+          "_alignFlags": 45,
+          "_left": 0.025770913560970946,
+          "_right": 39.95274999999995,
+          "_top": 0.11771276595744691,
+          "_bottom": 0.5392021276595744,
+          "_isAbsLeft": false,
+          "_isAbsTop": false,
+          "_isAbsBottom": false,
+          "_originalWidth": 1047,
+          "_originalHeight": 645
+        }
+      ],
+      "_prefab": {
+        "__type__": "cc.PrefabInfo",
+        "root": {
+          "__id__": 1
+        },
+        "fileId": "211c7y9G61BXLTLljTpYZPM"
+      }
+    },
+    {
+      "__type__": "cc.Node",
+      "_name": "richtext",
+      "_parent": {
+        "__id__": 1
+      },
+      "_anchorPoint": {
+        "__type__": "cc.Vec2",
+        "x": 0.5,
+        "y": 1
+      },
+      "_contentSize": {
+        "__type__": "cc.Size",
+        "width": 1050,
+        "height": 1000
+      },
+      "_position": {
+        "__type__": "cc.Vec2",
+        "x": -5.5,
+        "y": -882.284
+      },
+      "_components": [
+        {
+          "__type__": "cc.RichText",
+          "node": {
+            "__id__": 10
+          },
+          "_N$string": "<color=#ff0000><size=50>--简介--</size></c>\n<color=#ffffff><size=34>在押宝大战游戏中，玩家猜测庄家牌型，针对牌型进行下注，牌型不同奖励注金不同，从而组合自己的投注策略！</size></color>\n\n<color=#ff0000><size=50>--具体结算规则--</size></c>\n<color=#ffffff><size=34>1、玩家根据猜测庄家牌型，进行对应牌型区域的下注！\n2、下注区域对应相应牌型，奖励注金倍数不同！\n3、玩家赢，赢取相应下注区域的注金对应倍数奖励！\n4、玩家输，只输掉下注本金！\n5、玩家可同时下注多个区域！\n6、玩家每局最多下注次数10次！</size></color>\n\n<color=#ff0000><size=50>--牌型大小与倍数--</size></c>\n<color=#ffffff><size=34>2倍：没牛\n14倍：牛一~牛九\n12倍：牛牛</size></color>\n\n<color=#ff0000><size=50>--牌型说明--</size></c>\n<color=#ffffff><size=34>牌型共11个牌型划分，分别为：没牛，牛一，牛二，牛三，牛四，牛五，牛六，牛七，牛八，牛九，牛牛！</size></color>",
+          "_N$maxWidth": 1050,
+          "_N$lineHeight": 50
+        },
+        {
+          "__type__": "cc.Widget",
+          "node": {
+            "__id__": 10
+          },
+          "_alignFlags": 45,
+          "_left": 0.03259911894273128,
+          "_right": 0.04229074889867841,
+          "_top": 0.4693,
+          "_bottom": -0.0012148936170213328,
+          "_isAbsLeft": false,
+          "_isAbsRight": false,
+          "_isAbsTop": false,
+          "_isAbsBottom": false,
+          "_originalWidth": 1050,
+          "_originalHeight": 1000
+        }
+      ],
+      "_prefab": {
+        "__type__": "cc.PrefabInfo",
+        "root": {
+          "__id__": 1
+        },
+        "fileId": "affa0CVPMNIaaI0yVEf7tQ6"
+      }
+    }
+  ],
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "common_text_guize",
+      "texture": "16d0af448",
+      "rect": [
+        183,
+        67,
+        119,
+        61
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        119,
+        61
+      ]
+    }
+  },
+  [
+    {
+      "__type__": "cc.Prefab",
+      "_name": "prefab_rulesBull100Cell",
+      "data": {
+        "__id__": 1
+      }
+    },
+    {
+      "__type__": "cc.Node",
+      "_name": "prefab_rulesBull100Cell",
+      "_anchorPoint": {
+        "__type__": "cc.Vec2",
+        "x": 0.5,
+        "y": 1
+      },
+      "_contentSize": {
+        "__type__": "cc.Size",
+        "width": 1135,
+        "height": 2265
+      },
+      "_children": [
+        {
+          "__id__": 2
+        },
+        {
+          "__id__": 3
+        },
+        {
+          "__id__": 4
+        },
+        {
+          "__id__": 5
+        },
+        {
+          "__id__": 6
+        },
+        {
+          "__id__": 7
+        },
+        {
+          "__id__": 8
+        },
+        {
+          "__id__": 9
+        },
+        {
+          "__id__": 10
+        }
+      ],
+      "_components": [
+        {
+          "__type__": "cc.Widget",
+          "node": {
+            "__id__": 1
+          },
+          "_left": -0.09114583333333336,
+          "_right": -0.09114583333333336,
+          "_isAbsLeft": false,
+          "_isAbsRight": false,
+          "_isAbsTop": false,
+          "_originalWidth": 1135
+        }
+      ],
+      "_prefab": {
+        "__type__": "cc.PrefabInfo",
+        "root": {
+          "__id__": 1
+        },
+        "fileId": "ad4aeYqvetIv5hJ6cvC4mT1"
+      }
+    },
+    {
+      "__type__": "cc.Node",
+      "_name": "textBoard",
+      "_parent": {
+        "__id__": 1
+      },
+      "_contentSize": {
+        "__type__": "cc.Size",
+        "width": 325.53393346183975,
+        "height": 70.09468822170885
+      },
+      "_position": {
+        "__type__": "cc.Vec2",
+        "x": -379.9591379624759,
+        "y": -157.56521739130434
+      },
+      "_components": [
+        {
+          "__type__": "cc.Sprite",
+          "node": {
+            "__id__": 2
+          },
+          "_spriteFrame": {
+            "__uuid__": "6abf1cbf-b0d3-4dbf-88b1-2d4992e134f6"
+          },
+          "_type": 1,
+          "_sizeMode": 0,
+          "_isTrimmedMode": false
+        },
+        {
+          "__type__": "cc.Widget",
+          "node": {
+            "__id__": 2
+          },
+          "_alignFlags": 45,
+          "_left": 0.021827220534453105,
+          "_right": 0.6913587411731771,
+          "_top": 0.054091776282759345,
+          "_bottom": 0.9149613415001506,
+          "_isAbsLeft": false,
+          "_isAbsRight": false,
+          "_isAbsTop": false,
+          "_isAbsBottom": false,
+          "_originalWidth": 320,
+          "_originalHeight": 67
+        }
+      ],
+      "_prefab": {
+        "__type__": "cc.PrefabInfo",
+        "root": {
+          "__id__": 1
+        },
+        "fileId": "f1378k5Z9NBeqQEowYzcvg4"
+      }
+    },
+    {
+      "__type__": "cc.Node",
+      "_name": "textBoard",
+      "_parent": {
+        "__id__": 1
+      },
+      "_contentSize": {
+        "__type__": "cc.Size",
+        "width": 254.3233855170563,
+        "height": 70.09468822170918
+      },
+      "_position": {
+        "__type__": "cc.Vec2",
+        "x": -45.77820939307014,
+        "y": -157.58384411085459
+      },
+      "_components": [
+        {
+          "__type__": "cc.Sprite",
+          "node": {
+            "__id__": 3
+          },
+          "_spriteFrame": {
+            "__uuid__": "6abf1cbf-b0d3-4dbf-88b1-2d4992e134f6"
+          },
+          "_type": 1,
+          "_sizeMode": 0,
+          "_isTrimmedMode": false
+        },
+        {
+          "__type__": "cc.Widget",
+          "node": {
+            "__id__": 3
+          },
+          "_alignFlags": 45,
+          "_left": 0.34763004215718213,
+          "_right": 0.42829649042690926,
+          "_top": 0.0541,
+          "_bottom": 0.9149531177829099,
+          "_isAbsLeft": false,
+          "_isAbsRight": false,
+          "_isAbsTop": false,
+          "_isAbsBottom": false,
+          "_originalWidth": 250,
+          "_originalHeight": 67
+        }
+      ],
+      "_prefab": {
+        "__type__": "cc.PrefabInfo",
+        "root": {
+          "__id__": 1
+        },
+        "fileId": "100a5Ga3RVBXKn3jgMxfnip"
+      }
+    },
+    {
+      "__type__": "cc.Node",
+      "_name": "textBoard",
+      "_parent": {
+        "__id__": 1
+      },
+      "_contentSize": {
+        "__type__": "cc.Size",
+        "width": 101.72935420682256,
+        "height": 70.09468822170918
+      },
+      "_position": {
+        "__type__": "cc.Vec2",
+        "x": 172.9399021515983,
+        "y": -157.58384411085459
+      },
+      "_components": [
+        {
+          "__type__": "cc.Sprite",
+          "node": {
+            "__id__": 4
+          },
+          "_spriteFrame": {
+            "__uuid__": "6abf1cbf-b0d3-4dbf-88b1-2d4992e134f6"
+          },
+          "_type": 1,
+          "_sizeMode": 0,
+          "_isTrimmedMode": false
+        },
+        {
+          "__type__": "cc.Widget",
+          "node": {
+            "__id__": 4
+          },
+          "_alignFlags": 45,
+          "_left": 0.6075552643596361,
+          "_right": 0.3028153486740004,
+          "_top": 0.0541,
+          "_bottom": 0.9149531177829099,
+          "_isAbsLeft": false,
+          "_isAbsRight": false,
+          "_isAbsTop": false,
+          "_isAbsBottom": false,
+          "_originalWidth": 100,
+          "_originalHeight": 67
+        }
+      ],
+      "_prefab": {
+        "__type__": "cc.PrefabInfo",
+        "root": {
+          "__id__": 1
+        },
+        "fileId": "dfa8d3VcAtKLrV6ZDvIG7o6"
+      }
+    },
+    {
+      "__type__": "cc.Node",
+      "_name": "textBoard",
+      "_parent": {
+        "__id__": 1
+      },
+      "_contentSize": {
+        "__type__": "cc.Size",
+        "width": 101.72935420682262,
+        "height": 70.09468822170885
+      },
+      "_position": {
+        "__type__": "cc.Vec2",
+        "x": 315.36099804114974,
+        "y": -157.56521739130434
+      },
+      "_components": [
+        {
+          "__type__": "cc.Sprite",
+          "node": {
+            "__id__": 5
+          },
+          "_spriteFrame": {
+            "__uuid__": "6abf1cbf-b0d3-4dbf-88b1-2d4992e134f6"
+          },
+          "_type": 1,
+          "_sizeMode": 0,
+          "_isTrimmedMode": false
+        },
+        {
+          "__type__": "cc.Widget",
+          "node": {
+            "__id__": 5
+          },
+          "_alignFlags": 45,
+          "_left": 0.733036406112545,
+          "_right": 0.17733420692109156,
+          "_top": 0.054091776282759345,
+          "_bottom": 0.9149613415001506,
+          "_isAbsLeft": false,
+          "_isAbsRight": false,
+          "_isAbsTop": false,
+          "_isAbsBottom": false,
+          "_originalWidth": 100,
+          "_originalHeight": 67
+        }
+      ],
+      "_prefab": {
+        "__type__": "cc.PrefabInfo",
+        "root": {
+          "__id__": 1
+        },
+        "fileId": "dadb0UC6glEz5+hsRaH3Cmc"
+      }
+    },
+    {
+      "__type__": "cc.Node",
+      "_name": "textBoard",
+      "_parent": {
+        "__id__": 1
+      },
+      "_contentSize": {
+        "__type__": "cc.Size",
+        "width": 101.72935420682273,
+        "height": 70.09468822170885
+      },
+      "_position": {
+        "__type__": "cc.Vec2",
+        "x": 456.76480038863303,
+        "y": -157.56521739130434
+      },
+      "_components": [
+        {
+          "__type__": "cc.Sprite",
+          "node": {
+            "__id__": 6
+          },
+          "_spriteFrame": {
+            "__uuid__": "6abf1cbf-b0d3-4dbf-88b1-2d4992e134f6"
+          },
+          "_type": 1,
+          "_sizeMode": 0,
+          "_isTrimmedMode": false
+        },
+        {
+          "__type__": "cc.Widget",
+          "node": {
+            "__id__": 6
+          },
+          "_alignFlags": 45,
+          "_left": 0.85762125399579,
+          "_right": 0.05274935903784638,
+          "_top": 0.054091776282759345,
+          "_bottom": 0.9149613415001506,
+          "_isAbsLeft": false,
+          "_isAbsRight": false,
+          "_isAbsTop": false,
+          "_isAbsBottom": false,
+          "_originalWidth": 100,
+          "_originalHeight": 67
+        }
+      ],
+      "_prefab": {
+        "__type__": "cc.PrefabInfo",
+        "root": {
+          "__id__": 1
+        },
+        "fileId": "7570cOMqahHuq2vq1f/KCyt"
+      }
+    },
+    {
+      "__type__": "cc.Node",
+      "_name": "title",
+      "_color": {
+        "__type__": "cc.Color",
+        "r": 255
+      },
+      "_parent": {
+        "__id__": 1
+      },
+      "_contentSize": {
+        "__type__": "cc.Size",
+        "width": 373.28,
+        "height": 50
+      },
+      "_position": {
+        "__type__": "cc.Vec2",
+        "x": -24.415045009637396,
+        "y": -60.01203810623579
+      },
+      "_components": [
+        {
+          "__type__": "cc.Label",
+          "node": {
+            "__id__": 7
+          },
+          "_useOriginalSize": false,
+          "_lineHeight": 50,
+          "_N$string": "--百人大战规则介绍--",
+          "_N$horizontalAlign": 1,
+          "_N$verticalAlign": 1
+        },
+        {
+          "__type__": "cc.Widget",
+          "node": {
+            "__id__": 7
+          },
+          "_alignFlags": 45,
+          "_left": 0.3112046592940521,
+          "_right": 0.35422676503790657,
+          "_top": -0.0010046189376443416,
+          "_bottom": 0.9460046189376442,
+          "_isAbsLeft": false,
+          "_isAbsRight": false,
+          "_isAbsTop": false,
+          "_isAbsBottom": false,
+          "_originalWidth": 373.28,
+          "_originalHeight": 50
+        }
+      ],
+      "_prefab": {
+        "__type__": "cc.PrefabInfo",
+        "root": {
+          "__id__": 1
+        },
+        "fileId": "50bb8VBsZpLa7F3HWtyn83G"
+      }
+    },
+    {
+      "__type__": "cc.Node",
+      "_name": "text",
+      "_parent": {
+        "__id__": 1
+      },
+      "_contentSize": {
+        "__type__": "cc.Size",
+        "width": 1017.69,
+        "height": 38
+      },
+      "_position": {
+        "__type__": "cc.Vec2",
+        "x": -18.31128375722801,
+        "y": -159.53478260869574
+      },
+      "_components": [
+        {
+          "__type__": "cc.Label",
+          "node": {
+            "__id__": 8
+          },
+          "_useOriginalSize": false,
+          "_actualFontSize": 38,
+          "_fontSize": 38,
+          "_lineHeight": 38,
+          "_N$string": "选择投注筹码单位  >  选择投注区域  >  发牌  >  亮牌  >  结算",
+          "_N$horizontalAlign": 1,
+          "_N$verticalAlign": 1
+        },
+        {
+          "__type__": "cc.Widget",
+          "node": {
+            "__id__": 8
+          },
+          "_alignFlags": 45,
+          "_left": 0.027792056237062445,
+          "_right": 0.06005863554495329,
+          "_top": 0.06217391304347827,
+          "_bottom": 0.921304347826087,
+          "_isAbsLeft": false,
+          "_isAbsRight": false,
+          "_isAbsTop": false,
+          "_isAbsBottom": false,
+          "_originalWidth": 1017.69,
+          "_originalHeight": 38
+        }
+      ],
+      "_prefab": {
+        "__type__": "cc.PrefabInfo",
+        "root": {
+          "__id__": 1
+        },
+        "fileId": "9e224z4fchAgbH90C5MRy8A"
+      }
+    },
+    {
+      "__type__": "cc.Node",
+      "_name": "bull100_rules",
+      "_parent": {
+        "__id__": 1
+      },
+      "_contentSize": {
+        "__type__": "cc.Size",
+        "width": 1065.797263108298,
+        "height": 645
+      },
+      "_position": {
+        "__type__": "cc.Vec2",
+        "x": -5.351381554148929,
+        "y": -543.881304347826
+      },
+      "_components": [
+        {
+          "__type__": "cc.Sprite",
+          "node": {
+            "__id__": 9
+          },
+          "_spriteFrame": {
+            "__uuid__": "3ff2731c-151b-4f3b-948a-cf4a6aa67470"
+          },
+          "_type": 1,
+          "_sizeMode": 0
+        },
+        {
+          "__type__": "cc.Widget",
+          "node": {
+            "__id__": 9
+          },
+          "_alignFlags": 40,
+          "_left": 0.025770913560970946,
+          "_right": 39.95274999999995,
+          "_top": 0.08747404357867257,
+          "_bottom": 0.6146044783612813,
+          "_isAbsLeft": false,
+          "_isAbsTop": false,
+          "_isAbsBottom": false,
+          "_originalWidth": 1047,
+          "_originalHeight": 645
+        }
+      ],
+      "_prefab": {
+        "__type__": "cc.PrefabInfo",
+        "root": {
+          "__id__": 1
+        },
+        "fileId": "42ba2qIqu1LvrizRIfdiX0u"
+      }
+    },
+    {
+      "__type__": "cc.Node",
+      "_name": "richtext",
+      "_parent": {
+        "__id__": 1
+      },
+      "_anchorPoint": {
+        "__type__": "cc.Vec2",
+        "x": 0.5,
+        "y": 1
+      },
+      "_contentSize": {
+        "__type__": "cc.Size",
+        "width": 1050,
+        "height": 1350
+      },
+      "_children": [
+        {
+          "__id__": 11
+        }
+      ],
+      "_position": {
+        "__type__": "cc.Vec2",
+        "x": -7.8,
+        "y": -929.5526794858913
+      },
+      "_components": [
+        {
+          "__type__": "cc.RichText",
+          "node": {
+            "__id__": 10
+          },
+          "_N$string": "<color=#ff0000><size=50>--简介--</size></c>\n<color=#ffffff><size=34>在百人大战游戏中，玩家可以押注任意一个闲家赢庄家，或者庄家赢任意一个闲家，玩家自己组合自己的投注策略！</size></color>\n\n<color=#ff0000><size=50>--具体结算规则--</size></c>\n<color=#ffffff><size=34>1、押注某一闲家大，闲家牌型大于庄家牌型，则赢，否则为输！\n2、玩家赢钱=所押金币*闲家牌型倍数。\n3、玩家输钱=所押金币*庄家牌型倍数。\n4、押注某一闲家小，闲家牌型小于庄家牌型，则赢，否则为输！\n5、玩家赢钱=所押金币*庄家牌型倍数。\n6、玩家输钱=所押金币*闲家牌型倍数。</size></color>\n\n<color=#ff0000><size=50>--牌型大小与顺序--</size></c>\n<color=#ffffff><size=34>1倍：没牛\n1倍：牛一~牛七\n2倍：牛八\n3倍：牛九\n4倍：牛牛</size></color>\n\n<color=#ff0000><size=50>--牌型说明--</size></c>\n<color=#ffffff><size=34>牌型共11个牌型划分，分别为：没牛，牛一，牛二，牛三，牛四，牛五，牛六，牛七，牛八，牛九，牛牛！</size></color>\n\n<color=#ff0000><size=50>--相同牌型按照以下规则进行对比--\t</size></c>\n<color=#ffffff><size=34>以手中最大的一张进行对比\n1.比点数：双方最大的牌点数大的赢。\n</size></color>",
+          "_N$maxWidth": 1050,
+          "_N$lineHeight": 50
+        },
+        {
+          "__type__": "cc.Widget",
+          "node": {
+            "__id__": 10
+          },
+          "_alignFlags": 1,
+          "_top": 0.410398533989356,
+          "_isAbsTop": false
+        }
+      ],
+      "_prefab": {
+        "__type__": "cc.PrefabInfo",
+        "root": {
+          "__id__": 1
+        },
+        "fileId": "a38d9JVDTREzqKGNYK41r2I"
+      }
+    },
+    {
+      "__type__": "cc.Node",
+      "_name": "New Label",
+      "_parent": {
+        "__id__": 10
+      },
+      "_contentSize": {
+        "__type__": "cc.Size",
+        "width": 576.68,
+        "height": 38
+      },
+      "_position": {
+        "__type__": "cc.Vec2",
+        "x": -237,
+        "y": -1315
+      },
+      "_components": [
+        {
+          "__type__": "cc.Label",
+          "node": {
+            "__id__": 11
+          },
+          "_useOriginalSize": false,
+          "_actualFontSize": 37,
+          "_fontSize": 37,
+          "_lineHeight": 38,
+          "_N$string": "2.比花色：黑桃>红心>梅花>方块。",
+          "_N$verticalAlign": 1
+        }
+      ],
+      "_prefab": {
+        "__type__": "cc.PrefabInfo",
+        "root": {
+          "__id__": 1
+        },
+        "fileId": "f21dd9ill9E6ZPFDTMRzYrD"
+      }
+    }
+  ],
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "common_board_rules1",
+      "texture": "f152df67-9a0e-4f50-887f-85d4d5444133",
+      "rect": [
+        0,
+        0,
+        1043,
+        643
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        1043,
+        643
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "common_board_rules2",
+      "texture": "b77146c9-a72a-4832-9e9d-805226f0957c",
+      "rect": [
+        0,
+        0,
+        1043,
+        643
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        1043,
+        643
+      ]
+    }
+  }
+]

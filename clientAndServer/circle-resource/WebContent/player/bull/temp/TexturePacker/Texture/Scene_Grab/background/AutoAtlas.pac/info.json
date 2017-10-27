@@ -1,0 +1,16 @@
+{
+  "packedTextures": [
+    {
+      "path": "D:\\GitPro\\circle-resource\\WebContent\\player\\bull\\temp\\TexturePacker\\Texture\\Scene_Grab\\background\\AutoAtlas.pac/AutoAtlas-1.png",
+      "name": "AutoAtlas-1.png",
+      "size": "1024x256"
+    }
+  ],
+  "unpackedTextures": [
+    {
+      "path": "D:/GitPro/circle-resource/WebContent/player/bull/assets/Texture/Scene_Grab/background/Grab__board_beijing_2.jpg",
+      "name": "Grab__board_beijing_2.jpg",
+      "size": "1338x754"
+    }
+  ]
+}

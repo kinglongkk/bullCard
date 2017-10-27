@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application generated-by="intellij" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.zeroturnaround.com" xsi:schemaLocation="http://www.zeroturnaround.com http://update.zeroturnaround.com/jrebel/rebel-2_1.xsd">
+
+	<classpath>
+		<dir name="D:/GitPro/circle/websites/api/target/classes">
+		</dir>
+	</classpath>
+
+	<web>
+		<link target="/WEB-INF/classes/conf/i18n">
+			<dir name="D:/GitPro/circle/websites/_i18n">
+			</dir>
+		</link>
+		<link target="/WEB-INF/tags">
+			<dir name="D:/GitPro/circle-resource/WebContent/WEB-INF/tags">
+			</dir>
+		</link>
+		<link target="/WEB-INF/classes/conf">
+			<dir name="D:/GitPro/circle/config/common/dev">
+			</dir>
+		</link>
+		<link target="/WEB-INF/classes/conf">
+			<dir name="D:/GitPro/circle/config/service/dev">
+			</dir>
+		</link>
+		<link target="/WEB-INF/classes/conf">
+			<dir name="D:/GitPro/circle/config/web/dev">
+			</dir>
+		</link>
+		<link target="/include">
+			<dir name="D:/GitPro/circle/webcommon/WebContent/include">
+			</dir>
+		</link>
+		<link target="/">
+			<dir name="D:/GitPro/circle/websites/api/WebContent">
+			</dir>
+		</link>
+	</web>
+
+</application>

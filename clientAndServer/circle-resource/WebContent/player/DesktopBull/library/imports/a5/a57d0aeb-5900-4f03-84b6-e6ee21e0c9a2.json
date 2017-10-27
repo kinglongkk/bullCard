@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "common_btn_bet_gg_1",
+    "texture": "f42e50ae-4bba-4d51-92ab-2ddb98b72508",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      169,
+      71
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      169,
+      71
+    ]
+  }
+}

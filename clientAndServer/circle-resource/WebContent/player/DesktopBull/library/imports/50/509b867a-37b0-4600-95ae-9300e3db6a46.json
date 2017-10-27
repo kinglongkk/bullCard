@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "common_board_card5",
+    "texture": "28751937-2d82-4425-bd3c-afd7571444d8",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      171,
+      86
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      171,
+      86
+    ]
+  }
+}

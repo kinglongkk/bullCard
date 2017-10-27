@@ -1,0 +1,407 @@
+.centre{
+    position: absolute;
+    top: 1.26rem;
+    bottom: 1.5rem;
+    width: 100%;
+}
+.GL_exit{
+    background: url("../images/poker/bullFight/common/icon/exit.png") 50% 50% / auto 100% no-repeat;
+    height: 0.85rem;
+    width: 1.1rem;
+    float: left;
+    margin: 0.2rem 0 0 0.34rem;
+}
+.GL_list{
+    margin-top: 1.18rem;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    top: 0;
+}
+/*排行榜*/
+.toggle_button{
+    width: 5.54rem;
+    background: url("../images/poker/bullFight/common/board/frame001.png");
+    height: 0.97rem;
+    background-size: 100%;
+    margin-left: -2.77rem;
+    position: absolute;
+    left: 50%;
+}
+.rich{
+    background: url("../images/poker/bullFight/common/btn/bet3.png");
+    width: 2.52rem;
+    height: 0.82rem;
+    background-size: 100%;
+    position: absolute;
+    margin: 0.08rem 0 0 0.16rem;
+}
+.rich2{
+    width: 2.52rem;
+    height: 0.82rem;
+    background-size: 100%;
+    position: absolute;
+    margin: 0.08rem 0 0 0.16rem;
+}
+.rich_font{
+    width: 1.54rem;
+    float: left;
+    margin: 0.1rem 0 0 0.5rem;
+}
+.list_bg{
+    width: 8.98rem;
+    position: absolute;
+    margin: 0.86rem 0 0 -4.49rem;
+    left: 50%;
+    bottom: 4.5rem;
+    top: 0;
+}
+.gain{
+    width: 2.52rem;
+    height: 0.82rem;
+    background-size: 100%;
+    position: absolute;
+    margin: 0.08rem 0 0 2.75rem;
+}
+.list_bg1{
+    background: url("../images/poker/bullFight/common/board/windo0.png");
+    background-size: 100%;
+    height: 1.2rem;
+}
+.list_bg11{
+    background: url("../images/poker/bullFight/common/board/windo4.png") no-repeat;
+    background-size: 100%;
+}
+.list_bg2{
+    background: url("../images/poker/bullFight/common/board/windo1.png");
+    background-size: 100%;
+    position: absolute;
+    width: 8.98rem;
+    bottom: 0;
+    top: 0;
+    margin: 1.1rem 0 1.18rem 0;
+}
+.list_bg22{
+    background: url("../images/poker/bullFight/common/board/windo6.png") no-repeat;
+    background-size: 100%;
+}
+.list_bg3{
+    background: url("../images/poker/bullFight/common/board/Under2.png");
+    background-size: 100%;
+    height: 1.2rem;
+    position: absolute;
+    bottom: 0;
+    width: 8.98rem;
+}
+.list_bg33{
+    background: url("../images/poker/bullFight/common/board/Under5.png") no-repeat;
+    background-size: 100%;
+}
+.list_bg4 {
+    background: url("../images/poker/bullFight/common/board/ribbon01.png");
+    background-size: 100%;
+    height: 0.792rem;
+    width: 6.048rem;
+    margin: -0.16rem 0 0 1.5rem;
+    position: absolute;
+}
+.list_bg5 {
+    background: url("../images/poker/bullFight/common/board/ribbon02.png");
+    background-size: 100%;
+    height: 2.91rem;
+    width: 0.91rem;
+    margin: -0.5rem 0 0 -0.6rem;
+}
+.list_bg6{
+    background: url("../images/poker/bullFight/common/board/ribbon03.png");
+    background-size: 100%;
+    height: 2.2rem;
+    width: 0.45rem;
+    margin: -2.8rem 0 0 8.72rem;
+}
+.list_content{
+    width: 7.98rem;
+    margin: -0.4rem 0 -0.6rem 0.48rem;
+    overflow: scroll;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+.list_content ul{
+    overflow: hidden;
+}
+.list_content li{
+    background: url("../images/poker/bullFight/common/board/dark3.png");
+    background-size: 100%;
+    height: 1.65rem;
+    margin-top: 0.1rem;
+}
+.list_NO{
+    height: 1.49rem;
+    width: 1.44rem;
+    float: left;
+    margin: 0.1rem 0 0 -0.05rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+.list_content li:nth-child(1) .list_NO{
+    background: url("../images/poker/bullFight/common/board/level0.png") 50% 50% / auto 100% no-repeat;
+}
+.list_content li:nth-child(2) .list_NO{
+    background: url("../images/poker/bullFight/common/board/level6.png") 50% 50% / auto 100% no-repeat;
+}
+.list_content li:nth-child(3) .list_NO{
+    background: url("../images/poker/bullFight/common/board/level7.png")50% 50% / auto 100% no-repeat;
+}
+.list_content li:nth-child(n+4) .list_NO{
+    background: url("../images/poker/bullFight/common/board/level1.png") no-repeat;
+    background-size: 100%;
+    color: #fff;
+    text-shadow: 0.01rem 0rem 0.1em #826037,
+    -0.01rem 0rem 0.1em #826037,
+    0rem 0.01rem 0.1em #826037,
+    0rem -0.01rem 0.1em #826037;
+}
+.list_info{
+    height: 1.4rem;
+    margin: 0.13rem 0 0 0.2rem;
+    float: left;
+    border-radius: 0.15rem;
+    overflow: hidden;
+    width: 6rem;
+}
+.list_head{
+    width: 1.4rem;
+    float: left;
+}
+.list_name{
+    color:#c38b6a;
+    font-size: 0.5rem;
+    float: left;
+    margin-left: 0.2rem;
+    font-weight: bold;
+    width: 4.2rem;
+}
+.list_money{
+    color:#d8652e;
+    font-size: 0.5rem;
+    margin-left: 0.2rem;
+    font-weight: bold;
+    float: left;
+}
+.list_money_none{
+    color:#bea883;
+    font-size: 0.5rem;
+    margin-left: 0.2rem;
+    font-weight: bold;
+    float: left;
+}
+.earnings{
+    width: 7.98rem;
+    margin: -0.4rem 0 -0.6rem 0.48rem;
+    overflow: scroll;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: none;
+}
+.earnings ul{
+    overflow: hidden;
+}
+.earnings li{
+    background: url("../images/poker/bullFight/common/board/dark3.png");
+    background-size: 100%;
+    height: 1.65rem;
+    margin-top: 0.1rem;
+}
+.earnings_NO{
+    height: 1.49rem;
+    width: 1.44rem;
+    float: left;
+    margin: 0.1rem 0 0 -0.05rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.6rem;
+    line-height: 1.6rem
+}
+.earnings li:nth-child(1) .earnings_NO{
+    background: url("../images/poker/bullFight/common/board/level2.png") 50% 50% / auto 100% no-repeat;
+}
+.earnings li:nth-child(2) .earnings_NO{
+    background: url("../images/poker/bullFight/common/board/level3.png") 50% 50% / auto 100% no-repeat;
+}
+.earnings li:nth-child(3) .earnings_NO{
+    background: url("../images/poker/bullFight/common/board/level4.png")50% 50% / auto 100% no-repeat;
+}
+.earnings li:nth-child(n+4) .earnings_NO{
+    background: url("../images/poker/bullFight/common/board/level5.png") no-repeat;
+    background-size: 100%;
+    color: #fff;
+    text-shadow: 0.01rem 0rem 0.1em #826037,
+    -0.01rem 0rem 0.1em #826037,
+    0rem 0.01rem 0.1em #826037,
+    0rem -0.01rem 0.1em #826037;
+}
+.gain2{
+    background: url("../images/poker/bullFight/common/btn/bet3.png");
+    width: 2.52rem;
+    height: 0.82rem;
+    background-size: 100%;
+    float: left;
+    margin: 0.08rem 0 0 2.95rem;
+}
+.button{
+    display: block;
+}
+.button2{
+    display: none;
+}
+.show{
+    display: block;
+}
+.hidden{
+    display: none;
+}
+/*玩法*/
+.game_play{
+    position: absolute;
+    bottom: 0;
+    width: 5.94rem;
+    left: 50%;
+    margin-left: -2.86rem;
+}
+.Begin{
+    width: 5.78rem;
+    height: 1.72rem;
+    background: url("../images/poker/bullFight/bull100/specialEffects/ljks02.png");
+    background-size: 100%;
+    float: left;
+}
+.classic{
+    width: 5.86rem;
+    height: 1.99rem;
+    background: url("../images/poker/bullFight/bull100/specialEffects/jdwf02.png");
+    background-size: 100%;
+    float: left;
+}
+.hundred{
+    width: 5.94rem;
+    height: 2.47rem;
+    background: url("../images/poker/bullFight/bull100/specialEffects/brdz02.png");
+    background-size: 100%;
+    float: left;
+}
+/*按钮动画*/
+.Game_Lobby_light{
+    width: 3.7rem;
+    height: 2rem;
+    margin-left: 2rem;
+    overflow: hidden;
+}
+.Lobby_light{
+    width: 0.8rem;
+    height: 2rem;
+    transform: skew(-12deg);
+    -webkit-transform: skew(-12deg);
+    overflow: hidden;
+    animation: Lobby_light 3s linear infinite;
+    -webkit-animation: Lobby_light 3s linear infinite;
+    opacity: 0;
+}
+@keyframes Lobby_light {
+    39% {transform: translate3d(0, 0, 0) skew(-12deg);opacity: 0;}
+    40%  {transform: translate3d(0, 0, 0) skew(-12deg);opacity: 1;}
+    70%  {transform: translate3d(6rem, 0, 0) skew(-12deg);opacity: 1;}
+    100%  {transform: translate3d(6rem, 0, 0) skew(-12deg);opacity: 1;}
+}
+
+@-webkit-keyframes Lobby_light {
+    39% {transform: translate3d(0, 0, 0) skew(-12deg);opacity: 0;}
+    40%  {transform: translate3d(0, 0, 0) skew(-12deg);opacity: 1;}
+    70%  {transform: translate3d(6rem, 0, 0) skew(-12deg);opacity: 1;}
+    100%  {transform: translate3d(6rem, 0, 0) skew(-12deg);opacity: 1;}
+}
+.Lobby_btn {
+    background: url("../images/poker/bullFight/bull100/specialEffects/ljks01.png") 50% 50% / auto 100% no-repeat;
+    height: 1.72rem;
+    overflow: hidden;
+    width: 5.78rem;
+    transform: skew(12deg);
+    -webkit-transform: skew(12deg);
+    margin-left: -2rem;
+}
+.Lobby_btn1 {
+    background: url("../images/poker/bullFight/bull100/specialEffects/jdwf01.png") 50% 50% / auto 100% no-repeat;
+    width: 5.86rem;
+    height: 1.99rem;
+    overflow: hidden;
+    transform: skew(12deg);
+    -webkit-transform: skew(12deg);
+    margin-left: -2rem;
+}
+.Lobby_btn2 {
+    background: url("../images/poker/bullFight/bull100/specialEffects/brdz01.png") 50% 50% / auto 100% no-repeat;
+    width: 5.94rem;
+    height: 2.47rem;
+    overflow: hidden;
+    transform: skew(12deg);
+    -webkit-transform: skew(12deg);
+    margin-left: -2rem;
+}
+.Lobby_btn_animation{
+    animation: Lobby_btn 3s linear infinite;
+    -webkit-animation: Lobby_btn 3s linear infinite;
+}
+@keyframes Lobby_btn {
+    39% {transform: translate3d(0, 0, 0) skew(12deg);opacity: 1;}
+    40%  {transform: translate3d(0, 0, 0) skew(12deg);opacity: 1;}
+    70%  {transform: translate3d(-6rem, 0, 0) skew(12deg);opacity: 1;}
+    100%  {transform: translate3d(-6rem, 0, 0) skew(12deg);opacity: 1;}
+}
+
+@-webkit-keyframes Lobby_btn {
+    39% {transform: translate3d(0, 0, 0) skew(12deg);opacity: 1;}
+    40%  {transform: translate3d(0, 0, 0) skew(12deg);opacity: 1;}
+    70%  {transform: translate3d(-6rem, 0, 0) skew(12deg);opacity: 1;}
+    100%  {transform: translate3d(-6rem, 0, 0) skew(12deg);opacity: 1;}
+}
+/*底部*/
+.GameLobby_nav{
+    position: fixed;
+    bottom: 0;
+    background: url("../images/poker/bullFight/common/board/under.png");
+    background-size: 100%;
+    width: 100%;
+    height: 2.18rem;
+    float: left;
+}
+.GameL-announcement{
+    background: url("../images/poker/bullFight/common/icon/announcement.png") 50% 50% / auto 100% no-repeat;
+    width: 1.94rem;
+    height: 1.04rem;
+    margin: 1rem 0 0 2.5rem;
+    float: left;
+}
+.GameL-rules {
+    width: 1.94rem;
+    height: 1.04rem;
+    background: url("../images/poker/bullFight/common/icon/rules.png") 50% 50% / auto 100% no-repeat;
+    margin: 1rem 0 0 0.5rem;
+    float: left;
+}
+.notes{
+    width: 1.87rem;
+    height: 1.04rem;
+    background: url("../images/poker/bullFight/common/icon/record.png");
+    background-size: 100%;
+    float: left;
+    margin: 1rem 0 0 0.5rem;
+}
+.accounts{
+    width: 1.9rem;
+    height: 1.04rem;
+    background: url("../images/poker/bullFight/common/icon/accounts.png") 50% 50% / auto 100% no-repeat;
+    float: left;
+    margin: 1rem 0 0 0.5rem;
+}

@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "font_blodWords_noSide_0",
+    "texture": "017e7d08-61f6-46be-b081-7d8ef074cf05",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      499,
+      455
+    ],
+    "offset": [
+      -0.5,
+      12.5
+    ],
+    "originalSize": [
+      500,
+      480
+    ]
+  }
+}

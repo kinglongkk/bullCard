@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/.tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/circle-resource/WebContent/player/bull/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/circle-resource/WebContent/player/bull/.vscode" />
+      <excludeFolder url="file://$MODULE_DIR$/circle-resource/WebContent/player/bull/assets/.vscode" />
+      <excludeFolder url="file://$MODULE_DIR$/circle-resource/WebContent/player/bull/assets/Configs" />
+      <excludeFolder url="file://$MODULE_DIR$/circle-resource/WebContent/player/bull/assets/Texture" />
+      <excludeFolder url="file://$MODULE_DIR$/circle-resource/WebContent/player/bull/assets/resources" />
+      <excludeFolder url="file://$MODULE_DIR$/circle-resource/WebContent/player/bull/build" />
+      <excludeFolder url="file://$MODULE_DIR$/circle-resource/WebContent/player/bull/library" />
+      <excludeFolder url="file://$MODULE_DIR$/circle-resource/WebContent/player/bull/local" />
+      <excludeFolder url="file://$MODULE_DIR$/circle-resource/WebContent/player/bull/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/circle-resource/WebContent/player/bull/settings" />
+      <excludeFolder url="file://$MODULE_DIR$/circle-resource/WebContent/player/bull/temp" />
+      <excludeFolder url="file://$MODULE_DIR$/temp" />
+      <excludeFolder url="file://$MODULE_DIR$/tmp" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

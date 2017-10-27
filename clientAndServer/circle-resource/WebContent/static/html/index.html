@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>首页</title>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="keywords"/>
+    <meta name="description" content="description"/>
+    <meta name="author" content="author" />
+    <meta name="Copyright" content="author" />
+    <meta name="viewport" content="width=device-width"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <link rel="stylesheet" type="text/css" href="../../common/themes/default/bootstrap/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../admin/themes/default/style.css">
+    <link rel="stylesheet" type="text/css" href="../../common/themes/default/font-awesome/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../../admin/themes/default/content.css">
+    <link rel="stylesheet" type="text/css" href="../layout.css">
+    <link rel="stylesheet" type="text/css" href="../../common/themes/default/iconfont.css">
+    <style type="text/css">
+        .carousel-fill{
+            background-position:center;
+            text-align:center;
+        }
+        .carousel-fill img{
+            /*设置图片垂直居中*/
+            vertical-align:middle;
+            max-width: 100%;
+            max-height: 100%;
+        }
+        /* faster sliding speed */
+        .carousel-inner > .item {
+             -webkit-transition: 0.3s ease-in-out left;
+             -moz-transition: 0.3s ease-in-out left;
+             -o-transition: 0.3s ease-in-out left;
+            transition: 0.3s ease-in-out left;
+        }
+    </style>
+</head>
+<body oncontextmenu="return false" class="background-gray">
+<input id="domainTemp" type="hidden" value="">
+<div id="newMessageDIV" style="display:none"></div>
+<div class="top row top-navigation border-bottom white-bg clearfix header">
+    <nav class="navbar navbar-static-top" role="navigation">
+        <div class="pull-left logo-m-l line-hi60">
+            <a href="javascript:void(0)"><span class="m-l-sm m-r-sm fs18">Game</span>
+                <span class="line">|</span>
+                <span href="javascript:void(0)" class="m-l-sm fs16">管理后台</span></a>
+        </div>
+        <div class="navbar-header">
+            <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                <span class="sr-only">导航栏</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar" aria-expanded="false">
+            <ul class="nav navbar-nav navbar-left">
+
+                <li id="menuItem1">
+                    <a nav-top="page-content" href=""><i class="fa fa-server"></i>首页</a>
+                </li>
+
+                <li id="menuItem2">
+                    <a nav-top="page-content" href=""><i class="fa fa-server"></i>报表查询</a>
+                </li>
+
+                <li id="menuItem3">
+                    <a nav-top="page-content" href=""><i class="fa fa-server"></i>代理商管理</a>
+                </li>
+
+                <li id="menuItem4">
+                    <a nav-top="page-content" href=""><i class="fa fa-pie-chart"></i>系统管理</a>
+                </li>
+            </ul>
+            <div class="navbar-nav-up">
+                <a class="fa fa-angle-up" data-target="#navbar" data-toggle="collapse" type="button" aria-expanded="true"></a>
+            </div>
+        </div>
+        <div class="pull-right top-account-menu">
+            <ul class="tips">
+                <li class="clock top-time open"><a href="../../icon/clock-o" data-toggle="dropdown" class="clock-icon-show top-time-ico" aria-expanded="true"><i class="icon iconfont"></i></a>
+                    <span id="userTime">当前时区：GMT+08:00</span>
+                    <span id="index-clock" class="clock-show"> </span>
+                </li>
+                <li class="infos show-info">
+                    <a data-toggle="dropdown" style="min-width: 100px">
+                        <img alt="image" class="img-circle" src="">double<i
+                            class="fa fa-angle-down"></i></a>
+                    <ul class="information nav-shadow">
+                        <li><a href="/sys/account/index.html"  nav-target="mainFrame"><i class="fa fa-user m-r-sm"></i>个人资料</a></li>
+                        <li><a href="/report/log/logList.html?search.operator=double"  nav-target="mainFrame"><i class="fa fa-file-excel-o m-r-sm"></i>操作日志</a></li>
+                        <li><a href="/sys/account/index.html"  nav-target="mainFrame"><i class="fa fa-key m-r-sm"></i>更改密码</a></li>
+                        <li class="off"><a href="javascript:void(0)">退出 <i class="fa fa-power-off"></i></a></li>
+                    </ul>
+                </li>
+                <li class="informations">
+                    <a href="javascript:void(0)" class="locate" data-toggle="dropdown"
+                       data-href="/admin/index/message.html">
+                        <i class="icon iconfont"></i><span class="label label-green" id="unReadCount">0</span>
+                    </a>
+                    <dl class="infos_list nav-shadow">
+                        <dt>系统消息</dt>
+                        <dd class="infos-load">
+                            <img src="http://192.168.0.100:8080/admin/static/images/022b.gif">
+                        </dd>
+                        <dd class="infos-none"><i class="fa fa-exclamation-circle"></i>暂无消息</dd>
+                    </dl>
+                </li>
+                <li class="tasks">
+                    <a href="javascript:void(0)" class="locate" data-href="/admin/index/task.html" data-toggle="dropdown" aria-expanded="false"><i class="icon iconfont"></i><span class="label label-orange" id="unReadTaskCount">0</span></a>
+                    <dl class="infos_list tasks_list nav-shadow">
+                        <dt>任务提醒</dt>
+                        <dd class="infos-load">
+                            <img src="http://192.168.0.100:8080/admin/static/images/022b.gif">
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<div id="page-content" style="min-height: 800px;">
+    <nav class="navbar-default navbar-static-side shadow side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav" id="side-menu">
+            <li>
+                <a href="javascript:void(0);">
+                    <i class="fa fa-th-large"></i> <span class="nav-label">游戏进行时</span> <span class="fa arrow"></span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">
+                    <i class="fa fa-th-large"></i> <span class="nav-label">游戏管理</span> <span class="fa arrow"></span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">
+                    <i class="fa fa-th-large"></i> <span class="nav-label">游戏活动</span> <span class="fa arrow"></span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">
+                    <i class="fa fa-th-large"></i> <span class="nav-label">游戏公告</span> <span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level collapse" aria-expanded="false" style="height: 0px;">
+                    <li><a nav-second="mainFrame" href="">公告管理</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+    <div id="page-wrapper" class="gray-bg dashbard-1 main">
+        <div id="mainFrame" style="height: 100%;"><!--//region your codes 1-->
+                <form id="command" action="/admin/vPayAccount/list.html" method="post" novalidate="novalidate"><div id="validateRule" style="display: none"></div>
+                    <input id="search.type" name="search.type" type="hidden" value="1"><!--//region your codes 2-->
+                    <div class="row">
+                        <div class="position-wrap clearfix">
+                            <h2><a class="navbar-minimalize" href="javascript:void(0)"><i class="icon iconfont"></i> </a></h2>
+                            <span>收款账户</span><span>/</span>
+                            <span>
+
+                            公司入款账户
+                        </span>
+                            <a href="javascript:void(0)" class="pull-right siteMap"><i class="fa fa-sitemap"></i></a>
+                        </div>
+                    </div>
+                </form>
+           </div>
+        <div class="sy_content">
+            <ul>
+                <li>
+                    <div class="sy_shares shadow ">每日盈亏</div>
+                    <div class="sy_shares_nr shadow"></div>
+                </li>
+                <li>
+                    <div class="sy_shares shadow">玩家总数</div>
+                    <div class="sy_player_nr shadow"></div>
+                </li>
+                <li>
+                    <div class="sy_shares shadow">每日玩家活跃度</div>
+                    <div class="sy_hyd_nr shadow"></div>
+                </li>
+                <li>
+                    <div class="sy_shares shadow">每日新增玩家</div>
+                    <div class="sy_add_nr shadow"></div>
+                </li>
+                <li>
+                    <div class="sy_shares shadow">额度变化</div>
+                    <div class="sy_hilt_nr shadow"></div>
+                </li>
+                <li>
+                    <div class="sy_shares shadow">代理商玩家占比</div>
+                    <div class="sy_agent_nr shadow"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="a-copy clearfix">
+        <div class="pull-left"><a href="javascript:void(0)">联系客服</a><span class="dividing-line m-r-xs m-l-xs">|</span>
+            <a href="javascript:void(0)" id="feedback">意见反馈</a>
+        </div>
+        <span class="m-l-sm pull-left">Copyright © 2016 Game 版权所有</span> <span class="htm-5-logo" type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="我们项目使用html5规范开发，可提供您在所有设备上更加好的体验。"></span></div>
+</div>
+</body>
+
+</html>
+

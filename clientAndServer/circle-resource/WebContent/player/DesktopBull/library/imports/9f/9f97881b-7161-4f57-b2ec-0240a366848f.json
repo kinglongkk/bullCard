@@ -1,0 +1,23 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "common_card_zheng",
+    "texture": "e7498a01-3a27-45e7-997f-17e85ef4e304",
+    "atlas": "3b7bbc17-7b87-450a-a2d7-33be6a9279e4",
+    "rect": [
+      2,
+      2,
+      88,
+      108
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      88,
+      108
+    ],
+    "rotated": 1
+  }
+}

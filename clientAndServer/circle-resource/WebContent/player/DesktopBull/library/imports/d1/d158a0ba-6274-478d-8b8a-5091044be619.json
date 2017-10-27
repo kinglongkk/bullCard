@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "Home_zhuang_mark_tex",
+    "texture": "b6303f71-7a71-4e5a-a1c9-6489ee249303",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      107,
+      133
+    ],
+    "offset": [
+      -9.5,
+      60.5
+    ],
+    "originalSize": [
+      128,
+      256
+    ]
+  }
+}

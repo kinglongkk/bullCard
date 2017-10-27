@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "common_board_ribbon_2",
+    "texture": "a1e50e43-ff07-4e0c-804d-4dab5fe29ae4",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      280,
+      77
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      280,
+      77
+    ]
+  }
+}

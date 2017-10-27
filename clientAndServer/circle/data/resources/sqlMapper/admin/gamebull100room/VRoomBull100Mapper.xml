@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.admin.gamebull100room.VRoomBull100Mapper">
+
+    <resultMap id="TABLE:v_room_bull100" type="g.model.admin.gamebull100room.po.VRoomBull100">
+        <id column="id" property="id"/>
+        <result column="game_id" property="gameId"/>
+        <result column="game_model_id" property="gameModelId"/>
+        <result column="name" property="name"/>
+        <result column="status" property="status"/>
+        <result column="max_limit_player_number" property="maxLimitPlayerNumber"/>
+        <result column="min_limit_player_blance" property="minLimitPlayerBlance"/>
+        <result column="min_limit_dealer_blance" property="minLimitDealerBlance"/>
+        <result column="current_player_count" property="currentPlayerCount"/>
+        <result column="per_desk_seat_count" property="perDeskSeatCount"/>
+        <result column="game_code" property="gameCode"/>
+        <result column="game_name" property="gameName"/>
+        <result column="game_icon" property="gameIcon"/>
+        <result column="game_status" property="gameStatus"/>
+        <result column="game_model_code" property="gameModelCode"/>
+        <result column="game_model_name" property="gameModelName"/>
+        <result column="game_model_status" property="gameModelStatus"/>
+        <result column="game_model_icon" property="gameModelIcon"/>
+    </resultMap>
+
+    <!--//region your codes 1-->
+
+    <!--//endregion your codes 1-->
+
+</mapper>

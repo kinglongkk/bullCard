@@ -1,0 +1,16 @@
+{
+  "packedTextures": [
+    {
+      "path": "D:\\workspace\\PokerProject\\circle-resource\\WebContent\\player\\bull\\temp\\TexturePacker\\Texture\\SpecialEffect\\InHomeLoading\\AutoAtlas.pac/AutoAtlas-1.png",
+      "name": "AutoAtlas-1.png",
+      "size": "512x256"
+    }
+  ],
+  "unpackedTextures": [
+    {
+      "path": "D:/workspace/PokerProject/circle-resource/WebContent/player/bull/assets/Texture/SpecialEffect/InHomeLoading/board_jiazaibeij.jpg",
+      "name": "board_jiazaibeij.jpg",
+      "size": "1338x754"
+    }
+  ]
+}

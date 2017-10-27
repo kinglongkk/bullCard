@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.warning.VWarningPlayerDetailMapper">
+
+    <resultMap id="TABLE:v_warning_player_detail" type="g.model.warning.po.VWarningPlayerDetail">
+        <id column="id" property="id"/>
+        <result column="sys_user_id" property="sysUserId"/>
+        <result column="match_id" property="matchId"/>
+        <result column="bet_time" property="betTime"/>
+        <result column="username" property="username"/>
+        <result column="gamename" property="gamename"/>
+        <result column="gamemodelname" property="gamemodelname"/>
+        <result column="gameroomname" property="gameroomname"/>
+        <result column="bet_no" property="betNo"/>
+        <result column="single_amount" property="singleAmount"/>
+        <result column="profit_amount" property="profitAmount"/>
+        <result column="effective_amount" property="effectiveAmount"/>
+        <result column="settle_status" property="settleStatus"/>
+    </resultMap>
+
+    <!--//region your codes 1-->
+
+    <!--//endregion your codes 1-->
+    <!--//endregion your codes 1-->
+    <select id="getMatchList" resultType="g.model.warning.po.MatchPlayer" parameterType="map" >
+	select bb.*,s.username,s.nickname,s.create_time from (
+		select m.id as match_id,b.sys_user_id,sum(b.profit_amount) as profit_amount,m.begin_time,m.end_time,sum(b.effective_amount) as effective_amount
+		from match m
+		left join bet_detail bd on m.id=bd.match_id
+		left join bet b on b.id=bd.bet_id
+		where  m.settle_status='20' and profit_amount is not null
+		group by m.id,b.sys_user_id
+		order by b.sys_user_id asc,m.begin_time asc) as bb
+		left join sys_user s on bb.sys_user_id=s.id
+		 WHERE
+        ${where}
+		order by bb.sys_user_id asc,bb.begin_time asc
+		${paging};
+    </select>
+
+    <select id="selectTotalRecords" parameterType="map" resultType="int">
+        	select count(*) from (
+		select m.id as match_id,b.sys_user_id,sum(b.profit_amount) as profit_amount,m.begin_time,m.end_time,sum(b.effective_amount) as effective_amount
+		from match m
+		left join bet_detail bd on m.id=bd.match_id
+		left join bet b on b.id=bd.bet_id
+		where m.settle_status='20' and profit_amount is not null
+		group by m.id,b.sys_user_id
+		order by b.sys_user_id asc,m.begin_time asc) as bb
+		left join sys_user s on bb.sys_user_id=s.id
+		where  ${where}
+    </select>
+</mapper>

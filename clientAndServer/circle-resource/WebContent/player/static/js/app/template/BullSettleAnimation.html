@@ -1,0 +1,47 @@
+<div id="BullAnimation">
+<div id="BullWinLoseAnimation" class="Bull_animation">
+    <div class="Bull_victory_bg"><i></i></div>
+    {{if ~winLoseShow(player.coin)}}
+    <div class="Bull_victory">
+        <div class="Bull_victory_win"><i></i></div>
+        <div class="Bull_vc_win_bg">
+            <i></i>
+            <div class="Bull_vc_win_font"></div>
+        </div>
+        <div class="Bull_vc_win_stars"><i></i></div>
+        <div class="Bull_vc_win_stars1"><i></i></div>
+        <div class="Bull_victory_font Bull_slsb_animation" data-text="+200"><i></i>+{{moneyFormat:player.coin}}</div>
+    </div>
+    {{else}}
+    <div class="Bull_failure">
+        <div class="Bull_animation_failure"><i></i></div>
+        <div class="Bull_failure_bg">
+            <i></i>
+            <div class="Bull_failure_font"></div>
+        </div>
+        <div class="Bull_failure_stars"><i></i></div>
+        <div class="Bull_failure_stars1"><i></i></div>
+        <div class="Bull_failure_font1 Bull_slsb_animation" data-text="+200"><i></i>{{moneyFormat:player.coin}}</div>
+    </div>
+    {{/if}}
+    <div class="Bull_animation_content">
+        <i></i>
+        <div class="Bull_vc_content_bg">
+            <div class="Bull_victory_user">
+                <ul>
+                    {{for players}}
+                    <li>
+                        <div class="Bull_victory_user_head">{{infoHeadIcon:icon}}</div>
+                        <div class="Bull_victory_user_name">{{partUserName:nickname}}</div>
+                        <div class="Bull_victory_user_font">{{moneyFormat:balance}}</div>
+                    </li>
+                    {{/for}}
+                </ul>
+            </div>
+            <div class="Bull_victory_btn">
+                <div class="Bull_victory_btn_font"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

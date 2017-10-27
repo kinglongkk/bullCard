@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.admin.BetLimitMultipleMapper">
+
+    <resultMap id="TABLE:bet_limit_multiple" type="g.model.admin.po.BetLimitMultiple">
+        <id column="id" property="id"/>
+        <result column="bet_num" property="betNum"/>
+        <result column="odds_min" property="oddsMin"/>
+        <result column="odds_max" property="oddsMax"/>
+        <result column="bet_min" property="betMin"/>
+        <result column="bet_max" property="betMax"/>
+        <result column="order_num" property="orderNum"/>
+        <result column="create_user" property="createUser"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_user" property="updateUser"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="schema_code" property="schemaCode"/>
+    </resultMap>
+
+    <!--//region your codes 1-->
+
+    <select id="selectOne" resultMap="TABLE:bet_limit_multiple">
+        select * from bet_limit_multiple where schema_code='99999999' limit 1
+    </select>
+
+    <select id="selectUserOne" resultMap="TABLE:bet_limit_multiple" parameterType="g.model.admin.so.VUserBetLimitMultipleSo">
+        select a.* from bet_limit_multiple a inner join bet_limit_user_multiple b on a.schema_code=b.schema_code
+          where b.sys_user_id=#{sysUserId} limit 1
+    </select>
+
+    <select id="selectUserGroupOne" resultMap="TABLE:bet_limit_multiple" parameterType="g.model.admin.so.VUserGroupBetLimitMultipleSo">
+        select a.* from bet_limit_multiple a inner join bet_limit_user_group_multiple b on a.schema_code=b.schema_code
+          where b.sys_user_group_id=#{sysUserGroupId} limit 1
+    </select>
+    <!--//endregion your codes 1-->
+
+</mapper>

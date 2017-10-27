@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "Home_bet_tex",
+    "texture": "771a2ba4-4966-4cbe-8a38-5e178dc05110",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      462,
+      480
+    ],
+    "offset": [
+      -24,
+      15
+    ],
+    "originalSize": [
+      512,
+      512
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "common_board_zoushi_4",
+    "texture": "17c36c2d4",
+    "rect": [
+      384,
+      2,
+      145,
+      57
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      145,
+      57
+    ]
+  }
+}

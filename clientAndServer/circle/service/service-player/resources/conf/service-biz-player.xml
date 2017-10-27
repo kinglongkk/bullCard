@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd"
+       default-autowire="byName">
+
+       <!-- 注册配置 -->
+       <bean class="g.service.player.RegisterService" id="registerService"/>
+
+       <bean class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor" id="settleThreadPool" >
+              <property name="queueCapacity" value="300"/>
+              <property name="corePoolSize" value="10"/>
+              <property name="maxPoolSize" value="100"/>
+              <property name="threadGroupName" value="Task"/>
+              <property name="rejectedExecutionHandler">
+                     <bean class="java.util.concurrent.ThreadPoolExecutor$CallerRunsPolicy"/>
+              </property>
+       </bean>
+       
+       <bean id="configLocationResource" class="org.springframework.core.io.ClassPathResource">
+              <constructor-arg value="conf/quartz.properties" type="java.lang.String"/>
+       </bean>
+
+       <!-- 玩家盈利榜 任务调度 一点 -->
+       <bean class="org.springframework.scheduling.quartz.JobDetailFactoryBean" id="matchProfitJobDetail">
+              <property name="jobClass" value="g.service.profitOrder.MatchProfitJob" />
+       </bean>
+       <bean class="org.springframework.scheduling.quartz.CronTriggerFactoryBean" id="matchProfitTrigger">
+              <property name="jobDetail" ref="matchProfitJobDetail" />
+              <property name="cronExpression" value="0 0 1 * * ? *" />
+              <property name="group" value="profit" />
+       </bean>
+
+       <!-- 游戏公告 任务调度 -->
+       <bean class="org.springframework.scheduling.quartz.JobDetailFactoryBean" id="gameAnnouncementJobDetail">
+              <property name="jobClass" value="g.service.announcement.CreateGameAnnouncementJob" />
+       </bean>
+       <bean class="org.springframework.scheduling.quartz.CronTriggerFactoryBean" id="gameAnnouncementTrigger">
+              <property name="jobDetail" ref="gameAnnouncementJobDetail" />
+              <property name="cronExpression" value="0 0/1 * * * ? *" />
+              <property name="group" value="gameAnnouncement" />
+       </bean>
+
+       <!--&lt;!&ndash; 游戏公告 被动产生发送  &ndash;&gt;-->
+       <!--<bean class="org.springframework.scheduling.quartz.JobDetailFactoryBean" id="sendAnnouncementJobDetail">-->
+              <!--<property name="jobClass" value="g.service.announcement.SendAnnouncementJob" />-->
+       <!--</bean>-->
+       <!--<bean class="org.springframework.scheduling.quartz.CronTriggerFactoryBean" id="sendAnnouncementTrigger">-->
+              <!--<property name="jobDetail" ref="sendAnnouncementJobDetail" />-->
+              <!--&lt;!&ndash;<property name="cronExpression" value="0 0/1 * * * ? *" />&ndash;&gt;-->
+              <!--<property name="cronExpression" value="0/5 * * * * ?" />-->
+
+              <!--<property name="group" value="gameAnnouncement" />-->
+       <!--</bean>-->
+
+</beans>

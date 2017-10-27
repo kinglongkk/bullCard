@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "common_btn_zhujiemain_3",
+    "texture": "2bb43fd9-82ac-46cf-864e-e6454d06f871",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      121,
+      37
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      121,
+      37
+    ]
+  }
+}

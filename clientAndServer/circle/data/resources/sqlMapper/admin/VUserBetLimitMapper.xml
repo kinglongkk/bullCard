@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.admin.VUserBetLimitMapper">
+
+    <resultMap id="TABLE:v_user_bet_limit" type="g.model.admin.po.VUserBetLimit">
+        <id column="id" property="id"/>
+        <result column="bet_type" property="betType"/>
+        <result column="r_type" property="rtype"/>
+        <result column="bet_min" property="betMin"/>
+        <result column="bet_max" property="betMax"/>
+        <result column="item_max" property="itemMax"/>
+        <result column="sys_user_id" property="sysUserId"/>
+        <result column="schema_code" property="schemaCode"/>
+        <result column="order_num" property="orderNum"/>
+        <result column="column_group_code" property="columnGroupCode"/>
+    </resultMap>
+
+    <!--//region your codes 1-->
+    <select id="getUserBetLimit" resultMap="TABLE:v_user_bet_limit" parameterType="g.model.admin.so.VUserBetLimitSo">
+        select id,bet_min,bet_max,item_max,column_group_code from v_user_bet_limit where sys_user_id=#{sysUserId} and bet_type='R' and r_type is null
+        UNION ALL
+        select id,bet_min,bet_max,item_max,column_group_code from v_user_bet_limit where sys_user_id=#{sysUserId} and bet_type='R' and r_type='rb'
+        UNION ALL
+        select id,bet_min,bet_max,item_max,column_group_code from v_user_bet_limit where sys_user_id=#{sysUserId} and bet_type='M' and r_type is null
+        UNION ALL
+        select id,bet_min,bet_max,item_max,column_group_code from v_user_bet_limit where sys_user_id=#{sysUserId} and bet_type='QT' and r_type is null
+        UNION ALL
+        select id,bet_min,bet_max,item_max,column_group_code from v_user_bet_limit where sys_user_id=#{sysUserId} and bet_type='QT' and r_type='rb'
+        UNION ALL
+        select id,bet_min,bet_max,item_max,column_group_code from v_user_bet_limit where sys_user_id=#{sysUserId} and bet_type='fs'
+    </select>
+    <!--//endregion your codes 1-->
+
+</mapper>

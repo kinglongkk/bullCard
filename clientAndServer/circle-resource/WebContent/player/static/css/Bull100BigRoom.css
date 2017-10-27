@@ -1,0 +1,317 @@
+.BigRoom_center{
+    position: absolute;
+    width: 10.12rem;
+    left: 50%;
+    margin-left: -5.06rem;
+    top: 50%;
+    margin-top: -7.02rem;
+}
+.BigRoom{
+    width: 10.12rem;
+    margin: auto;
+}
+.BR_bg{
+    background: url(../images/poker/bullFight/common/board/title01.png);
+    background-size: 100%;
+    width: 6.36rem;
+    height: 2.68rem;
+    margin: auto;
+}
+.ybdz_bg{
+    background: url(../images/poker/bullFight/common/board/title03.png);
+    background-size: 100%;
+    width: 6.36rem;
+    height: 2.68rem;
+    margin: auto;
+}
+.BR_bg_bg1 {
+    background: url("../images/poker/bullFight/common/board/windo0.png");
+    background-size: 100%;
+    height: 1.4rem;
+}
+.BR_bg_bg2 {
+    background: url("../images/poker/bullFight/common/board/windo1.png");
+    background-size: 100%;
+    height: 7.2rem;
+    margin-top: -0.05rem;
+}
+.BR_bg_bg3 {
+    background: url("../images/poker/bullFight/common/board/Under2.png") no-repeat;
+    background-size: 100%;
+    height: 1.4rem;
+}
+.BigRoom1{
+    width: 10.12rem;
+}
+.room{
+    width: 9.2rem;
+    margin: -9.2rem 0 0 0.45rem;
+    height: 8.75rem;
+    overflow: scroll;
+}
+.room li{
+    width: 4.34rem;
+    height: 2.64rem;
+    margin: 0.2rem 0 0 0.17rem;
+    float: left;
+    font-weight: bold;
+}
+.purple{
+    background: url("../images/poker/bullFight/bull100/board/blue.png");
+    background-size: 100%;
+}
+.purple1{
+    color: #f2b2fd;
+}
+.purple2{
+    color: #7800aa;
+}
+.limit{
+    font-size: 0.3rem;
+    line-height: 0.9rem;
+    padding-left: 0.3rem;
+}
+
+.city{
+    font-size: 0.5rem;
+    line-height: 1.1rem;
+    color: #80522e;
+    text-align: center
+}
+.number{
+    font-size: 0.3rem;
+    padding-left: 1.3rem;
+}
+.number span{
+    margin-right: 0.5rem;
+    float: right;
+}
+.red{
+    background: url("../images/poker/bullFight/bull100/board/red.png");
+    background-size: 100%;
+}
+.red1{
+    color: #fec2bf;
+}
+.red2{
+    color: #9e0a02;
+}
+.green{
+    background: url("../images/poker/bullFight/bull100/board/green.png");
+    background-size: 100%;
+}
+.green1{
+    color: #d4ffac;
+}
+.green2{
+    color: #426124;
+}
+.yellow{
+    background: url("../images/poker/bullFight/bull100/board/huang.png");
+    background-size: 100%;
+}
+.yellow1{
+    color: #c8f9ff;
+}
+.yellow2{
+    color: #008579;
+}
+.orange{
+    background: url("../images/poker/bullFight/bull100/board/cheng.png");
+    background-size: 100%;
+}
+.orange1{
+    color: #fed0d6;
+}
+.orange2{
+    color: #a54604;
+}
+.blue{
+    background: url("../images/poker/bullFight/bull100/board/lan.png");
+    background-size: 100%;
+}
+.blue1{
+    color: #d9e8fe;
+}
+.blue2{
+    color: #0925b7;
+}
+
+/*点击动画*/
+.BigRoom_animation{
+    -webkit-animation: BigRoom_animation 1s ease 1 ;
+    animation: BigRoom_animation 1s ease 1 ;
+    opacity:1;
+}
+@keyframes BigRoom_animation
+{
+    0%  {transform: scale(1,1); opacity:1;}
+    25% {transform:  scale(1.1,1.1);opacity:1;}
+    50%{transform:  scale(0.8,0.8);opacity:1;}
+    75%{transform: scale(1,1);opacity:1;}
+}
+@-webkit-keyframes BigRoom_animation
+{
+    0%  {transform: scale(1,1); opacity:1;}
+    25% {transform:  scale(1.1,1.1);opacity:1;}
+    50%{transform:  scale(0.8,0.8);opacity:1;}
+    75%{transform: scale(1,1);opacity:1;}
+}
+/*经典界面*/
+.Classic-bg {
+    background: url("../images/poker/bullFight/classic/common/board/beij4.jpg") no-repeat;
+    background-size: 100% 100%;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    overflow: hidden;
+}
+.Classic_info {
+    background: url(../images/poker/bullFight/common/board/comm_1_frame_tap_main.png) 50% 50%/auto 100% no-repeat;
+    position: relative;
+    z-index: 2;
+    margin-left: 15%;
+    width: 70%;
+    height: 1.7rem;
+}
+.Classic_back{
+    background: url(../images/poker/bullFight/common/icon/back.png) 50% 50%/auto 100% no-repeat;
+    width: 0.77rem;
+    height: 0.595rem;
+    float: left;
+    margin: 0.12rem 0 0 0.2rem;
+}
+.Classic_info_head {
+    width: 1rem;
+    margin-left: 4%;
+    height: 1rem;
+    border-radius: 0.1rem;
+    overflow: hidden;
+}
+.Classic_info_name {
+    color: #fff;
+    font-size: 0.25rem;
+    text-align: center;
+    font-weight: bold;
+    width: 1.6rem;
+    line-height: 0.4rem;
+    position: absolute;
+}
+.Classic_info_coin {
+    width: 4.3rem;
+    height: 0.8rem;
+    background: rgba(0,0,0,0.2);
+    border-radius: 0.15rem;
+    position: absolute;
+    top: 0.07rem;
+    left: 38%;
+}
+.Classic_if_coin {
+    width: 0.9rem;
+    position: fixed;
+    left: 40%;
+}
+.Classic_setting {
+    background: url("../images/poker/bullFight/common/icon/setUp.png");
+    background-size: 100% 100%;
+    width: 0.77rem;
+    height: 0.76rem;
+    position: absolute;
+    right: 2%;
+    top: 0.05rem;
+}
+.Classic_Room_center {
+    position: fixed;
+    width: 80%;
+    left: 10%;
+    height: 4.977rem;
+    margin-top: 0.3rem;
+}
+.CR_bg_bg1 {
+    background: url("../images/poker/bullFight/common/board/dib02.png");
+    background-size: 100%;
+    height: 4.977rem;
+    width: 0.756rem;
+    float: left;
+}
+.CR_bg_bg2 {
+    background: url("../images/poker/bullFight/common/board/dib03.png") repeat-x;
+    height: 5.75rem;
+    left: 0.75rem;
+    position: absolute;
+    right: 0.75rem;
+    top: 0.03rem;
+    background-size: 0.273rem;
+}
+.CR_bg_bg3 {
+    background: url("../images/poker/bullFight/common/board/dib01.png") no-repeat;
+    background-size: 100%;
+    height: 4.977rem;
+    width: 0.819rem;
+    float: right;
+}
+.CR_room{
+    position: absolute;
+    overflow: scroll;
+    left: -0.4rem;
+    right: -0.4rem;
+    top: 0.5rem;
+    height: 4.1rem;
+    font-weight: bold;
+}
+.CR_room li{
+    width: 2.8644rem;
+    height: 1.7424rem;
+    margin: 0.15rem;
+    float: left;
+}
+.CR_room li a{
+    color: #795037;
+}
+.CR_limit {
+    font-size: 0.25rem;
+    line-height: 0.56rem;
+    padding-left: 0.2rem;
+}
+.CR_points {
+    font-size: 0.25rem;
+    line-height: 0.7rem;
+    margin-left: 0.25rem;
+    height: 0.76rem;
+}
+.CR_points p {
+   float: left;
+}
+.CR_points span{
+    font-size: 0.4rem;
+    color: #ef3c12;
+    -webkit-text-fill-color: transparent;
+    background: -webkit-linear-gradient(#f9703b,#d82d06 80%);
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 0.01rem #613f18;
+    margin-left: 0.2rem;
+}
+.CR_number {
+    font-size: 0.2rem;
+    padding-left: 1rem;
+    width: 1rem;
+    text-align: center;
+}
+.CR_number span {
+    margin-right: 0.3rem;
+    float: right;
+}
+.CR_announcement {
+    margin-top: -6%;
+    transform: scale(0.7 ,0.7);
+    -webkit-transform: scale(0.7 ,0.7);
+}
+.CR_personal {
+    transform: scale(0.7 ,0.7);
+    -webkit-transform: scale(0.7 ,0.7);
+    margin-top: -0.4rem;
+}
+.CR_room_bg{
+    background: url("../images/poker/bullFight/common/board/brown.png") 50% 50%/ auto 100% no-repeat ;
+    color: #795037;
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "sztishidibang",
+    "texture": "e016e5ab-8a47-4fbf-b99e-cfb5ce77c2a3",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      251,
+      43
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      251,
+      43
+    ],
+    "capInsets": [
+      60,
+      11,
+      60,
+      11
+    ]
+  }
+}

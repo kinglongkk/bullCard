@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd"
+       default-autowire="byName">
+
+    <!--代理服务-->
+    <bean id="vAgentManageService" class="g.service.admin.VAgentManageService"/>
+    <!-- 代理管理 -->
+    <bean id="agentManagerService" class="g.service.admin.AgentManagerService" />
+    <!--账号服务 -->
+    <bean id="vAccountManageService" class="g.service.account.VAccountManageService"/>
+    <!-- 历史赛事-半全场 -->
+    <bean id="onlinePayService" class="org.soul.service.pay.OnlinePayService"/>
+
+    <!-- 玩家盈亏消耗 一点十五分 -->
+    <bean class="org.springframework.scheduling.quartz.JobDetailFactoryBean" id="profitAndLossJobDetail">
+        <property name="jobClass" value="g.service.profitandloss.PlayerProfitAndLossJob" />
+    </bean>
+    <bean class="org.springframework.scheduling.quartz.CronTriggerFactoryBean" id="profitAndLossJobTrigger">
+        <property name="jobDetail" ref="profitAndLossJobDetail" />
+        <property name="cronExpression" value="0 15 1 * * ? *" />
+        <property name="group" value="profitAndLoss" />
+    </bean>
+
+    <!-- 代理额度消耗 任务调度 一点三十分 -->
+    <bean class="org.springframework.scheduling.quartz.JobDetailFactoryBean" id="quotaJobDetail">
+        <property name="jobClass" value="g.service.admin.agent.quota.statistics.QuotaStatisticsJob" />
+    </bean>
+    <bean class="org.springframework.scheduling.quartz.CronTriggerFactoryBean" id="quotaJobTrigger">
+        <property name="jobDetail" ref="quotaJobDetail" />
+        <property name="cronExpression" value="0 30 1 * * ? *" />
+        <property name="group" value="quota" />
+    </bean>
+
+    <!-- 修改代理额度 任务调度 每个月的一号一点四十五分 -->
+    <bean class="org.springframework.scheduling.quartz.JobDetailFactoryBean" id="quotaSumJobDetail">
+        <property name="jobClass" value="g.service.admin.agent.quota.statistics.QuotaSumJob" />
+    </bean>
+    <bean class="org.springframework.scheduling.quartz.CronTriggerFactoryBean" id="quotaSumJobTrigger">
+        <property name="jobDetail" ref="quotaSumJobDetail" />
+        <property name="cronExpression" value="0 45 1 1 * ? *" />
+        <property name="group" value="quota" />
+    </bean>
+
+    <!-- 盈亏实时每个2分钟调用存储过程 -->
+    <bean class="org.springframework.scheduling.quartz.JobDetailFactoryBean" id="quotaAgentActualJobDetail">
+        <property name="jobClass" value="g.service.admin.agent.quota.playersummery.AgentDateActualJob" />
+    </bean>
+    <bean class="org.springframework.scheduling.quartz.CronTriggerFactoryBean" id="quotaAgentActualJobTrigger">
+        <property name="jobDetail" ref="quotaAgentActualJobDetail" />
+        <property name="cronExpression" value="0 0/2 * * * ?" />
+        <property name="group" value="quota" />
+    </bean>
+
+    <!-- 代理商下玩家数 两点 -->
+    <bean class="org.springframework.scheduling.quartz.JobDetailFactoryBean" id="quotaPlayerSummeryJobDetail">
+        <property name="jobClass" value="g.service.admin.agent.quota.playersummery.PlayerSummeryJob" />
+    </bean>
+    <bean class="org.springframework.scheduling.quartz.CronTriggerFactoryBean" id="quotaPlayerSummeryJobTrigger">
+        <property name="jobDetail" ref="quotaPlayerSummeryJobDetail" />
+        <property name="cronExpression" value="0 0 2 * * ? *" />
+        <property name="group" value="quota" />
+    </bean>
+
+    <!-- 代理商盈亏 两点十五分 -->
+    <bean class="org.springframework.scheduling.quartz.JobDetailFactoryBean" id="playerStatisticsReportJobDetail">
+        <property name="jobClass" value="g.service.admin.agent.quota.playersummery.PlayerStatisticsReportJob" />
+    </bean>
+    <bean class="org.springframework.scheduling.quartz.CronTriggerFactoryBean" id="playerStatisticsReportJobTrigger">
+        <property name="jobDetail" ref="playerStatisticsReportJobDetail" />
+        <property name="cronExpression" value="0 15 2 * * ? *" />
+        <property name="group" value="quota" />
+    </bean>
+
+    <!-- 每分钟执行一次玩家盈亏明细 -->
+    <bean class="org.springframework.scheduling.quartz.JobDetailFactoryBean" id="quotaPlayerDataStatisticsJobDetail">
+        <property name="jobClass" value="g.service.admin.agent.quota.playersummery.PlayerDataStatisticsJob" />
+    </bean>
+    <bean class="org.springframework.scheduling.quartz.CronTriggerFactoryBean" id="quotaPlayerDataStatisticsJobTrigger">
+        <property name="jobDetail" ref="quotaPlayerDataStatisticsJobDetail" />
+        <property name="cronExpression" value="0 0/1 * * * ?" />
+        <property name="group" value="quota" />
+    </bean>
+
+    <!--&lt;!&ndash;预警赢的金币和投注金额倍数比&ndash;&gt;-->
+    <!--<bean class="org.springframework.scheduling.quartz.JobDetailFactoryBean" id="playerWarningMultipleJobDetail">-->
+        <!--<property name="jobClass" value="g.service.admin.agent.quota.warning.PlayerWarningMultipleJob" />-->
+    <!--</bean>-->
+    <!--<bean class="org.springframework.scheduling.quartz.CronTriggerFactoryBean" id="playerWarningMultipleJobTrigger">-->
+        <!--<property name="jobDetail" ref="playerWarningMultipleJobDetail" />-->
+        <!--<property name="cronExpression" value="0 0/10 * * * ?" />-->
+        <!--<property name="group" value="quota" />-->
+    <!--</bean>-->
+
+    <!--&lt;!&ndash;预警连赢派彩次数&ndash;&gt;-->
+    <!--<bean class="org.springframework.scheduling.quartz.JobDetailFactoryBean" id="playerWarningWinCountJobDetail">-->
+        <!--<property name="jobClass" value="g.service.admin.agent.quota.warning.PlayerWarningWinCountJob" />-->
+    <!--</bean>-->
+    <!--<bean class="org.springframework.scheduling.quartz.CronTriggerFactoryBean" id="playerWarningWinCountJobTrigger">-->
+        <!--<property name="jobDetail" ref="playerWarningWinCountJobDetail" />-->
+        <!--<property name="cronExpression" value="0 0/06 * * * ?" />-->
+        <!--<property name="group" value="quota" />-->
+    <!--</bean>-->
+
+</beans>

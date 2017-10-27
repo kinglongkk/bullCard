@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "Scene_Classic_hzhuo01",
+    "texture": "e77bc251-47e5-4c06-94de-96b9ddb7b141",
+    "atlas": "",
+    "rect": [
+      3,
+      7,
+      201,
+      55
+    ],
+    "offset": [
+      1.5,
+      -3
+    ],
+    "originalSize": [
+      204,
+      63
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.activitymessage.ActivityRuleMapper">
+
+    <resultMap id="TABLE:activity_rule" type="g.model.activitymessage.po.ActivityRule">
+        <id column="id" property="id"/>
+        <result column="activity_message_id" property="activityMessageId"/>
+        <result column="limit_number" property="limitNumber"/>
+        <result column="effective_time" property="effectiveTime"/>
+        <result column="is_demand_first" property="isDemandFirst"/>
+        <result column="is_designated_game" property="isDesignatedGame"/>
+        <result column="game_type" property="gameType"/>
+        <result column="is_exclusive" property="isExclusive"/>
+        <result column="exclusive_activity" property="exclusiveActivity"/>
+    </resultMap>
+
+    <!--//region your codes 1-->
+
+    <!--//endregion your codes 1-->
+
+</mapper>

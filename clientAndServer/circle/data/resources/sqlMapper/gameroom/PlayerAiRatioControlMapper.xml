@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.gameroom.PlayerAiRatioControlMapper">
+
+    <resultMap id="TABLE:player_ai_ratio_control" type="g.model.gameroom.po.PlayerAiRatioControl">
+        <id column="id" property="id"/>
+        <result column="ai_player_control_id" property="aiPlayerControlId"/>
+        <result column="player_proportion_min" property="playerProportionMin"/>
+        <result column="player_proportion_max" property="playerProportionMax"/>
+        <result column="ai_proportion_min" property="aiProportionMin"/>
+        <result column="ai_proportion_max" property="aiProportionMax"/>
+    </resultMap>
+    <!--根据id获取数据列表-->
+    <select id="getDefaultPlayerAiRationControl" resultType="g.model.gameroom.po.PlayerAiRatioControl">
+        select * from player_ai_ratio_control where ai_player_control_id=#{aiControlId}
+    </select>
+
+</mapper>

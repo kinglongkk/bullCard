@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.bet.VBetSettleMapper">
+
+    <resultMap id="TABLE:v_bet_settle" type="g.model.bet.po.VBetSettle">
+        <id column="id" property="id"/>
+        <result column="sys_user_id" property="sysUserId"/>
+        <result column="r_type" property="rtype"/>
+        <result column="bet_no" property="betNo"/>
+        <result column="order_type" property="orderType"/>
+        <result column="single_amount" property="singleAmount"/>
+        <result column="profit_amount" property="profitAmount"/>
+        <result column="effective_amount" property="effectiveAmount"/>
+        <result column="can_win" property="canWin"/>
+        <result column="status" property="status"/>
+        <result column="settle_status" property="settleStatus"/>
+        <result column="bet_time" property="betTime"/>
+        <result column="confirm_time" property="confirmTime"/>
+        <result column="bet_detail_id" property="betDetailId"/>
+        <result column="match_id" property="matchId"/>
+        <result column="bet_id" property="betId"/>
+        <result column="ball_type" property="ballType"/>
+        <result column="bet_team" property="betTeam"/>
+        <result column="point" property="point"/>
+        <result column="bet_type" property="betType"/>
+        <result column="bet_team_type" property="betTeamType"/>
+        <result column="ior_field" property="iorField"/>
+        <result column="ratio" property="ratio"/>
+        <result column="host_score" property="hostScore"/>
+        <result column="client_score" property="clientScore"/>
+        <result column="host_code" property="hostCode"/>
+        <result column="client_code" property="clientCode"/>
+        <result column="strong" property="strong"/>
+    </resultMap>
+
+    <!--//region your codes 1-->
+
+    <select id="groupBySettleState" parameterType="long" resultMap="TABLE:v_bet_settle">
+        select count(1) as count,settle_status from v_bet_settle  where match_id = #{id} GROUP BY settle_status;
+    </select>
+
+    <!--//endregion your codes 1-->
+
+</mapper>

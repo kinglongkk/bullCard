@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.gamemodel.GameModelMapper">
+
+    <resultMap id="TABLE:game_model" type="g.model.gamemodel.po.GameModel">
+        <id column="id" property="id"/>
+        <result column="game_id" property="gameId"/>
+        <result column="code" property="code"/>
+        <result column="name" property="name"/>
+        <result column="status" property="status"/>
+        <result column="icon" property="icon"/>
+    </resultMap>
+
+    <!--//region your codes 1-->
+
+    <!-- 获取所有游戏玩法列表 -->
+    <select id="getGameModelAllList" resultMap="TABLE:game_model">
+        SELECT
+        *
+        FROM
+        game_model
+        where status='10'
+    </select>
+
+    <!--//endregion your codes 1-->
+
+</mapper>

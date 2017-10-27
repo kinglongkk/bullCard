@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.admin.agent.message.UserAgentMapper">
+
+    <resultMap id="TABLE:user_agent" type="g.model.admin.agent.message.po.UserAgent">
+        <id column="id" property="id"/>
+        <result column="agent_id" property="agentId"/>
+        <result column="merchant_no" property="merchantNo"/>
+        <result column="merchant_key" property="merchantKey"/>
+        <result column="merchant_logo" property="merchantLogo"/>
+        <result column="merchant_index_link" property="merchantIndexLink"/>
+        <result column="merchant_recharge_link" property="merchantRechargeLink"/>
+        <result column="quota" property="quota"/>
+        <result column="exchange_rate_id" property="exchangeRateId"/>
+        <result column="current_quota" property="currentQuota"/>
+        <result column="warn_type" property="warnType"/>
+        <result column="quota_status" property="quotaStatus"/>
+    </resultMap>
+
+    <!--//region your codes 1-->
+    <!-- 查找商户信息 -->
+    <select id="selectInfoByAgentId" parameterType="map" resultType="g.model.admin.agent.message.po.UserAgent">
+        SELECT
+            *
+        FROM
+            user_agent
+        WHERE
+            agent_id = #{agentId};
+    </select>
+    <!--//endregion your codes 1-->
+
+</mapper>

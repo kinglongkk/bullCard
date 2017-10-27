@@ -1,0 +1,36 @@
+<div  class="container"><!--经典房间列表-->
+    <div class="Classic-bg">
+        <!--玩家信息-->
+        <div class="personal_info CR_personal"> </div>
+        <div class="center">
+        <!--滚动通知-->
+        <div class="announcement CR_announcement"></div>
+        <!--房间列表-->
+        <div class="Classic_Room_center">
+            <div class="CR_bg_bg1"></div>
+            <div class="CR_bg_bg2 ">
+                <div class="CR_room">
+                    <ul class="bullRoom">
+                        {{if ~dataIsEmpty(code)}}
+                        {{for data}}
+                        {{if ~showRoom(status)}}
+                        <li class="CR_room_bg">
+                            <a href="#/model/bullclassic/room/{{:id}}">
+                                <p class="CR_limit">进房下限{{moneyFormat:minLimitPlayerBlance}}</p>
+                                <div class="CR_points"><p>底分</p><span>{{:betMin}}</span></div>
+                                <p class="CR_number">{{:currentPlayerCount}}人</p>
+                            </a>
+                        </li>
+                        {{/if}}
+                        {{/for}}
+                        {{else}}
+                        <div class="Dialog_font_center">{{:msg}}</div>
+                        {{/if}}
+                    </ul>
+                </div>
+            </div>
+            <div class="CR_bg_bg3"></div>
+        </div>
+        </div>
+    </div>
+</div>

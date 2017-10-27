@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "common_board_jinpai1",
+    "texture": "820d55d2-4c3d-48e6-ab4f-e39d3c4b83fd",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      54,
+      45
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      54,
+      45
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.withdrawdesk.VPlayerWithdrawMapper">
+
+    <resultMap id="TABLE:v_player_withdraw" type="g.model.withdrawdesk.po.VPlayerWithdraw">
+        <id column="id" property="id"/>
+        <result column="player_id" property="playerId"/>
+        <result column="player_transaction_id" property="playerTransactionId"/>
+        <result column="transaction_no" property="transactionNo"/>
+        <result column="current_account_amount" property="currentAccountAmount"/>
+        <result column="current_return_zero_amount" property="currentReturnZeroAmount"/>
+        <result column="current_backflush_amount" property="currentBackflushAmount"/>
+        <result column="withdraw_monetary" property="withdrawMonetary"/>
+        <result column="withdraw_amount" property="withdrawAmount"/>
+        <result column="withdraw_remark" property="withdrawRemark"/>
+        <result column="deduct_favorable" property="deductFavorable"/>
+        <result column="counter_fee" property="counterFee"/>
+        <result column="administrative_fee" property="administrativeFee"/>
+        <result column="is_deduct_audit" property="isDeductAudit"/>
+        <result column="deduct_audit_recharge_amount" property="deductAuditRechargeAmount"/>
+        <result column="deduct_audit_recharge_index" property="deductAuditRechargeIndex"/>
+        <result column="deduct_audit_favorable_amount" property="deductAuditFavorableAmount"/>
+        <result column="deduct_audit_favorable_index" property="deductAuditFavorableIndex"/>
+        <result column="withdraw_type" property="withdrawType"/>
+        <result column="create_time" property="createTime"/>
+        <result column="payee_bank" property="payeeBank"/>
+        <result column="payee_bankcard" property="payeeBankcard"/>
+        <result column="payee_name" property="payeeName"/>
+        <result column="withdraw_status" property="withdrawStatus"/>
+        <result column="check_status" property="checkStatus"/>
+        <result column="check_time" property="checkTime"/>
+        <result column="check_user_id" property="checkUserId"/>
+        <result column="check_remark" property="checkRemark"/>
+        <result column="is_clear_audit" property="isClearAudit"/>
+        <result column="is_warn" property="isWarn"/>
+        <result column="check_closing_time" property="checkClosingTime"/>
+        <result column="withdraw_type_parent" property="withdrawTypeParent"/>
+        <result column="withdraw_actual_amount" property="withdrawActualAmount"/>
+        <result column="play_money_time" property="playMoneyTime"/>
+        <result column="play_money_user" property="playMoneyUser"/>
+        <result column="reason_content" property="reasonContent"/>
+        <result column="artificial_reason_content" property="artificialReasonContent"/>
+        <result column="is_lock" property="isLock"/>
+        <result column="lock_person_id" property="lockPersonId"/>
+        <result column="is_satisfy_audit" property="isSatisfyAudit"/>
+        <result column="artificial_reason_title" property="artificialReasonTitle"/>
+        <result column="reason_title" property="reasonTitle"/>
+        <result column="success_count" property="successCount"/>
+        <result column="closing_time" property="closingTime"/>
+        <result column="remark" property="remark"/>
+        <result column="username" property="username"/>
+        <result column="check_user_name" property="checkUserName"/>
+        <result column="player_group_id" property="playerGroupId"/>
+        <result column="region" property="region"/>
+        <result column="nation" property="nation"/>
+        <result column="country" property="country"/>
+        <result column="city" property="city"/>
+        <result column="real_name" property="realName"/>
+        <result column="register_time" property="registerTime"/>
+        <result column="status" property="status"/>
+        <result column="risk_marker" property="riskMarker"/>
+        <result column="group_name" property="groupName"/>
+        <result column="agent_name" property="agentName"/>
+        <result column="general_agent_name" property="generalAgentName"/>
+        <result column="lock_person_name" property="lockPersonName"/>
+    </resultMap>
+
+    <!--//region your codes 1-->
+
+    <!--//endregion your codes 1-->
+
+</mapper>

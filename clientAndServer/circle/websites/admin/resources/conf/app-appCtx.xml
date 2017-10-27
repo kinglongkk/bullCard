@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xmlns:p="http://www.springframework.org/schema/p"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+
+	<!--common begin-->
+	<import resource="classpath*:/conf/commons-redis.xml"/>
+	<!--common end-->
+
+	<!--service begin-->
+	<import resource="classpath*:/conf/service-common-appCtx.xml"/>
+	<import resource="classpath*:/conf/service-biz-admin.xml"/>
+	<!--service end-->
+
+	<!--web begin-->
+	<import resource="classpath*:/conf/web-common.xml"/>
+	<import resource="classpath*:/conf/web-cache.xml"/>
+	<import resource="classpath:conf/shiro-app-main.xml"/>
+	<import resource="classpath:conf/app-quartz.xml"/>
+
+	<!--comet begin-->
+	<!--<import resource="classpath*:/conf/web-comet.xml"/>-->
+	<!--comet end-->
+
+	<context:property-placeholder location="classpath*:conf/*-conf.properties" ignore-unresolvable="true"/>
+
+	<context:annotation-config />
+
+	<aop:aspectj-autoproxy/>
+	<aop:config>
+		<!--拦截:生产消息-->
+		<aop:aspect id="reportGenAop" ref="reportServiceAspect">
+			<aop:pointcut id="reportGenPointcut" expression="execution(void g.service.bet.settle.DatabaseSettleService.settle(Long)) || execution(void g.service.bet.settle.DatabaseSettleService.reSettle(Long))"/>
+			<aop:after-returning method="after" pointcut-ref="reportGenPointcut"/>
+		</aop:aspect>
+	</aop:config>
+
+	<context:component-scan base-package="g.web">
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"></context:exclude-filter>
+	</context:component-scan>
+	<bean id="reportServiceAspect" class="g.web.admin.report.ReportServiceAspect"/>
+
+	<!--过滤器审计日志实现-->
+	<bean id="filterAuditLog" class="g.web.common.interceptor.FilterAuditLog"/>
+
+	<!--PageCache页面级缓存配置-->
+	<bean id="pageCacheConf" class="org.soul.web.cache.core.PageCacheConf">
+		<property name="active" value="true"/>
+		<property name="pageCacheItemConfList">
+			<list>
+
+			</list>
+		</property>
+	</bean>
+
+</beans>

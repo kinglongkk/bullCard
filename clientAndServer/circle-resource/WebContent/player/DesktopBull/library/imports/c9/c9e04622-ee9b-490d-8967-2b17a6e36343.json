@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "common_icon_exit",
+    "texture": "0a66d461-6ad0-4d85-a70e-2131eed7bf13",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      74,
+      69
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      74,
+      69
+    ]
+  }
+}

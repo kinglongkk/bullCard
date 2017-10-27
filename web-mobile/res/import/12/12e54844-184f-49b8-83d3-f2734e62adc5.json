@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "common_board_frame_2",
+    "texture": "1cfae9545",
+    "rect": [
+      276,
+      415,
+      86,
+      86
+    ],
+    "offset": [
+      -0.5,
+      -0.5
+    ],
+    "originalSize": [
+      87,
+      89
+    ]
+  }
+}

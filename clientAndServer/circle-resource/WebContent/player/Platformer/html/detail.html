@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>游戏详情</title>
+    <link rel="stylesheet" href="../css/luara.left.css"/>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="stylesheet" href="../css/lrtk.css"/>
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <script src="../js/jquery-1.9.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <script src="../js/jquery.luara.0.0.1.min.js"></script>
+    <script>
+        $(function(){
+            <!--调用Luara示例-->
+            $(".example2").luara({width:"793",height:"488",interval:4000,selected:"seleted",deriction:"left"});
+            $(".list").click(function(){
+                $(".deviation").toggleClass("dev1");
+                $(".deviation").siblings().removeClass("dev1");
+                $(".mob_nav").toggleClass("dis_b");
+                $(".mob_nav").siblings().removeClass("dis_n");
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="about">
+    <div class="header_c">
+        <div class="header ab_c">
+            <a class="list"></a>
+            <a class="logo fl" href="index.html"></a>
+            <ul>
+                <li><a href="index.html" class="">首页</a></li>
+                <li><a href="game.html" class="xz_c">游戏</a></li>
+                <li><a href="news.html" class="">公告</a></li>
+                <li><a href="about.html" class="">关于我们</a></li>
+            </ul>
+            <div style="clear:both"></div>
+        </div>
+    </div>
+    <div class="mob_nav">
+        <ul>
+            <li>
+                <a class="" href="game.html">
+                    <div class="game_btn btn1 fl"></div>
+                    <span class="nav_font">游戏</span>
+                    <span class="tri fr"></span>
+                </a>
+            </li>
+            <li>
+                <a class="" href="news.html">
+                    <div class="game_btn btn2 fl"></div>
+                    <span class="nav_font">公告</span>
+                    <span class="tri fr"></span>
+                </a>
+            </li>
+            <li>
+                <a class="" href="about.html">
+                    <div class="game_btn btn3 fl"></div>
+                    <span class="nav_font">关于我们</span>
+                    <span class="tri fr"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="deviation">
+        <div class="news_title">
+            <div class="game_bt">
+                游戏详情
+                <div class="game_tp"></div>
+            </div>
+        </div>
+        <div class="news_contain">
+            <div class="detail">
+                <div class="game_i">
+                    <div class="game_icon"></div>
+                    <div class="game_c">
+                        <p>百人大战 测试版</p>
+                        <div class="game_xq">
+                            <ul>
+                                <li>版本:<span>1.0</span></li>
+                                <li>大小:<span>100M</span></li>
+                                <li>语音:<span>中文</span></li>
+                                <li>分类:<span>棋牌休闲</span></li>
+                                <li>发布:<span>2017-2-25</span></li>
+                                <li>格式:<span>gpk</span></li>
+                                <li>使用:<span>Android2.3.1以上版本</span></li>
+                                <li>下载资源:<span>免费</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="download">下载</div>
+                </div>
+                <div class="game_nr">
+                    <div class="game_title">--简介--</div>
+                    <div class="contain_tp">
+                        <div class="con_tp fl">
+                            <img src="../images/pc_03.jpg">
+                        </div>
+                        <div class="con_tp1 fl">
+                            <img src="../images/pc_06.jpg">
+                        </div>
+                    </div>
+                    <P>本玩法是多人同屏在线竞技类游戏，根据当前局势，调整自己的策略，亦可独自挑战全体玩家，上庄竞技。</P>
+                    <div class="game_title">--具体结算规则--</div>
+                    <p>1、押注某一闲家大，闲家牌型>庄家牌型，则赢，否则为输！</br>
+                        2、玩家赢钱=所押金币*闲家牌型倍数。</br>
+                        3、玩家输钱=所押金币*庄家牌型倍数。</br>
+                        4、押注某一闲家小，闲家牌型<庄家牌型，则赢，否则为输！</br>
+                        5、玩家赢钱=所押金币*庄家牌型倍数。</br>
+                        6、玩家输钱=所押金币*闲家牌型倍数。
+                    </P>
+                    <div class="game_title">--牌型大小与顺序--</div>
+                    <p>1倍：没牛</br>
+                        1倍：牛一~牛七</br>
+                        2倍：牛八</br>
+                        3倍：牛九</br>
+                        4倍：牛牛
+                    </P>
+                </div>
+            </div>
+            <div class="fenye ">
+                <div class="digg">
+                    <a href="javascript:void(0)" class="disabled">首页</a>
+
+                    <a href="" class="current">1</a>
+                    <a href="" class="">2</a>
+                    <a href="" class="">3</a>
+                    <a href="" class="">4</a>
+                    <a href="" class="">5</a>
+
+                    <a href="" class="page-next">...</a>
+
+                    <a href="" class="">301</a>
+                    <a href="" class="">302</a>
+                    <a href="" class="page-last" totalpages="302">尾页</a>
+                </div>
+            </div>
+        </div>
+        <div class="foot1">
+            <p>
+                健康游戏忠告：抵制不良游戏 拒绝盗版游戏 注意自我保护 谨防受骗上当 适度游戏益脑 沉迷游戏伤身 合理安排时间 享受健康生
+                </br>
+                本公司旗下所运营游戏均适合18周岁以上人群。
+                </br>
+                Copyright ©2016- zhiwansoft. All Rights Reserved. 厦门智玩软件开发有限公司 版权所有
+            </p>
+        </div>
+    </div>
+    <!-- 代码 开始 -->
+    <div class="floatDivBoxs">
+        <div class="floatDtt">在线客服</div>
+        <div class="floatShadow">
+            <ul class="floatDqq">
+                <li style="padding-left:0px;"><a target="_blank" href="tencent://message/?uin=1234567890&Site=www.lanrentuku.com&Menu=yes"><img src="../images/qq.png"  align="absmiddle">&nbsp;&nbsp;在线客服1号</a></li>
+                <li style="padding-left:0px;"><a target="_blank" href="tencent://message/?uin=1234567890&Site=www.lanrentuku.com&Menu=yes"><img src="../images/qq.png"   align="absmiddle">&nbsp;&nbsp;在线客服2号</a></li>
+                <li style="padding-left:0px;"><a target="_blank" href="tencent://message/?uin=1234567890&Site=www.lanrentuku.com&Menu=yes"><img src="../images/qq.png"   align="absmiddle">&nbsp;&nbsp;在线客服3号</a></li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/lrtk.js"></script>
+    <!-- 代码 结束 -->
+</div>
+</body>
+</html>

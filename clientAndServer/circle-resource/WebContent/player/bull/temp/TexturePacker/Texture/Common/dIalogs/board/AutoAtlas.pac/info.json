@@ -1,0 +1,36 @@
+{
+  "packedTextures": [
+    {
+      "path": "D:\\workspace\\PokerProject\\circle-resource\\WebContent\\player\\bull\\temp\\TexturePacker\\Texture\\Common\\dIalogs\\board\\AutoAtlas.pac/AutoAtlas-1.png",
+      "name": "AutoAtlas-1.png",
+      "size": "1024x1024"
+    }
+  ],
+  "unpackedTextures": [
+    {
+      "path": "D:/workspace/PokerProject/circle-resource/WebContent/player/bull/assets/Texture/Common/dIalogs/board/common_board_windo_2.png",
+      "name": "common_board_windo_2.png",
+      "size": "1453x834"
+    },
+    {
+      "path": "D:/workspace/PokerProject/circle-resource/WebContent/player/bull/assets/Texture/Common/dIalogs/board/common_board_windo_a.png",
+      "name": "common_board_windo_a.png",
+      "size": "1473x960"
+    },
+    {
+      "path": "D:/workspace/PokerProject/circle-resource/WebContent/player/bull/assets/Texture/Common/dIalogs/board/common_board_windo_b.png",
+      "name": "common_board_windo_b.png",
+      "size": "1066x264"
+    },
+    {
+      "path": "D:/workspace/PokerProject/circle-resource/WebContent/player/bull/assets/Texture/Common/dIalogs/board/common_board_windo_sj_1.png",
+      "name": "common_board_windo_sj_1.png",
+      "size": "1137x108"
+    },
+    {
+      "path": "D:/workspace/PokerProject/circle-resource/WebContent/player/bull/assets/Texture/Common/dIalogs/board/common_board_windo_sj_3.png",
+      "name": "common_board_windo_sj_3.png",
+      "size": "1127x134"
+    }
+  ]
+}

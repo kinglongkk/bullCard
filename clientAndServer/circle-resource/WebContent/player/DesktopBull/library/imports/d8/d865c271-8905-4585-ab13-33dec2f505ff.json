@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "common_text_gonggao",
+    "texture": "f4ef679b-6dc6-4037-8b95-ca9a339c1695",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      140,
+      40
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      140,
+      40
+    ]
+  }
+}

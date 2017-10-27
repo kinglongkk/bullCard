@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.bet.BetDetailMapper">
+
+    <resultMap id="TABLE:bet_detail" type="g.model.bet.po.BetDetail">
+        <id column="id" property="id"/>
+        <result column="match_id" property="matchId"/>
+        <result column="bet_id" property="betId"/>
+        <result column="bet_team" property="betTeam"/>
+        <result column="point" property="point"/>
+        <result column="bet_type" property="betType"/>
+        <result column="bet_team_type" property="betTeamType"/>
+        <result column="ior_field" property="iorField"/>
+        <result column="ratio" property="ratio"/>
+        <result column="host_score" property="hostScore"/>
+        <result column="client_score" property="clientScore"/>
+        <result column="player_result" property="playerResult"/>
+    </resultMap>
+
+    <!--//region your codes 1-->
+
+    <select id="getBetDetailByMatchId" parameterType="java.lang.Integer" resultMap="TABLE:bet_detail">
+        select id,
+               match_id,
+               bet_id,
+               bet_team,
+               point,
+               bet_type,
+               bet_team_type,
+               ior_field,
+               ratio,
+               host_score,
+               client_score,
+               player_result
+        from bet_detail
+        where match_id=#{matchId}
+    </select>
+
+    <insert id="saveBetDetail" parameterType="g.model.bet.po.BetDetail">
+        <![CDATA[
+          INSERT INTO bet_detail(match_id,bet_id,bet_type,ior_field)
+          VALUES (#{matchId},#{betId},#{betType},#{iorField})
+        ]]>
+    </insert>
+
+    <!--//endregion your codes 1-->
+
+</mapper>

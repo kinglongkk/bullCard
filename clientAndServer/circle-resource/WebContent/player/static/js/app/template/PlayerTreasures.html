@@ -1,0 +1,13 @@
+<div class="list_content"><!--富豪榜-->
+    <ul>
+        {{for data}}
+            <li>
+                <div class="list_NO">{{medalChange:(#getIndex()+1)}}</div>
+                <div class="list_info">{{listHeadIcon:avatarurl}}
+                    <span class="list_name">{{hidePartUserName:username}}</span>
+                    <span class="list_money">{{moneyFormat:walletbalance}}</span>
+                </div>
+            </li>
+        {{/for}}
+    </ul>
+</div>

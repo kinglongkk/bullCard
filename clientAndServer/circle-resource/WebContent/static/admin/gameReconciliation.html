@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>首页</title>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="keywords"/>
+    <meta name="description" content="description"/>
+    <meta name="author" content="author" />
+    <meta name="Copyright" content="author" />
+    <meta name="viewport" content="width=device-width"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <link rel="stylesheet" type="text/css" href="../../common/themes/default/bootstrap/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../admin/themes/default/style.css">
+    <link rel="stylesheet" type="text/css" href="../../common/themes/default/font-awesome/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../../admin/themes/default/content.css">
+    <link rel="stylesheet" type="text/css" href="../layout.css">
+    <link rel="stylesheet" type="text/css" href="../../common/themes/default/iconfont.css">
+    <style type="text/css">
+        .carousel-fill{
+            background-position:center;
+            text-align:center;
+        }
+        .carousel-fill img{
+            /*设置图片垂直居中*/
+            vertical-align:middle;
+            max-width: 100%;
+            max-height: 100%;
+        }
+        /* faster sliding speed */
+        .carousel-inner > .item {
+            -webkit-transition: 0.3s ease-in-out left;
+            -moz-transition: 0.3s ease-in-out left;
+            -o-transition: 0.3s ease-in-out left;
+            transition: 0.3s ease-in-out left;
+        }
+    </style>
+</head>
+<body oncontextmenu="return false" class="background-gray">
+<input id="domainTemp" type="hidden" value="">
+<div id="newMessageDIV" style="display:none"></div>
+<div class="top row top-navigation border-bottom white-bg clearfix header">
+    <nav class="navbar navbar-static-top" role="navigation">
+        <div class="pull-left logo-m-l line-hi60">
+            <a href="javascript:void(0)"><span class="m-l-sm m-r-sm fs18">Game</span>
+                <span class="line">|</span>
+                <span href="javascript:void(0)" class="m-l-sm fs16">管理后台</span></a>
+        </div>
+        <div class="navbar-header">
+            <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                <span class="sr-only">导航栏</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar" aria-expanded="false">
+            <ul class="nav navbar-nav navbar-left">
+
+                <li id="menuItem1">
+                    <a nav-top="page-content" href=""><i class="fa fa-server"></i>首页</a>
+                </li>
+
+                <li id="menuItem2">
+                    <a nav-top="page-content" href=""><i class="fa fa-server"></i>报表查询</a>
+                </li>
+
+                <li id="menuItem3">
+                    <a nav-top="page-content" href=""><i class="fa fa-server"></i>代理商管理</a>
+                </li>
+
+                <li id="menuItem4">
+                    <a nav-top="page-content" href=""><i class="fa fa-pie-chart"></i>系统管理</a>
+                </li>
+            </ul>
+            <div class="navbar-nav-up">
+                <a class="fa fa-angle-up" data-target="#navbar" data-toggle="collapse" type="button" aria-expanded="true"></a>
+            </div>
+        </div>
+        <div class="pull-right top-account-menu">
+            <ul class="tips">
+                <li class="clock top-time open"><a href="../../icon/clock-o" data-toggle="dropdown" class="clock-icon-show top-time-ico" aria-expanded="true"><i class="icon iconfont"></i></a>
+                    <span id="userTime">当前时区：GMT+08:00</span>
+                    <span id="index-clock" class="clock-show"> </span>
+                </li>
+                <li class="infos show-info">
+                    <a data-toggle="dropdown" style="min-width: 100px">
+                        <img alt="image" class="img-circle" src="">double<i
+                            class="fa fa-angle-down"></i></a>
+                    <ul class="information nav-shadow">
+                        <li><a href="/sys/account/index.html"  nav-target="mainFrame"><i class="fa fa-user m-r-sm"></i>个人资料</a></li>
+                        <li><a href="/report/log/logList.html?search.operator=double"  nav-target="mainFrame"><i class="fa fa-file-excel-o m-r-sm"></i>操作日志</a></li>
+                        <li><a href="/sys/account/index.html"  nav-target="mainFrame"><i class="fa fa-key m-r-sm"></i>更改密码</a></li>
+                        <li class="off"><a href="javascript:void(0)">退出 <i class="fa fa-power-off"></i></a></li>
+                    </ul>
+                </li>
+                <li class="informations">
+                    <a href="javascript:void(0)" class="locate" data-toggle="dropdown"
+                       data-href="/admin/index/message.html">
+                        <i class="icon iconfont"></i><span class="label label-green" id="unReadCount">0</span>
+                    </a>
+                    <dl class="infos_list nav-shadow">
+                        <dt>系统消息</dt>
+                        <dd class="infos-load">
+                            <img src="http://192.168.0.100:8080/admin/static/images/022b.gif">
+                        </dd>
+                        <dd class="infos-none"><i class="fa fa-exclamation-circle"></i>暂无消息</dd>
+                    </dl>
+                </li>
+                <li class="tasks">
+                    <a href="javascript:void(0)" class="locate" data-href="/admin/index/task.html" data-toggle="dropdown" aria-expanded="false"><i class="icon iconfont"></i><span class="label label-orange" id="unReadTaskCount">0</span></a>
+                    <dl class="infos_list tasks_list nav-shadow">
+                        <dt>任务提醒</dt>
+                        <dd class="infos-load">
+                            <img src="http://192.168.0.100:8080/admin/static/images/022b.gif">
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<div id="page-content" style="min-height: 800px;">
+    <nav class="navbar-default navbar-static-side shadow side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="side-menu">
+                <li>
+                    <a href="javascript:void(0);">
+                        <i class="fa fa-th-large"></i> <span class="nav-label">游戏对账</span> <span class="fa arrow"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <i class="fa fa-th-large"></i> <span class="nav-label">游戏详情</span> <span class="fa arrow"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <i class="fa fa-th-large"></i> <span class="nav-label">代理玩家统计</span> <span class="fa arrow"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <i class="fa fa-th-large"></i> <span class="nav-label">玩家当日游戏查询</span> <span class="fa arrow"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="page-wrapper" class="gray-bg dashbard-1 main">
+        <div id="mainFrame" style="height: 100%;"><!--//region your codes 1-->
+            <!--//endregion your codes 1-->
+            <div class="row">
+                <form id="command" action="/admin/reportCqssc/masterReportByGroup.html" method="post" novalidate="novalidate"><div id="validateRule" style="display: none"></div>
+                    <div class="position-wrap clearfix">
+                        <h2>
+                            <a class="navbar-minimalize" href="javascript:void(0)">
+                                <i class="icon iconfont"></i>
+                            </a>
+                        </h2>
+                        <span>首页</span>
+                        <span>/</span>
+                        <span>游戏对账系统</span>
+                        <a href="javascript:void(0)" class="pull-right siteMap">
+                            <i class="fa fa-sitemap"></i>
+                        </a>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="clearfix filter-wraper border-b-1">
+                            <div class="pull-left">
+                                <a nav-target="mainFrame" href="" class="btn btn-outline btn-filter"><i class="fa fa-refresh"></i><span class="hd">&nbsp;&nbsp;刷新</span></a>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <!--//region your codes 2-->
+                            <div class="input-group">
+                                <div class="input-group pull-left">
+                        <span class="input-group-addon abroder-no">
+                            <b>*日期：</b>
+                        </span>
+                                    <div class="input-group bootstrap" style="">
+
+                                        <i class="input-group-addon glyphicon glyphicon-calendar fa fa-calendar" style="display: table-cell;top:0px;"></i>
+                                        <input class="form-control" type="text" id="" name="" style="" value=" - " data-rel="{showDropdowns:false,callback:'query',useRange:true,useToday:false,format:'yyyy-MM-dd HH:mm:ss',useTime:false,minDate:'',maxDate:'',startDate:'',endDate:'',btnClass:'',drops:'down',opens:'right',startName:'search.startTime',endName:'search.endTime'}" readonly="readonly">
+
+                                        <input type="hidden" name="search.startTime" value="">
+                                        <div>
+                                            <input type="hidden" name="search.endTime" value="">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="input-group pull-left">
+                        <span class="input-group-addon abroder-no">
+                            <b>代理：</b>
+                        </span>
+                                    <input type="text" class="form-control" name="search.username">
+                                </div>
+                                <span class="input-group-btn pull-left">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <button title="搜索" class="btn btn-filter" type="button" data-rel="{&quot;precall&quot;:&quot;&quot;,&quot;callback&quot;:&quot;&quot;,post:&quot;&quot;,opType:&quot;function&quot;,dataType:&quot;&quot;,target:&quot;query&quot;,confirm:&quot;&quot;,text:&quot;搜索&quot;,size:&quot;&quot; }">
+
+
+                        <i class="fa fa-search"></i>
+                                <span class="hd">&nbsp;搜索</span>
+
+
+                </button>
+
+
+
+
+
+
+
+</span>
+                            </div>
+
+                            <br>
+                            <div class="search-list-container">
+                                <!--//region your codes 1-->
+                                <div class="table-responsive">
+                                    <table class="table table-condensed table-hover table-striped table-bordered">
+                                        <thead>
+                                        <tr>
+                                            <th width="80px">#</th>
+                                            <th>日期</th>
+                                            <th>场次</th>
+                                            <th>总投注额</th>
+                                            <th>总有效投注额</th>
+                                            <th>总输赢</th>
+                                            <th>总返点</th>
+                                            <th width="70px">操作</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>2016-08-17</td>
+                                            <td>1</td>
+                                            <td>3500.0</td>
+                                            <td>3500.0</td>
+                                            <td>-60.0</td>
+                                            <td>35.0</td>
+                                            <td>
+                                                <div class="joy-list-row-operations">
+                                                    <a href="/report/agentReport.html?search.startTime=2016-08-17" nav-target="mainFrame">
+                                                        查看
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>2016-08-16</td>
+                                            <td>1</td>
+                                            <td>7000.0</td>
+                                            <td>7000.0</td>
+                                            <td>-3040.0</td>
+                                            <td>70.0</td>
+                                            <td>
+                                                <div class="joy-list-row-operations">
+                                                    <a href="/report/agentReport.html?search.startTime=2016-08-16" nav-target="mainFrame">
+                                                        查看
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>2016-08-15</td>
+                                            <td>1</td>
+                                            <td>6000.0</td>
+                                            <td>6000.0</td>
+                                            <td>-2040.0</td>
+                                            <td>60.0</td>
+                                            <td>
+                                                <div class="joy-list-row-operations">
+                                                    <a href="/report/agentReport.html?search.startTime=2016-08-15" nav-target="mainFrame">
+                                                        查看
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>2016-08-12</td>
+                                            <td>1</td>
+                                            <td>5000.0</td>
+                                            <td>5000.0</td>
+                                            <td>940.0</td>
+                                            <td>50.0</td>
+                                            <td>
+                                                <div class="joy-list-row-operations">
+                                                    <a href="/report/agentReport.html?search.startTime=2016-08-12" nav-target="mainFrame">
+                                                        查看
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>2016-08-11</td>
+                                            <td>2</td>
+                                            <td>1500.0</td>
+                                            <td>1500.0</td>
+                                            <td>866.0</td>
+                                            <td>15.0</td>
+                                            <td>
+                                                <div class="joy-list-row-operations">
+                                                    <a href="/report/agentReport.html?search.startTime=2016-08-11" nav-target="mainFrame">
+                                                        查看
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>2016-08-08</td>
+                                            <td>14</td>
+                                            <td>7800.0</td>
+                                            <td>7800.0</td>
+                                            <td>-24.0</td>
+                                            <td>78.0</td>
+                                            <td>
+                                                <div class="joy-list-row-operations">
+                                                    <a href="/report/agentReport.html?search.startTime=2016-08-08" nav-target="mainFrame">
+                                                        查看
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>2016-08-05</td>
+                                            <td>11</td>
+                                            <td>4400.0</td>
+                                            <td>4400.0</td>
+                                            <td>-158.0</td>
+                                            <td>44.0</td>
+                                            <td>
+                                                <div class="joy-list-row-operations">
+                                                    <a href="/report/agentReport.html?search.startTime=2016-08-05" nav-target="mainFrame">
+                                                        查看
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>2016-08-05</td>
+                                            <td>3</td>
+                                            <td>900.0</td>
+                                            <td>900.0</td>
+                                            <td>-504.0</td>
+                                            <td>9.0</td>
+                                            <td>
+                                                <div class="joy-list-row-operations">
+                                                    <a href="/report/agentReport.html?search.startTime=2016-08-05" nav-target="mainFrame">
+                                                        查看
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>9</td>
+                                            <td>2016-08-04</td>
+                                            <td>9</td>
+                                            <td>23600.0</td>
+                                            <td>23600.0</td>
+                                            <td>21037.0</td>
+                                            <td>1180.0</td>
+                                            <td>
+                                                <div class="joy-list-row-operations">
+                                                    <a href="/report/agentReport.html?search.startTime=2016-08-04" nav-target="mainFrame">
+                                                        查看
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>10</td>
+                                            <td>2016-08-04</td>
+                                            <td>11</td>
+                                            <td>25850.0</td>
+                                            <td>25850.0</td>
+                                            <td>-18653.0</td>
+                                            <td>1292.5</td>
+                                            <td>
+                                                <div class="joy-list-row-operations">
+                                                    <a href="/report/agentReport.html?search.startTime=2016-08-04" nav-target="mainFrame">
+                                                        查看
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>11</td>
+                                            <td>2016-08-03</td>
+                                            <td>14</td>
+                                            <td>38199.0</td>
+                                            <td>38199.0</td>
+                                            <td>-1704.24</td>
+                                            <td>1546.95</td>
+                                            <td>
+                                                <div class="joy-list-row-operations">
+                                                    <a href="/report/agentReport.html?search.startTime=2016-08-03" nav-target="mainFrame">
+                                                        查看
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>12</td>
+                                            <td>2016-08-03</td>
+                                            <td>2</td>
+                                            <td>1444.0</td>
+                                            <td>1444.0</td>
+                                            <td>-24.44</td>
+                                            <td>72.2</td>
+                                            <td>
+                                                <div class="joy-list-row-operations">
+                                                    <a href="/report/agentReport.html?search.startTime=2016-08-03" nav-target="mainFrame">
+                                                        查看
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>13</td>
+                                            <td>2016-08-02</td>
+                                            <td>12</td>
+                                            <td>102950.0</td>
+                                            <td>102950.0</td>
+                                            <td>40689.0</td>
+                                            <td>2059.0</td>
+                                            <td>
+                                                <div class="joy-list-row-operations">
+                                                    <a href="/report/agentReport.html?search.startTime=2016-08-02" nav-target="mainFrame">
+                                                        查看
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14</td>
+                                            <td>2016-08-01</td>
+                                            <td>1</td>
+                                            <td>750.0</td>
+                                            <td>750.0</td>
+                                            <td>735.0</td>
+                                            <td>15.0</td>
+                                            <td>
+                                                <div class="joy-list-row-operations">
+                                                    <a href="/report/agentReport.html?search.startTime=2016-08-01" nav-target="mainFrame">
+                                                        查看
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr><td>总计</td>
+                                            <td></td>
+                                            <td>83</td>
+                                            <td>228,893.00</td>
+                                            <td>228,893.00</td>
+                                            <td>38,059.32</td>
+                                            <td>6,526.65</td>
+                                            <td></td>
+                                        </tr></tbody>
+                                    </table>
+                                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <div class="row bdtop3 ">
+                                    <input type="hidden" name="paging.pageNumber" value="1">
+                                    <input type="hidden" name="paging.prePage" value="1">
+                                    <input type="hidden" name="paging.nextPage" value="1">
+                                    <input type="hidden" name="paging.firstPageNumber" value="1">
+                                    <input type="hidden" name="paging.lastPageNumber" value="1">
+                                    <input type="hidden" name="paging.totalCount" value="14">
+
+
+                                    <div class="col-sm-4 col-xs-6">
+                                        <div aria-relevant="all" aria-live="polite" role="alert" id="editable_info" class="dataTables_info pull-left">
+                                            <ul class="pagination-pages">
+                                                <li tabindex="0" aria-controls="editable" class="paginate_button "><span>每页显示</span></li>
+                                            </ul>
+                                        </div>
+                                        <div class="pull-left">
+                                            <div selectdiv="paging.pageSize" value="20" class="btn-group chosen-select-no-single" initprompt="20条" callback=""><input type="hidden" name="paging.pageSize" value="20" id=""><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="overflow: hidden;padding-right: 10px;" aria-expanded="false"><span prompt="prompt" style="display:inline-block;min-width: 60px;">20条</span> <span class="caret"></span></button><ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1"><li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0)" key="10">10条</a></li><li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0)" selected="selected" key="20">20条</a></li><li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0)" key="30">30条</a></li><li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0)" key="50">50条</a></li></ul></div>
+                                            <span class="m-l-sm">共14条</span>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-sm-8 col-xs-6">
+                                        <div id="editable_paginate" class="dataTables_paginate paging_simple_numbers">
+
+
+                                            <div class="pull-right pages show-hide-1095 page-skip form-inline">
+                                                <input name="paging.pageNumberText" type="text" value="1" class="m-l-xs m-r-xs min form-control input-sm">页
+                                                <button type="button" class="btn btn-sm m-l-sm">跳转</button>
+                                            </div>
+
+                                            <ul class="pagination pull-right">
+
+                                                <li aria-controls="editable" class="paginate_button previous show-hide-768 disabled"><a name="paging.firstPageNumber" href="javascript:void(0);">首页</a></li>
+
+                                                <li aria-controls="editable" class="paginate_button previous disabled"><a name="paging.prePage" href="javascript:void(0);">上一页</a></li>
+
+
+
+
+
+
+
+                                                <li class="paginate_button show-hide-768 current disabled"><a name="paging.Page" href="javascript:void(0)" data-page="0">1</a></li>
+
+
+
+
+
+
+
+
+
+
+                                                <li aria-controls="editable" class="paginate_button next disabled"><a name="paging.nextPage" href="javascript:void(0);">下一页</a></li>
+
+                                                <li aria-controls="editable" class="paginate_button next show-hide-768 disabled"><a name="paging.lastPageNumber" href="javascript:void(0);">尾页</a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div><!--//endregion your codes 1-->
+                            </div>
+                            <!--//endregion your codes 2-->
+                        </div>
+                    </div>
+                </form></div>
+            <!--//region your codes 3-->
+            <script type="text/javascript">
+                curl(['common/BaseListPage'], function(Page) {
+                    page = new Page();
+                    page.bindButtonEvents();
+                });
+            </script>
+            <!--//endregion your codes 3--></div>
+    </div>
+</div>
+<div class="footer">
+    <div class="a-copy clearfix">
+        <div class="pull-left"><a href="javascript:void(0)">联系客服</a><span class="dividing-line m-r-xs m-l-xs">|</span>
+            <a href="javascript:void(0)" id="feedback">意见反馈</a>
+        </div>
+        <span class="m-l-sm pull-left">Copyright © 2016 Game 版权所有</span> <span class="htm-5-logo" type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="我们项目使用html5规范开发，可提供您在所有设备上更加好的体验。"></span></div>
+</div>
+</body>
+
+</html>
+

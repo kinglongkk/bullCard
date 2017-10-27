@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.warning.VWarningTransactionMapper">
+
+    <resultMap id="TABLE:v_warning_transaction" type="g.model.warning.po.VWarningTransaction">
+        <id column="id" property="id"/>
+        <result column="player_id" property="playerId"/>
+        <result column="completion_time" property="completionTime"/>
+        <result column="username" property="username"/>
+        <result column="transaction_no" property="transactionNo"/>
+        <result column="transaction_money" property="transactionMoney"/>
+        <result column="balance" property="balance"/>
+        <result column="game_currency" property="gameCurrency"/>
+        <result column="status" property="status"/>
+        <result column="remark" property="remark"/>
+        <result column="transaction_type" property="transactionType"/>
+
+    </resultMap>
+
+    <!--//region your codes 1-->
+
+    <!--//endregion your codes 1-->
+
+</mapper>

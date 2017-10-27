@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "common_text_jilu02",
+    "texture": "fedfcf8d-7228-4ed3-8ef7-f9a097a7226b",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      50,
+      25
+    ],
+    "offset": [
+      0.5,
+      -0.5
+    ],
+    "originalSize": [
+      51,
+      26
+    ]
+  }
+}

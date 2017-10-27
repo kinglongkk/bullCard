@@ -1,0 +1,5 @@
+[["id名","押注金币移动时间","收益金币移动时间","金币移动间隔","投注区域金币放置的最大范围,值越大范围越大","筹码单位对应飞出金币数量","卡牌间隔，长的百分比","卡牌移动时间","移动卡牌的间隔","开牌花费时间","赢钱区域标志存在时长","头像上金币增减移动时长","开牌前的延时","移动金币的大小"],
+["ID名","time_goldFly_Add","time_goldFly_Result","time_goldFly_delay","num_goldImgArea","dict_moveGoldNum","num_pokerOffX","time_pokerMove","delayTime_pokerMove","time_openMovePoker","time_showFlag","time_goldOnHead","time_openDelay","scale_moveGold"],
+["key_int","number","number","number","number","json","number","number","number","number","number","number","number","number"],
+[1,"0.3","0.5","0.1","0.3","{'1':1,'2':1,'3':2,'4':3}","0.35","0.5","0.2","0.2",3,"0.5","0.5","0.3"]
+]

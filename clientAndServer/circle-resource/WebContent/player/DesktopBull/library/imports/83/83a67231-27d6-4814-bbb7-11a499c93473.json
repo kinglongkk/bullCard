@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "common_board_touxiang_4",
+    "texture": "f5d30565-2af5-40d1-8592-609efcf3827d",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      1408,
+      133
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      1408,
+      133
+    ]
+  }
+}

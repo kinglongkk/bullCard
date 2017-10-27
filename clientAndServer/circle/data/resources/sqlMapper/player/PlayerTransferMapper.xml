@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.player.PlayerTransferMapper">
+
+    <resultMap id="TABLE:player_transfer" type="g.model.player.po.PlayerTransfer">
+        <id column="id" property="id"/>
+        <result column="source_order_no" property="sourceOrderNo"/>
+        <result column="transaction_id" property="transactionId"/>
+        <result column="agent_id" property="agentId"/>
+        <result column="player_id" property="playerId"/>
+        <result column="amount" property="amount"/>
+        <result column="game_currency" property="gameCurrency"/>
+        <result column="create_time" property="createTime"/>
+    </resultMap>
+
+    <!-- 新增玩家转账记录 -->
+    <insert id="insertNewRecord" parameterType="map">
+        INSERT INTO
+            player_transfer
+            (
+                source_order_no,
+                transaction_id,
+                agent_id,
+                player_id,
+                amount,
+                create_time
+            )
+        VALUES
+            (
+                #{sourceOrderNo},
+                #{transactionId},
+                #{agentId},
+                #{playerId},
+                #{amount},
+                #{createTime}
+            );
+    </insert>
+
+</mapper>

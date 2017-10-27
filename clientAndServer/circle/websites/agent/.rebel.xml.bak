@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application generated-by="intellij" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.zeroturnaround.com" xsi:schemaLocation="http://www.zeroturnaround.com http://update.zeroturnaround.com/jrebel/rebel-2_1.xsd">
+
+	<classpath>
+		<dir name="D:/GitPro/circle/websites/agent/target/classes">
+		</dir>
+	</classpath>
+
+	<web>
+		<link target="/common/js">
+			<dir name="D:/GitPro/circle-resource/WebContent/common/js">
+			</dir>
+		</link>
+		<link target="/common/fonts">
+			<dir name="D:/GitPro/circle-resource/WebContent/common/fonts">
+			</dir>
+		</link>
+		<link target="/common/themes">
+			<dir name="D:/GitPro/circle-resource/WebContent/common/themes">
+			</dir>
+		</link>
+		<link target="/common/images">
+			<dir name="D:/GitPro/circle-resource/WebContent/common/images">
+			</dir>
+		</link>
+		<link target="/static/js">
+			<dir name="D:/GitPro/circle-resource/WebContent/agent/js">
+			</dir>
+		</link>
+		<link target="/static/themes">
+			<dir name="D:/GitPro/circle-resource/WebContent/agent/themes">
+			</dir>
+		</link>
+		<link target="/static/images">
+			<dir name="D:/GitPro/circle-resource/WebContent/agent/images">
+			</dir>
+		</link>
+		<link target="/WEB-INF/tags">
+			<dir name="D:/GitPro/circle-resource/WebContent/WEB-INF/tags">
+			</dir>
+		</link>
+		<link target="/WEB-INF/classes/conf">
+			<dir name="D:/GitPro/circle/config/common/dev">
+			</dir>
+		</link>
+		<link target="/WEB-INF/classes/conf">
+			<dir name="D:/GitPro/circle/config/service/dev">
+			</dir>
+		</link>
+		<link target="/WEB-INF/classes/conf">
+			<dir name="D:/GitPro/circle/config/web/dev">
+			</dir>
+		</link>
+		<link target="/include">
+			<dir name="D:/GitPro/circle/webcommon/WebContent/include">
+			</dir>
+		</link>
+		<link target="/errors">
+			<dir name="D:/GitPro/circle/webcommon/WebContent/errors">
+			</dir>
+		</link>
+		<link target="/subaccount">
+			<dir name="D:/GitPro/circle/webcommon/WebContent/subaccount">
+			</dir>
+		</link>
+		<link target="/privilege">
+			<dir name="D:/GitPro/circle/webcommon/WebContent/privilege">
+			</dir>
+		</link>
+		<link target="/systemFeedBack">
+			<dir name="D:/GitPro/circle/webcommon/WebContent/systemFeedBack">
+			</dir>
+		</link>
+		<link target="/passport">
+			<dir name="D:/GitPro/circle/webcommon/WebContent/passport">
+			</dir>
+		</link>
+		<link target="/">
+			<dir name="D:/GitPro/circle/websites/agent/WebContent">
+			</dir>
+		</link>
+	</web>
+
+</application>

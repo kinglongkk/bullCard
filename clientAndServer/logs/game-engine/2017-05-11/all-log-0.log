@@ -1,0 +1,200 @@
+16:44:22.587 WARN  [main] o.s.d.datasource.MultipleDataSource:25 - 当前上下文数据源为空，取默认数据源!
+16:44:39.341 WARN  [desk-5-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:44:39.341 WARN  [desk-2-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:44:39.341 WARN  [desk-3-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:44:39.341 WARN  [desk-6-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:44:39.575 WARN  [desk-4-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:44:40.285 WARN  [desk-1-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:44:41.526 WARN  [desk-11-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:44:41.655 WARN  [desk-9-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:44:41.763 WARN  [desk-12-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:44:41.903 WARN  [desk-10-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:44:42.041 WARN  [desk-8-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:44:42.156 WARN  [desk-7-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:45:09.880 WARN  [desk-11-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:45:09.880 WARN  [desk-3-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:45:09.883 WARN  [desk-6-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:45:09.930 WARN  [desk-5-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:45:09.937 WARN  [desk-2-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:45:10.004 WARN  [desk-9-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:45:10.027 WARN  [desk-4-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:45:10.164 WARN  [desk-12-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:45:10.352 WARN  [desk-10-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:45:10.402 WARN  [desk-8-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:45:10.500 WARN  [desk-7-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:45:10.625 WARN  [desk-1-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:45:38.213 WARN  [desk-11-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:45:38.409 WARN  [desk-9-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:45:38.515 WARN  [desk-12-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:45:38.688 WARN  [desk-10-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:45:38.746 WARN  [desk-8-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:45:38.864 WARN  [desk-7-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:45:40.358 WARN  [desk-3-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:45:40.366 WARN  [desk-6-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:45:40.371 WARN  [desk-5-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:45:40.373 WARN  [desk-2-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:45:40.436 WARN  [desk-4-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:45:41.099 WARN  [desk-1-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:46:06.670 WARN  [desk-11-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:46:06.855 WARN  [desk-9-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:46:06.955 WARN  [desk-12-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:46:07.016 WARN  [desk-10-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:46:07.075 WARN  [desk-8-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:46:07.172 WARN  [desk-7-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:46:10.835 WARN  [desk-6-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:46:10.838 WARN  [desk-2-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:46:10.838 WARN  [desk-3-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:46:10.842 WARN  [desk-5-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:46:10.881 WARN  [desk-4-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:46:11.457 WARN  [desk-1-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:46:35.049 WARN  [desk-11-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:46:35.278 WARN  [desk-9-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:46:35.357 WARN  [desk-12-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:46:35.420 WARN  [desk-10-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:46:35.455 WARN  [desk-8-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:46:35.538 WARN  [desk-7-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:46:41.367 WARN  [desk-6-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:46:41.381 WARN  [desk-2-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:46:41.416 WARN  [desk-3-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:46:41.426 WARN  [desk-4-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:46:41.426 WARN  [desk-5-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:46:41.951 WARN  [desk-1-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:47:03.441 WARN  [desk-11-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:47:03.671 WARN  [desk-9-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:47:03.746 WARN  [desk-12-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:47:03.794 WARN  [desk-10-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:47:03.859 WARN  [desk-8-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:47:03.900 WARN  [desk-7-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:47:11.849 WARN  [desk-6-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:47:11.865 WARN  [desk-2-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:47:11.865 WARN  [desk-4-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:47:11.865 WARN  [desk-3-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:47:11.869 WARN  [desk-5-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:47:12.287 WARN  [desk-1-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:47:32.020 WARN  [desk-11-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:47:32.236 WARN  [desk-9-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:47:32.243 WARN  [desk-12-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:47:32.303 WARN  [desk-10-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:47:32.341 WARN  [desk-8-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:47:32.419 WARN  [desk-7-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:47:42.254 WARN  [desk-6-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:47:42.278 WARN  [desk-4-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:47:42.278 WARN  [desk-3-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:47:42.278 WARN  [desk-5-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:47:42.278 WARN  [desk-2-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:47:42.836 WARN  [desk-1-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:48:00.309 WARN  [desk-11-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:48:00.534 WARN  [desk-9-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:48:00.534 WARN  [desk-12-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:48:00.618 WARN  [desk-10-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:48:00.640 WARN  [desk-8-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:48:00.683 WARN  [desk-7-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:48:12.733 WARN  [desk-3-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:48:12.733 WARN  [desk-6-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:48:12.770 WARN  [desk-4-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:48:12.790 WARN  [desk-5-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:48:12.790 WARN  [desk-2-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:48:13.221 WARN  [desk-1-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:48:13.812 ERROR [desk-1-1] g.s.c.n.douniu.Bull100MatchHandle:153 - null
+java.lang.NullPointerException: null
+	at g.service.chesscard.engine.manager.BroadcastMessageManager.createMsgFromGameSettle(BroadcastMessageManager.java:68)
+	at g.service.chesscard.engine.manager.SettleManager.newSettle(SettleManager.java:123)
+	at g.service.chesscard.netHandles.douniu.Bull100MatchHandle.onSettle(Bull100MatchHandle.java:126)
+	at g.service.chesscard.engine.task.MatchTask.settle(MatchTask.java:152)
+	at g.service.chesscard.engine.task.MatchTask.stop(MatchTask.java:130)
+	at g.service.chesscard.engine.task.MatchTask.run(MatchTask.java:213)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+16:48:28.687 WARN  [desk-11-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:48:28.894 WARN  [desk-12-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:48:28.897 WARN  [desk-9-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:48:28.941 WARN  [desk-10-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:48:28.970 WARN  [desk-8-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:48:29.049 WARN  [desk-7-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:48:43.248 WARN  [desk-6-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:48:43.268 WARN  [desk-3-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:48:43.268 WARN  [desk-2-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:48:43.295 WARN  [desk-4-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:48:43.309 WARN  [desk-5-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:48:44.116 WARN  [desk-1-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:48:44.335 ERROR [desk-1-1] g.s.c.n.douniu.Bull100MatchHandle:153 - null
+java.lang.NullPointerException: null
+	at g.service.chesscard.engine.manager.BroadcastMessageManager.createMsgFromGameSettle(BroadcastMessageManager.java:68)
+	at g.service.chesscard.engine.manager.SettleManager.newSettle(SettleManager.java:123)
+	at g.service.chesscard.netHandles.douniu.Bull100MatchHandle.onSettle(Bull100MatchHandle.java:126)
+	at g.service.chesscard.engine.task.MatchTask.settle(MatchTask.java:152)
+	at g.service.chesscard.engine.task.MatchTask.stop(MatchTask.java:130)
+	at g.service.chesscard.engine.task.MatchTask.run(MatchTask.java:213)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+16:48:57.067 WARN  [desk-11-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:48:57.235 WARN  [desk-9-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:48:57.235 WARN  [desk-12-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:48:57.350 WARN  [desk-10-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:48:57.367 WARN  [desk-8-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:48:57.393 WARN  [desk-7-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:49:13.656 WARN  [desk-4-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:49:13.660 WARN  [desk-2-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:49:13.660 WARN  [desk-3-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:49:13.668 WARN  [desk-5-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:49:13.668 WARN  [desk-6-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:49:14.569 WARN  [desk-1-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:49:14.734 ERROR [desk-1-1] g.s.c.n.douniu.Bull100MatchHandle:153 - null
+java.lang.NullPointerException: null
+	at g.service.chesscard.engine.manager.BroadcastMessageManager.createMsgFromGameSettle(BroadcastMessageManager.java:68)
+	at g.service.chesscard.engine.manager.SettleManager.newSettle(SettleManager.java:123)
+	at g.service.chesscard.netHandles.douniu.Bull100MatchHandle.onSettle(Bull100MatchHandle.java:126)
+	at g.service.chesscard.engine.task.MatchTask.settle(MatchTask.java:152)
+	at g.service.chesscard.engine.task.MatchTask.stop(MatchTask.java:130)
+	at g.service.chesscard.engine.task.MatchTask.run(MatchTask.java:213)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+16:49:25.330 WARN  [desk-11-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:49:25.540 WARN  [desk-12-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:49:25.540 WARN  [desk-9-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:49:25.720 WARN  [desk-10-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:49:25.722 WARN  [desk-8-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:49:25.757 WARN  [desk-7-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:49:41.056 WARN  [nioEventLoopGroup-4-1] g.s.c.engine.manager.RoomManager:174 - 玩家:{0},退出房间失败,由于他已经参与与游戏.
+16:49:44.052 WARN  [desk-4-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:49:44.052 WARN  [desk-2-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:49:44.052 WARN  [desk-3-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:49:44.052 WARN  [desk-5-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:49:44.064 WARN  [desk-6-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:49:45.091 WARN  [desk-1-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:49:45.257 ERROR [desk-1-1] g.s.c.n.douniu.Bull100MatchHandle:153 - null
+java.lang.NullPointerException: null
+	at g.service.chesscard.engine.manager.BroadcastMessageManager.createMsgFromGameSettle(BroadcastMessageManager.java:68)
+	at g.service.chesscard.engine.manager.SettleManager.newSettle(SettleManager.java:123)
+	at g.service.chesscard.netHandles.douniu.Bull100MatchHandle.onSettle(Bull100MatchHandle.java:126)
+	at g.service.chesscard.engine.task.MatchTask.settle(MatchTask.java:152)
+	at g.service.chesscard.engine.task.MatchTask.stop(MatchTask.java:130)
+	at g.service.chesscard.engine.task.MatchTask.run(MatchTask.java:213)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+16:49:53.634 WARN  [desk-11-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:49:53.938 WARN  [desk-12-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:49:53.938 WARN  [desk-9-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:49:54.050 WARN  [desk-10-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:49:54.050 WARN  [desk-8-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap
+16:49:54.115 WARN  [desk-7-1] o.s.d.r.mybatis.StatementInterceptor:45 - no MapperMethod ParamMap

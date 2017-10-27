@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "Home_coins_tex",
+    "texture": "bc9757b0-6c9d-47c1-8745-832caa60adc8",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      348,
+      140
+    ],
+    "offset": [
+      -81,
+      57
+    ],
+    "originalSize": [
+      512,
+      256
+    ]
+  }
+}

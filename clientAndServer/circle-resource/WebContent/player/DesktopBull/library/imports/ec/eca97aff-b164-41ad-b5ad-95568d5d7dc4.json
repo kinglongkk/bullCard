@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "platform_specialEffects_win_tex",
+    "texture": "32c1525a-a509-434a-9e0c-70d05cc095d9",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      420,
+      227
+    ],
+    "offset": [
+      -45,
+      13.5
+    ],
+    "originalSize": [
+      512,
+      256
+    ]
+  }
+}

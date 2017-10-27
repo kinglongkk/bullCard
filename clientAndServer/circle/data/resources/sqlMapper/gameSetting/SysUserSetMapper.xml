@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.gameSetting.SysUserSetMapper">
+
+    <resultMap id="TABLE:sys_user_set" type="g.model.gameSetting.po.SysUserSet">
+        <id column="id" property="id"/>
+        <result column="player_id" property="playerId"/>
+        <result column="sound" property="sound"/>
+        <result column="music" property="music"/>
+        <result column="gametype" property="gametype"/>
+    </resultMap>
+
+    <!--//region your codes 1-->
+
+    <!--//endregion your codes 1-->
+
+</mapper>

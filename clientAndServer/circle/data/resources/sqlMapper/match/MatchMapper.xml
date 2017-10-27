@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.match.MatchMapper">
+
+    <resultMap id="TABLE:match" type="g.model.match.po.Match">
+        <id column="id" property="id"/>
+        <result column="game_id" property="gameId"/>
+        <result column="game_model_id" property="gameModelId"/>
+        <result column="game_room_id" property="gameRoomId"/>
+        <result column="dealer_user_id" property="dealerUserId"/>
+        <result column="result" property="result"/>
+        <result column="code" property="code"/>
+        <result column="game_type" property="gameType"/>
+        <result column="ball_type" property="ballType"/>
+        <result column="league_code" property="leagueCode"/>
+        <result column="host_code" property="hostCode"/>
+        <result column="client_code" property="clientCode"/>
+        <result column="begin_time" property="beginTime"/>
+        <result column="end_time" property="endTime"/>
+        <result column="cover_time" property="coverTime"/>
+        <result column="create_time" property="createTime"/>
+        <result column="gather_time" property="gatherTime"/>
+        <result column="result_gather_time" property="resultGatherTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="settle_type" property="settleType"/>
+        <result column="settle_status" property="settleStatus"/>
+        <result column="is_settling" property="isSettling"/>
+        <result column="is_resulted" property="isResulted"/>
+        <result column="is_cancel" property="isCancel"/>
+    </resultMap>
+
+    <!-- match以及关联的子表结果 -->
+    <resultMap id="matchAndResult" type="g.model.match.po.Match">
+        <id column="id" property="id"/>
+        <!-- 子表 -->
+        <collection column="match_id" property="matchResult" ofType="g.model.match.po.MatchResult">
+            <result column="match_id" property="matchId" />
+            <result column="outcome" property="outcome" />
+            <result column="item_type" property="itemType" />
+        </collection>
+    </resultMap>
+
+    <!-- 百人大战走势图 -->
+    <select id="selectBull100Trend" resultMap="matchAndResult" parameterType="map">
+        SELECT
+            match.id,
+            result.match_id,
+            result.item_type,
+            result.outcome
+        FROM
+            match match
+        RIGHT JOIN
+            match_result result
+        ON
+            match.id = result.match_id
+        WHERE
+            game_model_id = #{modelId}
+        AND
+            game_room_id = #{roomId}
+        AND
+            begin_time &gt;= #{beginTime}
+        AND
+            end_time &lt; #{endTime}
+        AND
+            match.settle_status = '20'
+        ORDER BY
+            end_time DESC,
+            result.id
+        LIMIT
+            20
+        OFFSET
+            0;
+    </select>
+
+    <!-- 押宝大战走势图 -->
+    <select id="selectGrabTrend" parameterType="map" resultType="map" >
+        SELECT
+            betMatch.client AS client,
+            SUM(bet.profit_amount) AS profitAmount
+        FROM
+            (SELECT
+                match.id,
+                result.client
+            FROM
+                match_result result
+            RIGHT JOIN
+                (SELECT
+                    id
+                FROM
+                    match
+                WHERE
+                    begin_time &gt;= #{beginTime}
+                AND
+                    end_time &lt; #{endTime}
+                AND
+                    game_model_id = #{modelId}
+                AND
+                    game_room_id = #{roomId}
+                AND
+                    settle_status = '20'
+                ORDER BY
+                    id
+                DESC
+                LIMIT
+                    5
+                OFFSET
+                    0) as
+                match
+            ON
+                match.id = result.match_id) AS
+            betMatch
+        LEFT JOIN
+            bet_detail detail
+        ON
+            betMatch.id = detail.match_id
+        LEFT JOIN
+            (SELECT
+                 id,
+                 profit_amount
+            FROM
+                bet
+            WHERE
+                confirm_time
+            BETWEEN
+                #{beginTime}
+            AND
+                #{endTime}
+            AND
+                sys_user_id = #{playerId}) AS
+            bet
+        ON
+            detail.bet_id = bet.id
+        GROUP BY
+            betMatch.id,
+            betMatch.client
+        ORDER BY
+            betMatch.id
+        DESC;
+    </select>
+
+    <!-- 赛事数据合并-->
+    <insert id="merge" parameterType="java.util.List">
+
+        insert into match(ball_type,league_code,host_code,client_code,begin_time,create_time,
+                            gather_time,code,gnum_h,gnum_c,strong,has_running_ball)
+        VALUES
+        <foreach collection="list" item="item" index="index"
+                 separator=",">
+            ( #{item.ballType}, #{item.leagueCode}, #{item.hostCode}, #{item.clientCode}, #{item.beginTime},now(),
+            #{item.gatherTime}, #{item.code},  #{item.gnumH}, #{item.gnumC},  #{item.strong}, #{item.hasRunningBall})
+        </foreach>
+        ON CONFLICT (code) do update set update_time = now()
+    </insert>
+
+    <!-- 未采集到结果的赛事-->
+
+    <!-- TODO:美东时间应该是GMT-05:00,但需要使用GMT+05:00才能算出正常时间-->
+    <select id="unResulted" resultType="string" parameterType="string">
+        SELECT a.begin_time from (
+        SELECT to_char(begin_time, 'YYYY-MM-DD') begin_time
+        FROM match t
+        WHERE t.is_resulted = FALSE
+        ) a GROUP BY a.begin_time ORDER BY a.begin_time;
+    </select>
+
+    <update id="toSettled" parameterType="g.model.match.vo.MatchVo">
+        update match set settle_status = #{result.settleStatus} where id = #{result.id} and settle_status = #{search.settleStatus};
+    </update>
+
+    <update id="toCanceled" parameterType="g.model.match.vo.MatchVo">
+        update match set is_cancel = #{result.isCancel} where id = #{result.id} and (is_cancel = #{search.isCancel} or is_cancel is null);
+    </update>
+
+    <update id="updateMatchDealer" parameterType="g.model.match.po.Match">
+        <![CDATA[
+          update match
+          set dealer_user_id=#{dealerUserId}
+          where id=#{id}
+        ]]>
+    </update>
+
+    <update id="updateMatchResult" parameterType="g.model.match.po.Match">
+        <![CDATA[
+          update match
+          set result=#{result},settle_status=#{settleStatus}
+          where id=#{id}
+        ]]>
+    </update>
+
+    <!--//endregion your codes 1-->
+
+</mapper>

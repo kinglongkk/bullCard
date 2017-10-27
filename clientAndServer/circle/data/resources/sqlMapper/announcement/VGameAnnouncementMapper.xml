@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.announcement.VGameAnnouncementMapper">
+
+    <resultMap id="TABLE:v_game_announcement" type="g.model.announcement.po.VGameAnnouncement">
+        <id column="id" property="id"/>
+        <result column="publish_time" property="publishTime"/>
+        <result column="publish_user_id" property="publishUserId"/>
+        <result column="announcement_type" property="announcementType"/>
+        <result column="publish_user_name" property="publishUserName"/>
+        <result column="language" property="language"/>
+        <result column="title" property="title"/>
+        <result column="content" property="content"/>
+        <result column="save_time" property="saveTime"/>
+        <result column="local" property="local"/>
+        <result column="game_id" property="gameId"/>
+        <result column="validity_start_time" property="validityStartTime"/>
+        <result column="validity_end_time" property="validityEndTime"/>
+        <result column="repeat" property="repeat"/>
+        <result column="repeat_time" property="repeatTime"/>
+        <result column="repeat_unit" property="repeatUnit"/>
+    </resultMap>
+
+    <!--//region your codes 1-->
+
+    <!--//endregion your codes 1-->
+
+</mapper>

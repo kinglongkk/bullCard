@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.admin.VUserBetLimitMultipleMapper">
+
+    <resultMap id="TABLE:v_user_bet_limit_multiple" type="g.model.admin.po.VUserBetLimitMultiple">
+        <id column="id" property="id"/>
+        <result column="bet_num" property="betNum"/>
+        <result column="odds_min" property="oddsMin"/>
+        <result column="odds_max" property="oddsMax"/>
+        <result column="bet_min" property="betMin"/>
+        <result column="bet_max" property="betMax"/>
+        <result column="sys_user_id" property="sysUserId"/>
+        <result column="schema_code" property="schemaCode"/>
+        <result column="order_num" property="orderNum"/>
+    </resultMap>
+
+    <!--//region your codes 1-->
+
+    <!--//endregion your codes 1-->
+
+</mapper>

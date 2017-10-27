@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "common_text_yinglibang",
+    "texture": "8693e562-441d-4e9d-b311-fdef3c0702bd",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      56,
+      19
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      56,
+      19
+    ]
+  }
+}

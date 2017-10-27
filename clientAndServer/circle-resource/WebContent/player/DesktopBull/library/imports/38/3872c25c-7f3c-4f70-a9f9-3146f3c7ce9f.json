@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "bull100_board_beijing_3",
+    "texture": "ddf21422-0068-4be9-8c93-50a9088f0fd4",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      102,
+      24
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      102,
+      24
+    ]
+  }
+}

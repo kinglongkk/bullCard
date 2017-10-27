@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+	<import resource="classpath*:conf/service-biz-player.xml"/>
+
+	<!-- 订阅消息玩家交易结果信息 -->
+	<bean id="loadReSource" class="g.api.biz.PlayerTransactionResultService" init-method="start"></bean>
+
+	<!-- api玩家交易任务调度 -->
+	<!--<bean class="org.springframework.scheduling.quartz.JobDetailFactoryBean" id="apiTransactionJobDetail">-->
+		<!--<property name="jobClass" value="g.api.biz.TransactionJob" />-->
+	<!--</bean>-->
+	<!--<bean class="org.springframework.scheduling.quartz.CronTriggerFactoryBean" id="apiTransactionTrigger">-->
+		<!--<property name="jobDetail" ref="apiTransactionJobDetail" />-->
+		<!--<property name="cronExpression" value="0/2 * * * * ? *" />-->
+		<!--<property name="group" value="apiTransaction" />-->
+	<!--</bean>-->
+
+	<!-- 检查转账状态 -->
+	<bean id="checkTransferService" class="g.api.biz.CheckTransferService"/>
+	<!-- 确认转账 -->
+	<bean id="confirmTransactionService" class="g.api.biz.ConfirmTransactionService" />
+	<!-- 预存款 -->
+	<bean id="depositService" class="g.api.biz.DepositService"/>
+	<!-- 获取在游戏平台的账户余额 -->
+	<bean id="fetchBalanceService" class="g.api.biz.FetchBalanceService"/>
+	<!-- 获取下单记录 -->
+	<bean id="fetchRecordService" class="g.api.biz.FetchRecordService" />
+	<!-- 查找游戏公告 -->
+	<bean id="notifyService" class="g.api.biz.GameNotifyService" />
+	<!-- 游戏查询 -->
+	<bean id="gameSelectService" class="g.api.biz.GameSelectService" />
+	<!-- 踢出游戏 -->
+	<bean id="kickoutService" class="g.api.biz.KickoutService"/>
+	<!-- 登陆到游戏 -->
+	<bean id="loginService" class="g.api.biz.LoginService"/>
+	<!-- 向游戏平台注册游戏帐号 -->
+	<bean id="registerService" class="g.api.biz.RegisterService"/>
+	<!-- 预取款 -->
+	<bean id="withdrawService" class="g.api.biz.WithdrawService"/>
+	<bean id="sysParamVo" class="org.soul.model.sys.vo.SysParamVo"/>
+	<!-- 玩家转账操作 -->
+	<bean id="transactionService" class="g.api.biz.PlayerTransactionService" />
+	<!-- 玩家转账服务端返回结果 -->
+	<bean id="playerTransactionResultService" class="g.api.biz.PlayerTransactionResultService" />
+	<!-- 玩家盈亏 -->
+	<bean id="profitAndLossService" class="g.api.biz.PlayerProfitAndLossService" />
+
+</beans>

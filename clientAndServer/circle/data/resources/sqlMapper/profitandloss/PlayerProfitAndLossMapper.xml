@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.profitandloss.PlayerProfitAndLossMapper">
+
+    <resultMap id="TABLE:player_profit_and_loss" type="g.model.profitandloss.po.PlayerProfitAndLoss">
+        <id column="id" property="id"/>
+        <result column="gather_time" property="gatherTime"/>
+        <result column="player_id" property="playerId"/>
+        <result column="bet_frequency" property="betFrequency"/>
+        <result column="effective_amount" property="effectiveAmount"/>
+        <result column="profit_amount" property="profitAmount"/>
+        <result column="water_amount" property="waterAmount"/>
+    </resultMap>
+
+    <!-- 每日统计 玩家盈亏 -->
+    <select id="playerProfitAndLoss" statementType="CALLABLE" parameterType="map" resultType="boolean">
+        {call circle.player_profit_and_loss(#{endTime, jdbcType=OTHER, mode=IN})}
+    </select>
+
+    <!-- 盈亏查询 -->
+    <select id="selectPlayerProfitAndLoss" parameterType="map" resultType="map">
+        SELECT
+            sysUser.nickname AS playerNickname,
+            loss.bet_frequency AS betFrequency,
+            loss.effective_amount AS effectiveAmount,
+            loss.profit_amount AS profitAmount,
+            loss.water_amount AS waterAmount,
+            loss.gather_time AS gatherTime
+        FROM
+            player_profit_and_loss loss,
+            sys_user sysUser
+        WHERE
+            loss.player_id = sysUser.id
+        AND
+            loss.gather_time &gt;= #{startTime}
+        AND
+            loss.gather_time &lt;= #{endTime}
+        AND
+            sysUser.owner_id = #{agentId}
+        <if test="playerId != null">
+        AND loss.player_id = #{playerId}
+        </if>
+        LIMIT
+            #{pageSize}
+        OFFSET
+            (#{pageNo} - 1) * #{pageSize};
+    </select>
+
+    <!-- 盈亏查询 总条数 -->
+    <select id="selectCount" parameterType="map" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM
+            player_profit_and_loss loss,
+            sys_user sysUser
+        WHERE
+            loss.player_id = sysUser.id
+        AND
+            loss.gather_time &gt;= #{startTime}
+        AND
+            loss.gather_time &lt;= #{endTime}
+        AND
+            sysUser.owner_id = #{agentId}
+        <if test="playerId != null">
+        AND loss.player_id = #{playerId}
+        </if>
+    </select>
+
+</mapper>

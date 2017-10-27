@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd"
+       default-autowire="byName">
+
+       <bean id="vBetListService" class="g.service.common.VBetListService"/>
+       <bean class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor" id="settleThreadPool" >
+              <property name="queueCapacity" value="300"/>
+              <property name="corePoolSize" value="10"/>
+              <property name="maxPoolSize" value="100"/>
+              <property name="threadGroupName" value="Task"/>
+              <property name="rejectedExecutionHandler">
+                     <bean class="java.util.concurrent.ThreadPoolExecutor$CallerRunsPolicy"/>
+              </property>
+       </bean>
+</beans>

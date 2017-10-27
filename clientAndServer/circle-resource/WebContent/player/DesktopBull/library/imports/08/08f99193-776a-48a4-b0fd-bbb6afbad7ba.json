@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "common_text_guize",
+    "texture": "394dba68-bda0-40ce-ad31-179ab350b4e2",
+    "atlas": "",
+    "rect": [
+      0,
+      2,
+      68,
+      35
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      68,
+      39
+    ]
+  }
+}

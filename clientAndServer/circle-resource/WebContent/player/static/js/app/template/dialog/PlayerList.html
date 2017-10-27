@@ -1,0 +1,42 @@
+<div  class="dialogFront"><!--玩家列表-->
+    <div id="dialog" class="dia_small">
+    <div class="Prompt_bt_bg">
+        <div class="PlayerList_btn"></div>
+    </div>
+    <div class="Dialog_bg1 Prompt_tc_bg1">
+        <div class="PlayerList_nub">
+            {{if ~dataIsEmpty(code)}}
+            当前玩家共有<span>{{:data.length}}</span>人
+            {{else}}
+            当前玩家共有<span>0</span>人
+            {{/if}}
+        </div>
+    </div>
+    <div class="Dialog_bg3 Prompt_tc_bg3"></div>
+    <div class="Prompt_bg">
+        <div class="Prompt_tc">
+            <div class="Dialog_bg2 Prompt_tc_bg2">
+                <div class="PlayerList_content">
+                    <ul>
+                        {{if ~dataIsEmpty(code)}}
+                        {{for data}}
+                        <li>
+                            <div class="PlayerList_head">{{infoHeadIcon:avatarUrl}}</div>
+                            <p>{{:nickname}}</p>
+                            <div class="PlayerList_money">
+                                <div class="PlayerList_coin"></div>
+                                <span>{{moneyFormat:coin}}</span>
+                            </div>
+                        </li>
+                        {{/for}}
+                        {{else}}
+                        <div class="Dialog_font_center">{{:msg}}</div>
+                        {{/if}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="Prompt_close"></button>
+    </div>
+</div>

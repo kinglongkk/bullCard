@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "Home_start_tex",
+    "texture": "a230c8f3-5d86-4ce5-84cb-fe4814c40a4e",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      1998,
+      447
+    ],
+    "offset": [
+      -24,
+      31.5
+    ],
+    "originalSize": [
+      2048,
+      512
+    ]
+  }
+}

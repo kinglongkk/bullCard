@@ -1,0 +1,44 @@
+[
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "unknown1",
+      "texture": "436680b4-029e-4650-b3a8-53713d77aa28",
+      "rect": [
+        0,
+        0,
+        147,
+        141
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        147,
+        141
+      ]
+    }
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "comm_1_icon_coins_2",
+      "texture": "179dec9ad",
+      "rect": [
+        2,
+        208,
+        62,
+        62
+      ],
+      "offset": [
+        0,
+        -2
+      ],
+      "originalSize": [
+        74,
+        72
+      ]
+    }
+  }
+]

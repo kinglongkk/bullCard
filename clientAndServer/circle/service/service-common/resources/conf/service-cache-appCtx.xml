@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:cache="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+	   http://www.springframework.org/schema/util
+	   http://www.springframework.org/schema/util/spring-util-4.1.xsd
+	   http://www.springframework.org/schema/cache
+       http://www.springframework.org/schema/cache/spring-cache.xsd">
+
+    <description>所有缓存配置</description>
+    <import resource="classpath*:conf/soul-cache.xml"/>
+    <!--<import resource="classpath*:conf/soul-dubbo-cache.xml"/>-->
+    <bean id="bankVo" class="g.model.payaccount.vo.BankVo"/>
+    <util:constant id="CACHE_KEY_DICTS"   static-field="org.soul.commons.cache.CacheKey.CACHE_KEY_DICTS"/>
+    <util:constant id="CACHE_KEY_PARAMS" static-field="org.soul.commons.cache.CacheKey.CACHE_KEY_PARAMS"/>
+    <util:constant id="CACHE_KEY_GROUP_LIMIT" static-field="g.model.cache.CacheKey.CK_PLAYER_GROUP_LIMIT"/>
+    <util:constant id="CACHE_KEY_GROUP_MUL_LIMIT" static-field="g.model.cache.CacheKey.CK_PLAYER_GROUP_MUL_LIMIT"/>
+    <util:constant id="CACHE_KEY_BANK"  static-field="g.model.cache.CacheKey.CACHE_KEY_BANK"/>
+    <util:constant id="CACHE_KEY_PAYPROVIDER"   static-field="org.soul.commons.cache.CacheKey.CACHE_KEY_PAYPROVIDER"/>
+
+    <bean id="cacheConf" name="baseCacheConf" class="org.soul.commons.cache.core.CacheConf">
+        <property name="active" value="true"/>
+        <property name="cacheItemConfs" ref="baseCacheItemConfsMap"/>
+    </bean>
+    <!--字典缓存-->
+    <bean id="dicts" class="org.soul.commons.cache.core.CacheItemConf">
+        <property name="dataProviderClass" value="org.soul.iservice.sys.ISysDictService"/>
+        <property name="local" value="true"/>
+        <property name="dataProviderMethod" value="load"/>
+        <property name="cacheLoadStrategy" ref="FIRST_TIME"/>
+        <property name="cacheProviderType" ref="dictJedisProxy"/>
+        <property name="expire" value="3600"/>
+    </bean>
+    <!--参数缓存-->
+    <bean id="params" class="org.soul.commons.cache.core.CacheItemConf">
+        <property name="dataProviderClass" value="org.soul.iservice.sys.ISysParamService"/>
+        <property name="local" value="true"/>
+        <property name="dataProviderMethod" value="load"/>
+        <property name="cacheLoadStrategy" ref="FIRST_TIME"/>
+        <property name="cacheProviderType" ref="paramJedisPorxy"/>
+        <property name="expire" value="3600"/>
+    </bean>
+    <!-- 玩家分组单注限额 -->
+    <bean id="limits" class="org.soul.commons.cache.core.CacheItemConf">
+        <property name="dataProviderClass" value="g.service.common.IVUserGroupBetLimitService"/>
+        <property name="local" value="true"/>
+        <property name="dataProviderMethod" value="load"/>
+        <property name="cacheLoadStrategy" ref="FIRST_TIME"/>
+        <property name="cacheProviderType" ref="paramJedisPorxy"/>
+        <property name="expire" value="3600"/>
+    </bean>
+    <!-- 玩家分组综合过关单注最高限额 -->
+    <bean id="multipleLimits" class="org.soul.commons.cache.core.CacheItemConf">
+        <property name="dataProviderClass" value="g.service.common.IVUserGroupBetLimitMultipleService"/>
+        <property name="local" value="true"/>
+        <property name="dataProviderMethod" value="load"/>
+        <property name="cacheLoadStrategy" ref="FIRST_TIME"/>
+        <property name="cacheProviderType" ref="paramJedisPorxy"/>
+        <property name="expire" value="3600"/>
+    </bean>
+    <!--Bank 缓存-->
+    <bean id="bank" class="org.soul.commons.cache.core.CacheItemConf">
+        <property name="dataProviderClass" value="g.service.payaccount.IBankService"/>
+        <property name="local" value="true"/>
+        <property name="dataProviderMethod" value="load"/>
+        <property name="cacheLoadStrategy" ref="FIRST_TIME"/>
+        <property name="cacheProviderType" ref="jedisProxy"/>
+        <property name="expire" value="3600"/>
+    </bean>
+    <!--在线支付提供商缓存-->
+    <bean lazy-init="true" id="payProvider" class="org.soul.commons.cache.core.CacheItemConf">
+        <property name="dataProviderClass" value="org.soul.service.pay.OnlinePayService"/>
+        <property name="local" value="true"/>
+        <property name="dataProviderMethod" value="loadPayApiProvider"/>
+        <property name="cacheLoadStrategy" ref="FIRST_TIME"/>
+        <property name="cacheProviderType" ref="jedisProxy"/>
+    </bean>
+    <bean id="baseCacheItemConfsMap" class="org.springframework.beans.factory.config.MapFactoryBean">
+        <property name="sourceMap">
+            <map>
+                <!--参数缓存-->
+                <entry key-ref="CACHE_KEY_PARAMS">
+                    <bean parent="params">
+                        <property name="methodArgs">
+                            <list>
+                                <!--soul-web.xml-->
+                                <ref bean="sysParamVo"/>
+                            </list>
+                        </property>
+                    </bean>
+                </entry>
+                <!--字典缓存项-->
+                <entry key-ref="CACHE_KEY_DICTS">
+                    <bean parent="dicts">
+                        <property name="methodArgs">
+                            <list>
+                                <value type="java.lang.String"/>
+                                <value type="java.lang.String"/>
+                            </list>
+                        </property>
+                    </bean>
+                </entry>
+                <!-- 玩家分组单注限额 -->
+                <entry key-ref="CACHE_KEY_GROUP_LIMIT">
+                    <bean parent="limits">
+                        <property name="methodArgs">
+                            <list>
+                                <ref bean="vUserGroupBetLimitVo"/>
+                            </list>
+                        </property>
+                    </bean>
+                </entry>
+                <!-- 玩家分组综合过关单注最高限额 -->
+                <entry key-ref="CACHE_KEY_GROUP_MUL_LIMIT">
+                    <bean parent="multipleLimits">
+                        <property name="methodArgs">
+                            <list>
+                                <ref bean="vUserGroupBetLimitMultipleVo"/>
+                            </list>
+                        </property>
+                    </bean>
+                </entry>
+                <!--Bank 缓存-->
+                <entry key-ref="CACHE_KEY_BANK" >
+                    <bean parent="bank">
+                        <property name="methodArgs">
+                            <list>
+                                <ref bean="bankVo"/>
+                            </list>
+                        </property>
+                    </bean>
+                </entry>
+                <!--在线支付提供商缓存-->
+                <entry key-ref="CACHE_KEY_PAYPROVIDER" >
+                    <bean parent="payProvider">
+                    </bean>
+                </entry>
+
+            </map>
+        </property>
+    </bean>
+    <bean id="vUserGroupBetLimitVo" class="g.model.admin.vo.VUserGroupBetLimitVo"/>
+    <bean id="vUserGroupBetLimitMultipleVo" class="g.model.admin.vo.VUserGroupBetLimitMultipleVo"/>
+</beans>

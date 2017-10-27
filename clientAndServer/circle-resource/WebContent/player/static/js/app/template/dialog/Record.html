@@ -1,0 +1,70 @@
+<div id="dialog" class="dia_big"><!--游戏记录-->
+    <div class="Account_bt_bg">
+        <div class="Record_icons"></div>
+    </div>
+    <div class="Account_tc">
+        <div class="Dialog_bg1 Record_tc_bg1">
+            <ul>
+                <li class="Record_time"></li>
+                <li class="Record_room"></li>
+                <li class="Record_bet"></li>
+                <li class="Record_result"></li>
+                <li class="Record_outcome"></li>
+            </ul>
+        </div>
+        <div class="Dialog_bg2 Account_tc_bg2">
+            <div class="Record_content">
+                <ul id="dataUl"></ul>
+                <div id="pageEnd" class="Record_loading">
+                    <div class="Record_loading">
+                        <div class="loader">
+                            <div class="loader-inner line-spin-fade-loader">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <span>加载中...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Banker_tc_bg3 Account_tc_bg3">
+            <div class="Dialog_bg3_bg">
+                <ul id="dataTab">
+                    <li tab="div1" data-value="0" class="Record_today"></li>
+                    <li tab="div2" data-value="1" class="Record_yesterday bg3_op"></li>
+                    <li tab="div3" data-value="2" class="Record_qt bg3_op"></li>
+                </ul>
+            </div>
+            <div class="Dialog_bg2 Record_bg1"></div>
+        </div>
+        <div class="Account_tc_bg4"></div>
+        <div class="Account_tc_bg5"></div>
+    </div>
+    <button class="Prompt_close"></button>
+</div>
+<script id="dataTmpl" type="text/x-jsrender">
+{{if ~dataIsEmpty(code)}}
+    {{for data.datas}}
+        <li>
+            <div class="Record_content1">{{:confirmtime}}</div>
+            <div class="Record_content2"><span class="Account_content_red">{{partModelName:gamemodelname}}: </span><span>{{:gameroomname}}</span></div>
+        {{if effectiveamount}}
+            <div class="Record_content1">{{:effectiveamount}}</div>
+        {{else}}
+            <div class="Record_content1">当庄</div>
+        {{/if}}
+            <div class="Record_content1 Account_content_{{contentColor:profitamount}}">{{moneyConverter:profitamount}}</div>
+            <div class="Record_content1 Account_content_{{contentColor:profitamount}}">{{winOrLose:profitamount}}</div>
+        </li>
+    {{/for}}
+{{else}}
+   <div class="Dialog_font_center">{{:msg}}</div>
+{{/if}}
+</script>

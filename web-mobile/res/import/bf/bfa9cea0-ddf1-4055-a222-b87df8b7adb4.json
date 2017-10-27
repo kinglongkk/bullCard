@@ -1,0 +1,20 @@
+{
+  "__type__": "cc.SpriteAtlas",
+  "_spriteFrames": {
+    "bull100_but_shangzhuang": {
+      "__uuid__": "94395096-fe7d-463e-b1bb-f30599a10b4d"
+    },
+    "bull100_but_xiazhuang": {
+      "__uuid__": "cb79e8f2-c0bb-4c4e-84d6-0a1994dbf33c"
+    },
+    "common_btn_bet9": {
+      "__uuid__": "b242a7d1-e53d-4f52-a17e-32abf41f4de3"
+    },
+    "common_btn_bet3": {
+      "__uuid__": "7be9dd06-2b9c-4416-9141-52f5f7ea38db"
+    },
+    "common_btn_bet5": {
+      "__uuid__": "af066f71-f890-43f1-b2e3-24726daafb6f"
+    }
+  }
+}

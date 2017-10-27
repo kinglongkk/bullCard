@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.admin.agent.quota.statistics.AgentQuotaStatisticsMapper">
+
+    <resultMap id="TABLE:agent_quota_statistics" type="g.model.admin.agent.quota.statistics.po.AgentQuotaStatistics">
+        <id column="id" property="id"/>
+        <result column="agent_id" property="agentId"/>
+        <result column="game_id" property="gameId"/>
+        <result column="quota" property="quota"/>
+        <result column="date" property="date"/>
+    </resultMap>
+
+    <!--//region your codes 1-->
+    <!-- 代理旗下玩家额度消耗 -->
+    <select id="consumePlayerQuota" statementType="CALLABLE" parameterType="map" resultType="boolean">
+        {call circle.agent_quota(
+            #{endTime, jdbcType=OTHER, mode=IN})
+        }
+    </select>
+
+    <!-- 代理额度消耗 -->
+    <select id="consumeAgentQuota" statementType="CALLABLE" resultType="boolean">
+        {call circle.agent_quota_sum()}
+    </select>
+
+    <!-- 清除表中所有数据 -->
+    <delete id="truncateDate">
+        DELETE FROM agent_quota_statistics;
+    </delete>
+    <!--//endregion your codes 1-->
+
+</mapper>

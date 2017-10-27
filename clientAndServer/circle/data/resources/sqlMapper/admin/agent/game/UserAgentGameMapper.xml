@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.admin.agent.game.UserAgentGameMapper">
+
+    <resultMap id="TABLE:user_agent_game" type="g.model.admin.agent.game.po.UserAgentGame">
+        <id column="id" property="id"/>
+        <result column="game_id" property="gameId"/>
+        <result column="game_logo" property="gameLogo"/>
+        <result column="game_link" property="gameLink"/>
+        <result column="agent_id" property="agentId"/>
+    </resultMap>
+
+    <!-- 新增代理游戏 -->
+    <insert id="insertAgentGame" parameterType="map">
+        TRUNCATE TABLE user_agent_game CASCADE;
+        <if test="gameList != null">
+            <if test="!gameList.isEmpty()">
+                INSERT INTO
+                    user_agent_game
+                    (
+                        game_id,
+                        agent_id
+                    )
+                VALUES
+                <foreach collection="gameList" index="index" item="gameList" separator=",">
+                    (
+                        #{gameList.id},
+                        #{agentId}
+                    )
+                </foreach>
+            </if>
+        </if>
+    </insert>
+
+</mapper>

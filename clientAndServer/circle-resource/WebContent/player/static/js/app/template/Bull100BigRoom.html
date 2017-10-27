@@ -1,0 +1,53 @@
+<div  class="container"><!--百人大战房间-->
+    <div class="ui-green-bg">
+        <!-- 玩家信息 -->
+        <div class="personal_info"></div>
+        <div class="center">
+            <!--滚动通知-->
+            <div class="announcement"></div>
+            <!--房间-->
+            <div class="BigRoom_center">
+                <div class="BigRoom">
+                <div class="BR_bg"></div>
+                <div class="BigRoom1">
+                    <div class="BR_bg_bg1"></div>
+                    <div class="BR_bg_bg2"></div>
+                    <div class="BR_bg_bg3"></div>
+                    <div class="room">
+                        <ul class="bullRoom">
+                            {{if ~dataIsEmpty(code)}}
+                            {{for data}}
+                            {{if ~showRoom(status)}}
+                                <a href="#/model/bull100/room/{{:id}}">
+                                    <li class="{{changeBgColor:minLimitPlayerBlance}}">
+                                        <p class="limit {{changeBgColor:minLimitPlayerBlance}}1">进房下限{{moneyFormat:minLimitPlayerBlance}}</p>
+                                        <p class="city">{{:name}}</p>
+                                        <p class="number {{changeBgColor:minLimitPlayerBlance}}2">{{:currentPlayerCount}}</p>
+                                    </li>
+                                </a>
+                            {{/if}}
+                            {{/for}}
+
+                            {{for data}}
+                            {{if ~showRoom(status)}}
+                            <a href="#/model/newBull100/room/{{:id}}">
+                                <li class="{{changeBgColor:minLimitPlayerBlance}}">
+                                    <p class="limit {{changeBgColor:minLimitPlayerBlance}}1">进房下限{{moneyFormat:minLimitPlayerBlance}}</p>
+                                    <p class="city">{{:name}}</p>
+                                    <p class="number {{changeBgColor:minLimitPlayerBlance}}2">{{:currentPlayerCount}}</p>
+                                </li>
+                            </a>
+                            {{/if}}
+                            {{/for}}
+
+                            {{else}}
+                            <div class="Dialog_font_center">{{:msg}}</div>
+                            {{/if}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>

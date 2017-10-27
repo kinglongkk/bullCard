@@ -1,0 +1,455 @@
+@charset "UTF-8";
+/* CSS reset */
+html{color:#515c6b; font-family:'微软雅黑',"Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","WenQuanYi Micro Hei",sans-serif;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td,
+strong{padding:0;margin:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset{border:0;}
+img{border:0; width:100%;}
+a{text-decoration:none; outline:none;}/*此处待添加默认链接颜色*/
+var,em,strong{font-style:normal;}
+address,caption,cite,code,dfn,em,strong,th,var, optgroup{font-style:inherit;font-weight:inherit;}
+del,ins{text-decoration:none;}
+li{list-style:none;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before,q:after{content:'';}
+abbr,acronym{border:0;font-variant:normal;}
+sup{vertical-align:baseline;}
+sub{vertical-align:baseline;}
+legend{color:#000;}
+input,button,textarea,select,optgroup,option{font-family:inherit; font-size:inherit;font-style:inherit;font-weight:inherit;}
+input,button,textarea,select{*font-size:100%;}
+*{-webkit-tap-highlight-color:rgba(0,0,0,0);}
+.clear:after {content:".";display:block;height:0;clear:both;visibility:hidden; overflow:hidden;}
+.clear { *zoom:1;}
+.fl {float: left;}
+.fr {float: right;}
+.fw {font-weight: bold;}
+a{ cursor:pointer;}
+body,html,.container {width: 100%; height: 100%; }
+.tc{text-align: center;}
+/*公共背景*/
+.ui-green-bg {
+    background: url("../images/poker/bullFight/common/board/beijing.jpg") no-repeat;
+    background-size: 100% 100%;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    overflow: hidden;
+}
+.ui-green-bg1{
+    background: url("../images/poker/bullFight/common/board/beijing.jpg") no-repeat;
+    background-size: 100% 100%;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    overflow: hidden;
+}
+/*@media only screen and (min-width: 899px) {*/
+    /*.ui-green-bg1 {*/
+        /*left: 50%;*/
+        /*margin-left: -257px;*/
+        /*width: 514px;*/
+    /*}*/
+/*}*/
+/*选择房间顶部用户信息和公告部分*/
+.personal_info{
+    background: url(../images/poker/bullFight/common/board/comm_1_frame_tap_main.png);
+    background-size:100% 100%;
+    height: 2.34rem;
+    position: relative;
+    z-index: 2;
+}
+.GB_back{
+    background: url(../images/poker/bullFight/common/icon/back.png);
+    background-size:100% 100%;
+    height:0.85rem;
+    width: 1.1rem;
+    float: left;
+    margin: 0.2rem 0 0 0.34rem;
+}
+.user_info{
+    margin-left: 16%;
+}
+.info_head{
+    width: 1.38rem;
+    margin-left:4.5%;
+    height: 1.38rem;
+    border-radius: 0.15rem;
+    overflow: hidden;
+}
+.info_name{
+    color: #fff;
+    font-size: 0.3rem;
+    text-align: center;
+    font-weight: bold;
+    width: 2.32rem;
+    line-height: 0.6rem;
+    position: absolute
+}
+.info_coin{
+    width: 5rem;
+    height: 0.82rem;
+    background: rgba(0,0,0,0.2);
+    border-radius: 0.15rem;
+    position: absolute;
+    top: 0.19rem;
+    left: 38%
+}
+.if_coin{
+    width: 1.2rem;
+    position: fixed;
+    left: 35%;
+    top: 0.1rem;
+}
+.info_nub{
+    float: left;
+    color: #fecb55;
+    font-size: 0.55rem;
+    margin-left: 1rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 0.82rem;
+}
+.setting{
+    background: url("../images/poker/bullFight/common/icon/setUp.png");
+    background-size: 100% 100%;
+    width: 1.1rem;
+    height: 1.09rem;
+    position: absolute;
+    right: 2.5%;
+    top: 0.1rem;
+}
+.announcement{
+    margin-left: 2.5rem;
+    margin-top: -8.5%;
+    float: left;
+}
+.ui-destop-notice {
+    background-image: url(../images/poker/bullFight/common/board/radio.png);
+    background-size: 100% 100%;
+    width: 8.11rem;
+    height: 1rem;
+    color: #f2c900;
+    font-size: 0.35rem;
+    line-height: 1rem;
+}
+.ui-destop-user {
+    width: 100%;
+    height: 100%;
+}
+.ui-destopnotic-font {
+    width: 5.5rem;
+    height: 1.18rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-top: -0.05rem;
+    margin-left: 1.35rem;
+    float: left;
+    z-index: 1;
+}
+.ui-destop-notic-wifi {
+    width: 0.87rem;
+    height: 0.64rem;
+    float: left;
+    margin: -1rem 0 0 7.1rem;
+}
+.ui-destopnotic-font b {
+    color: #f9020a;
+}
+.ui-destopnotic-font span {
+    color: #FFFFFF;
+}
+.marquee{
+    display:inline-block;
+}
+.msgDialogMain,.msgDialogFront,.dialogMain,.dialogBg,.dialogFront,#coinMain, .animationMain, .Bull_animation{
+    width: 100%;
+    height:100%;
+    position: fixed;
+}
+.msgDialogFront{
+    position: absolute;
+}
+#coinMain{top:0; pointer-events: none;}
+.animationMain{
+    pointer-events: none;
+    display:none;
+    z-index: 1998;
+}
+.dialogLoading{
+    pointer-events: none;
+    display:none;
+    z-index: 2000;
+}
+.Bull_animation{
+    pointer-events: none;
+    display:none;
+    z-index: 1998;
+}
+.dialogMain{
+    z-index: 2001;
+    display: none;
+    top: 0;
+}
+.msgDialogMain{
+    z-index: 2008;
+    top: -9999px;
+}
+
+#maskDiv,.dialogBg{
+    background:rgb(0,0,0);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    opacity: 0.7;
+}
+
+#maskDiv{
+    z-index: 2004;
+    display: none;
+    opacity: 0;
+    top: 0;
+}
+
+/*提示窗口*/
+.Prompt_bg{
+    width: 100%;
+    margin: auto;
+    top: 1.91rem;
+    margin-bottom: -0.6rem;
+    bottom: 1.4rem;
+    position: absolute !important;
+    margin-top: -0.04rem;
+    z-index: 10;
+}
+.Prompt_bg1{
+    top: 50%;
+    bottom: 20%;
+    left: 50%;
+    width: 10.23rem;
+    position: absolute;
+    height: 60%;
+    margin-left: -5.115rem;
+    transform: translateY(-50%);
+}
+.Prompt_tc{
+    width: 100%;
+    height: 100%;
+}
+.Prompt_tc_bg1{
+    height: 1.42rem;
+}
+.Prompt_tc_bg2{
+    height: 100%;
+}
+.Prompt_tc_bg21{
+    height: 60%;
+}
+.Prompt_tc_bg3{
+    height: 1.42rem;
+    width: 100%;
+    z-index: 9;
+    bottom: 0;
+    position: absolute !important;
+}
+.cow_head{
+    background: url("../images/poker/bullFight/common/board/tauren.png") 50% 50% / auto 100% no-repeat;
+    width: 2.19rem;
+    height: 2.05rem;
+    margin: -1rem 0 0 1rem;
+    position: absolute !important;
+}
+.Prompt_content{
+    color: #b46336;
+    font-size: 0.5rem;
+    font-weight: bold;
+    text-align: center;
+    width: 8.6rem;
+    margin: 0 0 0 0.82rem;
+    padding-bottom: 1rem;
+}
+.Prompt_close{
+    background: url("../images/poker/bullFight/common/btn/down.png") 50% 50% / auto 100% no-repeat;
+    width: 1.01rem;
+    height: 1.01rem;
+    border: none;
+    position: absolute !important;
+    right: 0;
+    top: 0.4rem;
+    outline:none;
+}
+.Prompt_tc_btn{
+    text-align: center;
+    font-size: 0.45rem;
+    font-weight: bolder;
+}
+.Prompt_exit{
+    background: url(../images/poker/bullFight/common/btn/boss3.png) 50% 50% / auto 100% no-repeat;
+    width: 2.77rem;
+    height: 1.09rem;
+    margin: -0.3rem 0.5rem 0;
+    border: none;
+    outline: none;
+    display: inline-block;
+}
+.Prompt_tc_btn p{
+    -webkit-text-fill-color:transparent;
+
+    background:-webkit-linear-gradient(#f9eaa7,#d3d43a 80%);
+
+    -webkit-background-clip:text;
+
+    /*-webkit-text-stroke:0.01rem #752800;*/
+
+}
+.Prompt_wrong{
+    background: url(../images/poker/bullFight/common/btn/boss2.png) 50% 50% / auto 100% no-repeat;
+    width: 2.77rem;
+    height: 1.09rem;
+    border: none;
+    outline: none;
+    display: inline-block;
+    margin: -0.3rem 0.5rem 0;
+}
+/*系统小提示*/
+#systemTip{
+    pointer-events: none;
+    z-index: 2005;
+    display: none;
+    background: url("../images/poker/bullFight/bull100/board/sztishidibang.png") 50% 50% / auto 100% no-repeat;
+    width: 12.09rem;
+    height: 2.04rem;
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    margin: -1.02rem 0 0 -6.03rem;
+    color: #ff1000;
+    text-align: center;
+    font-size: 0.5rem;
+    line-height: 2.04rem;
+    font-weight: bolder;
+}
+#tipNum{
+    color: #FFFFFF;
+}
+/*加载动画*/
+.sk-circle {
+    margin: -0.2rem 0 0 -0.2rem;
+    width: 0.4rem;
+    height: 0.4rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2017;
+}
+.sk-circle .sk-child {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0; }
+.sk-circle .sk-child:before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 15%;
+    height: 15%;
+    background-color: #333;
+    border-radius: 100%;
+    -webkit-animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;
+    animation: sk-circleBounceDelay 1.2s infinite ease-in-out both; }
+.sk-circle .sk-circle2 {
+    -webkit-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    transform: rotate(30deg); }
+.sk-circle .sk-circle3 {
+    -webkit-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    transform: rotate(60deg); }
+.sk-circle .sk-circle4 {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg); }
+.sk-circle .sk-circle5 {
+    -webkit-transform: rotate(120deg);
+    -ms-transform: rotate(120deg);
+    transform: rotate(120deg); }
+.sk-circle .sk-circle6 {
+    -webkit-transform: rotate(150deg);
+    -ms-transform: rotate(150deg);
+    transform: rotate(150deg); }
+.sk-circle .sk-circle7 {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg); }
+.sk-circle .sk-circle8 {
+    -webkit-transform: rotate(210deg);
+    -ms-transform: rotate(210deg);
+    transform: rotate(210deg); }
+.sk-circle .sk-circle9 {
+    -webkit-transform: rotate(240deg);
+    -ms-transform: rotate(240deg);
+    transform: rotate(240deg); }
+.sk-circle .sk-circle10 {
+    -webkit-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg); }
+.sk-circle .sk-circle11 {
+    -webkit-transform: rotate(300deg);
+    -ms-transform: rotate(300deg);
+    transform: rotate(300deg); }
+.sk-circle .sk-circle12 {
+    -webkit-transform: rotate(330deg);
+    -ms-transform: rotate(330deg);
+    transform: rotate(330deg); }
+.sk-circle .sk-circle2:before {
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s; }
+.sk-circle .sk-circle3:before {
+    -webkit-animation-delay: -1s;
+    animation-delay: -1s; }
+.sk-circle .sk-circle4:before {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s; }
+.sk-circle .sk-circle5:before {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s; }
+.sk-circle .sk-circle6:before {
+    -webkit-animation-delay: -0.7s;
+    animation-delay: -0.7s; }
+.sk-circle .sk-circle7:before {
+    -webkit-animation-delay: -0.6s;
+    animation-delay: -0.6s; }
+.sk-circle .sk-circle8:before {
+    -webkit-animation-delay: -0.5s;
+    animation-delay: -0.5s; }
+.sk-circle .sk-circle9:before {
+    -webkit-animation-delay: -0.4s;
+    animation-delay: -0.4s; }
+.sk-circle .sk-circle10:before {
+    -webkit-animation-delay: -0.3s;
+    animation-delay: -0.3s; }
+.sk-circle .sk-circle11:before {
+    -webkit-animation-delay: -0.2s;
+    animation-delay: -0.2s; }
+.sk-circle .sk-circle12:before {
+    -webkit-animation-delay: -0.1s;
+    animation-delay: -0.1s; }
+
+@-webkit-keyframes sk-circleBounceDelay {
+    0%, 80%, 100% {
+        -webkit-transform: scale(0);
+        transform: scale(0); }
+    40% {
+        -webkit-transform: scale(1);
+        transform: scale(1); } }
+
+@keyframes sk-circleBounceDelay {
+    0%, 80%, 100% {
+        -webkit-transform: scale(0);
+        transform: scale(0); }
+    40% {
+        -webkit-transform: scale(1);
+        transform: scale(1); } }

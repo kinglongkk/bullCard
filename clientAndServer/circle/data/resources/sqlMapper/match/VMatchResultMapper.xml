@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.match.VMatchResultMapper">
+
+    <resultMap id="TABLE:v_match_result" type="g.model.match.po.VMatchResult">
+        <id column="id" property="id"/>
+        <result column="game_model_id" property="gameModelId" />
+        <result column="game_room_id" property="gameRoomId" />
+        <result column="code" property="code"/>
+        <result column="ball_type" property="ballType"/>
+        <result column="league_code" property="leagueCode"/>
+        <result column="host_code" property="hostCode"/>
+        <result column="client_code" property="clientCode"/>
+        <result column="begin_time" property="beginTime"/>
+        <result column="end_time" property="endTime"/>
+        <result column="cover_time" property="coverTime"/>
+        <result column="create_time" property="createTime"/>
+        <result column="gather_time" property="gatherTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="is_settling" property="isSettling"/>
+        <result column="settle_type" property="settleType"/>
+        <result column="settle_status" property="settleStatus"/>
+        <result column="is_resulted" property="isResulted"/>
+        <result column="game_type" property="gameType"/>
+        <result column="result_gather_time" property="resultGatherTime"/>
+        <result column="is_cancel" property="isCancel"/>
+        <result column="result_id" property="resultId"/>
+        <result column="item_type" property="itemType"/>
+        <result column="outcome" property="outcome" />
+        <result column="result" property="result"/>
+        <result column="type" property="type"/>
+        <result column="host" property="host"/>
+        <result column="client" property="client"/>
+        <result column="provider" property="provider"/>
+        <result column="manual_time" property="manualTime"/>
+        <result column="manual_user_id" property="manualUserId"/>
+    </resultMap>
+
+
+    <!--//region your codes 1-->
+
+    <select id="offsetMatch" resultType="g.model.match.po.VMatchResult">
+        SELECT * FROM v_match_result  ORDER BY id DESC  LIMIT 1 OFFSET #{offSet}
+    </select>
+
+
+    <select id="newMatchResult" resultType="g.model.match.po.MatchResult">
+        SELECT result FROM  match_result WHERE result is NOT NULL ORDER BY id DESC LIMIT 1
+    </select>
+
+    <!--//endregion your codes 1-->
+
+</mapper>

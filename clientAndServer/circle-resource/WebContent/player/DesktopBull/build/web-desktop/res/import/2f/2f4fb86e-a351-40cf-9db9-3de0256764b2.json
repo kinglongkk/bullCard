@@ -1,0 +1,11 @@
+{
+  "__type__": "cc.SpriteAtlas",
+  "_spriteFrames": {
+    "specialEffects_jiesuan01": {
+      "__uuid__": "23566da8-da68-4c3d-a537-91509e1efa81"
+    },
+    "specialEffects_jiesuan02": {
+      "__uuid__": "bf7047f1-8bc7-4b92-a59d-652a6bc5347a"
+    }
+  }
+}

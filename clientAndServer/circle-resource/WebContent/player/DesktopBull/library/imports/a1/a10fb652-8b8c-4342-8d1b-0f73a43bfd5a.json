@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "board_radio2",
+    "texture": "b8fabb74-603f-4762-812f-a33de1d921c8",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      388,
+      57
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      388,
+      57
+    ]
+  }
+}

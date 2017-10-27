@@ -1,0 +1,7 @@
+{
+  "ver": "1.0.0",
+  "uuid": "c3ad0e1e-9657-4483-a334-004faae00698",
+  "atlasJson": "{\"imagePath\":\"Home_coins_tex.png\",\"SubTexture\":[{\"width\":63,\"y\":1,\"height\":63,\"name\":\"Home_coins_1\",\"x\":286},{\"width\":93,\"y\":1,\"height\":140,\"name\":\"Home_coins_2_1\",\"x\":96},{\"width\":93,\"y\":1,\"height\":140,\"name\":\"Home_coins_2\",\"x\":191},{\"width\":93,\"y\":1,\"height\":140,\"name\":\"Home_coins_2_2\",\"x\":1}],\"name\":\"Home_coins_ske_3_ske_1\"}",
+  "texture": "bc9757b0-6c9d-47c1-8745-832caa60adc8",
+  "subMetas": {}
+}

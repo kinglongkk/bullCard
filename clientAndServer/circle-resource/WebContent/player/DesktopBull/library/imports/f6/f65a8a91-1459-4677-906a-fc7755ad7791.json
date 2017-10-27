@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "common_board_tongpai2",
+    "texture": "861128c3-04d7-4378-9c2f-ae331fceb461",
+    "atlas": "",
+    "rect": [
+      9,
+      0,
+      36,
+      45
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      54,
+      45
+    ]
+  }
+}

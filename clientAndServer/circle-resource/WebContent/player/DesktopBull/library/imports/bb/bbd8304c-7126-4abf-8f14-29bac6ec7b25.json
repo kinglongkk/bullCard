@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "common_board_zhujiemain_12",
+    "texture": "66511b5c-5dd8-4825-9339-a4505d70e7ec",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      1920,
+      100
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      1920,
+      100
+    ]
+  }
+}

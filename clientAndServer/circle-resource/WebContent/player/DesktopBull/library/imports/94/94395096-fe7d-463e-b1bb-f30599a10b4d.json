@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "bull100_but_shangzhuang",
+    "texture": "a9b7d580-55fe-44f6-91f6-bd365299c1f8",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      172,
+      66
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      172,
+      66
+    ]
+  }
+}

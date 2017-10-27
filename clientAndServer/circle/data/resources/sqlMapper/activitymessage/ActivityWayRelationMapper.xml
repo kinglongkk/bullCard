@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="g.data.activitymessage.ActivityWayRelationMapper">
+
+    <resultMap id="TABLE:activity_way_relation" type="g.model.activitymessage.po.ActivityWayRelation">
+        <id column="id" property="id"/>
+        <result column="activity_message_id" property="activityMessageId"/>
+        <result column="preferential_form" property="preferentialForm"/>
+        <result column="preferential_value" property="preferentialValue"/>
+        <result column="preferential_audit" property="preferentialAudit"/>
+        <result column="order_column" property="orderColumn"/>
+        <result column="activity_rule_id" property="activityRuleId"/>
+        <result column="is_article" property="isArticle"/>
+        <result column="article" property="article"/>
+        <result column="trigger_value" property="triggerValue"/>
+        <result column="preferential_ratio" property="preferentialRatio"/>
+    </resultMap>
+
+    <!-- 查询当前可参加的活动优惠 -->
+    <select id="selectCanJoinRelation" parameterType="map" resultType="map">
+        SELECT
+            id,
+            preferential_form,
+            preferential_value,
+            preferential_ratio
+        FROM
+            activity_way_relation
+        WHERE
+            id
+        NOT IN
+            (
+            SELECT
+                relation.id
+            FROM
+                activity_way_relation relation
+            LEFT JOIN
+                activity_player_apply apply
+            ON
+                relation.id = apply.activity_way_relation_id
+            WHERE
+                relation.activity_message_id = #{messageId}
+            AND
+                apply.user_id = #{userId}
+            AND
+                apply.is_realize = TRUE
+            )
+        AND
+            activity_message_id = #{messageId}
+        ORDER BY
+            preferential_value;
+    </select>
+
+</mapper>
