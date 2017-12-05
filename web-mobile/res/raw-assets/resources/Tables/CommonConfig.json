@@ -1,5 +1,0 @@
-[["id名","置灰的透明度","确认框显示出现时间","确认框最大缩放","倍数按钮，数值显示大于10后的偏移","超过数额后显示金钱单位","眼睛上的光特效，time1:移动时间，time2：停顿时间","翻牌消耗的时间"],
-["ID名","btnGrayValue","time_confirmTipShow","scale_confirmTipMax","num_multipleValueOff","dict_moneyUnit","time_eyeEffect","time_pokerOpen"],
-["key_int","number","number","number","number","json","json","number"],
-[1,"0.3","0.4","1.2",12,"{'10000':'万','100000000':'亿'}","[1.5, 2.0]","0.6"]
-]
