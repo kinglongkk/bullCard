@@ -369,6 +369,7 @@ Msg.prototype.putLongOnMark = function(val){
         tmp=parseInt(tmp/2);
         bit++;
     }
+
     bit = parseInt((bit+3)/7);
     rs += String.fromCharCode((bit<<4)|((positive?0:1)<<3) | (val&7));//高1-3多余byte数，低4位正0(负1)，低1-3位数据最低3位
     val=parseInt(val/(1<<3));
