@@ -33,7 +33,7 @@ cc.Class({
 
     //显示纯文本弹窗, pos为空默认显示在中央, 可重复使用的tip
     showTxtTip : function (dataObj) {
-        var tip = this._getTxtTip();;
+        var tip = this._getTxtTip();
         tip.showTip(dataObj);
         return tip
     },
