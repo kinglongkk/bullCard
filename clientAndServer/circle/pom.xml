@@ -51,7 +51,7 @@
         <cas.client.core.version>3.3.3</cas.client.core.version>
 
         <freemarker.version>2.3.22</freemarker.version>
-        <fastjson.version>1.2.3</fastjson.version>
+        <fastjson.version>1.2.25</fastjson.version>
         <shiro.version>1.2.3</shiro.version>
     </properties>
 
