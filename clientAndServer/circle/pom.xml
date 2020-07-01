@@ -45,7 +45,7 @@
         <jsp.api.version>2.2.1-b03</jsp.api.version>
         <geronimo.servlet_3_0.version>1.0</geronimo.servlet_3_0.version>
         <springframework.version>4.1.5.RELEASE</springframework.version>
-        <quartz.version>2.2.1</quartz.version>
+        <quartz.version>2.3.2</quartz.version>
 
         <springside.version>4.3.0-SNAPSHOT</springside.version>
         <cas.client.core.version>3.3.3</cas.client.core.version>
