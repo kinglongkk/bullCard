@@ -40,7 +40,7 @@
         <soul.version>1.0.2-SNAPSHOT</soul.version>
         <spring.data.monogodb.verion>1.8.0.RELEASE</spring.data.monogodb.verion>
         <mockito.version>2.0.2-beta</mockito.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <jstl.version>1.1.2</jstl.version>
         <jsp.api.version>2.2.1-b03</jsp.api.version>
         <geronimo.servlet_3_0.version>1.0</geronimo.servlet_3_0.version>
